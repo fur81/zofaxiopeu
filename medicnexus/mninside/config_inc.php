@@ -2,8 +2,8 @@
 	$g_hostname = 'localhost';
 	$g_db_type = 'mysql';
 	$g_database_name = 'mninside';
-	$g_db_username = 'root';
-	$g_db_password = 'carabobo';
+	$g_db_username = 'mninside';
+	$g_db_password = 'm4nt1s#2013';
 	
 	# --- language --- #
         $g_default_language = 'spanish';

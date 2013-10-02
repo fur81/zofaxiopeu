@@ -1,8 +1,8 @@
 <?php
 // variables globales de los sistemas
 define('MANTIS_DATABASE', 'mninside');
-define('MANTIS_ROOT_USERNAME', 'root');
-define('MANTIS_ROOT_PASSWORD', 'carabobo');
+define('MANTIS_ROOT_USERNAME', 'mninside');
+define('MANTIS_ROOT_PASSWORD', 'm4nt1s#2013');
 define('MANTIS_SERVER_IP', 'localhost');
 define('MANTIS_INFORMER_ACCESS', 25);
 define('MANTIS_DEVELOPER_ACCESS', 55);

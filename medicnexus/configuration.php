@@ -13,8 +13,8 @@ class JConfig {
 	public $debug_lang = '0';
 	public $dbtype = 'mysql';
 	public $host = 'localhost';
-	public $user = 'root';
-	public $password = 'carabobo';
+	public $user = 'joomla_cero';
+	public $password = 'j00ml4#2013';
 	public $db = 'cero';
 	public $dbprefix = 'cero_';
 	public $live_site = '';
