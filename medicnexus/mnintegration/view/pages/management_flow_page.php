@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER ['DOCUMENT_ROOT'] . '/cero/mnintegration/src/core/configuration.php';
+include_once $_SERVER ['DOCUMENT_ROOT'] . '/medicnexus/mnintegration/src/core/configuration.php';
 include_once $GLOBALS ['MNI_CORE'];
 include_once $GLOBALS ['MNI_UTILS'];
 $mantisCore = new MantisCore ();
