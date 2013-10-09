@@ -695,8 +695,8 @@
 	# User list sponsoring the bug
 	include( $tpl_mantis_dir . 'bug_sponsorship_list_view_inc.php' );
 
-	# User Medical History
-	include( $tpl_mantis_dir . 'bug_user_medical_history_view_inc.php');
+	# User Medical Record
+	include( $tpl_mantis_dir . 'bug_user_medical_record_view_inc.php');
 
 	# Bug Relationships
 	if ( $tpl_show_relationships_box ) {

@@ -1,13 +1,16 @@
 <?php
 /**
- * This include file prints out the Clinic History Details of the informer.
+ * This include file prints out the Clinic Record Details of the informer.
  */
 
 $t_users = bug_get_monitors ( $f_bug_id );
 $num_users = sizeof ( $t_users );
 
 // get connection
-include_once 'bug_user_medical_history_config.php';
+include_once 'bug_user_medical_record_config.php';
+
+// get queries
+include_once 'bug_user_medical_record_queries.php';
 
 // get user id
 $query = str_replace('%value%', $f_bug_id, $reporterIdQuery);
@@ -28,16 +31,16 @@ if ($data = $result->fetch_object ()) {
 
 echo '<br />';
 
-collapse_open( 'medical_history_form' );
+collapse_open( 'medical_record_form' );
 ?>
-<form method="post" action="bug_user_medical_history_view.php">
+<form method="post" action="bug_user_medical_record_view.php">
 	<table class="width100" cellspacing="1">
 		<!-- Title -->
 		<tr>
 			<td class="form-title" colspan="2">
 			<?php 
-				collapse_icon( 'medical_history_form' );
-				echo lang_get( 'medical_history' );
+				collapse_icon( 'medical_record_form' );
+				echo lang_get( 'medical_record' );
 			?>
 			</td>
 		</tr>
@@ -90,17 +93,17 @@ collapse_open( 'medical_history_form' );
 	</table>
 </form>
 <?php
-	collapse_closed( 'medical_history_form' );
+	collapse_closed( 'medical_record_form' );
 ?>
 <table class="width100" cellspacing="1">
 <tr>
 	<td class="form-title" colspan="2">
 		<?php
-			collapse_icon( 'medical_history_form' );
-			echo lang_get( 'medical_history' );
+			collapse_icon( 'medical_record_form' );
+			echo lang_get( 'medical_record' );
 		?>
 	</td>
 </tr>
 </table>
 <?php 
-collapse_end( 'medical_history_form' );
+collapse_end( 'medical_record_form' );
