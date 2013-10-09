@@ -1240,3 +1240,11 @@ $s_month_september = 'Setembre';
 $s_month_october = 'Octubre';
 $s_month_november = 'Novembre';
 $s_month_december = 'Desembre';
+
+$s_medical_history = 'Història Clínica del Pacient';
+$s_female = 'Femení';
+$s_male = 'Home';
+$s_sex = 'Sexe';
+$s_date_of_birth = 'Data de Naixement';
+$s_records = 'Antecedents';
+$s_observations = 'Obsevacions';
