@@ -17,7 +17,7 @@ $userId = $result->fetch_object ()->reporter_id;
 // load data
 $query = str_replace('%value%', $userId, $existMedicalRecordQuery);
 
-$medicalRecord = '';
+$medicalRecord = new stdClass();
 $result = $proxyMySql->query ( $query );
 if ($data = $result->fetch_object ()) {
 	$medicalRecord->date_of_birth = $data->date_of_birth;
