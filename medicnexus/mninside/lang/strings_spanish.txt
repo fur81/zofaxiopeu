@@ -1246,3 +1246,11 @@ $s_month_september = 'Septiembre';
 $s_month_october = 'Octubre';
 $s_month_november = 'Noviembre';
 $s_month_december = 'Diciembre';
+
+$s_medical_history = 'Historia Clínica del Paciente';
+$s_female = 'Femenino';
+$s_male = 'Masculino';
+$s_sex = 'Sexo';
+$s_date_of_birth = 'Fecha de Nacimiento';
+$s_records = 'Antecedentes';
+$s_observations = 'Observaciones';
