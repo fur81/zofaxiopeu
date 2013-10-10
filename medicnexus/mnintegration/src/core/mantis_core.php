@@ -42,7 +42,7 @@ class MantisCore {
 	 */
 	public function login($username, $realname, $email) {
 		$this->currentUser = "z_" . $username;
-		$this->currentPassword = $username . "_z";
+		$this->currentPassword = $this->currentUser . "_z";
 
 		// si no existe se crea
 		$this->createAccount ( $this->currentUser, $realname, $email );
@@ -150,7 +150,6 @@ class MantisCore {
 		try {
 			if ($this->existIssue ( $issueId )) {
 				$result = $this->proxySoap->mc_issue_get ( $this->currentUser, $this->currentPassword, $issueId );
-				;
 			}
 		} catch ( Exception $e ) {
 		}
@@ -161,7 +160,7 @@ class MantisCore {
 	 * Se obtiene los encabezados de las incidencias del usuario registrado.
 	 */
 	public function getIssueHeaders() {
-		return $this->proxySoap->mc_project_get_issue_headers ( $this->currentUser, $this->currentPassword, getProjectId (), PAGE_NUMBER, ELEMENTS_PER_PAGE );
+		return $this->proxySoap->mc_project_get_issue_headers ( $this->currentUser, $this->currentPassword, getProjectId(), PAGE_NUMBER, ELEMENTS_PER_PAGE );
 	}
 
 	/**
