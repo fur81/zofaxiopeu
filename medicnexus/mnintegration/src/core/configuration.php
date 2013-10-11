@@ -11,10 +11,10 @@ define('MANTIS_DEVELOPER_ACCESS', 55);
 define('MANTIS_WEBSERVICES_DIR', 'http://'.MANTIS_SERVER_IP.'/medicnexus/mninside/api/soap/mantisconnect.php?wsdl');
 
 // variables globales del proyecto
-define('PROJECT_RAPID_CONSULTATION', 1);
-define('PROjECT_1', 1);
-define('PROjECT_2', 2);
-define('PROjECT_3', 3);
+define('PROJECT_SECOND_OPINION', 1);
+define('PROJECT_VIRTUAL_CONSULTATION', 2);
+define('PROJECT_HEALTH_PROGRAM', 3);
+define('PROJECT_RAPID_CONSULTATION', 8);
 define('ELEMENTS_PER_PAGE', 30);
 define('PAGE_NUMBER', 1);
 
