@@ -42,7 +42,7 @@ class MantisCore {
 	 */
 	public function login($username, $realname, $email) {
 		$this->currentUser = "z_" . $username;
-		$this->currentPassword = $this->currentUser . "_z";
+		$this->currentPassword = $this->currentUser . "_%&";
 
 		// si no existe se crea
 		$this->createAccount ( $this->currentUser, $realname, $email );
@@ -60,7 +60,7 @@ class MantisCore {
 			$existUser = $this->existAccountByUsername ( $username );
 			if (! $existUser) {
 				// se recopilan los datos para crear una cuenta
-				$password = md5 ( $username . "_z" );
+				$password = md5 ( $this->currentPassword );
 				$enabled = 1;
 				$protected = 0;
 				$accessLevel = 25;
