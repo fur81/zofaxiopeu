@@ -1241,7 +1241,7 @@ $s_month_october = 'Octubre';
 $s_month_november = 'Novembre';
 $s_month_december = 'Desembre';
 
-$s_medical_history = 'Història Clínica del Pacient';
+$s_medical_record = 'Història Clínica del Pacient';
 $s_female = 'Femení';
 $s_male = 'Home';
 $s_sex = 'Sexe';

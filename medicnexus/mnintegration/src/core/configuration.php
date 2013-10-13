@@ -9,7 +9,7 @@ define('MANTIS_DEVELOPER_ACCESS', 55);
 
 // variables globales de los servicios web
 define('MANTIS_WEBSERVICES_DIR', 'http://'.MANTIS_SERVER_IP.'/medicnexus/mninside/api/soap/mantisconnect.php?wsdl');
-
+ 
 // variables globales del proyecto
 define('PROJECT_SECOND_OPINION', 1);
 define('PROJECT_VIRTUAL_CONSULTATION', 2);

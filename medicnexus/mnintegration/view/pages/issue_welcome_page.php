@@ -1,7 +1,3 @@
-<?php
-
-
-?>
 <table style="width: 100%;">
 	<tr align="center">
 		<td>
@@ -21,7 +17,7 @@
 				<input class="btn" type="submit" value="Segunda Opinión"
 					title="Segunda Opinión" name="headersIssue"> <input type="hidden"
 					name="flow" id="flow" value="headersIssue"> <input type="hidden"
-					id="projectId" name="projectId" value="<?php echo PROjECT_1;?>"><input
+					id="projectId" name="projectId" value="<?php echo PROJECT_SECOND_OPINION;?>"><input
 					type="hidden" id="issueAction" name="issueAction"
 					value="projectSelectionAction">
 			</form>
@@ -32,7 +28,7 @@
 				<input class="btn" type="submit" value="Consulta Virtual"
 					title="Consulta Virtual" name="headersIssue"> <input type="hidden"
 					name="flow" id="flow" value="headersIssue"> <input type="hidden"
-					id="projectId" name="projectId" value="<?php echo PROjECT_2;?>"><input
+					id="projectId" name="projectId" value="<?php echo PROJECT_VIRTUAL_CONSULTATION;?>"><input
 					type="hidden" id="issueAction" name="issueAction"
 					value="projectSelectionAction">
 			</form>
@@ -43,7 +39,7 @@
 				<input class="btn" type="submit" value="Programa de salud"
 					title="Programa de salud" name="headersIssue"> <input type="hidden"
 					name="flow" id="flow" value="headersIssue"> <input type="hidden"
-					id="projectId" name="projectId" value="<?php echo PROjECT_3;?>"><input
+					id="projectId" name="projectId" value="<?php echo PROJECT_HEALTH_PROGRAM;?>"><input
 					type="hidden" id="issueAction" name="issueAction"
 					value="projectSelectionAction">
 			</form>

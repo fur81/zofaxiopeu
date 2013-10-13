@@ -8,7 +8,7 @@
 	# --- language --- #
         $g_default_language = 'spanish';
 	
-	# --- email --- #
+	# --- email --- # 
 		#$g_enable_email_notification = OFF;
         $g_phpMailer_method     = PHPMAILER_METHOD_SMTP;
         $g_smtp_host            = 'smtp.gmail.com';
