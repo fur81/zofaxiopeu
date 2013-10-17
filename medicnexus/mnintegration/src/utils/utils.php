@@ -48,4 +48,11 @@ function getProjectId() {
 	return $_SESSION['projectId'];
 }
 
+function getValueByString($text) {
+	global $values;
+	// se busca en el paquete de idioma español
+	$value = array_search($text, $values[L_SPANISH]);
+	echo getValue($value);
+}
+
 ?>

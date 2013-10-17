@@ -1,6 +1,6 @@
 <?php
 global $values;
-$values['es-ES'] = array(
+$values[L_SPANISH] = array(
 		/**  menu */
 		'label_lastUpdate' => 'Última Actualización',
 		'label_summary' => 'Resumen',

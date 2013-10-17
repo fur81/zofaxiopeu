@@ -1,6 +1,6 @@
 <?php
 global $values;
-$values['en-GB'] = array(
+$values[L_ENGLISH] = array(
 		/**  encabezados */
 		'label_lastUpdate' => 'Last Update',
 		'label_summary' => 'Summary',

@@ -18,6 +18,11 @@ define('PROJECT_RAPID_CONSULTATION', 8);
 define('ELEMENTS_PER_PAGE', 30);
 define('PAGE_NUMBER', 1);
 
+// lenguajes
+define('L_SPANISH', 'es-ES');
+define('L_CATALAN', 'ca-ES');
+define('L_ENGLISH', 'en-GB');
+
 // variables de joomla
 $GLOBALS['lang'] = JRequest::getVar('language');
 $GLOBALS['CURRENT_USERNAME'] = JFactory::getUser()->username;
