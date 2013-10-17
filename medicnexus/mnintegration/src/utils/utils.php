@@ -29,16 +29,19 @@ function getQuery($key) {
  * @return string projectName
  */
 function getProjectName() {
-	$projectName = '';
+	$projectName = $_SESSION['projectId'];
 	switch ($_SESSION['projectId']){
-		case PROjECT_1:
-			$projectName = 'Segunda Opinión';
+		case PROJECT_SECOND_OPINION:
+			$projectName = getValue('label_project_second_opinion_title');
 			break;
-		case PROjECT_2:
-			$projectName = 'Consulta Virtual';
+		case PROJECT_VIRTUAL_CONSULTATION:
+			$projectName = getValue('label_project_virtual_consultation_title');
 			break;
-		case PROjECT_3:
-			$projectName = 'Programa de Salud';
+		case PROJECT_RAPID_CONSULTATION:
+			$projectName = getValue('label_project_rapid_consultation_title');
+			break;
+		case PROJECT_HEALTH_PROGRAM:
+			$projectName = getValue('label_project_health_program_title');
 			break;
 	}
 	return $projectName;
