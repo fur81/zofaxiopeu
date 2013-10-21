@@ -7,3 +7,4 @@
 2013-09-11T14:37:32+00:00	INFO	joomlafailure	Username and password do not match or you do not have an account yet.
 2013-09-15T22:31:18+00:00	INFO	joomlafailure	Contrasenya incorrecta
 2013-10-01T06:04:26+00:00	INFO	joomlafailure	Contrasenya incorrecta
+2013-10-15T07:50:12+00:00	INFO	joomlafailure	No se permiten contraseñas vacías

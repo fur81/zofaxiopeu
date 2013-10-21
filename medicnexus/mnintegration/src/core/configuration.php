@@ -18,6 +18,14 @@ define('PROJECT_RAPID_CONSULTATION', 8);
 define('ELEMENTS_PER_PAGE', 30);
 define('PAGE_NUMBER', 1);
 
+// lenguajes
+define('L_SPANISH', 'es-ES');
+define('L_CATALAN', 'ca-ES');
+define('L_ENGLISH', 'en-GB');
+
+// variables de paypal
+include_once 'configuration_paypal.php';
+
 // variables de joomla
 $GLOBALS['lang'] = JRequest::getVar('language');
 $GLOBALS['CURRENT_USERNAME'] = JFactory::getUser()->username;
@@ -28,6 +36,9 @@ $GLOBALS['CURRENT_USEREMAIL'] = JFactory::getUser()->email;
 // -- src
 $GLOBALS['MNI_CORE'] =          $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/core/mantis_core.php';
 $GLOBALS['MNI_CONNECTION'] =    $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/core/connection.php';
+// -- paypal
+$GLOBALS['PAYPAL_REQUEST_SECOND_OPINION'] = $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/paypal/payments/PayPalPaymentSecondOpinon.php';
+$GLOBALS['PAYPAL_EXECUTE_SECOND_OPINION'] = 'http://'.MANTIS_SERVER_IP.'/medicnexus/mnintegration/src/paypal/payments/ExecutePayment.php'; 
 // -- utils
 $GLOBALS['MNI_UTILS'] =         $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/utils/utils.php';
 $GLOBALS['MNI_ES'] =            $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/utils/es.php';
