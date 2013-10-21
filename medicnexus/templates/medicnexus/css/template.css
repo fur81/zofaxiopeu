@@ -1,0 +1,544 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font: 100%/1.4 "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background: #FFF url(../images/gradient_bg_site.gif) repeat-x;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: none;
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+/*html components*/
+
+input {
+	font-size: 11px;
+	border-left: 1px solid #CCC;
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	border-right: none;
+	color: #999;
+	height: 16px;	
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	width: 1000px;
+	background: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	height: 290px;
+	background: #FFF;
+}
+
+#left_header_zone {
+	width: 300px;
+	height: 290px;
+	float: left;
+	margin: 0;	
+	background: url(../images/bg_site-_title.gif) no-repeat 105px 58px;
+}
+
+#left_header_zone h1 {
+	font-size: 26px;
+	color: #1aa9b8;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 15px 0 0 105px;
+	/*letter-spacing: 5px;*/
+	font-family: "Frutiger LT Std 45 Light";
+}
+
+#left_header_zone h2 {
+	font-size: 11px;
+	color: #1aa9b8;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 0 0 0 105px;
+}
+
+#logo_img {
+	width: 85px;
+	height: 85px;
+	padding: 10px 0 0 10px;
+	float: left;
+}
+
+#header_newsflash {
+	margin: 15px 0 0 0;
+	width: 280px;
+	height: 180px;
+	float: left;	
+	background: url(../images/bg_header_newsflash.gif) repeat-x;
+	border-left: 10px #FFF solid;
+	border-right: 10px #FFF solid;
+}
+
+#right_header_zone {
+	width: 700px;
+	height: 290px;
+	float: left;
+	margin: 0;	
+}
+
+#promo_lang_zone {
+	font-size: 11px;
+	color: #999;
+	width: 700px;
+	text-align: right;
+	margin-top: 2px;	
+}
+
+#promo_lang_zone ul li {
+	display: inline;
+	/*margin-left: 3px;*/
+	margin: 0 5px 0 0;	
+}
+
+#promo_lang_zone ul li a {
+	text-decoration: none;	
+}
+
+#searching_zone {
+	color: #999999;
+    font-size: 11px;
+	width: 695px;
+    margin: 5px 0 0 0;
+	padding: 0 5px 0 0;
+}
+
+#searching_zone ul li {
+	display: inline;
+	margin-left: 3px;
+}
+
+#searching_zone ul li a {
+	font-size: 11px;
+	color: #999;
+	text-decoration: none;	
+}
+
+#top_menu {
+	width: 699px;
+	height: 30px;
+	float: left;
+	border-right: 1px solid #FFF;
+	background: url(../images/box_site_bg.gif) repeat-x;	
+	border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	behavior:url(border.htc);
+	margin: 0;
+	padding: 0;
+}
+
+#front_img_header {
+	width: 700px;
+	height: 200px;
+	float: left;
+	background: url(../images/front_img_header.jpg) no-repeat;
+	border-top: 1px solid #FFF;
+}
+
+#sitemap_zone {
+	height: 28px;
+    margin-top: 1px;
+    padding: 2px 0 0 5px;
+    width: 995px;
+	background: url(../images/sitemap_bg.gif) no-repeat 5px 5px;
+	/*border: 1px solid #930;*/
+	margin-top: 1px;
+}
+
+#sitemap_zone h6 {
+	margin: 5px 0 0 15px;
+	font-size: 11px;
+	color: #999;
+}
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the left instead of the right, simply float these columns the opposite direction (all left instead of all right) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar {
+	float: right;
+	width: 250px;
+	/*padding-bottom: 10px;
+	border: 1px solid #1aa9b8;*/
+}
+
+#authentication_zone {
+	width: 240px;
+	height: 215px;
+	border: 1px solid #1aa9b8;	
+	margin: 0 0 10px;
+    padding: 5px;
+}
+
+#box_title_sidebar {
+	width: 230px;
+    height: 20px;
+    padding: 5px;  	
+	background: url("../images/box_site_bg.gif") repeat-x;
+}
+
+#box_title_sidebar h1 {
+	font-size: 12px;
+	color: #FFF;
+	background: url(../images/bg_title_box.png) no-repeat right center;
+	text-align: right;
+}
+
+.welcome_site_zone {
+	padding: 5px 5px;
+	margin: 0 0 10px 0;
+	width: 730px;
+	border: 1px solid #1aa9b8;
+	float: left;
+}
+
+#box_title {
+	width: 720px;
+    height: 20px;
+    padding: 5px;  	
+	background: url("../images/box_site_bg.gif") repeat-x;
+}
+
+#box_title h1 {
+	font-size: 12px;
+	color: #FFF;
+	background: url(../images/bg_title_box.png) no-repeat left center;
+}
+
+#welcome_text {
+	width: 730px;
+	float: left;	
+	padding: 10px 0 0 0;
+}
+
+#welcome_text p {
+	text-align: justify;
+	color: #999;
+	font-size: 11px;	
+}
+
+#site_services_zone {
+	width: 730px;
+	float: left;		
+}
+
+#site_services_zone h1 {
+	font-size: 12px;
+	color: #666;
+	background: url(../images/services_title_bg.gif) no-repeat 140px 12px;
+}
+
+#site_service_box {
+	width: 150px;
+	float: left;	
+}
+
+#site_service_box img {
+	margin: 0 0 0 45px;	
+}
+
+
+#site_service_box h1 {
+	color: #1aa9b8;
+	font-size: 11px;
+	background: none;
+	margin: 3px 0 0 0;
+	text-align: center;
+}
+
+#site_service_box p {
+	text-align: justify;
+	font-size: 10px;
+	color: #666;
+	margin: 3px 0 0 0;
+}
+
+#site_service_box #service_box_btn img {
+	margin: 5px 0 0 35px;	
+}
+
+.services_box_separator {
+	margin: 0 20px 0 20px;
+	width: 1px;
+	height: 90px;
+	background: url(../images/services_box_separator_bg.gif) no-repeat;
+	float: left;	
+}
+
+#site_specialities_zone {
+	width: 730px;
+	float: left;
+	margin: 10px 0 0 0;
+}
+
+#site_specialities_zone h1 {
+	font-size: 12px;
+	color: #666;
+	background: url(../images/specialities_title_bg.gif) no-repeat 180px 12px;
+}
+
+#site_speciality_box {
+	width: 200px;
+	height: 90px;
+	float: left;
+	margin: 5px 30px 0 10px;	
+}
+
+#speciality_icon {
+	float: left;
+	width: 50px;
+	height: 40px;
+}
+
+#speciality_icon img {
+	margin: 0 0 0 5px;	
+}
+
+#speciality_text {
+	width: 150px;
+	height: 90px;
+	float: left;
+	background: url(../images/speciality_description_bg.png) repeat-x left 20px;
+	/*padding: 0 2px;*/
+}
+
+#speciality_text h1 {
+	background: url(../images/speciality_title_bg.gif) no-repeat left center;
+	padding: 0 0 0 10px;
+}
+
+#speciality_text p {
+	font-size: 10px;
+	color: #FFF;
+	text-align: justify;
+}
+
+#news-article_zone {
+	padding: 5px 5px;
+	margin: 0 0 10px 0;
+	width: 730px;
+	border: 1px solid #1aa9b8;
+	float: left;
+	clear: both;
+}
+
+#articles_zone {
+	width: 350px;
+	float: left;
+	margin: 10px 0 0 0;	
+}
+
+#articles_zone h1 {
+	font-size: 12px;
+	color: #666;
+	background: url(../images/articles_title_bg.gif) no-repeat 85px 12px;
+}
+
+#articles {
+	height: 310px;	
+}
+
+#articles-news_separator {
+	width: 1px;
+	height: 320px;
+	background: url(../images/articles-news_zone_bg.gif) no-repeat;
+	float: left;
+	margin: 10px 5px 0 5px;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #666; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* this creates the button separation */
+}
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background: #C6D580;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	background: #ADB96E;
+	color: #FFF;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	height: 170px;
+	padding: 10px 0;
+	background: #CCC;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+.bottom_menu_site_separator {
+	color: #1aa9b8;
+	font-size: 11px;	
+}
+
+#bottom_menu_site {
+	width: 1000px;
+	height: 30px;
+	margin: 0 auto;	
+	text-align: center;
+}
+
+#bottom_menu_site ul li {
+	display: inline;
+	margin: 0 0 0 10px;
+}
+
+#bottom_menu_site ul li a {
+	color: #1aa9b8;
+	font-size: 11px;
+	text-decoration: none;
+}
+
+#bottom_menu_site ul li a:hover {
+	text-decoration: underline;
+}
+
+#bottom_submenu_site_zone {
+	width: 1000px;
+	margin: 10px auto;	
+}
+
+#block_bottom_submenu {
+	width: 190px;
+	float: left;	
+}
+
+#block_bottom_submenu h1 {
+	color: #FFF;
+	font-size: 10px;	
+}
+
+#block_bottom_submenu ul li {
+	list-style: none;	
+	margin: 0 0 0 25px;
+	line-height: 16px;
+}
+
+#block_bottom_submenu ul li a {
+	text-decoration: none;
+	font-size: 10px;
+	color: #FFF;	
+}
+
+#block_bottom_submenu ul li a:hover {
+	color: #1aa9b8;	
+}
+
+#bottom_menu_site_separator {
+	float: left;
+	width: 1px;
+	height: 115px;
+	background: url(../images/bottom_menu_site_separator.gif) no-repeat;
+	margin: 5px 5px 0 5px;
+}
+
+#bottom_social_networks_zone {
+	width: 190px;
+	float: left;
+	color: #FFF;
+	font-size: 11px;	
+}
+
+#bottom_social_networks_zone h1 {
+	text-align: right;
+	color: #FFF;
+	font-size: 11px;
+}
+
+#final_site_band {
+	width: 1000px;
+	margin: 10px auto 0;
+	background: url(../images/bottom_footer_bg.gif) no-repeat;
+}
+
+#final_site_band ul li {
+	display: inline;	
+	list-style: none;
+	color: #999;
+	font-size: 11px;
+}
+
+#health_colleges_site {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: right;
+}
+
+#health_colleges_site ul li {
+	list-style: none;
+	display: inline;
+	margin: 0 0 0 10px;
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
