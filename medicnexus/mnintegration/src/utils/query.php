@@ -28,7 +28,13 @@ $values['query'] = array(
 		'getProjectName' => 'SELECT name FROM mantis_project_table WHERE id = %value%;',
 		'getDeveloperUsersByProject' => 'SELECT  user_id, realname FROM mantis_user_table 
 										INNER JOIN mantis_project_user_list_table ON user_id = id
-										WHERE project_id = %value% AND mantis_project_user_list_table.access_level = 55'
+										WHERE project_id = %value% AND mantis_project_user_list_table.access_level = 55;',
+
+		/** -- temporal data -- */
+		'createTemporalData' => 'INSERT INTO mantis_temp_table(data) VALUES ("%value%");',
+		'updateTemporalData' => 'UPDATE mantis_temp_table SET data="%value%" WHERE id = %idData%;',
+		'removeTemporalData' => 'DELETE FROM mantis_temp_table WHERE id = %idData%;',
+		'getTemporalData' => 'SELECT data FROM mantis_temp_table WHERE id= %idData%;'
 );
 
 ?>

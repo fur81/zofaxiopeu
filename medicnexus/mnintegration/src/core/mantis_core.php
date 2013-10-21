@@ -185,8 +185,9 @@ class MantisCore {
 	public function addIssue($summary, $description, $projectId) {
 		$result = '';
 		try {
-			$issueData = new stdClass ();
+			$issueData = new stdClass();
 			// proyecto
+			$issueData->project = new stdClass();
 			$issueData->project->id = $projectId;
 			// categoria
 			$issueData->category = 'General';
@@ -446,6 +447,67 @@ class MantisCore {
 			$query = str_replace ( '%userId%', $userId, getQuery ( 'removeUserToCategory' ) );
 			$query = str_replace ( '%categoryId%', $categoryId, $query);
 			$this->proxyMySql->query ( $query );
+		} catch (Exception $e) {
+		}
+	}
+	
+	/**
+	 * Salva la información necesaria para crear una incidencia.
+	 * @param string $summary
+	 * @param string $description
+	 * @param string $projectId
+	 * @return string $result
+	 */
+	public function saveIssueCreateData($summary, $description, $projectId) {
+		$idData = 0;
+		try {
+			$data  = 'summary=' . $summary;
+			$data .= "&description=" . $description;
+			$data .= "&projectId=" . $projectId;
+			$idData = $this->saveTempData($data);
+		} catch (Exception $e) {
+		}
+		return $idData;
+	}
+	
+	/**
+	 * Salva la información en la tabla temporal del sistema
+	 * @param string $data
+	 */
+	private function saveTempData($data) {
+		$queryId = 0;
+		try {
+			$query = str_replace ( '%value%', $data, getQuery ( 'createTemporalData' ) );
+			$result = $this->proxyMySql->query ( $query );
+			if ($result == TRUE) {
+				$queryId = $this->proxyMySql->insert_id;
+			}
+		} catch (Exception $e) {
+		}
+		return $queryId;
+	}
+	
+	/**
+	 * Obtiene la información existente en la tabla temporal del sistema
+	 * @return string $result
+	 */
+	public function loadTempData($idData) {
+		try {
+			$query = str_replace ( '%idData%', $idData, getQuery ( 'getTemporalData' ) );
+			$resultQuery = $this->proxyMySql->query ( $query );
+			while ( $result = $resultQuery->fetch_object () ) {
+				$result = $result->data;
+				parse_str($result, $results);
+			}
+		} catch (Exception $e) {
+		}
+		return $results;
+	}
+	
+	public function removeTempData($idData) {
+		try {
+			$query = str_replace ( '%idData%', $idData, getQuery ( 'removeTemporalData' ) );
+			$resultQuery = $this->proxyMySql->query ( $query );
 		} catch (Exception $e) {
 		}
 	}

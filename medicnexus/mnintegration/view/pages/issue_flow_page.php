@@ -2,9 +2,17 @@
 include_once $GLOBALS ['MNI_CORE'];
 include_once $GLOBALS ['MNI_UTILS'];
 $mantisCore = new MantisCore ();
+// se salva la dirección actual. Se utiliza en Pagos
+$GLOBALS ['CURRENT_PAGE'] = JFactory::getURI();
 
+// se registra el usuario con las credenciales de joomla
 $mantisCore->login ( $GLOBALS ['CURRENT_USERNAME'], $GLOBALS ['CURRENT_USERFULLNAME'], $GLOBALS ['CURRENT_USEREMAIL'] );
 //$mantisCore->getFunctions ();
+
+if ( isset($_GET['success'])) {
+	$_POST ['flow'] = 'headersIssue';
+	$_POST ['issueAction'] = 'createIssueAction';
+} 
 
 // se identifica la acción que será realizada
 if (isset ( $_POST ['flow'] )) {
@@ -54,12 +62,12 @@ if (isset ( $_POST ['flow'] )) {
 	
 	unset ( $_POST ['flow'] );
 	unset ( $_POST ['issueAction'] );
-	header ( 'Location: #' );
+	header ( 'Location: ' );
 	exit ();
-} 
-
-// se identifica la vista que será mostrada
-else if (isset ( $_SESSION ['flow'] )) {
+	
+} else 
+	// se identifica la vista que será mostrada
+	if (isset ( $_SESSION ['flow'] )) {
 	
 	switch ($_SESSION ['flow']) {
 		case 'headersIssue' :
@@ -87,4 +95,5 @@ else if (isset ( $_SESSION ['flow'] )) {
 	// para ver los encabezados de las incidencias
 	include_once $GLOBALS ['MNI_ISSUES_WELCOME'];
 }
+
 ?>

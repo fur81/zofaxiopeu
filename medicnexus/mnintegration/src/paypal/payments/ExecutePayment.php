@@ -31,10 +31,11 @@ if(isset($_GET['success']) && $_GET['success'] == 'true') {
 	// (See bootstrap.php for more on `ApiContext`)
 	$payment->execute($execution, $apiContext);
 
-	echo "<html><body><pre>";
-	var_dump($payment->toArray());
-	echo "</pre><a href='../index.html'>Back</a></body></html>";
+	//echo "<html><body><pre>";
+	//var_dump($payment->toArray());
+	//echo "</pre><a href=''>Back</a></body></html>";
 	
 } else {
-	echo "User cancelled payment.";
+	//$_SESSION ['flow'] = 'welcome';
 }
+
