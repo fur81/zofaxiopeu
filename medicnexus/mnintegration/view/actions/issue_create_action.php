@@ -27,7 +27,9 @@ if ( isset($_GET['success'])) {
 	// se salva la información el la base de datos
 	$idData = $mantisCore->saveIssueCreateData($summary, $description, $projectId);
 	// se carga el servicio de paypal
-	include_once $GLOBALS['PAYPAL_REQUEST_SECOND_OPINION'];
-	exit();
+	//include_once $GLOBALS['PAYPAL_REQUEST_SECOND_OPINION'];
+	//exit();
+	// solo para cuando paypal no está funcionando
+	$mantisCore->addIssue($summary, $description, $projectId);
 }
 ?>
