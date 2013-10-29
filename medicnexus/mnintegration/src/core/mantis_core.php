@@ -187,8 +187,7 @@ class MantisCore {
 		try {
 			$issueData = new stdClass();
 			// proyecto
-			$issueData->project = new stdClass();
-			$issueData->project->id = $projectId;
+			$issueData->project = $this->getProject($projectId);
 			// categoria
 			$issueData->category = 'General';
 			// informador
