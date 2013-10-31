@@ -182,7 +182,7 @@ class MantisCore {
 	 * @param string $description
 	 * @return id
 	 */
-	public function addIssue($summary, $description, $projectId) {
+	public function addIssue($summary, $description, $projectId, $specialistId) {
 		$result = '';
 		try {
 			$issueData = new stdClass();
@@ -194,6 +194,9 @@ class MantisCore {
 			$issueData->summary = $summary;
 			// descripción
 			$issueData->description = $description;
+			// asignación
+			$issueData->handler = new stdClass();
+			$issueData->handler->id = $specialistId;
 
 			$result = $this->proxySoap->mc_issue_add ( $this->currentUser, $this->currentPassword, $issueData );
 		} catch ( Exception $e ) {
@@ -457,12 +460,13 @@ class MantisCore {
 	 * @param string $projectId
 	 * @return string $result
 	 */
-	public function saveIssueCreateData($summary, $description, $projectId) {
+	public function saveIssueCreateData($summary, $description, $projectId, $specialistId) {
 		$idData = 0;
 		try {
 			$data  = 'summary=' . $summary;
 			$data .= "&description=" . $description;
 			$data .= "&projectId=" . $projectId;
+			$data .= "&specialistId=" . $specialistId;
 			$idData = $this->saveTempData($data);
 		} catch (Exception $e) {
 		}

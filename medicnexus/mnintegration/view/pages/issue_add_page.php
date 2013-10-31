@@ -49,25 +49,27 @@
 			name="issueAction" id="issueAction" value="subprojectSelectionAction">
 	</p>
 </form>
-			<?php if ($_SESSION['viewSpecialistsCheckbox'] == true)
-			{
-				?>
-<p>
-	<label for="specialist">*Especialistas: </label> <select
-		name="specialist" id="specialist">
-		<?php
-		$users = $mantisCore->getDeveloperUsersByProject($_SESSION['subProjectId']);
-		foreach ($users as $user) {
-			echo '<option value="'.$user->id.'">'.$user->realname.'</option>';
-		}
-		?>
-	</select>
 
-</p>
-		<?php }?>
 <form name="createIssueForm" method="post" action="#"
 	style="width: 100%;">
-	<p>
+	
+	<?php if ($_SESSION['viewSpecialistsCheckbox'] == true)
+	{
+	?>
+		<p>
+			<label for="specialist">*Especialistas: </label> <select
+				name="specialist" id="specialist">
+			<?php $users = $mantisCore->getDeveloperUsersByProject($_SESSION['subProjectId']);
+			foreach ($users as $user) {
+				echo '<option value="'.$user->id.'">'.$user->realname.'</option>';
+			}
+			?>
+			</select>
+
+		</p>
+	<?php }?>
+		<p>
+		
 		<label title="Resumen de la Incidencia">*Resumen:</label> <input
 			id="summaryText" name="summaryText" style="width: 100%;">
 	</p>
