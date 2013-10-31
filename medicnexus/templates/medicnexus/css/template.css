@@ -114,9 +114,11 @@ input {
 #promo_lang_zone {
 	font-size: 11px;
 	color: #999;
-	width: 700px;
 	text-align: right;
-	margin-top: 2px;	
+	/*margin-top: 2px;*/
+	float: left;
+	/*margin-left: 490px;*/
+	margin: 2px 5px 0 484px;
 }
 
 #promo_lang_zone ul li {
@@ -129,7 +131,14 @@ input {
 	text-decoration: none;	
 }
 
+#language_flag_zone {
+	text-align: right;
+	margin-top: 2px;
+	float: left;
+}
+
 #searching_zone {
+	float: left;
 	color: #999999;
     font-size: 11px;
 	width: 695px;
@@ -206,10 +215,20 @@ input {
 
 #authentication_zone {
 	width: 240px;
-	height: 215px;
-	border: 1px solid #1aa9b8;	
+	/*height: 225px;*/
+	/*border: 1px solid #1aa9b8;*/	
+	margin: 0 0 5px 0;
+    padding: 5px;
+	float: left;
+}
+
+#contact_zone {
+	width: 240px;
+	height: 225px;
+	border: 1px solid #1aa9b8;
 	margin: 0 0 10px;
     padding: 5px;
+	float: left;
 }
 
 #box_title_sidebar {
@@ -244,7 +263,8 @@ input {
 #box_title h1 {
 	font-size: 12px;
 	color: #FFF;
-	background: url(../images/bg_title_box.png) no-repeat left center;
+	background: url(../images/bg_title_box.png) no-repeat 2px center;
+	margin-top: 2px;
 }
 
 #welcome_text {
@@ -542,3 +562,96 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	font-size: 1px;
 	line-height: 0px;
 }
+
+/*Inicio estilos del módulo mod_login*/
+
+#authentication_zone h3 {
+	font-size: 12px;
+	color: #FFF;
+	background: url(../images/bg_title_box.png) no-repeat right center;
+	margin-top: 2px;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+.mn-element-invisible {
+	color: #666;
+	font-size: 11px;	
+}
+
+.mn-control-label {
+	color: #666;
+	font-size: 11px;	
+}
+
+.mn-input-small {
+    border: 1px solid #1aa9b8;
+    color: #999999;
+    font-size: 11px;
+    height: 16px;
+	width: 200px;
+}
+
+.mn-userdata {
+	float: right;
+	margin: -41px -11px 0 0;
+    padding: 40px 0 10px 35px;
+    width: 215px;
+	border: 1px solid #1aa9b8;	
+}
+
+.mn-btn-login {
+	width: 100px;
+	height: 22px;
+	background: url(../images/login_btn_bg.png) no-repeat;
+	border: 0;
+	color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.mn-unstyled {
+	list-style: none;
+	color: #999;
+	font-size: 11px;
+}
+
+.mn-unstyled li a {
+	/*display: inline;*/
+	background: url(../images/link_bullet_bg.gif) no-repeat center left;
+	padding-left: 10px;
+	color: #666;
+}
+
+.mn-unstyled li a:hover {
+	text-decoration: underline;
+}
+
+.mn-form-vertical {
+	color: #999;
+	font-size: 11px;	
+	float: right;
+	margin: -41px -11px 0 0;
+    padding: 40px 0 10px 35px;
+    width: 215px;
+	border: 1px solid #1aa9b8;	
+}
+
+.mn-login-greeting {
+	text-align: right;
+	margin-right: 10px;	
+}
+
+.mn-btn-logout {
+	width: 100px;
+	height: 22px;
+	background: url(../images/login_btn_bg.png) no-repeat;
+	border: 0;
+	color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+	margin: 5px 10px 0 0;
+	float: right;	
+}
+
+/*Fin estilos del módulo mod_login*/

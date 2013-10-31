@@ -111,27 +111,17 @@ else
                     </a>
                 </li>
                 <li>
-                  <img src="<?php echo $this->baseurl;?>/templates/medicneus/images/promo_lang_separator.gif" border="0" />
-                </li>
-                <li>
-                  <a href="#">
-                      <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/eng_flag_icon.gif" border="0" />
-                    </a>
-                </li>
-                <li>
-                  <a href="#">
-                      <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/spa_flag_icon.gif" border="0" />
-                    </a>
-                </li>
-                <li>
-                  <a href="#">
-                      <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/vas_flag_icon.gif" border="0" />
-                    </a>
-                </li>
+                  <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/promo_lang_separator.gif" border="0" />
+                </li>		
             </ul>
+			
         </div>
+		
+		<div id="language_flag_zone">
+			<jdoc:include type="modules" name="position-0" style="xhtml" />
+		</div>
+		
         <div id="searching_zone">
-      <jdoc:include type="modules" name="position-0" style="none" />
           <table cellpadding="0" cellspacing="0" align="right" >
               <tr>
                   <td style="padding-bottom: 5px;">
@@ -182,11 +172,11 @@ else
   <jdoc:include type="modules" name="position-8" style="xhtml" />
     <div id="authentication_zone">
       <div id="box_title_sidebar">
-        <h1>AUTENTICACIÓN</h1>
+        <!--<h1>AUTENTICACIÓN</h1>-->
         <jdoc:include type="modules" name="position-7" style="xhtml" />
       </div>
     </div>
-    <div id="authentication_zone">
+    <div id="contact_zone">
       <div id="box_title_sidebar">
         <h1>CONTACTO</h1>
       </div>
