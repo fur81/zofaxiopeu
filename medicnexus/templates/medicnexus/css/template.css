@@ -25,7 +25,7 @@ a img { /* this selector removes the default blue border displayed in some brows
 
 /* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
 a:link {
-	color: #42413C;
+	color: #666;
 	text-decoration: none;
 }
 a:visited {
@@ -40,10 +40,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 input {
 	font-size: 11px;
-	border-left: 1px solid #CCC;
-	border-top: 1px solid #CCC;
-	border-bottom: 1px solid #CCC;
-	border-right: none;
+	border: 1px solid #CCC;
 	color: #999;
 	height: 16px;	
 }
@@ -118,7 +115,7 @@ input {
 	/*margin-top: 2px;*/
 	float: left;
 	/*margin-left: 490px;*/
-	margin: 2px 5px 0 484px;
+	margin: 2px 5px 0 476px;
 }
 
 #promo_lang_zone ul li {
@@ -141,9 +138,9 @@ input {
 	float: left;
 	color: #999999;
     font-size: 11px;
-	width: 695px;
+	width: 690px;
     margin: 5px 0 0 0;
-	padding: 0 5px 0 0;
+	padding: 0 10px 0 0;
 }
 
 #searching_zone ul li {
@@ -159,13 +156,13 @@ input {
 
 #top_menu {
 	width: 699px;
-	height: 30px;
+	/*height: 30px;*/
 	float: left;
 	border-right: 1px solid #FFF;
 	background: url(../images/box_site_bg.gif) repeat-x;	
-	border-radius: 3px 3px 3px 3px;
-	-webkit-border-radius: 3px 3px 3px 3px;
-	-moz-border-radius: 3px 3px 3px 3px;
+	border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
 	behavior:url(border.htc);
 	margin: 0;
 	padding: 0;
@@ -235,6 +232,9 @@ input {
 	width: 230px;
     height: 20px;
     padding: 5px;  	
+	box-shadow: 2px 2px 3px #000;
+	-webkit-box-shadow: 2px 2px 3px #000;
+	-moz-box-shadow: 2px 2px 3px #000;
 	background: url("../images/box_site_bg.gif") repeat-x;
 }
 
@@ -256,7 +256,10 @@ input {
 #box_title {
 	width: 720px;
     height: 20px;
-    padding: 5px;  	
+    padding: 5px;  
+	box-shadow: 2px 2px 3px #000;
+	-webkit-box-shadow: 2px 2px 3px #000;
+	-moz-box-shadow: 2px 2px 3px #000;
 	background: url("../images/box_site_bg.gif") repeat-x;
 }
 
@@ -381,7 +384,7 @@ input {
 	width: 730px;
 	border: 1px solid #1aa9b8;
 	float: left;
-	clear: both;
+	/*clear: both;*/
 }
 
 #articles_zone {
@@ -417,20 +420,25 @@ input {
 ul.nav {
 	list-style: none; /* this removes the list marker */
 	border-top: 1px solid #666; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
-	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+	/*margin-bottom: 15px;*/ /* this creates the space between the navigation on the content below */
+	margin: 0;
+	display: block;
+	padding: 0;
+	height: 29px;
 }
 ul.nav li {
 	border-bottom: 1px solid #666; /* this creates the button separation */
+	display: block;
 }
 ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
 	padding: 5px 5px 5px 15px;
-	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	display: inline; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
 	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
 	text-decoration: none;
-	background: #C6D580;
+	background: none;
 }
 ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
-	background: #ADB96E;
+	background: #none;
 	color: #FFF;
 }
 
@@ -655,3 +663,59 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 }
 
 /*Fin estilos del módulo mod_login*/
+
+/*Inicio estilos del módulo mod_menu*/
+
+#top_menu ul.nav {
+	border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+}
+
+#top_menu ul.nav li {
+	display: inline;
+	border: none;	
+	margin-top: 5px;
+	background: url(../images/top_menu_separator.png) no-repeat left center;
+	border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+}
+
+#top_menu ul.nav a {
+	color: #FFF;
+	font-size: 12px;
+	text-transform: uppercase;
+	text-align: center;	
+	padding-right: 10px;
+	/*box-shadow: 0px 2px 3px #000;
+	-webkit-box-shadow: 0px 2px 3px #000;
+	-moz-box-shadow: 0px 2px 3px #000;*/
+}
+
+#top_menu ul.nav a:hover {
+	color: #FFF;
+	font-size: 12px;
+	background: url(../images/top_menu_bg_over.gif);
+	text-transform: uppercase;
+	text-align: center;	
+	padding-right: 10px;
+	
+}
+
+/*Fin estilos del módulo mod_menu*/
+
+.page-header h2 {
+	font-size: 12px;
+	text-transform: uppercase;
+	color: blue;
+}
+
+#system-message-container {
+	background: #0F6;	
+}
+
+#system-message-container h4 {
+	color: #FFF;
+	font-size: 24px;	
+}

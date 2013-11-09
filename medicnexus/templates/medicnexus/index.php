@@ -93,6 +93,7 @@ else
         <h1><span style="color: #81197f;">MEDIC</span>NEXUS</h1>
         <h2>Conexión directa con tu médico</h2>
         <div id="header_newsflash">
+        	<jdoc:include type="modules" name="newsflash" style="xhtml" />
           <!--Zona de las noticias rápidas de la portada del sitio-->
         </div>  
     </div>
@@ -140,33 +141,39 @@ else
                             </li>
                         </ul>
                     </td>
-                    <td align="right" style="padding-bottom: 3px;">
-                      <input name="" type="text" />  
+                    <td align="right" style="padding-bottom: 7px;">
+                      <jdoc:include type="modules" name="general-search" style="xhtml" />
+                      <!--<input name="" type="text" />-->  
                     </td>
-                    <td align="left">
+                    <!--<td align="left" style="padding-bottom: 3px;">
                       <a href="#">
-                        <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/tbsearch_bg.gif" border="0" />
+                        <img src="<?php //echo $this->baseurl;?>/templates/medicnexus/images/tbsearch_bg.gif" border="0" />
                         </a>
-                    </td>
+                    </td>-->
                 </tr>
             </table>
         </div>
         <div id="top_menu">
+        	<jdoc:include type="modules" name="position-1" style="xhtml" />
+            
           <!--Zona del menú principal del sitio-->
         </div>
         <div id="front_img_header"></div>
     </div>
      <!-- end .header --></div>
- 
-    <?php if ($this->countModules('position-1')) : ?>
-      <nav class="navigation" role="navigation">
-        <jdoc:include type="modules" name="position-1" style="none" />
-      </nav>
-      <?php endif; ?>
+     
+     <!-- <?php if ($this->countModules('position-1')) : ?>
+          <nav class="navigation" role="navigation">
+            <jdoc:include type="modules" name="position-1" style="none" />
+          </nav>
+          <?php endif; ?> -->
+    
   <jdoc:include type="modules" name="banner" style="xhtml" />
     
     <div id="sitemap_zone">
-      <h6>Zona del site map del sitio</h6>
+      <h6>
+      	<jdoc:include type="modules" name="position-2" style="none" />
+      </h6>
     </div>
   <div class="sidebar">
   <jdoc:include type="modules" name="position-8" style="xhtml" />
@@ -184,146 +191,42 @@ else
     <!-- end .sidebar1 --></div>
     
     <div class="welcome_site_zone">
-    <div id="box_title">
-    <h1>BIENVENIDOS A MEDICNEXUS</h1>
-    </div>
-    <div id="welcome_text">
-    <p>
-<img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/welcome_text_img.jpg" align="left" style="margin: 0 10px 0 0; border: 1px solid #1aa9b8;" />
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam erictus mepli rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicitus nillus ectol bo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur maraellos malic gni dolores eos qui ratione voluptatem sequi nesciunt. <br /><br /> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean maite ellectus illio ect lassa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean maesus cisei commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montello brenuli usu is, nascetur ridiculus mus.
-        </p>
-    </div>
-    <div id="site_services_zone">
-    <h1>NUESTROS SERVICIOS</h1>
-        <div id="site_service_box">
-        <a href="#">           </a><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image18','','<?php echo $this->baseurl;?>/templates/medicnexus/images/quick_consult_service_icon.gif',1)"><img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/g_quick_consult_service_icon.gif" name="Image18" width="50" height="45" border="0" id="Image18" /></a><a href="#">
-<!--<img src="images/quick_consult_service_icon.gif" border="0" />-->   
-            </a>
-            <h1>CONSULTA RÁPIDA</h1>
-          <p>Quis autem vel eum iure reprehenderit qui in<a href="#">...</a></p>
-            <div id="service_box_btn">
-            <a href="#">
-            <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/contract_btn.gif" border="0" />
-            </a>
-            </div>
+        <div id="box_title">
+        	<h1>BIENVENIDOS A MEDICNEXUS</h1>
         </div>
-      <div class="services_box_separator"></div>
-        <div id="site_service_box">
-        <a href="#">            </a><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image19','','<?php echo $this->baseurl;?>/templates/medicnexus/images/virtual_consult_service_icon_new.gif',1)"><img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/virtual_consult_service_icon.gif" name="Image19" width="50" height="45" border="0" id="Image19" /></a><a href="#">
-<!--<img src="images/virtual_consult_service_icon.gif" border="0" />-->   
-            </a>
-          <h1>CONSULTA VIRTUAL</h1>
-            <p>Quis autem vel eum iure reprehenderit qui in<a href="#">...</a></p>
-            <div id="service_box_btn">
-            <a href="#">
-            <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/contract_btn.gif" border="0" />
-            </a>
-            </div>
-        </div>
-      <div class="services_box_separator"></div>
-        <div id="site_service_box">
-        <a href="#">            </a><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image20','','<?php echo $this->baseurl;?>/templates/medicnexus/images/second_opinion_service_icon.gif',1)"><img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/second_opinion_service_icon_new1.gif" name="Image20" width="50" height="45" border="0" id="Image20" /></a><a href="#">
-<!--<img src="images/second_opinion_service_icon.gif" border="0" />-->   
-            </a>
-          <h1>SEGUNDA OPINIÓN</h1>
-            <p>Quis autem vel eum iure reprehenderit qui in<a href="#">...</a></p>
-            <div id="service_box_btn">
-            <a href="#">
-            <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/contract_btn.gif" border="0" />
-            </a>
-            </div>
-        </div>
-      <div class="services_box_separator"></div>
-        <div id="site_service_box">
-        <a href="#">
-             <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/health_programs_service_icon.gif" border="0" />   
-            </a>
-            <h1>PROGRAMAS DE SALUD</h1>
-            <p>Quis autem vel eum iure reprehenderit qui in<a href="#">...</a></p>
-            <div id="service_box_btn">
-            <a href="#">
-            <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/contract_btn.gif" border="0" />
-            </a>
-            </div>
-        </div>
-    </div>
-    <div id="site_specialities_zone">
-    <h1>NUESTRAS ESPECIALIDADES</h1>
-        <div id="site_speciality_box">
-        <div id="speciality_icon">
-            <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/cardiology_icon.gif" border="0" />
-            </div>
-            <div id="speciality_text">
-            <h1>CARDIOLOGÍA</h1>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-            </div>
-        </div> 
-        <div id="site_speciality_box">
-        <div id="speciality_icon">
-            <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/odontology_icon.gif" border="0" />
-            </div>
-            <div id="speciality_text">
-            <h1>ODONTOLOGÍA</h1>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-            </div>
-        </div>
-        <div id="site_speciality_box">
-        <div id="speciality_icon">
-            <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/laringology_icon.gif" border="0" />
-            </div>
-            <div id="speciality_text">
-            <h1>OTORRINOLARINGOLOGÍA</h1>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-            </div>
-        </div>
-        <div id="site_speciality_box">
-        <div id="speciality_icon">
-            <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/oftalmology_icon.gif" border="0" />
-            </div>
-            <div id="speciality_text">
-            <h1>OFTALMOLOGÍA</h1>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-            </div>
-        </div> 
-        <div id="site_speciality_box">
-        <div id="speciality_icon">
-            <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/medic_test_icon.gif" border="0" />
-            </div>
-            <div id="speciality_text">
-            <h1>RAYOS X</h1>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-            </div>
-        </div>
-        <div id="site_speciality_box">
-        <div id="speciality_icon">
-            <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/clinic_icon.gif" border="0" />
-            </div>
-            <div id="speciality_text">
-            <h1>CLÍNICA</h1>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
-            </div>
-        </div>
-    </div>
-    <!-- end .welcome_site_zone --></div>
+    
+    <main id="content" role="main" class="<?php echo $span;?>">
+          <!-- Begin Content -->
+          <jdoc:include type="modules" name="position-3" style="xhtml" />
+          <jdoc:include type="message" />
+          <jdoc:include type="component" />
+          
+          <!-- End Content -->
+        </main>
+
+    
+    <!--<jdoc:include type="modules" name="position-3" style="xhtml" />-->
+    <!--Info cambiante-->
+     
+  	</div>
     <div id="news-article_zone">
     <div id="box_title">
     <h1>INFORMACIÓN GENERAL</h1>
         <div id="articles_zone">
-        <h1>ARTÍCULOS</h1>
+        	<h1>ARTÍCULOS</h1>
             <div id="articles">
             
             </div>
         </div>
         <div id="articles-news_separator"></div>
         <div id="articles_zone">
-        <h1>NOTICIAS</h1>
+        	<h1>NOTICIAS</h1>
             <div id="articles">
             
             </div>
         </div>
     </div>
     </div>
-  </div>
     
   <div class="footer">
     <div id="bottom_menu_site">
@@ -485,7 +388,7 @@ else
                 </a>
             </li>
         </ul>
-    </div>  
+    </div> 
   
 </body>
 </html>
