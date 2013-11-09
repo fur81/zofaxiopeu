@@ -70,7 +70,7 @@ JHtml::_('bootstrap.tooltip');
                     <?php endif; ?>
                     <?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
                     <tr>
-                    	<td width="35%">
+                    	<td width="80px">
                         	<label for="modlgn-remember" class="mn-control-label"><?php echo JText::_('MOD_LOGIN_REMEMBER_ME') ?></label>
                         </td>
                         <td>
