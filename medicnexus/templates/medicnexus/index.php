@@ -77,6 +77,7 @@ else
   <jdoc:include type="head" />
   <link rel="stylesheet" type="text/css" href="css/template.css"/>
   <script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/medicnexus/js/medicnexus.js"></script>
+  <script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/medicnexus/js/template.js"></script>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>MEDICNEXUS</title>
 </head>
@@ -155,25 +156,25 @@ else
         </div>
         <div id="top_menu">
         	<jdoc:include type="modules" name="position-1" style="xhtml" />
-            
+            <!--<?php if ($this->countModules('position-1')) : ?>
+          <nav class="navigation" role="navigation">
+            <jdoc:include type="modules" name="position-1" style="none" />
+          </nav>
+          <?php endif; ?>-->
           <!--Zona del menú principal del sitio-->
         </div>
         <div id="front_img_header"></div>
     </div>
+    
+    
      <!-- end .header --></div>
      
-     <!-- <?php if ($this->countModules('position-1')) : ?>
-          <nav class="navigation" role="navigation">
-            <jdoc:include type="modules" name="position-1" style="none" />
-          </nav>
-          <?php endif; ?> -->
+     
     
-  <jdoc:include type="modules" name="banner" style="xhtml" />
+  <!--<jdoc:include type="modules" name="banner" style="xhtml" />-->
     
     <div id="sitemap_zone">
-      <h6>
-      	<jdoc:include type="modules" name="position-2" style="none" />
-      </h6>
+      <jdoc:include type="modules" name="position-2" style="none" />
     </div>
   <div class="sidebar">
   <jdoc:include type="modules" name="position-8" style="xhtml" />
@@ -183,16 +184,33 @@ else
         <jdoc:include type="modules" name="position-7" style="xhtml" />
       </div>
     </div>
-    <div id="contact_zone">
+    <div id="contact_zone">   
       <div id="box_title_sidebar">
-        <h1>CONTACTO</h1>
+        <h1>CONTACTO</h1>  
       </div>
+      <h2>le atendemos las 24 horas del día</h2>
+      
+      <table width="90%" cellpadding="1" cellspacing="1" border="0">
+      	<tr>
+        	<td width="40%" style="color: #666; font-size: 11px;" align="right">Correo:</td>
+            <td style="color: #999; font-size: 11px;">contacto@medicnexus.com</td>
+        </tr>
+        <tr>
+        	<td width="40%" style="color: #666; font-size: 11px;" align="right">Teléfono:</td>
+            <td style="color: #999; font-size: 11px;">(+34) 66-683-0777</td>
+        </tr>
+        <tr>
+        	<td width="40%" style="color: #666; font-size: 11px;" align="right">Fax:</td>
+            <td style="color: #999; font-size: 11px;">(+34) 91-188-6000</td>
+        </tr>
+      </table>
+       
     </div>
     <!-- end .sidebar1 --></div>
     
     <div class="welcome_site_zone">
         <div id="box_title">
-        	<h1>BIENVENIDOS A MEDICNEXUS</h1>
+        	<!--<h1>BIENVENIDOS A MEDICNEXUS</h1>-->
         </div>
     
     <main id="content" role="main" class="<?php echo $span;?>">

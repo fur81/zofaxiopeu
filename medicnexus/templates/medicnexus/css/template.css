@@ -177,20 +177,20 @@ input {
 }
 
 #sitemap_zone {
-	height: 28px;
+	height: 25px;
     margin-top: 1px;
-    padding: 2px 0 0 5px;
+    padding: 5px 0 0 30px;
     width: 995px;
 	background: url(../images/sitemap_bg.gif) no-repeat 5px 5px;
 	/*border: 1px solid #930;*/
 	margin-top: 1px;
 }
 
-#sitemap_zone h6 {
+/*#sitemap_zone h6 {
 	margin: 5px 0 0 15px;
 	font-size: 11px;
 	color: #999;
-}
+}*/
 
 /* ~~ These are the columns for the layout. ~~ 
 
@@ -221,11 +221,25 @@ input {
 
 #contact_zone {
 	width: 240px;
-	height: 225px;
+	height: 220px;
 	border: 1px solid #1aa9b8;
 	margin: 0 0 10px;
     padding: 5px;
 	float: left;
+	background: url("../images/contact_img.gif") no-repeat 10px 50px;
+}
+
+#contact_zone h2 {
+	font-size: 18px;
+	color: #1aa9b8;
+	text-transform: uppercase;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin: 35px 0 0 84px;
+}
+
+#contact_zone table {
+	margin-top: 25px;
+	margin-left: 15px;
 }
 
 #box_title_sidebar {
@@ -243,6 +257,7 @@ input {
 	color: #FFF;
 	background: url(../images/bg_title_box.png) no-repeat right center;
 	text-align: right;
+	margin-top: 2px;
 }
 
 .welcome_site_zone {
@@ -611,7 +626,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 .mn-btn-login {
 	width: 100px;
 	height: 22px;
-	background: url(../images/login_btn_bg.png) no-repeat;
+	background: url(../images/btn_bg100.png) no-repeat;
 	border: 0;
 	color: #FFF;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -653,7 +668,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 .mn-btn-logout {
 	width: 100px;
 	height: 22px;
-	background: url(../images/login_btn_bg.png) no-repeat;
+	background: url(../images/btn_bg100.png) no-repeat;
 	border: 0;
 	color: #FFF;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -705,17 +720,157 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 
 /*Fin estilos del módulo mod_menu*/
 
-.page-header h2 {
+/*Inicio estilos del módulo mod_breadcrumbs*/
+
+#sitemap_zone ul li  {
+	display: inline;	
+	list-style: none;
+	margin-right: 5px;
+	color: #999;
 	font-size: 12px;
+}
+
+#sitemap_zone .pathway  {
+	font-size: 12px;
+	color: #333;
+}
+
+/*Fin estilos del módulo mod_breadcrumbs*/
+
+/*Estilo generales de Joomla*/
+
+.item-page {
+	margin: -22px 0 0 -5px;	
+}
+
+.item-page p {
+	color: #999;
+	font-size: 12px;
+	text-align: justify;
+}
+
+.page-header h2 a {
+	font-size: 12px;
+	color: #FFF;
+	background: url(../images/bg_title_box.png) no-repeat left center;
+	margin-top: 2px;
+	padding-left: 15px;
 	text-transform: uppercase;
-	color: blue;
 }
 
 #system-message-container {
-	background: #0F6;	
+	color: #666;
+	font-size: 12px;
 }
 
-#system-message-container h4 {
+/*#system-message-container h4 {
 	color: #FFF;
 	font-size: 24px;	
+}*/
+
+.registration {
+	padding: 10px;	
+}
+
+fieldset {
+	font-size: 12px;
+	color: #666;
+	border: 1px solid #1AA9B8;	
+	padding: 10px 10px 0 10px;
+	margin-bottom: 10px;
+}
+
+.login {
+	padding: 10px 10px 10px 10px;
+	width: 710px;
+}
+
+.well {
+	font-size: 12px;
+	color: #666;
+	border: 1px solid #1AA9B8;	
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.red {
+	color: #F00;	
+}
+
+.star {
+	color: #F00;	
+}
+
+/*#jform_name-lbl {
+	color: #00C;	
+	font-size: 36px;
+}*/
+
+.controls button {
+	margin-top: 5px;
+	width: 100px;
+	height: 22px;
+	background: url(../images/btn_bg100.png) no-repeat;
+	border: 0;
+	color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.control-label {
+	font-size: 12px;
+	color: #666;
+}
+
+.form-actions button {
+	width: 100px;
+	height: 22px;
+	background: url(../images/btn_bg100.png) no-repeat;
+	border: 0;
+	color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.form-actions a {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.form-actions a:hover {
+	text-decoration: underline;
+}
+
+.remind p {
+	font-size: 12px;
+	color: #666;
+	text-align: justify;
+	margin-top: 10px;	
+}
+
+.reset p {
+	font-size: 12px;
+	color: #666;
+	text-align: justify;
+	margin-top: 10px;	
+}
+
+#content {
+	float: left;
+    width: 730px;
+}
+
+#content ul {
+	border: none;
+}
+
+#content ul li {
+	border: none;
+	margin-left: 10px;	
+}
+
+#content ul li a {
+	color: #666;
+	font-size: 12px;
+	background: url(../images/link_bullet_bg.gif) no-repeat center left;	
 }
