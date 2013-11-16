@@ -156,11 +156,7 @@ else
         </div>
         <div id="top_menu">
         	<jdoc:include type="modules" name="position-1" style="xhtml" />
-            <!--<?php if ($this->countModules('position-1')) : ?>
-          <nav class="navigation" role="navigation">
-            <jdoc:include type="modules" name="position-1" style="none" />
-          </nav>
-          <?php endif; ?>-->
+            
           <!--Zona del menú principal del sitio-->
         </div>
         <div id="front_img_header"></div>
@@ -190,21 +186,23 @@ else
       </div>
       <h2>le atendemos las 24 horas del día</h2>
       
-      <table width="90%" cellpadding="1" cellspacing="1" border="0">
-      	<tr>
-        	<td width="40%" style="color: #666; font-size: 11px;" align="right">Correo:</td>
-            <td style="color: #999; font-size: 11px;">contacto@medicnexus.com</td>
-        </tr>
-        <tr>
-        	<td width="40%" style="color: #666; font-size: 11px;" align="right">Teléfono:</td>
-            <td style="color: #999; font-size: 11px;">(+34) 66-683-0777</td>
-        </tr>
-        <tr>
-        	<td width="40%" style="color: #666; font-size: 11px;" align="right">Fax:</td>
-            <td style="color: #999; font-size: 11px;">(+34) 91-188-6000</td>
-        </tr>
-      </table>
-       
+      <div id="contact_table">
+      	<table width="90%" cellpadding="1" cellspacing="1" border="0">
+            <tr>
+                <td width="40%" style="color: #666; font-size: 11px;" align="right">Correo:</td>
+                <td style="color: #999; font-size: 11px;">contacto@medicnexus.com</td>
+            </tr>
+            <tr>
+                <td width="40%" style="color: #666; font-size: 11px;" align="right">Teléfono:</td>
+                <td style="color: #999; font-size: 11px;">(+34) 66-683-0777</td>
+            </tr>
+            <tr>
+                <td width="40%" style="color: #666; font-size: 11px;" align="right">Fax:</td>
+                <td style="color: #999; font-size: 11px;">(+34) 91-188-6000</td>
+            </tr>
+          </table>	
+      </div>
+   
     </div>
     <!-- end .sidebar1 --></div>
     
