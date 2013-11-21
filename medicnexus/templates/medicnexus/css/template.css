@@ -287,7 +287,7 @@ input {
 }
 
 #welcome_text {
-	width: 730px;
+	width: 740px;
 	float: left;	
 	padding: 10px 0 0 0;
 }
@@ -391,7 +391,7 @@ input {
 #speciality_text p {
 	font-size: 10px;
 	color: #FFF;
-	text-align: justify;
+	text-align: left;
 }
 
 #news-article_zone {
@@ -767,12 +767,17 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 
 .item-page {
 	margin: -22px 0 0 -5px;	
+	width: 720px;
 }
 
 .item-page p {
 	color: #999;
 	font-size: 12px;
 	text-align: justify;
+}
+
+.item-page table {
+	margin-left: 10px;
 }
 
 .page-header h2 a {
@@ -832,6 +837,10 @@ fieldset {
 
 /*navs*/
 
+.nav.nav-tabs.nav-stacked {
+	line-height: 16px;
+	font-size: 11px;	
+}
 .nav-stacked > li {
 	float: none;
 }
@@ -952,7 +961,7 @@ fieldset {
 
 #content ul li a {
 	color: #666;
-	font-size: 12px;
+	font-size: 11px;
 	background: url(../images/link_bullet_bg.gif) no-repeat center left;	
 }
 
@@ -1039,7 +1048,14 @@ fieldset {
 /*Inicio Estilos Clientes*/
 
 #client_zone {
-	width: 730px;	
+	width: 720px;	
+}
+#client_zone h1 {
+	font-size: 12px;
+	color: #666;
+}
+#client_zone table {
+	margin-left: 10px;
 }
 #client_zone_options {
 	width: 730px;
@@ -1112,4 +1128,63 @@ fieldset {
 	padding-left: 10px;
 	line-height: 18px;
 }
+#issue_report {
+	float: right;	
+	margin-bottom: 10px;
+}
+#issue_report ul li{
+	display: inline;
+	list-style: none;	
+	margin-left: 5px;	
+}
+#issue_report ul li a{
+	background: none;	
+	font-size: 11px;	
+	color: #1AA9B8;
+	cursor: pointer;
+	
+}
+#issue_report ul li a:hover{
+	text-decoration: underline;
+}
 /*Fin Estilos Clientes*/
+
+/*Inicio Estilo de Table*/
+
+.managed-table-th {
+	background: #666;
+}
+.managed-table-th td {
+	border-bottom: 2px solid #FFF;
+}
+#client_zone .managed-table-th h1 {
+	color: #FFF;
+	font-size: 11px;
+	text-transform: uppercase;
+	margin: 3px;
+	padding: 0;
+}
+.managed-table-tr {
+	background: #E3E3E3;
+	color: #1aa9b8;
+	font-size: 11px;
+}
+.managed-table-tr td {
+	padding: 3px;
+}
+.managed-table-tr-alternate {
+	background: #FFF;
+	color: #666;
+	font-size: 11px;
+}
+.managed-table-tr-alternate td {
+	padding: 3px;
+}
+.empty-data-table {
+	background: #FFF;
+	color: #666;
+	font-size: 11px;
+	text-align: center;	
+}
+
+/*Fin Estilo de Table*/
