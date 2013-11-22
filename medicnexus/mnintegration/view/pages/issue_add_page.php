@@ -1,26 +1,32 @@
-<h4>Adicionar Incidencia</h4>
-<div align="right">
-	<fieldset>
-		<table>
-			<tr>
-				<td>
-					<form id="headersIssueForm" name="headersIssueForm" action="#"
-						method="post">
-						<input class="btn" type="submit" value="Ver Incidencias"
-							title="Volver al Inicio" name="headersIssue"> <input
-							type="hidden" name="flow" id="flow" value="headersIssue">
-					</form>
-				</td>
-			</tr>
-		</table>
-	</fieldset>
+<div id="client_zone">
+
+	<!-- se agrega el encabezado con los proyectos -->
+	<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
+	
+	<h4>Adicionar Incidencia</h4>
+	<div align="right">
+			<table>
+				<tr>
+					<td>
+						<form id="headersIssueForm" name="headersIssueForm" action="#"
+							method="post">
+							<input class="btn" type="submit" value="Ver Incidencias"
+								title="Volver al Inicio" name="headersIssue"> <input
+								type="hidden" name="flow" id="flow" value="headersIssue">
+						</form></td>
+				</tr>
+			</table>
+	</div>
 </div>
+
+<!-- formularios para garantizar la getión del sitio -->
 <form name="subprojectSelectionForm" method="post" action="#"
 	style="width: 100%;">
 	<p>
 
 		<label for="subproject">*Especialidades: </label> <select
-			name="subprojectId" id="subproject" onchange="subprojectSelectionAction()">
+			name="subprojectId" id="subproject"
+			onchange="subprojectSelectionAction()">
 			<?php
 			$subprojects = $mantisCore->getSubProjects();
 			foreach ($subprojects as $subproject) {
@@ -37,39 +43,37 @@
 				}
 			}
 			?>
-		</select>
-		<label for="subproject">Seleccionar Especialista: 
-		<input type="checkbox" id="viewSpecialistsCheckbox" name="viewSpecialistsCheckbox" 
-			onclick="showSpecialists()"
+		</select> <label for="subproject">Seleccionar Especialista: <input
+			type="checkbox" id="viewSpecialistsCheckbox"
+			name="viewSpecialistsCheckbox" onclick="showSpecialists()"
 			<?php if ($_SESSION['viewSpecialistsCheckbox'] == true) {
 				echo 'checked="checked"';
-			}?>> 
-		</label> 
-		<input type="hidden" name="flow" id="flow" value="addIssue"> <input type="hidden"
-			name="issueAction" id="issueAction" value="subprojectSelectionAction">
+			}?>> </label> <input type="hidden" name="flow" id="flow"
+			value="addIssue"> <input type="hidden" name="issueAction"
+			id="issueAction" value="subprojectSelectionAction">
 	</p>
 </form>
 
 <form name="createIssueForm" method="post" action="#"
 	style="width: 100%;">
-	
+
 	<?php if ($_SESSION['viewSpecialistsCheckbox'] == true)
 	{
-	?>
-		<p>
-			<label for="specialist">*Especialistas: </label> <select
-				name="specialist" id="specialist">
+		?>
+	<p>
+		<label for="specialist">*Especialistas: </label> <select
+			name="specialist" id="specialist">
 			<?php $users = $mantisCore->getDeveloperUsersByProject($_SESSION['subProjectId']);
 			foreach ($users as $user) {
 				echo '<option value="'.$user->id.'">'.$user->realname.'</option>';
 			}
 			?>
-			</select>
+		</select>
 
-		</p>
+	</p>
 	<?php }?>
-		<p>
-		
+	<p>
+
 		<label title="Resumen de la Incidencia">*Resumen:</label> <input
 			id="summaryText" name="summaryText" style="width: 100%;">
 	</p>
@@ -86,15 +90,18 @@
 		value="createIssueAction">
 </form>
 
-<script>
+
+
+<!-- scripts de la página -->
+<script type="text/javascript">
 function subprojectSelectionAction() {
 	var lfckv = document.getElementById("viewSpecialistsCheckbox").checked;
 	if (lfckv) {
-		document.forms.subprojectSelectionForm.submit();
+		document.forms["subprojectSelectionForm"].submit();
 	}
 }
 
 function showSpecialists() {
-	document.forms.subprojectSelectionForm.submit();
+	document.forms["subprojectSelectionForm"].submit();
 }
 </script>
