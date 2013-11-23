@@ -5,7 +5,7 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 
 <div id="client_zone">
 	<!-- se incluye el encabezado con los proyectos -->
-<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
+	<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
 
 	<div id="issue_report" onclick="redirectToAddIssue()">
 		<ul>
@@ -19,19 +19,19 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 	<table width="100%" cellpadding="1" cellspacing="1"
 		style="float: left;">
 		<tr class="managed-table-th">
-			<td width="130px" align="center"><h1>
+			<td width="130px" align="left"><h1>
 			<?php getValue('label_lastUpdate');?>
 				</h1></td>
 			<td><h1>
 			<?php getValue('label_summary');?>
 				</h1></td>
-			<td width="130px" align="center"><h1>
+			<td width="110px" align="left"><h1>
 			<?php getValue('label_speciality');?>
 				</h1></td>
-			<td width="50px" align="center"><h1>
+			<td width="50px" align="left"><h1>
 			<?php getValue('label_attached');?>
 				</h1></td>
-			<td width="50px" align="center"><h1>
+			<td width="50px" align="left"><h1>
 			<?php getValue('label_notes');?>
 				</h1></td>
 		</tr>
@@ -48,11 +48,11 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 		<tr class="managed-table-tr-alternate"
 			onclick="data(<?php echo $issue->id;?>)">
 			<?php }?>
-			<td align="center"><?php echo substr($issue->last_updated, 0, 10);?>
+			<td><?php echo substr($issue->last_updated, 0, 10);?>
 			</td>
-			<td align="left"><?php echo $issue->summary;?>
+			<td><?php echo $issue->summary;?>
 			</td>
-			<td align="center"><?php echo $issueProject->name;?>
+			<td><?php echo $issueProject->name;?>
 			</td>
 			<td align="center"><?php echo $issue->attachments_count;?>
 			</td>
