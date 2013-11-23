@@ -1,6 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
 
+li.maximenuck {margin: 0; padding: 0px;}
+
 body {
 	font: 100%/1.4 "Trebuchet MS", Arial, Helvetica, sans-serif;
 	background: #FFF url(../images/gradient_bg_site.gif) repeat-x;
@@ -43,6 +45,17 @@ input {
 	border: 1px solid #CCC;
 	color: #999;
 	height: 16px;	
+}
+
+select {
+	font-size: 11px;
+	color: #999;
+	height: 22px;	
+}
+
+label {
+	color: #666;
+	font-size: 11px;	
 }
 
 /* ~~this fixed width container surrounds the other divs~~ */
@@ -166,6 +179,8 @@ input {
 	behavior:url(border.htc);
 	margin: 0;
 	padding: 0;
+	height: 37px;
+    margin-top: -3px;
 }
 
 #front_img_header {
@@ -449,9 +464,10 @@ ul.nav li {
 ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
 	padding: 5px 5px 5px 15px;
 	display: inline; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
-	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	/*width: 160px;*/  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
 	text-decoration: none;
 	background: none;
+	margin: 0 15px;
 }
 ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
 	background: #none;
@@ -679,7 +695,6 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 }
 
 /*Fin estilos del módulo mod_login*/
-
 /*Inicio estilos del módulo mod_menu*/
 
 #top_menu ul.nav {
@@ -691,7 +706,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 #top_menu ul.nav li {
 	display: inline;
 	border: none;	
-	margin-top: 5px;
+	/*margin-top: 5px;*/
 	background: url(../images/top_menu_separator.png) no-repeat left center;
 	border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
@@ -767,7 +782,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 
 .item-page {
 	margin: -22px 0 0 -5px;	
-	width: 720px;
+	width: 740px;
 }
 
 .item-page p {
@@ -1053,12 +1068,38 @@ fieldset {
 #client_zone h1 {
 	font-size: 12px;
 	color: #666;
+	text-transform: uppercase;
+}
+#client_zone h3 {
+	font-size: 12px;
+	color: #666;
+	text-transform: uppercase;
+	padding: 0 !important;
 }
 #client_zone table {
 	margin-left: 10px;
 }
+#client_zone table ul li {
+	display: inline;
+	margin: 0;
+}
+#client_zone table ul li a {
+	background: none;
+	color: #1AA9B8;
+}
+#client_zone table ul li a: {
+	background: none;
+}
+#client_zone table a {
+	font-size: 11px;
+    color: #1aa9b8;
+}
+#client_zone table a:hover {
+	font-size: 11px;
+	text-decoration: underline;
+}
 #client_zone_options {
-	width: 730px;
+	width: 740px;
 	float: left;	
 	margin-top: 10px;	
 }
@@ -1068,11 +1109,11 @@ fieldset {
 	background: url(../images/services_title_bg.gif) no-repeat 140px 12px;
 }
 #client_service_box {
-	width: 150px;
+	width: 160px;
 	float: left;	
 }
 #client_service_box img {
-	margin: 0 0 0 45px;	
+	margin: 0 0 0 55px;	
 }
 #client_service_box h1 {
 	color: #1aa9b8;
@@ -1089,7 +1130,7 @@ fieldset {
 	float: left;	
 }
 .client_options_separator {
-	margin: 10px 20px 0 20px;
+	margin: 10px 10px 0 20px;
 	width: 1px;
 	height: 46px;
 	background: url(../images/client_options_separator.gif) no-repeat;
@@ -1147,12 +1188,75 @@ fieldset {
 #issue_report ul li a:hover{
 	text-decoration: underline;
 }
+.client_data {
+	color: #999;
+	font-size: 11px;	
+}
+#attachment_info {
+	margin: 10px 0 0 -10px;
+    width: 715px;
+} 
+#fileAttached {
+	font-size: 11px;
+	border: 1px solid #CCC;
+	color: #999;
+	height: 20px;		
+}
+.managed-notes-td {
+	color: #666666;
+	font-size: 11px;
+	font-style: italic;	
+}
+
+.managed-chat-td {
+	border: 1px solid #666; 
+	color: #999; 
+	font-size: 11px; 
+	font-style: italic;	
+	padding: 3px;
+}
+
+.managed-chatdate-td {
+	color: #999; 
+	font-size: 11px; 
+	font-style: italic;	
+}
+
+.managed-notes-td-alternate {
+	color: #1aa9b8;
+	font-size: 11px;
+	font-style: italic;	
+}
+
+.managed-chat-td-alternate {
+	border: 1px solid #18aebe; 
+	color: #53c6d2; 
+	font-size: 11px; 
+	font-style: italic;	
+	padding: 3px;
+}
+
+.managed-chatdate-td-alternate {
+	color: #53c6d2; 
+	font-size: 11px; 
+	font-style: italic;	
+}
+
+.btn-client {
+	width: 100px;
+	height: 22px;
+	background: url(../images/btn_bg100.png) no-repeat;
+	border: 0;
+	color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
 /*Fin Estilos Clientes*/
 
 /*Inicio Estilo de Table*/
 
 .managed-table-th {
-	background: #666;
+	background: #999;
 }
 .managed-table-th td {
 	border-bottom: 2px solid #FFF;
@@ -1188,3 +1292,127 @@ fieldset {
 }
 
 /*Fin Estilo de Table*/
+
+/*sitemap items*/
+
+#sitemap_items {
+	width: 720px;
+	float: left;
+	margin: 0 0 10px 10px;
+	padding: 0;
+}
+
+#sitemap_items h1 {
+	font-size: 14px;
+	color: #1aa9b8;
+	background: url(../images/sitemap_title_bg.gif) no-repeat 5px center; 
+	text-transform: uppercase;	
+}
+
+#sitemap_items ul {
+	list-style: none;
+	margin: 10px 0 0 30px;
+}
+
+#sitemap_items ul li {
+	background: url(../images/link_bullet_bg.gif) left 12px no-repeat;
+	padding-left: 15px;
+	line-height: 24px;
+}
+
+.divider.icon-location.hasTooltip {
+	
+}
+
+#sitemap_items ul li a {
+	color: #666;
+	font-size: 11px;
+	background: none;
+}
+
+#sitemap_items ul li a:hover {
+	font-weight: bold;
+}
+
+#sitemap_separator {
+	width: 250px;
+	height: 2px;
+	background: url(../images/sitemap_separator.gif) no-repeat;
+	margin-left: 5px;	
+}
+
+/*general_services*/
+
+#general_services {
+	width: 740px;
+	float: left;	
+}
+
+#general_services h1 {
+	color: #666;
+	font-size: 12px;
+	text-transform: uppercase;	
+}
+
+#medical_services_block {
+	width: 730px;
+	margin: 10px 0 0 0;
+	padding: 0;
+	float: left;
+}
+
+#medical_services_block_separator {
+	margin: 0 0 5px 15px;
+    width: 705px;
+	float: left;
+	border-bottom: 1px dotted #1aa9b8;	
+}
+
+#services_img {
+	width: 50px;
+	height: 45px;
+	margin: 5px 0 0 30px;
+	float: left;
+}
+
+#services_info {
+	width: 640px;
+	float: left;
+	padding-top: 5px;
+}
+
+#services_info p {
+	padding-right: 0;
+}
+
+#services_info #service_box_btn img {
+	margin: 0 0 0 15px;	
+}
+
+/*Inicio estilos Newsflash*/
+
+.fcfc_wrapper {
+	color: #666;
+	font-size: 12px;
+	font-style: italic;
+	text-align: justify;	
+	padding: 10px;
+}
+
+.fcfc_wrapper a {
+	color: #cc66cc;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-style: normal;
+	/*margin: 30px 0 0 50px;*/
+}
+
+.fcfc_inner h6 a {
+	color: #81197f;
+	font-size: 16px;
+	text-transform: uppercase;	
+	font-style: normal;
+	font-weight: 500;
+}
+
+/*Fin estilos Newsflash*/
