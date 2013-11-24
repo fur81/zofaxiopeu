@@ -1,7 +1,8 @@
 
 <div id="client_zone_options">
 	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_RAPID_CONSULTATION;?>')"
-		title="<?php getValue('label_project_rapid_consultation_title');?>">
+		title="<?php getValue('label_project_rapid_consultation_title');?>"
+		style="cursor: pointer;">
 		<img src="images/medicnexus/home/g_quick_consult_service_icon.gif"
 			name="g_quick_consult_service_icon" width="50" height="45" border="0" id="g_quick_consult_service_icon"
 			alt="<?php getValue('label_project_rapid_consultation_title');?>"/>
@@ -10,7 +11,8 @@
 	</div>
 	<div class="client_options_separator"></div>
 	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_VIRTUAL_CONSULTATION;?>')"
-			title="<?php getValue('label_project_virtual_consultation_title');?>">
+			title="<?php getValue('label_project_virtual_consultation_title');?>"
+			style="cursor: pointer;">
 		<img src="images/medicnexus/home/virtual_consult_service_icon.gif"
 			name="virtual_consult_service_icon" width="50" height="45" border="0" id="virtual_consult_service_icon" 
 			alt="<?php getValue('label_project_virtual_consultation_title');?>"/>
@@ -19,7 +21,8 @@
 	</div>
 	<div class="client_options_separator"></div>
 	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_SECOND_OPINION;?>')"
-			title="<?php getValue('label_project_second_opinion_title');?>">
+			title="<?php getValue('label_project_second_opinion_title');?>"
+			style="cursor: pointer;">
 		<img src="images/medicnexus/home/second_opinion_service_icon_new1.gif"
 			name="virtual_consult_service_icon" width="50" height="45" border="0" id="virtual_consult_service_icon"
 			alt="<?php getValue('label_project_second_opinion_title');?>"/>
@@ -28,7 +31,8 @@
 	</div>
 	<div class="client_options_separator"></div>
 	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_HEALTH_PROGRAM;?>')"
-			title="<?php getValue('label_project_health_program_title');?>">
+			title="<?php getValue('label_project_health_program_title');?>"
+			style="cursor: pointer;">
 		<img src="images/medicnexus/home/health_programs_service_icon.gif"
 			name="health_programs_service_icon" width="50" height="45" border="0" id="health_programs_service_icon"
 			alt="<?php getValue('label_project_health_program_title');?>"/>
