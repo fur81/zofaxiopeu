@@ -43,19 +43,15 @@ $issue = $mantisCore->getIssueById ( $issueId );
 		</tr>
 		<tr>
 			<td><label><?php getValue('label_attached');?>:</label></td>
-			<td width="25%">
+			<td width="50%">
 				<form enctype="multipart/form-data" method="post" action="#">
 					<input class="btn" type="file" id="fileAttached"
-						name="fileAttached" />
-			
-			</td>
-			<td><input class="btn-client" type="submit" name="uploadFile"
-				value="<?php getValue('label_upload_file');?>">
-			</td>
-			<td><input type="hidden" name="issueAction"
-				value="uploadAttachedAction"> <input type="hidden" name="flow"
-				id="flow" value="detailsIssue" /> <input type="hidden"
-				name="issueId" id="issueId" value="<?php echo $issueId;?>">
+						name="fileAttached" /><input type="hidden" name="issueAction"
+						value="uploadAttachedAction"> <input type="hidden" name="flow"
+						id="flow" value="detailsIssue" /> <input type="hidden"
+						name="issueId" id="issueId" value="<?php echo $issueId;?>"> <input
+						class="btn-client" type="submit" name="uploadFile"
+						value="<?php getValue('label_upload_file');?>">
 				</form>
 			</td>
 		</tr>
@@ -163,7 +159,6 @@ $issue = $mantisCore->getIssueById ( $issueId );
 			}
 		}
 		?>
-		</tr>
 		<tr>
 			<td colspan="4">
 				<form id="addNoteIssueForm" name="addNoteIssueForm" action="#"
@@ -196,20 +191,22 @@ $issue = $mantisCore->getIssueById ( $issueId );
 <!-- formularios para ser utilizados en el javascript -->
 <form id="headersIssueForm" name="headersIssueForm" action="#"
 	method="post">
-	<input type="hidden" name="flow" id="flow" value="headersIssue">
+	<input type="hidden" name="flow" id="flow" value="headersIssue"><input type="hidden"
+	id="projectId" name="projectId">
 </form>
 
 <form id="downloadAttachedForm" name="downloadAttachedForm"
 	method="post" action="#">
 	<input type="hidden" name="issueAction" value="downloadAttachedAction">
 	<input type="hidden" name="attachedId"> <input type="hidden"
-		name="attachedFileName"> <input
-		type="hidden" name="flow" id="flow" value="detailsIssue" />
+		name="attachedFileName"> <input type="hidden" name="flow" id="flow"
+		value="detailsIssue" />
 </form>
 
 <!-- scripts para el funcionamiento de la página -->
 <script type="text/javascript">
 	function redirectToBack() {
+		document.getElementById('projectId').value = <?php echo $_SESSION['projectId'];?>;
 		document.forms["headersIssueForm"].submit();
 	}
 
