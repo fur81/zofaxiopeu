@@ -1,6 +1,10 @@
 <?php
 global $values;
 $values['query'] = array(
+
+		/** -- usuarios -- */
+		'getUserById' => 'SELECT id, username, realname, email, access_level, login_count, last_visit
+						 FROM mantis_user_table WHERE id = %value%;',
 		
 		/** -- cuentas de usuarios -- */
 		'createAccount' => 'INSERT INTO mantis_user_table(username, realname, email, password, enabled, protected,

@@ -291,6 +291,11 @@ class MantisCore {
 		return $retult;
 	}
 	
+	/**
+	 * Se obtienen los desarrolladores que se encuentran asignados a un proyecto.
+	 * @param int $projectId
+	 * @return ArrayObject $users
+	 */
 	public function getDeveloperUsersByProject($projectId) {
 		$result = '';
 		try {
@@ -308,10 +313,34 @@ class MantisCore {
 		}
 		return $users;
 	}
+	
+	/**
+	 * Se obtienen todos los datos de un usuario a partir de su identificador.
+	 * @param int $userId
+	 * @return stdClass user
+	 */
+	public function getUserById($userId) {
+		$result = '';
+		try {
+			$query = str_replace ( '%value%', $userId, getQuery ( 'getUserById' ) );
+			$result = $this->proxyMySql->query ( $query );
+			$user = new stdClass();
+			while ( $data = $result->fetch_object () ) {
+				$user->id = $data->user_id;
+				$user->username = $data->username;
+				$user->realname = $data->realname;
+				$user->email = $data->email;
+				$user->access_level = $data->access_level;
+				$user->login_count = $data->login_count;
+				$user->last_visit = $data->last_visit;
+			}
+		} catch (Exception $e) {
+		}
+		return $user;
+	}
 
 	/**
 	 * Se listan todas las categorías pertenecientes al proyecto seleccionado.
-	 *
 	 * @return array
 	 */
 	public function getCategoriesByProject() {
@@ -325,7 +354,6 @@ class MantisCore {
 
 	/**
 	 * Se adiciona una categoria para los usuarios existenes en el sistema.
-	 *
 	 * @param string $name
 	 */
 	public function addUserCategory($name) {
@@ -342,7 +370,6 @@ class MantisCore {
 
 	/**
 	 * Se listan las categorías de los usuarios
-	 *
 	 * @return stdClass
 	 */
 	public function getUserCategories() {
@@ -364,7 +391,6 @@ class MantisCore {
 
 	/**
 	 * Se elimina una categoria de usuario
-	 *
 	 * @param int $userCategoryId
 	 */
 	public function removeUserCategory($userCategoryId) {
@@ -379,7 +405,6 @@ class MantisCore {
 	/**
 	 * Se obtienen todos los desarrolladores (medicos) que no están asignados
 	 * a una categoría pasada por parámetro
-	 *
 	 * @param int $userCategoryId
 	 * @return ArrayObject
 	 */
@@ -403,7 +428,6 @@ class MantisCore {
 	/**
 	 * Se obtienen todos los desarrolladores (medicos) que no están asignados
 	 * a una categoría pasada por parámetro
-	 *
 	 * @param int $userCategoryId
 	 * @return ArrayObject
 	 */
