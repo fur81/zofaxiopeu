@@ -1,6 +1,7 @@
 <?php
 global $values;
 $values[L_CATALAN] = array(
+
 		/**  headers */
 		'label_lastUpdate' => 'Darrera actualització',
 		'label_summary' => 'Resum',
@@ -22,6 +23,15 @@ $values[L_CATALAN] = array(
 		'label_report_consultation' => 'Reportar consulta',
 		
 		/** formularios */
-		'label_empty_list' => '-- No existen datos para mostrar --'
+		'label_empty_list' => '-- No existen datos para mostrar --',
+		'label_consultation_details' => 'Detalles de la consulta',
+		'label_lastUpdate' => 'Darrera actualització',
+		'label_summary' => 'Resum',
+		'label_speciality' => 'Especialidad',
+		'label_attached' => 'Adjuntos',
+		'label_notes' => 'Notas',
+		'label_description' => 'Descripción',
+		'label_upload_file' => 'Upload File',
+		'label_download' => 'Dercargar'
 );
 ?>

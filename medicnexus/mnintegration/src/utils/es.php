@@ -1,13 +1,7 @@
 <?php
 global $values;
 $values[L_SPANISH] = array(
-		/**  headers  */
-		'label_lastUpdate' => 'Última Actualización',
-		'label_summary' => 'Resumen',
-		'label_speciality' => 'Especialidad',
-		'label_attached' => 'Adjuntos',
-		'label_notes' => 'Notas',
-		
+
 		/**  projects */
 		'label_project_second_opinion_title' => 'Segunda Opinión',
 		'label_project_virtual_consultation_title' => 'Consulta Virtual',
@@ -22,6 +16,24 @@ $values[L_SPANISH] = array(
 		'label_report_consultation' => 'Reportar consulta',
 		
 		/** formularios */
-		'label_empty_list' => '-- No existen datos para mostrar --'
+		'label_empty_list' => '-- No existen datos para mostrar --',
+		'label_consultation_details' => 'Detalles de la consulta',
+		'label_assigned_to' => 'Asignado a',
+		'label_lastUpdate' => 'Última actualización',
+		'label_summary' => 'Resumen',
+		'label_speciality' => 'Especialidad',
+		'label_attached' => 'Adjuntos',
+		'label_notes' => 'Notas',
+		'label_description' => 'Descripción',
+		'label_upload_file' => 'Subir Fichero',
+		'label_name' => 'Nombre',
+		'label_upload_date' => 'Fecha de Subida',
+		'label_size' => 'Tamaño',
+		'label_upload_by' => 'Subido por',
+		'label_notes_history' => 'Historial de Notas',
+		'label_back' => 'Regresar',
+		'label_insert_note' => 'Insertar nota',
+		'label_download' => 'Dercargar'
+		
 );
 ?>
