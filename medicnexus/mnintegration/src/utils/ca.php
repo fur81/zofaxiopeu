@@ -36,6 +36,7 @@ $values[L_CATALAN] = array(
 		'label_notes' => 'Notas',
 		'label_description' => 'Descripción',
 		'label_upload_file' => 'Upload File',
-		'label_download' => 'Dercargar'
+		'label_download' => 'Dercargar',
+		'label_reports' => 'Reports'
 );
 ?>

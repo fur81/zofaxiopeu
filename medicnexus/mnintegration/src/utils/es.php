@@ -7,10 +7,6 @@ $values[L_SPANISH] = array(
 		'label_project_virtual_consultation_title' => 'Consulta Virtual',
 		'label_project_rapid_consultation_title' => 'Consulta Rápida',
 		'label_project_health_program_title' => 'Programa de Salud',
-		'label_project_second_opinion_upper_title' => 'SEGUNDA OPINIÓN',
-		'label_project_virtual_consultation_upper_title' => 'CONSULTA VIRTUAL',
-		'label_project_rapid_consultation_upper_title' => 'CONSULTA RÁPIDA',
-		'label_project_health_program_upper_title' => 'PROGRAMA DE SALUD',
 
 		/** etiquetas generales */
 		'label_report_consultation' => 'Reportar consulta',
@@ -37,7 +33,8 @@ $values[L_SPANISH] = array(
 		'label_notes_history' => 'Historial de Notas',
 		'label_back' => 'Regresar',
 		'label_insert_note' => 'Insertar nota',
-		'label_download' => 'Dercargar'
+		'label_download' => 'Dercargar',
+		'label_reports' => 'Reportes'
 		
 );
 ?>

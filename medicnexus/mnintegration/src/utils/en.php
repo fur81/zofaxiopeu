@@ -37,6 +37,7 @@ $values[L_ENGLISH] = array(
 		'label_notes_history' => 'Notes history',
 		'label_back' => 'Back',
 		'label_insert_note' => 'Insert note',
-		'label_download' => 'Download'
+		'label_download' => 'Download',
+		'label_reports' => 'Reports'
 );
 ?>

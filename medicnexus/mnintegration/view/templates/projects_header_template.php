@@ -6,7 +6,7 @@
 		<img src="images/medicnexus/home/g_quick_consult_service_icon.gif"
 			name="g_quick_consult_service_icon" width="50" height="45" border="0" id="g_quick_consult_service_icon"
 			alt="<?php getValue('label_project_rapid_consultation_title');?>"/>
-		<h1><?php getValue('label_project_rapid_consultation_upper_title');?></h1>
+		<h1><?php getValue('label_project_rapid_consultation_title');?></h1>
 
 	</div>
 	<div class="client_options_separator"></div>
@@ -16,7 +16,7 @@
 		<img src="images/medicnexus/home/virtual_consult_service_icon.gif"
 			name="virtual_consult_service_icon" width="50" height="45" border="0" id="virtual_consult_service_icon" 
 			alt="<?php getValue('label_project_virtual_consultation_title');?>"/>
-		<h1><?php getValue('label_project_virtual_consultation_upper_title');?></h1>
+		<h1><?php getValue('label_project_virtual_consultation_title');?></h1>
 
 	</div>
 	<div class="client_options_separator"></div>
@@ -26,7 +26,7 @@
 		<img src="images/medicnexus/home/second_opinion_service_icon_new1.gif"
 			name="virtual_consult_service_icon" width="50" height="45" border="0" id="virtual_consult_service_icon"
 			alt="<?php getValue('label_project_second_opinion_title');?>"/>
-		<h1><?php getValue('label_project_second_opinion_upper_title');?></h1>
+		<h1><?php getValue('label_project_second_opinion_title');?></h1>
 
 	</div>
 	<div class="client_options_separator"></div>
@@ -36,7 +36,7 @@
 		<img src="images/medicnexus/home/health_programs_service_icon.gif"
 			name="health_programs_service_icon" width="50" height="45" border="0" id="health_programs_service_icon"
 			alt="<?php getValue('label_project_health_program_title');?>"/>
-		<h1><?php getValue('label_project_health_program_upper_title');?></h1>
+		<h1><?php getValue('label_project_health_program_title');?></h1>
 	</div>
 </div>
 <div id="client_options_divider"></div>
