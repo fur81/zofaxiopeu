@@ -4,7 +4,7 @@
 <?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
 
 	<h1>
-	<?php getValue('label_report_consultation');?>
+	<?php getProjectName(); echo ' - '; getValue('label_report_consultation');?>
 	</h1>
 	<table width="100%" cellpadding="1" cellspacing="1"
 		style="float: left;">
