@@ -20,6 +20,8 @@
 			<td width="30%"><select name="subprojectId" id="subproject"
 				onchange="subprojectSelectionAction()" style="width: 100%">
 				<?php
+				$countProjects = 0;
+				$tempProject = NULL;
 				$subprojects = $mantisCore->getSubProjects();
 				foreach ($subprojects as $subproject) {
 					$project = $mantisCore->getProject($subproject);
@@ -27,12 +29,22 @@
 					if (!isset($_SESSION['subProjectId'])) {
 						$_SESSION['subProjectId'] = $project->id;
 					}
+					// almaceno el primer proyecto
+					if ($tempProject == NULL) {
+						$tempProject = $project;
+					}
 					// se selecciona en el combo el elemento marcado en el submit
 					if ($_SESSION['subProjectId'] == $project->id) {
 						echo '<option selected="selected" value="'.$project->id.'">'.$project->name.'</option>';
 					}else {
 						echo '<option value="'.$project->id.'">'.$project->name.'</option>';
+						// cuenta los proyectos que no coinciden
+						$countProjects++;
 					}
+				}
+				// si en el recorrido no coincide ninguno pues se actualiza con el primero
+				if (count($subprojects) == $countProjects) {
+					$_SESSION['subProjectId'] = $tempProject->id;
 				}
 				?>
 			</select></td>
