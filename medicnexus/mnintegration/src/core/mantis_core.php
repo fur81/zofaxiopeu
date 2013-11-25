@@ -195,8 +195,10 @@ class MantisCore {
 			// descripción
 			$issueData->description = $description;
 			// asignación
-			$issueData->handler = new stdClass();
-			$issueData->handler->id = $specialistId;
+			if ($specialistId != null) {
+				$issueData->handler = new stdClass();
+				$issueData->handler->id = $specialistId;
+			}
 
 			$result = $this->proxySoap->mc_issue_add ( $this->currentUser, $this->currentPassword, $issueData );
 		} catch ( Exception $e ) {
