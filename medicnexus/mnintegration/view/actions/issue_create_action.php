@@ -25,6 +25,7 @@ if ( isset($_GET['success'])) {
 	$projectId = getProjectId();
 	if (isset($_SESSION['subProjectId'])) {
 		$projectId = $_SESSION['subProjectId'];
+		unset($_SESSION['subProjectId']);
 	}
 	// se salva la información el la base de datos
 	$idData = $mantisCore->saveIssueCreateData($summary, $description, $projectId, $specialistId);
