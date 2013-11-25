@@ -36,15 +36,18 @@ $GLOBALS['CURRENT_USEREMAIL'] = JFactory::getUser()->email;
 // -- src
 $GLOBALS['MNI_CORE'] =          $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/core/mantis_core.php';
 $GLOBALS['MNI_CONNECTION'] =    $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/core/connection.php';
+
 // -- paypal
 $GLOBALS['PAYPAL_REQUEST_SECOND_OPINION'] = $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/paypal/payments/PayPalPaymentSecondOpinon.php';
 $GLOBALS['PAYPAL_EXECUTE_SECOND_OPINION'] = 'http://'.MANTIS_SERVER_IP.'/medicnexus/mnintegration/src/paypal/payments/ExecutePayment.php'; 
+
 // -- utils
 $GLOBALS['MNI_UTILS'] =         $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/utils/utils.php';
 $GLOBALS['MNI_ES'] =            $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/utils/es.php';
 $GLOBALS['MNI_EN'] =            $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/utils/en.php';
 $GLOBALS['MNI_CA'] =            $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/utils/ca.php';
 $GLOBALS['MNI_QUERY'] =         $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/utils/query.php';
+
 // -- view
 // -- -- pages
 $GLOBALS['MNI_TEST'] =          $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/view/pages/test.php';
@@ -71,4 +74,8 @@ $GLOBALS['MNI_USER_CATEGORY_REMOVE_ACTION'] =  $_SERVER['DOCUMENT_ROOT'].'/medic
 $GLOBALS['MNI_USER_CATEGORY_SELECTION_ACTION'] =  $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/view/actions/user_category_selection_action.php';
 $GLOBALS['MNI_USER_CATEGORY_ADD_RELATION_ACTION'] =  $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/view/actions/user_category_add_relation_action.php';
 $GLOBALS['MNI_USER_CATEGORY_REMOVE_RELATION_ACTION'] =  $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/view/actions/user_category_remove_relation_action.php';
+
+// -- -- templates
+$GLOBALS['MNI_PROJECTS_HEADER_ACTION'] =  $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/view/templates/projects_header_template.php';
+
 ?>

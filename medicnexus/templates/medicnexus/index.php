@@ -82,7 +82,9 @@ else
   <title>MEDICNEXUS</title>
 </head>
 
-<body onload="MM_preloadImages('<?php echo $this->baseurl;?>/templates/medicnexus/images/g_quick_consult_service_icon.gif','<?php echo $this->baseurl;?>/templates/medicnexus/images/virtual_consult_service_icon_new.gif','<?php echo $this->baseurl;?>/templates/medicnexus/images/second_opinion_service_icon.gif')" >
+<body onload="MM_preloadImages('<?php echo $this->baseurl;?>/templates/medicnexus/images/g_quick_consult_service_icon.gif',
+	'<?php echo $this->baseurl;?>/templates/medicnexus/images/virtual_consult_service_icon_new.gif',
+	'<?php echo $this->baseurl;?>/templates/medicnexus/images/second_opinion_service_icon.gif')" >
   <div class="container">
     <div class="header">
     <div id="left_header_zone">
@@ -92,7 +94,7 @@ else
           </a> 
         </div>
         <h1><span style="color: #81197f;">MEDIC</span>NEXUS</h1>
-        <h2>Conexión directa con tu médico</h2>
+        <h2><?php echo JText::_('TPL_MN_DIRECT_CONNECTION');?></h2>
         <div id="header_newsflash">
         	<jdoc:include type="modules" name="newsflash" style="xhtml" />
           <!--Zona de las noticias rápidas de la portada del sitio-->
@@ -101,7 +103,7 @@ else
     <div id="right_header_zone">
       <div id="promo_lang_zone">
           <ul>
-              <li>síguenos en:</li>
+              <li><?php echo JText::_('TPL_MN_FoLLOW_US_IN');?>:</li>
                 <li>
                   <a href="#">
                       <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/fb_icon.gif" border="0" />
@@ -129,11 +131,11 @@ else
                   <td style="padding-bottom: 5px;">
                       <ul>
                             <li>
-                                <a href="#">Mapa del sito</a>
+                                <a href="index.php?option=com_content&view=article&id=15"><?php echo JText::_('TPL_MN_SITE_MAP');?></a>
                             </li>
                             <li>|</li>
                             <li>
-                                <a href="#">Registro de usuarios</a>
+                                <a href="#"><?php echo JText::_('TPL_MN_USER_REGISTER');?></a>
                             </li>
                             <li style="margin: 2px 10px 0 5px;">
                               <a href="#">
@@ -182,22 +184,22 @@ else
     </div>
     <div id="contact_zone">   
       <div id="box_title_sidebar">
-        <h1>CONTACTO</h1>  
+        <h1><?php echo JText::_('TPL_MN_CONTACT_UPPER');?></h1>  
       </div>
-      <h2>le atendemos las 24 horas del día</h2>
+      <h2><?php echo JText::_('TPL_MN_ATTEND_SERVICE');?></h2>
       
       <div id="contact_table">
       	<table width="90%" cellpadding="1" cellspacing="1" border="0">
             <tr>
-                <td width="40%" style="color: #666; font-size: 11px;" align="right">Correo:</td>
+                <td width="40%" style="color: #666; font-size: 11px;" align="right"><?php echo JText::_('TPL_MN_EMAIL');?>:</td>
                 <td style="color: #999; font-size: 11px;">contacto@medicnexus.com</td>
             </tr>
             <tr>
-                <td width="40%" style="color: #666; font-size: 11px;" align="right">Teléfono:</td>
+                <td width="40%" style="color: #666; font-size: 11px;" align="right"><?php echo JText::_('TPL_MN_PHONE');?>:</td>
                 <td style="color: #999; font-size: 11px;">(+34) 66-683-0777</td>
             </tr>
             <tr>
-                <td width="40%" style="color: #666; font-size: 11px;" align="right">Fax:</td>
+                <td width="40%" style="color: #666; font-size: 11px;" align="right"><?php echo JText::_('TPL_MN_FAX');?>:</td>
                 <td style="color: #999; font-size: 11px;">(+34) 91-188-6000</td>
             </tr>
           </table>	
@@ -248,103 +250,107 @@ else
     <div id="bottom_menu_site">
     <ul>
         <li>
-            <a href="#">HOME</a>
+            <a href="index.php"><?php echo JText::_('TPL_MN_HOME_UPPER');?></a>
             </li>
             <li class="bottom_menu_site_separator">::</li>
             <li>
-            <a href="#">SERVICIOS</a>
+            <a href="#"><?php echo JText::_('TPL_MN_NOTICES_UPPER');?></a>
             </li>
             <li class="bottom_menu_site_separator">::</li>
             <li>
-            <a href="#">NOTICIAS</a>
+            <a href="index.php?option=com_content&view=article&id=10"><?php echo JText::_('TPL_MN_ARTICLES_UPPER');?></a>
             </li>
             <li class="bottom_menu_site_separator">::</li>
             <li>
-            <a href="#">ARTICULOS</a>
+            <a href="#"><?php echo JText::_('TPL_MN_SERVICES_UPPER');?></a>
+            </li> 
+            <li class="bottom_menu_site_separator">::</li>
+            <li>
+            <a href="#"><?php echo JText::_('TPL_MN_ABOUT_US_UPPER');?></a>
             </li>
             <li class="bottom_menu_site_separator">::</li>
             <li>
-            <a href="#">DOCUMENTACION</a>
+            <a href="#"><?php echo JText::_('TPL_MN_DOCUMENTATION_UPPER');?></a>
             </li>
             <li class="bottom_menu_site_separator">::</li>
             <li>
-            <a href="#">PREGUNTAS FRECUENTES</a>
+            <a href="#"><?php echo JText::_('TPL_MN_FAQ_UPPER');?></a>
             </li>
             <li class="bottom_menu_site_separator">::</li>
             <li>
-            <a href="#">ZONA CLIENTES</a>
+            <a href="#"><?php echo JText::_('TPL_MN_CLIENT_ZONE_UPPER');?></a>
             </li>
         </ul>
     </div>
     <div id="bottom_submenu_site_zone">
     <div id="block_bottom_submenu">
-        <h1>POLÍTICAS GENERALES DEL SITIO</h1>
+        <h1><?php echo JText::_('TPL_MN_GENERAL_POLITICS_SITE_UPPER');?></h1>
             <ul>
             <li>
-                <a href="#">- Políticas de privacidad</a>
+                <a href="#">- <?php echo JText::_('TPL_MN_PRIVACY_POLITICS');?></a>
                 </li>
                 <li>
-                <a href="#">- Condiciones y términos de uso</a>
+                <a href="#">- <?php echo JText::_('TPL_MN_CONDITIONS_TERMS');?></a>
                 </li>
                 <li>
-                <a href="#">- Mapa del sitio</a>
+                <a href="index.php?option=com_content&view=article&id=15">- <?php echo JText::_('TPL_MN_SITE_MAP');?></a>
                 </li>
             </ul>
         </div>
         <div id="bottom_menu_site_separator"></div>
         <div id="block_bottom_submenu">
-        <h1>SERVICIOS MÉDICOS DISPONIBLES</h1>
+        <h1><?php echo JText::_('TPL_MN_MEDIC_SERVICES_AVAILABLE_UPPER');?></h1>
             <ul>
             <li>
-                <a href="#">- Consulta rápida</a>
+                <a href="#">- <?php echo JText::_('TPL_MN_RAPID_CONSULTATION');?></a>
                 </li>
                 <li>
-                <a href="#">- Consulta virtual</a>
+                <a href="#">- <?php echo JText::_('TPL_MN_VIRTUAL_CONSULTATION');?></a>
                 </li>
                 <li>
-                <a href="#">- Segunda opinión</a>
+                <a href="#">- <?php echo JText::_('TPL_MN_SECOND_OPINION');?></a>
                 </li>
                 <li>
-                <a href="#">- Programas de salud</a>
+                <a href="#">- <?php echo JText::_('TPL_MN_HEALTH_PROGRAM');?></a>
                 </li>
             </ul>
         </div>
         <div id="bottom_menu_site_separator"></div>
         <div id="block_bottom_submenu">
-        <h1>SERVICIOS GENERALES DEL SITIO</h1>
+        <h1><?php echo JText::_('TPL_MN_GENERAL_SERVICES_SITE_UPPER');?></h1>
             <ul>
             <li>
-                <a href="#">- Noticias</a>
+                <a href="#">- <?php echo JText::_('TPL_MN_NOTICES');?></a>
                 </li>
                 <li>
-                <a href="#">- Artículos</a>
+                <a href="#">- <?php echo JText::_('TPL_MN_ARTICLES');?></a>
                 </li>
             </ul>
         </div>
         <div id="bottom_menu_site_separator"></div>
         <div id="block_bottom_submenu">
-        <h1>INFORMACIÓN GENERAL</h1>
+        <h1><?php echo JText::_('TPL_MN_GENERAL_INFORMATION_UPPER');?></h1>
             <ul>
             <li>
-                <a href="#">- Preguntas frecuentes</a>
+                <a href="#">- <?php echo JText::_('TPL_MN_FRECUENTLY_QUESTIONS');?></a>
                 </li>
                 <li>
-                <a href="#">- Documentación médica general</a>
+                <a href="#">- <?php echo JText::_('TPL_MN_GENERAL_MEDICAL_DOCUMENTATION');?></a>
                 </li>
             </ul>
         </div>
         <div id="bottom_menu_site_separator"></div>
         <div id="bottom_social_networks_zone">
-        <h1>REDES SOCIALES</h1>
+        <h1><?php echo JText::_('TPL_MN_SOCIAL_NETWORK_UPPER');?></h1>
             <table width="100%" cellpadding="0" cellspacing="0">
             <tr align="right">
-                <td>Twitter</td>
+                <td><?php echo JText::_('TPL_MN_TWITTER');?></td>
                     <td>
                     <a href="#">
                             <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_twitter_icon.gif" border="0" />
                         </a>
                     </td>
-                    <td>Facebook</td>
+                    <td><?php echo JText::_('TPL_MN_FACEBOOK');?></td>
                     <td>
                     <a href="#">
                             <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_fb_icon.gif" border="0" />
@@ -353,17 +359,17 @@ else
                 </tr>
                 <tr>
                 <td colspan="4">
-                    <h1>CANALES DE INFORMACIÓN</h1>
+                    <h1><?php echo JText::_('TPL_MN_INFORMATION_CHANNELS_UPPER');?></h1>
                     </td>
                 </tr>
                 <tr align="right">
-                <td>Youtube</td>
+                <td><?php echo JText::_('TPL_MN_YOUTUBE');?></td>
                     <td>
                     <a href="#">
                             <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_youtube_icon.gif" border="0" />
                         </a>
                     </td>
-                    <td>RSS</td>
+                    <td><?php echo JText::_('TPL_MN_RSS');?></td>
                     <td>
                     <a href="#">
                             <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_rss_icon.gif" border="0" />
@@ -388,7 +394,7 @@ else
     <ul>
         <li><span style="color: #81197f;">MEDIC</span>NEXUS 2013</li>
             <li>|</li>
-            <li>TODOS LOS DERECHOS RESERVADOS</li>
+            <li><?php echo JText::_('TPL_MN_ALL_RIGHT_RESERVED_UPPER');?></li>
         </ul>
     </div>
     <div id="health_colleges_site">

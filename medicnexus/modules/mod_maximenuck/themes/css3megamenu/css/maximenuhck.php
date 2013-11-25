@@ -38,7 +38,7 @@ list-style:none;
 margin:0 auto;
 /*height:43px;*/
 height: auto;
-padding:0px 20px 0px 20px;
+padding:0;/*mn*/
 -moz-border-radius: 5px;
 -webkit-border-radius: 5px;
 border-radius: 5px;
@@ -100,7 +100,7 @@ border-radius: 5px;
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1 > a,
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1 > span.separator {
 font-size:12px;/*mn*/
-color: #EEEEEE;
+color: #FFF;/*mn*/
 display:block;
 text-decoration:none;
 text-shadow: 1px 1px 1px #000;
@@ -112,8 +112,9 @@ filter: none;
 border : none;
 padding : 0;
 white-space: normal;
-width: 90px;
-text-transform: uppercase;/*mn*/
+/*width: 90px;*/
+/*text-transform: uppercase;*//*mn*/
+text-align : left;
 }
 
 /* parent item on mouseover (if subemnus exists) */
@@ -136,13 +137,13 @@ text-shadow: 1px 1px 1px #000;
 /* arrow image for parent item */
 div#<?php echo $id; ?> ul.maximenuck li.level1.parent > a,
 div#<?php echo $id; ?> ul.maximenuck li.level1.parent > span.separator {
-padding-right:21px;
-background:url("../images/drop.gif") no-repeat right 8px;
+padding-right:10px;/*mn*/
+/*background:url("../images/drop.gif") no-repeat right 8px;*/
 }
 
 div#<?php echo $id; ?> ul.maximenuck li.level1.parent:hover > a,
 div#<?php echo $id; ?> ul.maximenuck li.level1.parent:hover > span.separator {
-background:url("../images/drop.gif") no-repeat right 8px;
+/*background:url("../images/drop.gif") no-repeat right 8px;*/
 }
 
 /* arrow image for submenu parent item */
@@ -150,7 +151,7 @@ div#<?php echo $id; ?> ul.maximenuck li.level1.parent li.parent > a,
 div#<?php echo $id; ?> ul.maximenuck li.level1.parent li.parent > span.separator,
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck ul.maximenuck2 li.parent:hover > a,
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck ul.maximenuck2 li.parent.active > a {
-padding-right:21px;
+padding-right:10px;/*mn*/
 background:url("../images/drop-right.gif") no-repeat right 8px;
 }
 
@@ -216,7 +217,7 @@ div#<?php echo $id; ?> ul.maximenuck li ul.maximenuck2 li.maximenuck,
 div#<?php echo $id; ?> ul.maximenuck2 li.maximenuck {
 font-size:12px;
 position:static;
-text-shadow: 1px 1px 1px #ffffff;
+/*text-shadow: 1px 1px 1px #ffffff;*/
 padding: 5px 0px;
 margin: 0px 0px 4px 0px;
 float:none !important;
@@ -224,6 +225,7 @@ text-align:left;
 background : none;
 list-style : none;
 display: block !important;
+border-bottom: 1px dotted #FFFFFF;
 }
 
 div#<?php echo $id; ?> ul.maximenuck li ul.maximenuck2 li.maximenuck:hover,
@@ -255,8 +257,10 @@ box-shadow: none;
 /* submenu link */
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck ul.maximenuck2 li a,
 div#<?php echo $id; ?> ul.maximenuck2 li a {
-color:#015b86;
-text-shadow: 1px 1px 1px #ffffff;
+color:#FFF;
+/*text-shadow: 1px 1px 1px #ffffff;*//*mn*/
+text-align: left;
+margin: 0 10px;
 }
 
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck ul.maximenuck2 a,
@@ -274,7 +278,7 @@ div#<?php echo $id; ?> ul.maximenuck2 li:hover > a,
 div#<?php echo $id; ?> ul.maximenuck2 li:hover > h2 a,
 div#<?php echo $id; ?> ul.maximenuck2 li:hover > h3 a,
 div#<?php echo $id; ?> ul.maximenuck2 li.active > a{
-color:#029feb;
+color:#FFF;/*mn*/
 background: transparent;
 }
 
@@ -309,22 +313,23 @@ text-transform : none;
 font-size : 10px;
 text-decoration : none;
 height : 12px;
-line-height : 12px;
+line-height : 9px;/*mn*/
 float : none !important;
 float : left;
+color : #EEE;
 }
 
 /* submenus container */
 div#<?php echo $id; ?> div.floatck {
 width : 180px; /* default width */
-margin: 2px 0 0 -10px;
+/*margin: 2px 0 0 -10px;*/
 text-align:left;
-padding:5px 5px 0 5px;
+/*padding:5px 5px 0 5px;*/
 border:1px solid #777777;
 border-top:none;
 background:#F4F4F4;
-background: -moz-linear-gradient(top, #EEEEEE, #BBBBBB);
-background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEEEEE), to(#BBBBBB));
+background: -moz-linear-gradient(top, #EE53F1, #E19EE2);
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EE53F1), to(#E19EE2));
 -moz-border-radius: 0px 5px 5px 5px;
 -webkit-border-radius: 0px 5px 5px 5px;
 border-radius: 0px 5px 5px 5px;

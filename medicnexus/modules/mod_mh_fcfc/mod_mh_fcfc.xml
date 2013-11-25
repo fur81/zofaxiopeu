@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+    <name>MOD_MH_FCFC</name>
+    <author>mediahof</author>
+    <creationDate>July 2011</creationDate>
+    <copyright>(C) 2011 - 2013 mediahof. All rights reserved.</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <authorEmail>mail@mediahof.de</authorEmail>
+    <authorUrl>www.mediahof.de</authorUrl>
+    <version>rev 33</version>
+    <description>MOD_MH_FCFC_DESC</description>
+    <files>
+        <filename module="mod_mh_fcfc">mod_mh_fcfc.php</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+        <folder>js</folder>
+    </files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_mh_fcfc.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_mh_fcfc.sys.ini</language>
+        <language tag="de-DE">de-DE/de-DE.mod_mh_fcfc.ini</language>
+        <language tag="de-DE">de-DE/de-DE.mod_mh_fcfc.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field type="category" required="true" multiple="true" extension="com_content" name="catid" label="MOD_MH_FCFC_CATEGORY" description="MOD_MH_FCFC_CATEGORY_DESC" />
+                <field type="language" name="language" default="" label="MOD_MH_FCFC_LANGUAGE" description="MOD_MH_FCFC_LANGUAGE_DESC">
+                    <option value="">JALL_LANGUAGE</option>
+                </field>
+                <field type="radio" class="btn-group" name="content" default="introtext" label="MOD_MH_FCFC_TEXT" description="MOD_MH_FCFC_TEXT_DESC">
+                    <option value="introtext">MOD_MH_FCFC_TEXT_INTRO</option>
+                    <option value="fulltext">MOD_MH_FCFC_TEXT_FULL</option>
+                    <option value="bothtext">MOD_MH_FCFC_TEXT_BOTH</option>
+                </field>
+                <field type="text" name="limit" default="0" filter="integer" label="MOD_MH_FCFC_LIMIT" description="MOD_MH_FCFC_LIMIT_DESC" />
+                <field type="radio" class="btn-group" name="title" default="1" label="MOD_MH_FCFC_VIEWTITLE" description="MOD_MH_FCFC_VIEWTITLE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="headerlevel" type="integer" first="1" last="6" step="1" default="3" label="MOD_MH_FCFC_HEADERLEVEL" description="MOD_MH_FCFC_HEADERLEVEL_DESC" />
+                <field type="radio" class="btn-group" name="titlelink" default="1" label="MOD_MH_FCFC_TITLEASLINK" description="MOD_MH_FCFC_TITLEASLINK_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field type="radio" class="btn-group" name="readon" default="0" label="MOD_MH_FCFC_READON" description="MOD_MH_FCFC_READON_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field type="list" name="order" default="ordering" label="MOD_MH_FCFC_ORDER" description="MOD_MH_FCFC_ORDER_DESC">
+                    <option value="c.id">MOD_MH_FCFC_ORDER_ID</option>
+                    <option value="c.title">MOD_MH_FCFC_ORDER_TITLE</option>
+                    <option value="c.ordering">MOD_MH_FCFC_ORDER_ORDERING</option>
+                    <option value="c.publish_up">MOD_MH_FCFC_ORDER_DATE</option>
+                    <option value="random">MOD_MH_FCFC_ORDER_RAND</option>
+                </field>
+                <field type="radio" class="btn-group" name="sort" label="MOD_MH_FCFC_SORT" default="ASC">
+                    <option value="ASC">MOD_MH_FCFC_SORT_ASC</option>
+                    <option value="DESC">MOD_MH_FCFC_SORT_DESC</option>
+                </field>
+                <field type="text" name="width" default="350" filter="integer" label="MOD_MH_FCFC_WIDTH" description="MOD_MH_FCFC_WIDTH_DESC" />
+                <field type="text" name="height" default="400" filter="integer" label="MOD_MH_FCFC_HEIGHT" description="MOD_MH_FCFC_HEIGHT_DESC" />
+                <field type="text" name="fadeSpeed" default="100" filter="integer" label="MOD_MH_FCFC_FADESPEED" description="MOD_MH_FCFC_FADESPEED_DESC" />
+                <field type="text" name="fadeOutTime" default="5" filter="integer" label="MOD_MH_FCFC_FADEOUTTIME" description="MOD_MH_FCFC_FADEOUTTIME_DESC" />
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+                <field name="moduleclass_sfx" type="text" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                <field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+                <field name="cachemode" type="hidden" default="itemid">
+                    <option value="itemid"></option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <server type="collection" priority="1" name="mediahof">http://extensions.mediahof.de/extensions.xml</server>
+    </updateservers>
+</extension>

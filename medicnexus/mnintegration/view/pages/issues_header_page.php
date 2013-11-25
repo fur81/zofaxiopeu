@@ -2,118 +2,102 @@
 // se obtinen todas los encabezados de las incidencias del usuario registrado.
 $issuesByUser = $mantisCore->getIssueHeaders ();
 ?>
-<script>
-function data(id){
-	document.detailsForm.issueId.value = id;
-	document.forms["detailsForm"].submit();
-}
-</script>
-<table style="width: 100%;">
-	<tr align="center">
-		<td>
-			<form id="headersIssueForm" name="headersIssueForm" action="#"
-				method="post">
-				<input class="btn" type="submit" value="Consulta Rápida"
-					title="Segunda Opinión" name="headersIssue"> <input type="hidden"
-					name="flow" id="flow" value="headersIssue"> <input type="hidden"
-					id="projectId" name="projectId" value="<?php echo PROJECT_RAPID_CONSULTATION;?>"><input
-					type="hidden" id="issueAction" name="issueAction"
-					value="projectSelectionAction">
-			</form>
-		</td>
-		<td>
-			<form id="headersIssueForm" name="headersIssueForm" action="#"
-				method="post">
-				<input class="btn" type="submit" value="Segunda Opinión"
-					title="Segunda Opinión" name="headersIssue"> <input type="hidden"
-					name="flow" id="flow" value="headersIssue"> <input type="hidden"
-					id="projectId" name="projectId" value="<?php echo PROJECT_SECOND_OPINION;?>"><input
-					type="hidden" id="issueAction" name="issueAction"
-					value="projectSelectionAction">
-			</form>
-		</td>
-		<td>
-			<form id="headersIssueForm" name="headersIssueForm" action="#"
-				method="post">
-				<input class="btn" type="submit" value="Consulta Virtual"
-					title="Consulta Virtual" name="headersIssue"> <input type="hidden"
-					name="flow" id="flow" value="headersIssue"> <input type="hidden"
-					id="projectId" name="projectId" value="<?php echo PROJECT_VIRTUAL_CONSULTATION;?>"><input
-					type="hidden" id="issueAction" name="issueAction"
-					value="projectSelectionAction">
-			</form>
-		</td>
-		<td>
-			<form id="headersIssueForm" name="headersIssueForm" action="#"
-				method="post">
-				<input class="btn" type="submit" value="Programa de salud"
-					title="Programa de salud" name="headersIssue"> <input type="hidden"
-					name="flow" id="flow" value="headersIssue"> <input type="hidden"
-					id="projectId" name="projectId" value="<?php echo PROJECT_HEALTH_PROGRAM;?>"><input
-					type="hidden" id="issueAction" name="issueAction"
-					value="projectSelectionAction">
-			</form>
-		</td>
-	</tr>
-</table>
-<table style="width: 100%;">
-	<tr align="right">
-		<td>
-			<form id="addIssueForm" name="addIssueForm" action="#" method="post">
-				<fieldset>
-					<input class="btn" type="submit" value="Reportar Incidencia"
-						title="Adicionar Incidencia" name="addIssue"> <input type="hidden"
-						name="flow" id="flow" value="addIssue">
-				</fieldset>
-			</form>
-		</td>
-	</tr>
-</table>
-<?php 
-$projectName = getProjectName();
-echo '<h4>' . $projectName . '</h4>';
-?>
-<table style="width: 100%;">
-	<tr>
-		<td class="article-info-term" style="width: 7%;"><h5>
-		<?php getValue('label_lastUpdate');?>
-			</h5></td>
-		<td style="width: 10%;"><h5>
-		<?php getValue('label_summary');?>
-			</h5></td>
-		<td style="width: 10%;"><h5>Especialidad</h5></td>
-		<td style="width: 15%;"><h5>Numero de Adjuntos</h5></td>
-		<td style="width: 15%;"><h5>Numero de Notas</h5></td>
-	</tr>
-	<?php
-	for($i = 0; $i < count ( $issuesByUser ); $i ++) {
-		$issue = $issuesByUser [$i];
-		$issueProject = $mantisCore->getProject($issue->project);
+
+<div id="client_zone">
+	<!-- se incluye el encabezado con los proyectos -->
+	<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
+
+	<h1 align="left"><?php echo getProjectName(); echo ' - '; getValue('label_reports');?></h1>
+	<div id="issue_report" onclick="redirectToAddIssue()">
+		<ul>
+			<li><a><?php getValue('label_report_consultation');?> </a>
+			</li>
+			<li><img src="images/medicnexus/client/add_img.gif" border="0" />
+			</li>
+		</ul>
+	</div>
+
+	<table width="100%" cellpadding="1" cellspacing="1"
+		style="float: left;">
+		<tr class="managed-table-th">
+			<td width="130px" align="left"><h1>
+			<?php getValue('label_lastUpdate');?>
+				</h1></td>
+			<td><h1>
+			<?php getValue('label_summary');?>
+				</h1></td>
+			<td width="150px" align="left"><h1>
+			<?php getValue('label_speciality');?>
+				</h1></td>
+			<td width="50px" align="left"><h1>
+			<?php getValue('label_attached');?>
+				</h1></td>
+			<td width="50px" align="left"><h1>
+			<?php getValue('label_notes');?>
+				</h1></td>
+		</tr>
+		<?php
+		for($i = 0; $i < count ( $issuesByUser ); $i ++) {
+			$issue = $issuesByUser [$i];
+			$issueProject = $mantisCore->getProject($issue->project);
+			if ($i % 2 == 0) {
+				?>
+		<tr class="managed-table-tr" onclick="data(<?php echo $issue->id;?>)"
+			style="cursor: pointer;">
+		<?php } else {?>
+		<tr class="managed-table-tr-alternate" onclick="data(<?php echo $issue->id;?>)" style="cursor: pointer;">
+			<?php }?>
+			<td><?php echo substr($issue->last_updated, 0, 10);?>
+			</td>
+			<td><?php echo $issue->summary;?>
+			</td>
+			<td><?php echo $issueProject->name;?>
+			</td>
+			<td align="center"><?php echo $issue->attachments_count;?>
+			</td>
+			<td align="center"><?php echo $issue->notes_count;?>
+			</td>
+		</tr>
+		<?php
+		}
+		if (count ( $issuesByUser ) == 0) {
 		?>
-	<tr>
-		<td align="left"><h6>
-		<?php echo substr($issue->last_updated, 0, 10);?>
-			</h6></td>
-		<td align="left"><h6>
-				<a href="#" onclick="data(<?php echo $issue->id;?>)"><?php echo $issue->summary;?>
-				</a>
-			</h6></td>
-		<td align="left"><h6>
-		<?php echo $issueProject->name;?>
-			</h6></td>
-		<td align="left"><h6>
-		<?php echo $issue->attachments_count;?>
-			</h6></td>
-		<td align="left"><h6>
-		<?php echo $issue->notes_count;?>
-			</h6></td>
-	</tr>
-	<?php
-	}
-	?>
-</table>
+			<tr class="empty-data-table">
+				<td colspan="5"><i><?php getValue('label_empty_list');?> </i></td>
+			</tr>
+		<?php
+		}
+		?>
+
+	</table>
+	<div id="issue_report" onclick="redirectToAddIssue()">
+		<ul>
+			<li><a><?php getValue('label_report_consultation');?> </a>
+			</li>
+			<li><img src="images/medicnexus/client/add_img.gif" border="0" />
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- formularios para activar las opciones del panel -->
+<form id="addIssueForm" name="addIssueForm" action="#" method="post">
+	<input type="hidden" name="flow" id="flow" value="addIssue">
+</form>
 <form id="detailsForm" name="detailsForm" action="#" method="post">
 	<input type="hidden" name="issueId" id="issueId"> <input type="hidden"
 		name="flow" id="flow" value="detailsIssue"><input type="hidden"
 		id="issueAction" name="issueAction" value="detailsIssueAction">
 </form>
+
+<!-- scripts  -->
+<script type="text/javascript">
+function data(id){
+	document.detailsForm.issueId.value = id;
+	document.forms["detailsForm"].submit();
+}
+
+function redirectToAddIssue() {
+	document.forms["addIssueForm"].submit();
+}
+</script>
