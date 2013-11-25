@@ -7,6 +7,7 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 	<!-- se incluye el encabezado con los proyectos -->
 	<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
 
+	<h1 align="left"><?php echo getProjectName();?></h1>
 	<div id="issue_report" onclick="redirectToAddIssue()">
 		<ul>
 			<li><a><?php getValue('label_report_consultation');?> </a>
@@ -25,7 +26,7 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 			<td><h1>
 			<?php getValue('label_summary');?>
 				</h1></td>
-			<td width="110px" align="left"><h1>
+			<td width="150px" align="left"><h1>
 			<?php getValue('label_speciality');?>
 				</h1></td>
 			<td width="50px" align="left"><h1>

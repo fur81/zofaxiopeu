@@ -52,9 +52,8 @@
 				?>
 			</select></td>
 			<?php }else {?>
-			<td width="30%"><select name="specialist" id="specialist"
-				disabled="disabled" style="width: 100%">
-					<option value="0"><?php getValue('label_general_specialist');?></option>
+			<td width="30%"><select	disabled="disabled" style="width: 100%">
+					<option><?php getValue('label_general_specialist');?></option>
 			</select></td>
 			<?php }?>
 
@@ -106,26 +105,21 @@
 <form name="createIssueForm" method="post" action="#">
 	<input type="hidden" id="flow" name="flow" value="headersIssue"> <input
 		type="hidden" id="issueAction" name="issueAction"
-		value="createIssueAction"><input type="hidden" id="summaryText">
-	<input type="hidden" id="descriptionTextArea">
-	<input type="hidden" id="specialist">
+		value="createIssueAction"><input type="hidden" id="summaryText" name="summaryText">
+	<input type="hidden" id="descriptionTextArea" name="descriptionTextArea">
+	<?php if (isset($_SESSION['viewSpecialistsCheckbox']) && $_SESSION['viewSpecialistsCheckbox'] == true){?>
+		<input type="hidden" id="specialist" name="specialist">
+	<?php }?>
 </form>
 
 <!-- scripts de la página -->
 <script type="text/javascript">
 	function createIssue() {
-		var a = document.getElementById('summaryTextData').value
-		alert(a);
-		var b = document.getElementById('descriptionTextAreaData').value;
-		alert(b);
-		var c = document.getElementById('specialistData').value;
-		alert(c);
-	}
-
-	function temp() {
 		document.getElementById('summaryText').value = document.getElementById('summaryTextData').value;
 		document.getElementById('descriptionTextArea').value = document.getElementById('descriptionTextAreaData').value;
-		document.getElementById('specialist').value = document.getElementById('specialistData').value;
+		if (document.getElementById('specialistData') != null) {
+			document.getElementById('specialist').value = document.getElementById('specialistData').value;
+		}
 		document.forms["createIssueForm"].submit();
 	}
 

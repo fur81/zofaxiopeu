@@ -51,7 +51,7 @@ $issue = $mantisCore->getIssueById ( $issueId );
 						id="flow" value="detailsIssue" /> <input type="hidden"
 						name="issueId" id="issueId" value="<?php echo $issueId;?>"> <input
 						class="btn-client" type="submit" name="uploadFile"
-						value="<?php getValue('label_upload_file');?>">
+						value="<?php getValue('label_upload_file');?>" style="cursor: pointer;">
 				</form>
 			</td>
 		</tr>
