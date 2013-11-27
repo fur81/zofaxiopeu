@@ -2,29 +2,27 @@
 global $values;
 $values[L_CATALAN] = array(
 
-		/**  headers */
-		'label_lastUpdate' => 'Darrera actualització',
-		'label_summary' => 'Resum',
-		'label_speciality' => 'Especialidad',
-		'label_attached' => 'Adjuntos',
-		'label_notes' => 'Notas',
-
 		/**  projects */
 		'label_project_second_opinion_title' => 'Segona Opinió',
+		'label_project_second_opinion_description' => 'Los médicos dan una segunda opinión del servicio.',
 		'label_project_virtual_consultation_title' => 'Consulta Virtual',
+		'label_project_virtual_consultation_description' => 'Los médicos brindan una consulta virtual para los clientes.',
 		'label_project_rapid_consultation_title' => 'Consulta Ràpida',
+		'label_project_rapid_consultation_description' => 'Los médicos brindan una consulta rápida para necesidades inmediatas.',
 		'label_project_health_program_title' => 'Programa de Salut',
-		'label_project_second_opinion_upper_title' => 'SEGONA OPINIÓ',
-		'label_project_virtual_consultation_upper_title' => 'CONSULTA VIRTUAL',
-		'label_project_rapid_consultation_upper_title' => 'CONSULTA RÀPIDA',
-		'label_project_health_program_upper_title' => 'PROGRAMA DE SALUT',
+		'label_project_health_program_description' => 'Se brinda un programa de salud para los consultantes.',
 
 		/** etiquetas generales*/
 		'label_report_consultation' => 'Reportar consulta',
+		'label_price' => 'Precio',
+		'label_shipping' => 'Envío',
+		'label_tax' => 'Impuesto',
+		'label_total_amount' => 'Total a Pagar',
 		
 		/** formularios */
 		'label_empty_list' => '-- No existen datos para mostrar --',
 		'label_consultation_details' => 'Detalles de la consulta',
+		'label_assigned_to' => 'Asignado a',
 		'label_lastUpdate' => 'Darrera actualització',
 		'label_summary' => 'Resum',
 		'label_speciality' => 'Especialidad',
@@ -36,6 +34,13 @@ $values[L_CATALAN] = array(
 		'label_notes' => 'Notas',
 		'label_description' => 'Descripción',
 		'label_upload_file' => 'Upload File',
+		'label_name' => 'Nombre',
+		'label_upload_date' => 'Fecha de Subida',
+		'label_size' => 'Tamaño',
+		'label_upload_by' => 'Subido por',
+		'label_notes_history' => 'Historial de Notas',
+		'label_back' => 'Regresar',
+		'label_insert_note' => 'Insertar nota',
 		'label_download' => 'Dercargar',
 		'label_reports' => 'Reports'
 );
