@@ -20,19 +20,19 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 	<table width="100%" cellpadding="1" cellspacing="1"
 		style="float: left;">
 		<tr class="managed-table-th">
-			<td width="130px" align="left"><h1>
+			<td width="20%" align="left"><h1>
 			<?php getValue('label_lastUpdate');?>
 				</h1></td>
 			<td><h1>
 			<?php getValue('label_summary');?>
 				</h1></td>
-			<td width="150px" align="left"><h1>
+			<td width="25%" align="left"><h1>
 			<?php getValue('label_speciality');?>
 				</h1></td>
-			<td width="50px" align="left"><h1>
+			<td width="10%" align="left"><h1>
 			<?php getValue('label_attached');?>
 				</h1></td>
-			<td width="50px" align="left"><h1>
+			<td width="10%" align="left"><h1>
 			<?php getValue('label_notes');?>
 				</h1></td>
 		</tr>
