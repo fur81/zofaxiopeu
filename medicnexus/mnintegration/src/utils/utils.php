@@ -47,6 +47,44 @@ function getProjectName() {
 	return $projectName;
 }
 
+function setProjectPaypalConfiguration() {
+	
+	switch ($_SESSION['projectId']){
+		case PROJECT_SECOND_OPINION:
+			$GLOBALS['PAYPAL_PRICE'] = PAYPAL_PRICE_SECOND_OPINION;
+			$GLOBALS['PAYPAL_SHIPPING'] = PAYPAL_SHIPPING_SECOND_OPINION;
+			$GLOBALS['PAYPAL_TAX'] = PAYPAL_TAX_SECOND_OPINION;
+			$GLOBALS['PAYPAL_TOTAL_AMOUNT'] = PAYPAL_TOTAL_AMOUNT_SECOND_OPINION;
+			$GLOBALS['PAYPAL_NAME'] = getValueIn('label_project_second_opinion_title');
+			$GLOBALS['PAYPAL_DESCRIPTION'] = getValueIn('label_project_second_opinion_description');
+			break;
+		case PROJECT_VIRTUAL_CONSULTATION:
+			$GLOBALS['PAYPAL_PRICE'] = PAYPAL_PRICE_VIRTUAL_CONSULTATION;
+			$GLOBALS['PAYPAL_SHIPPING'] = PAYPAL_SHIPPING_VIRTUAL_CONSULTATION;
+			$GLOBALS['PAYPAL_TAX'] = PAYPAL_TAX_VIRTUAL_CONSULTATION;
+			$GLOBALS['PAYPAL_TOTAL_AMOUNT'] = PAYPAL_TOTAL_AMOUNT_VIRTUAL_CONSULTATION;
+			$GLOBALS['PAYPAL_NAME'] = getValueIn('label_project_virtual_consultation_title');
+			$GLOBALS['PAYPAL_DESCRIPTION'] = getValueIn('label_project_virtual_consultation_description');
+			break;
+		case PROJECT_RAPID_CONSULTATION:
+			$GLOBALS['PAYPAL_PRICE'] = PAYPAL_PRICE_RAPID_CONSULTATION;
+			$GLOBALS['PAYPAL_SHIPPING'] = PAYPAL_SHIPPING_RAPID_CONSULTATION;
+			$GLOBALS['PAYPAL_TAX'] = PAYPAL_TAX_RAPID_CONSULTATION;
+			$GLOBALS['PAYPAL_TOTAL_AMOUNT'] = PAYPAL_TOTAL_AMOUNT_RAPID_CONSULTATION;
+			$GLOBALS['PAYPAL_NAME'] = getValueIn('label_project_rapid_consultation_title');
+			$GLOBALS['PAYPAL_DESCRIPTION'] = getValueIn('label_project_rapid_consultation_description');
+			break;
+		case PROJECT_HEALTH_PROGRAM:
+			$GLOBALS['PAYPAL_PRICE'] = PAYPAL_PRICE_HEALTH_PROGRAM;
+			$GLOBALS['PAYPAL_SHIPPING'] = PAYPAL_SHIPPING_HEALTH_PROGRAM;
+			$GLOBALS['PAYPAL_TAX'] = PAYPAL_TAX_HEALTH_PROGRAM;
+			$GLOBALS['PAYPAL_TOTAL_AMOUNT'] = PAYPAL_TOTAL_AMOUNT_HEALTH_PROGRAM;
+			$GLOBALS['PAYPAL_NAME'] = getValueIn('label_project_health_program_title');
+			$GLOBALS['PAYPAL_DESCRIPTION'] = getValueIn('label_project_health_program_description');
+			break;
+	}
+}
+
 function getProjectId() {
 	return $_SESSION['projectId'];
 }
