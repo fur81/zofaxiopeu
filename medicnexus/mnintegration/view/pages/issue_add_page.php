@@ -119,6 +119,7 @@
 		type="hidden" id="issueAction" name="issueAction"
 		value="createIssueAction"><input type="hidden" id="summaryText" name="summaryText">
 	<input type="hidden" id="descriptionTextArea" name="descriptionTextArea">
+	<input type="hidden" id="subProjectId" name="subProjectId">
 	<?php if (isset($_SESSION['viewSpecialistsCheckbox']) && $_SESSION['viewSpecialistsCheckbox'] == true){?>
 		<input type="hidden" id="specialist" name="specialist">
 	<?php }?>
@@ -129,6 +130,7 @@
 	function createIssue() {
 		document.getElementById('summaryText').value = document.getElementById('summaryTextData').value;
 		document.getElementById('descriptionTextArea').value = document.getElementById('descriptionTextAreaData').value;
+		document.getElementById('subProjectId').value = document.getElementById('subproject').value;
 		if (document.getElementById('specialistData') != null) {
 			document.getElementById('specialist').value = document.getElementById('specialistData').value;
 		}
