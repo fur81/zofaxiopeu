@@ -2,7 +2,7 @@
 
 	<!-- se agrega el encabezado con los proyectos -->
 <?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
-
+<?php setProjectPaypalConfiguration();?>
 	<h1>
 	<?php getProjectName(); echo ' - '; getValue('label_report_consultation');?>
 	</h1>
@@ -12,6 +12,29 @@
 			<td colspan="4" align="right"><a onclick="redirectToBack()"
 				style="cursor: pointer;"><?php getValue('label_back');?>
 			</a></td>
+		</tr>
+		<tr>
+			<td><label><?php getValue('label_price');?>:</label></td>
+			<td align="right" width="6%"><label><?php echo $GLOBALS['PAYPAL_PRICE']; echo ' ' . PAYPAL_CURRENCY_EUR;?></label>
+			</td>
+		</tr>
+		<tr>
+			<td><label><?php getValue('label_shipping');?>:</label></td>
+			<td align="right"><label><?php echo $GLOBALS['PAYPAL_SHIPPING']; echo ' ' . PAYPAL_CURRENCY_EUR;?></label></td>
+		</tr>
+		<tr>
+			<td><label><?php getValue('label_tax');?>:</label></td>
+			<td align="right"><label><?php echo $GLOBALS['PAYPAL_TAX']; echo ' ' . PAYPAL_CURRENCY_EUR;?></label></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="right"><label>-------------</label></td>
+		</tr>
+		<tr>
+			<td><label><?php getValue('label_total_amount');?>:</label></td>
+			<td align="right"><label><?php echo $GLOBALS['PAYPAL_TOTAL_AMOUNT']; echo ' ' . PAYPAL_CURRENCY_EUR;?></label></td>
+		</tr>
+		<tr>
+			<td></td>
 		</tr>
 		<form name="subprojectSelectionForm" method="post" action="#">
 		<tr>
