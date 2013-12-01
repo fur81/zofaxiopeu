@@ -42,14 +42,15 @@ padding:0;/*mn*/
 -moz-border-radius: 5px;
 -webkit-border-radius: 5px;
 border-radius: 5px;
+border: 1px solid #19a6b5;
 filter: none;
-background: #014464;
-background: -moz-linear-gradient(top,  #1aa8b7 0%, #117f8b 100%);/*mn*/
+background: url("../images/top_menu_bg.gif") repeat-x;
+/*background: -moz-linear-gradient(top,  #1aa8b7 0%, #117f8b 100%);/*mn*/
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0272a7), color-stop(100%,#013953));
 background: -webkit-linear-gradient(top,  #0272a7 0%,#013953 100%);
 background: -o-linear-gradient(top,  #0272a7 0%,#013953 100%);
 background: -ms-linear-gradient(top,  #0272a7 0%,#013953 100%);
-background: linear-gradient(top,  #0272a7 0%,#013953 100%);
+background: linear-gradient(top,  #0272a7 0%,#013953 100%);*/
 border: 1px solid #002232;
 -moz-box-shadow:inset 0px 0px 1px #edf9ff;
 -webkit-box-shadow:inset 0px 0px 1px #edf9ff;
@@ -84,17 +85,23 @@ cursor: pointer;
 vertical-align: middle;
 box-shadow: none;
 filter: none;
+/*background:url("../images/top_menu_separatornew.png") no-repeat right center;*/
 }
+
+/*div#<?php echo $id; ?> ul.maximenuck li.item104 {
+padding: 3px 11px 0 33px;
+}*/
 
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1:hover,
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1.active {
 border: 1px solid #ee53f1;
-background: #821a80;
-background: -moz-linear-gradient(top, #821a80, #ee53f1);
-background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#821a80), to(#ee53f1));
+background: url("../images/top_menu_bg_over.gif") repeat-x;
+/*background: -moz-linear-gradient(top, #821a80, #ee53f1);
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#821a80), to(#ee53f1));*/
 -moz-border-radius: 5px;
 -webkit-border-radius: 5px;
 border-radius: 5px;
+/*background: ;*/
 }
 
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1 > a,
@@ -133,6 +140,18 @@ div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1.active > span.separato
 color : #FFF;/*mn*/
 text-shadow: 1px 1px 1px #000;
 }
+
+/* item color on mouseover */
+/*div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1:hover,
+div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1.active,
+div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1:hover,
+div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1.active {
+color : #FFF;/*mn*/
+text-shadow: 1px 1px 1px #000;
+background: url("../images/top_menu_bg_over.gif") repeat-x;
+/*background: -moz-linear-gradient(top, #821a80, #ee53f1);
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#821a80), to(#ee53f1));*/
+}*/
 
 /* arrow image for parent item */
 div#<?php echo $id; ?> ul.maximenuck li.level1.parent > a,
@@ -218,8 +237,8 @@ div#<?php echo $id; ?> ul.maximenuck2 li.maximenuck {
 font-size:12px;
 position:static;
 /*text-shadow: 1px 1px 1px #ffffff;*/
-padding: 5px 0px;
-margin: 0px 0px 4px 0px;
+padding: 2px 0px;
+margin: 0px 0px 0px 0px;
 float:none !important;
 text-align:left;
 background : none;
@@ -322,14 +341,14 @@ color : #EEE;
 /* submenus container */
 div#<?php echo $id; ?> div.floatck {
 width : 180px; /* default width */
-/*margin: 2px 0 0 -10px;*/
+margin: 3px 0 0 -1px;
 text-align:left;
 /*padding:5px 5px 0 5px;*/
-border:1px solid #777777;
+border:1px solid #ee53f1;
 border-top:none;
-background:#F4F4F4;
-background: -moz-linear-gradient(top, #EE53F1, #E19EE2);
-background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EE53F1), to(#E19EE2));
+background:#e749e4;
+/*background: -moz-linear-gradient(top, #EE53F1, #E19EE2);
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EE53F1), to(#E19EE2));*/
 -moz-border-radius: 0px 5px 5px 5px;
 -webkit-border-radius: 0px 5px 5px 5px;
 border-radius: 0px 5px 5px 5px;

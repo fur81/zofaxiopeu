@@ -96,4 +96,16 @@ function getValueByString($text) {
 	echo getValue($value);
 }
 
+function getDateFormat($date) {
+	// format d/m/Y H:i
+	// dia
+	$dateFormat = substr ( $date, 8, 2 ) . '/';
+	// mes
+	$dateFormat .= substr ( $date, 5, 2 ) . '/';
+	// año
+	$dateFormat .= substr ( $date, 0, 4 ) . ' ';
+	// hora
+	$dateFormat .= substr ( $date, 11, 5 );
+	return $dateFormat;
+}
 ?>

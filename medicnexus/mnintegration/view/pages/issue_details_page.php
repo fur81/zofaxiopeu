@@ -91,8 +91,7 @@ $issue = $mantisCore->getIssueById ( $issueId );
 							?>
 						<tr class="managed-table-tr">
 							<td><?php
-							echo substr ( $attached->date_submitted, 0, 10 ) . ' ';
-							echo substr ( $attached->date_submitted, 12, 4 );
+							echo getDateFormat($attached->date_submitted);
 							?>
 							</td>
 							<td><?php echo $attached->filename;?></td>
@@ -151,8 +150,7 @@ $issue = $mantisCore->getIssueById ( $issueId );
 					}else{
 						echo '<td class="managed-chatdate-td" colspan="4">';
 					}
-					echo '( ' . substr ( $note->date_submitted, 12, 4 ) . ' ';
-					echo '<b>' . substr ( $note->date_submitted, 0, 10 ) . ' )';
+					echo '( ' . getDateFormat($note->date_submitted) . ' )';
 					echo '</td>';
 					echo'</tr>';
 				}

@@ -47,7 +47,7 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 		<?php } else {?>
 		<tr class="managed-table-tr-alternate" onclick="data(<?php echo $issue->id;?>)" style="cursor: pointer;">
 			<?php }?>
-			<td><?php echo substr($issue->last_updated, 0, 10);?>
+			<td><?php echo getDateFormat($issue->last_updated);?>
 			</td>
 			<td><?php echo $issue->summary;?>
 			</td>
