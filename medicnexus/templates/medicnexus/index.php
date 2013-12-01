@@ -313,16 +313,20 @@ else
         <h1><?php echo JText::_('TPL_MN_MEDIC_SERVICES_AVAILABLE_UPPER');?></h1>
             <ul>
             <li>
-                <a href="#">- <?php echo JText::_('TPL_MN_RAPID_CONSULTATION');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=rapid_consultation">
+                	- <?php echo JText::_('TPL_MN_RAPID_CONSULTATION');?></a>
                 </li>
                 <li>
-                <a href="#">- <?php echo JText::_('TPL_MN_VIRTUAL_CONSULTATION');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=virtual_consultation">
+                	- <?php echo JText::_('TPL_MN_VIRTUAL_CONSULTATION');?></a>
                 </li>
                 <li>
-                <a href="#">- <?php echo JText::_('TPL_MN_SECOND_OPINION');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=second_opinion">
+                	- <?php echo JText::_('TPL_MN_SECOND_OPINION');?></a>
                 </li>
                 <li>
-                <a href="#">- <?php echo JText::_('TPL_MN_HEALTH_PROGRAM');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=health_program">
+                	- <?php echo JText::_('TPL_MN_HEALTH_PROGRAM');?></a>
                 </li>
             </ul>
         </div>
