@@ -35,11 +35,3 @@ define('PAYPAL_TAX_HEALTH_PROGRAM',          '0.00');
 define('PAYPAL_TOTAL_AMOUNT_HEALTH_PROGRAM', '6.00');
 define('PAYPAL_NAME_HEALTH_PROGRAM', 'Programa de Salud');
 define('PAYPAL_DESCRIPTION_HEALTH_PROGRAM', 'Se brinda un programa de salud para los consultantes.');
-
-// valores de apoyo
-define('PAYPAL_PRICE',       '0.00');
-define('PAYPAL_SHIPPING',    '0.00');
-define('PAYPAL_TAX',         '0.00');
-define('PAYPAL_TOTAL_AMOUNT','0.00');
-define('PAYPAL_NAME', '');
-define('PAYPAL_DESCRIPTION', '');
