@@ -18,24 +18,6 @@
 			<td align="right" width="6%"><label><?php echo $GLOBALS['PAYPAL_PRICE']; echo ' ' . PAYPAL_CURRENCY_EUR;?></label>
 			</td>
 		</tr>
-		<tr>
-			<td><label><?php getValue('label_shipping');?>:</label></td>
-			<td align="right"><label><?php echo $GLOBALS['PAYPAL_SHIPPING']; echo ' ' . PAYPAL_CURRENCY_EUR;?></label></td>
-		</tr>
-		<tr>
-			<td><label><?php getValue('label_tax');?>:</label></td>
-			<td align="right"><label><?php echo $GLOBALS['PAYPAL_TAX']; echo ' ' . PAYPAL_CURRENCY_EUR;?></label></td>
-		</tr>
-		<tr>
-			<td colspan="2" align="right"><label>-------------</label></td>
-		</tr>
-		<tr>
-			<td><label><?php getValue('label_total_amount');?>:</label></td>
-			<td align="right"><label><?php echo $GLOBALS['PAYPAL_TOTAL_AMOUNT']; echo ' ' . PAYPAL_CURRENCY_EUR;?></label></td>
-		</tr>
-		<tr>
-			<td></td>
-		</tr>
 		<form name="subprojectSelectionForm" method="post" action="#">
 		<tr>
 			<td width="15%"><label for="subproject">*<?php getValue('label_specialities');?>:</label>
