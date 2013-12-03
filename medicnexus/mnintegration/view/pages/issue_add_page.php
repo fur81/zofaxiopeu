@@ -2,7 +2,7 @@
 
 	<!-- se agrega el encabezado con los proyectos -->
 <?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
-
+<?php setProjectPaypalConfiguration();?>
 	<h1>
 	<?php getProjectName(); echo ' - '; getValue('label_report_consultation');?>
 	</h1>
@@ -12,6 +12,11 @@
 			<td colspan="4" align="right"><a onclick="redirectToBack()"
 				style="cursor: pointer;"><?php getValue('label_back');?>
 			</a></td>
+		</tr>
+		<tr>
+			<td><label><?php getValue('label_price');?>:</label></td>
+			<td align="right" width="6%"><label><?php echo $GLOBALS['PAYPAL_PRICE']; echo ' ' . PAYPAL_CURRENCY_EUR;?></label>
+			</td>
 		</tr>
 		<form name="subprojectSelectionForm" method="post" action="#">
 		<tr>
@@ -119,6 +124,7 @@
 		type="hidden" id="issueAction" name="issueAction"
 		value="createIssueAction"><input type="hidden" id="summaryText" name="summaryText">
 	<input type="hidden" id="descriptionTextArea" name="descriptionTextArea">
+	<input type="hidden" id="subProjectId" name="subProjectId">
 	<?php if (isset($_SESSION['viewSpecialistsCheckbox']) && $_SESSION['viewSpecialistsCheckbox'] == true){?>
 		<input type="hidden" id="specialist" name="specialist">
 	<?php }?>
@@ -129,6 +135,7 @@
 	function createIssue() {
 		document.getElementById('summaryText').value = document.getElementById('summaryTextData').value;
 		document.getElementById('descriptionTextArea').value = document.getElementById('descriptionTextAreaData').value;
+		document.getElementById('subProjectId').value = document.getElementById('subproject').value;
 		if (document.getElementById('specialistData') != null) {
 			document.getElementById('specialist').value = document.getElementById('specialistData').value;
 		}

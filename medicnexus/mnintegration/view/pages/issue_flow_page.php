@@ -7,12 +7,32 @@ $GLOBALS ['CURRENT_PAGE'] = JFactory::getURI();
 
 // se registra el usuario con las credenciales de joomla
 $mantisCore->login ( $GLOBALS ['CURRENT_USERNAME'], $GLOBALS ['CURRENT_USERFULLNAME'], $GLOBALS ['CURRENT_USEREMAIL'] );
+//JFactory::getApplication()->enqueueMessage('Hola este es mi nombre', 'notice');
 //$mantisCore->getFunctions ();
 
+// se utiliza para el retorno de paypal
 if ( isset($_GET['success'])) {
 	$_POST ['flow'] = 'headersIssue';
 	$_POST ['issueAction'] = 'createIssueAction';
 } 
+
+if (isset($_GET['rd'])) {
+	$_SESSION ['flow'] = 'headersIssue';
+	switch ($_GET['rd']){
+		case 'rapid_consultation':
+			$_SESSION['projectId'] = PROJECT_RAPID_CONSULTATION;
+			break;
+		case 'virtual_consultation':
+			$_SESSION['projectId'] = PROJECT_VIRTUAL_CONSULTATION;
+			break;
+		case 'second_opinion':
+			$_SESSION['projectId'] = PROJECT_SECOND_OPINION;
+			break;
+		case 'health_program':
+			$_SESSION['projectId'] = PROJECT_HEALTH_PROGRAM;
+			break;
+	}
+}
 
 // se identifica la acción que será realizada
 if (isset ( $_POST ['flow'] )) {
@@ -62,7 +82,7 @@ if (isset ( $_POST ['flow'] )) {
 	
 	unset ( $_POST ['flow'] );
 	unset ( $_POST ['issueAction'] );
-	header ( 'Location: ' );
+	header ( 'Location: #' );
 	exit ();
 	
 } else 

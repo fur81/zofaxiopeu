@@ -25,6 +25,10 @@
 		#$g_validate_email
 		#se utiliza para validar los correos, tener en cuenta si incluirlos o no
 		
+        # --- date format --- #
+        $g_short_date_format = 'd/m/Y H:i';
+        $g_normal_date_format = 'd/m/Y H:i';
+        $g_complete_date_format = 'd/m/Y H:i';
 		
         # --- branding --- #
         $g_window_title         = 'Medicnexus';

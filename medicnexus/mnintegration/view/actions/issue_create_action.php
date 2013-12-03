@@ -22,14 +22,13 @@ if ( isset($_GET['success'])) {
 	$summary = $_POST['summaryText'];
 	$description = $_POST['descriptionTextArea'];
 	$specialistId = $_POST['specialist'];
-	$projectId = getProjectId();
-	if (isset($_SESSION['subProjectId'])) {
-		$projectId = $_SESSION['subProjectId'];
-	}
+	$projectId = $_POST['subProjectId'];
+	$_SESSION['subProjectId'] = $projectId;
 	// se salva la información el la base de datos
 	$idData = $mantisCore->saveIssueCreateData($summary, $description, $projectId, $specialistId);
 	// se carga el servicio de paypal
-	include_once $GLOBALS['PAYPAL_REQUEST_SECOND_OPINION'];
+	setProjectPaypalConfiguration();
+	include_once $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE'];
 	exit();
 	// solo para cuando paypal no está funcionando
 	//$mantisCore->addIssue($summary, $description, $projectId, $specialistId);

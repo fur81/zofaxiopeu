@@ -24,10 +24,10 @@ $payer->setPaymentMethod("paypal");
 // (Optional) Lets you specify item wise
 // information
 $item1 = new Item();
-$item1->setName(PAYPAL_NAME_SECOND_OPINION)
+$item1->setName($GLOBALS['PAYPAL_NAME'])
 	->setCurrency(PAYPAL_CURRENCY_EUR)
 	->setQuantity(1)
-	->setPrice(PAYPAL_PRICE_SECOND_OPINION);
+	->setPrice($GLOBALS['PAYPAL_PRICE']);
 
 $itemList = new ItemList();
 $itemList->setItems(array($item1));
@@ -36,10 +36,10 @@ $itemList->setItems(array($item1));
 // Use this optional field to set additional
 // payment information such as tax, shipping
 // charges etc.
-$details = new Details();
-$details->setShipping(PAYPAL_SHIPPING_SECOND_OPINION)
-	->setTax(PAYPAL_TAX_SECOND_OPINION)
-	->setSubtotal(PAYPAL_PRICE_SECOND_OPINION);
+//$details = new Details();
+//$details->setShipping(PAYPAL_SHIPPING_SECOND_OPINION)
+//	->setTax(PAYPAL_TAX_SECOND_OPINION)
+//	->setSubtotal(PAYPAL_PRICE_SECOND_OPINION);
 
 // ### Amount
 // Lets you specify a payment amount.
@@ -47,8 +47,8 @@ $details->setShipping(PAYPAL_SHIPPING_SECOND_OPINION)
 // such as shipping, tax.
 $amount = new Amount();
 $amount->setCurrency(PAYPAL_CURRENCY_EUR)
-	->setTotal(PAYPAL_TOTAL_AMOUNT_SECOND_OPINION)
-	->setDetails($details);
+	->setTotal($GLOBALS['PAYPAL_PRICE']);
+	//->setDetails($details);
 
 // ### Transaction
 // A transaction defines the contract of a

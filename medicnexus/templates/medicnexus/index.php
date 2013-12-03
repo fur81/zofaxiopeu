@@ -131,7 +131,8 @@ else
                   <td style="padding-bottom: 5px;">
                       <ul>
                             <li>
-                                <a href="index.php?option=com_content&view=article&id=15"><?php echo JText::_('TPL_MN_SITE_MAP');?></a>
+                                <a href="index.php?option=com_content&amp;view=article&amp;id=15&amp;catid=17&amp;Itemid=104">
+                                	<?php echo JText::_('TPL_MN_SITE_MAP');?></a>
                             </li>
                             <li>|</li>
                             <li>
@@ -254,31 +255,38 @@ else
             </li>
             <li class="bottom_menu_site_separator">::</li>
             <li>
-            <a href="#"><?php echo JText::_('TPL_MN_NOTICES_UPPER');?></a>
+            <a href="index.php?option=com_content&amp;view=article&amp;id=9&amp;catid=9&amp;Itemid=112">
+            	<?php echo JText::_('TPL_MN_NOTICES_UPPER');?></a>
             </li>
             <li class="bottom_menu_site_separator">::</li>
             <li>
-            <a href="index.php?option=com_content&view=article&id=10"><?php echo JText::_('TPL_MN_ARTICLES_UPPER');?></a>
+            <a href="index.php?option=com_content&amp;view=article&amp;id=10&amp;catid=10&amp;Itemid=113">
+            	<?php echo JText::_('TPL_MN_ARTICLES_UPPER');?></a>
             </li>
             <li class="bottom_menu_site_separator">::</li>
             <li>
-            <a href="#"><?php echo JText::_('TPL_MN_SERVICES_UPPER');?></a>
+            <a href="index.php?option=com_content&amp;view=article&amp;id=14&amp;catid=11&amp;Itemid=117">
+            	<?php echo JText::_('TPL_MN_SERVICES_UPPER');?></a>
             </li> 
             <li class="bottom_menu_site_separator">::</li>
             <li>
-            <a href="#"><?php echo JText::_('TPL_MN_ABOUT_US_UPPER');?></a>
+            <a href="index.php?option=com_content&amp;view=article&amp;id=11&amp;catid=12&amp;Itemid=114">
+            	<?php echo JText::_('TPL_MN_ABOUT_US_UPPER');?></a>
             </li>
             <li class="bottom_menu_site_separator">::</li>
             <li>
-            <a href="#"><?php echo JText::_('TPL_MN_DOCUMENTATION_UPPER');?></a>
+            <a href="index.php?option=com_content&amp;view=article&amp;id=12&amp;catid=13&amp;Itemid=115">
+            	<?php echo JText::_('TPL_MN_DOCUMENTATION_UPPER');?></a>
             </li>
             <li class="bottom_menu_site_separator">::</li>
             <li>
-            <a href="#"><?php echo JText::_('TPL_MN_FAQ_UPPER');?></a>
+            <a href="index.php?option=com_content&amp;view=article&amp;id=13&amp;catid=14&amp;Itemid=116">
+            	<?php echo JText::_('TPL_MN_FAQ_UPPER');?></a>
             </li>
             <li class="bottom_menu_site_separator">::</li>
             <li>
-            <a href="#"><?php echo JText::_('TPL_MN_CLIENT_ZONE_UPPER');?></a>
+            <a href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109">
+            	<?php echo JText::_('TPL_MN_CLIENT_ZONE_UPPER');?></a>
             </li>
         </ul>
     </div>
@@ -287,13 +295,16 @@ else
         <h1><?php echo JText::_('TPL_MN_GENERAL_POLITICS_SITE_UPPER');?></h1>
             <ul>
             <li>
-                <a href="#">- <?php echo JText::_('TPL_MN_PRIVACY_POLITICS');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=18&amp;catid=17&amp;Itemid=104">
+                	- <?php echo JText::_('TPL_MN_PRIVACY_POLITICS');?></a>
                 </li>
                 <li>
-                <a href="#">- <?php echo JText::_('TPL_MN_CONDITIONS_TERMS');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=19&amp;catid=17&amp;Itemid=104">
+                	- <?php echo JText::_('TPL_MN_CONDITIONS_TERMS');?></a>
                 </li>
                 <li>
-                <a href="index.php?option=com_content&view=article&id=15">- <?php echo JText::_('TPL_MN_SITE_MAP');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=15&amp;catid=17&amp;Itemid=104">
+                	- <?php echo JText::_('TPL_MN_SITE_MAP');?></a>
                 </li>
             </ul>
         </div>
@@ -302,16 +313,20 @@ else
         <h1><?php echo JText::_('TPL_MN_MEDIC_SERVICES_AVAILABLE_UPPER');?></h1>
             <ul>
             <li>
-                <a href="#">- <?php echo JText::_('TPL_MN_RAPID_CONSULTATION');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=rapid_consultation">
+                	- <?php echo JText::_('TPL_MN_RAPID_CONSULTATION');?></a>
                 </li>
                 <li>
-                <a href="#">- <?php echo JText::_('TPL_MN_VIRTUAL_CONSULTATION');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=virtual_consultation">
+                	- <?php echo JText::_('TPL_MN_VIRTUAL_CONSULTATION');?></a>
                 </li>
                 <li>
-                <a href="#">- <?php echo JText::_('TPL_MN_SECOND_OPINION');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=second_opinion">
+                	- <?php echo JText::_('TPL_MN_SECOND_OPINION');?></a>
                 </li>
                 <li>
-                <a href="#">- <?php echo JText::_('TPL_MN_HEALTH_PROGRAM');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=health_program">
+                	- <?php echo JText::_('TPL_MN_HEALTH_PROGRAM');?></a>
                 </li>
             </ul>
         </div>
@@ -320,10 +335,12 @@ else
         <h1><?php echo JText::_('TPL_MN_GENERAL_SERVICES_SITE_UPPER');?></h1>
             <ul>
             <li>
-                <a href="#">- <?php echo JText::_('TPL_MN_NOTICES');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=9&amp;catid=9&amp;Itemid=112">
+                	- <?php echo JText::_('TPL_MN_NOTICES');?></a>
                 </li>
                 <li>
-                <a href="#">- <?php echo JText::_('TPL_MN_ARTICLES');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=10&amp;catid=10&amp;Itemid=113">
+                	- <?php echo JText::_('TPL_MN_ARTICLES');?></a>
                 </li>
             </ul>
         </div>
@@ -332,10 +349,12 @@ else
         <h1><?php echo JText::_('TPL_MN_GENERAL_INFORMATION_UPPER');?></h1>
             <ul>
             <li>
-                <a href="#">- <?php echo JText::_('TPL_MN_FRECUENTLY_QUESTIONS');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=13&amp;catid=14&amp;Itemid=116">
+                	- <?php echo JText::_('TPL_MN_FRECUENTLY_QUESTIONS');?></a>
                 </li>
                 <li>
-                <a href="#">- <?php echo JText::_('TPL_MN_GENERAL_MEDICAL_DOCUMENTATION');?></a>
+                <a href="index.php?option=com_content&amp;view=article&amp;id=20&amp;catid=20&amp;Itemid=104">
+                	- <?php echo JText::_('TPL_MN_GENERAL_MEDICAL_DOCUMENTATION');?></a>
                 </li>
             </ul>
         </div>

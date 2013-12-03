@@ -38,7 +38,7 @@ $GLOBALS['MNI_CORE'] =          $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegra
 $GLOBALS['MNI_CONNECTION'] =    $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/core/connection.php';
 
 // -- paypal
-$GLOBALS['PAYPAL_REQUEST_SECOND_OPINION'] = $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/paypal/payments/PayPalPaymentSecondOpinon.php';
+$GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE'] = $_SERVER['DOCUMENT_ROOT'].'/medicnexus/mnintegration/src/paypal/payments/PayPalPaymentClientZone.php';
 $GLOBALS['PAYPAL_EXECUTE_SECOND_OPINION'] = 'http://'.MANTIS_SERVER_IP.'/medicnexus/mnintegration/src/paypal/payments/ExecutePayment.php'; 
 
 // -- utils
