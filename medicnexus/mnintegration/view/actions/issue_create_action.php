@@ -27,8 +27,8 @@ if ( isset($_GET['success'])) {
 	// se salva la información el la base de datos
 	$idData = $mantisCore->saveIssueCreateData($summary, $description, $projectId, $specialistId);
 	// se carga el servicio de paypal
-	setProjectPaypalConfiguration();
-	include_once $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE'];
+	//setProjectPaypalConfiguration();
+	//include_once $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE'];
 	//exit();
 	// solo para cuando paypal no está funcionando
 	$mantisCore->addIssue($summary, $description, $projectId, $specialistId);

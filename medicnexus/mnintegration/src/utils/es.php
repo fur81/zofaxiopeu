@@ -41,7 +41,7 @@ $values[L_SPANISH] = array(
 		'label_notes_history' => 'Historial de Notas',
 		'label_back' => 'Regresar',
 		'label_insert_note' => 'Insertar nota',
-		'label_download' => 'Dercargar',
+		'label_download' => 'Descargar',
 		'label_reports' => 'Reportes'
 		
 );
