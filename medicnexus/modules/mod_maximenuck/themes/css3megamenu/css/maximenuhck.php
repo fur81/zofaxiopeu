@@ -44,13 +44,7 @@ padding:0;/*mn*/
 border-radius: 5px;
 border: 1px solid #19a6b5;
 filter: none;
-background: url("../images/top_menu_bg.gif") repeat-x;
-/*background: -moz-linear-gradient(top,  #1aa8b7 0%, #117f8b 100%);/*mn*/
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0272a7), color-stop(100%,#013953));
-background: -webkit-linear-gradient(top,  #0272a7 0%,#013953 100%);
-background: -o-linear-gradient(top,  #0272a7 0%,#013953 100%);
-background: -ms-linear-gradient(top,  #0272a7 0%,#013953 100%);
-background: linear-gradient(top,  #0272a7 0%,#013953 100%);*/
+background: #19a6b5 url("../images/top_menu_bg.gif") repeat-x;
 border: 1px solid #002232;
 -moz-box-shadow:inset 0px 0px 1px #edf9ff;
 -webkit-box-shadow:inset 0px 0px 1px #edf9ff;
@@ -85,7 +79,7 @@ cursor: pointer;
 vertical-align: middle;
 box-shadow: none;
 filter: none;
-/*background:url("../images/top_menu_separatornew.png") no-repeat right center;*/
+background:url("../images/top_menu_separatornew.png") no-repeat right center;
 }
 
 /*div#<?php echo $id; ?> ul.maximenuck li.item104 {
