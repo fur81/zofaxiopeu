@@ -1,8 +1,8 @@
 <div id="client_zone">
 
 	<!-- se agrega el encabezado con los proyectos -->
-<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
 <?php setProjectPaypalConfiguration();?>
+<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
 	<h1>
 	<?php getProjectName(); echo ' - '; getValue('label_report_consultation');?>
 	</h1>
@@ -113,11 +113,6 @@
 </div>
 
 <!-- formularios para el funcionamiento de la pagina adicionar consulta -->
-
-<form id="headersIssueForm" name="headersIssueForm" action="#"
-	method="post"><input type="hidden" name="flow" id="flow" 
-	value="headersIssue"><input	type="hidden" id="projectId" name="projectId">
-</form>
 
 <form name="createIssueForm" method="post" action="#">
 	<input type="hidden" id="flow" name="flow" value="headersIssue"> <input

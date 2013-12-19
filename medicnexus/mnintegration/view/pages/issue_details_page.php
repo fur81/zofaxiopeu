@@ -187,11 +187,6 @@ $issue = $mantisCore->getIssueById ( $issueId );
 </div>
 
 <!-- formularios para ser utilizados en el javascript -->
-<form id="headersIssueForm" name="headersIssueForm" action="#"
-	method="post">
-	<input type="hidden" name="flow" id="flow" value="headersIssue"><input type="hidden"
-	id="projectId" name="projectId">
-</form>
 
 <form id="downloadAttachedForm" name="downloadAttachedForm"
 	method="post" action="#">
