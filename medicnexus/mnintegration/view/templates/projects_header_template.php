@@ -3,7 +3,7 @@
 	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_RAPID_CONSULTATION;?>')"
 		title="<?php getValue('label_project_rapid_consultation_title');?>"
 		style="cursor: pointer;">
-		<img src="images/medicnexus/home/g_quick_consult_service_icon.gif"
+		<img src="images/medicnexus/home/quick_consult_service_icon.gif"
 			name="g_quick_consult_service_icon" width="50" height="45" border="0" id="g_quick_consult_service_icon"
 			alt="<?php getValue('label_project_rapid_consultation_title');?>"/>
 		<h1><?php getValue('label_project_rapid_consultation_title');?></h1>
@@ -23,7 +23,7 @@
 	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_SECOND_OPINION;?>')"
 			title="<?php getValue('label_project_second_opinion_title');?>"
 			style="cursor: pointer;">
-		<img src="images/medicnexus/home/second_opinion_service_icon_new1.gif"
+		<img src="images/medicnexus/home/second_opinion_service_icon.gif"
 			name="virtual_consult_service_icon" width="50" height="45" border="0" id="virtual_consult_service_icon"
 			alt="<?php getValue('label_project_second_opinion_title');?>"/>
 		<h1><?php getValue('label_project_second_opinion_title');?></h1>
