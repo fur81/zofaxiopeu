@@ -1,13 +1,9 @@
 
 <div id="client_zone_options">
-	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_RAPID_CONSULTATION;?>')"
-		title="<?php getValue('label_project_rapid_consultation_title');?>"
-		style="cursor: pointer;">
-		<img src="images/medicnexus/home/quick_consult_service_icon.gif"
-			name="g_quick_consult_service_icon" width="50" height="45" border="0" id="g_quick_consult_service_icon"
-			alt="<?php getValue('label_project_rapid_consultation_title');?>"/>
+	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_RAPID_CONSULTATION;?>')" 
+    title="<?php getValue('label_project_rapid_consultation_title');?>"	style="cursor: pointer;">
+        <div id="quick_consult_service_icon"></div>
 		<h1><?php getValue('label_project_rapid_consultation_title');?></h1>
-
 	</div>
 	<div class="client_options_separator"></div>
 	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_VIRTUAL_CONSULTATION;?>')"
