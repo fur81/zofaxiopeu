@@ -106,7 +106,7 @@ JHtml::_('bootstrap.tooltip');
                     <?php endif; ?>
                     <tr>
                     	<td colspan="2" align="right">
-                        	<button type="submit" tabindex="0" name="Submit" class="mn-btn-login"><?php echo JText::_('JLOGIN') ?></button>
+                        	<button type="submit" tabindex="0" name="Submit"><?php echo JText::_('JLOGIN') ?></button>
                         </td>
                     </tr>
                 </table>

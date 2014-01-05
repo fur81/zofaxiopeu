@@ -23,6 +23,9 @@ font-size:14px;
 line-height:21px;
 text-align:left;
 zoom:1;
+border-radius: 2px 2px 2px 2px;
+-webkit-border-radius: 2px 2px 2px 2px;
+-moz-border-radius: 2px 2px 2px 2px;
 }
 
 /* container style */
@@ -39,16 +42,13 @@ margin:0 auto;
 /*height:43px;*/
 height: auto;
 padding:0;/*mn*/
--moz-border-radius: 5px;
--webkit-border-radius: 5px;
-border-radius: 5px;
+border-radius: 2px 2px 2px 2px;
+-webkit-border-radius: 2px 2px 2px 2px;
+-moz-border-radius: 2px 2px 2px 2px;
 border: 1px solid #19a6b5;
 filter: none;
 background: #19a6b5 url("../images/top_menu_bg.gif") repeat-x;
-border: 1px solid #002232;
--moz-box-shadow:inset 0px 0px 1px #edf9ff;
--webkit-box-shadow:inset 0px 0px 1px #edf9ff;
-box-shadow:inset 0px 0px 1px #edf9ff;
+/*-moz-box-shadow:inset 0px 0px 1px #edf9ff; -webkit-box-shadow:inset 0px 0px 1px #edf9ff; box-shadow:inset 0px 0px 1px #edf9ff;*/
 text-align: left;
 zoom: 1;
 }
@@ -80,6 +80,10 @@ vertical-align: middle;
 box-shadow: none;
 filter: none;
 background:url("../images/top_menu_separatornew.png") no-repeat right center;
+height:25px;
+border-radius: 2px 2px 2px 2px;
+-webkit-border-radius: 2px 2px 2px 2px;
+-moz-border-radius: 2px 2px 2px 2px;
 }
 
 /*div#<?php echo $id; ?> ul.maximenuck li.item104 {
@@ -92,10 +96,9 @@ border: 1px solid #ee53f1;
 background: url("../images/top_menu_bg_over.gif") repeat-x;
 /*background: -moz-linear-gradient(top, #821a80, #ee53f1);
 background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#821a80), to(#ee53f1));*/
--moz-border-radius: 5px;
+/*-moz-border-radius: 5px;
 -webkit-border-radius: 5px;
-border-radius: 5px;
-/*background: ;*/
+border-radius: 5px;*/
 }
 
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1 > a,
@@ -104,9 +107,8 @@ font-size:12px;/*mn*/
 color: #FFF;/*mn*/
 display:block;
 text-decoration:none;
-text-shadow: 1px 1px 1px #000;
+/*text-shadow: 1px 1px 1px #000;*/
 box-shadow: none;
-min-height : 25px;/*mn*/
 outline : none;
 background : none;
 filter: none;
@@ -114,16 +116,17 @@ border : none;
 padding : 0;
 white-space: normal;
 /*width: 90px;*/
-/*text-transform: uppercase;*//*mn*/
+text-transform: uppercase;
 text-align : left;
+margin-top: 3px;
 }
 
 /* parent item on mouseover (if subemnus exists) */
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1.parent:hover,
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1.parent:hover {
--moz-border-radius: 5px 5px 0px 0px;
+/*-moz-border-radius: 5px 5px 0px 0px;
 -webkit-border-radius: 5px 5px 0px 0px;
-border-radius: 5px 5px 0px 0px;
+border-radius: 5px 5px 0px 0px;*/
 }
 
 /* item color on mouseover */
@@ -132,7 +135,7 @@ div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1.active > a span.titrec
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1:hover > span.separator,
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1.active > span.separator {
 color : #FFF;/*mn*/
-text-shadow: 1px 1px 1px #000;
+/*text-shadow: 1px 1px 1px #000;*/
 }
 
 /* item color on mouseover */
@@ -141,7 +144,7 @@ div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1.active,
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1:hover,
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck.level1.active {
 color : #FFF;/*mn*/
-text-shadow: 1px 1px 1px #000;
+/*text-shadow: 1px 1px 1px #000;*/
 background: url("../images/top_menu_bg_over.gif") repeat-x;
 /*background: -moz-linear-gradient(top, #821a80, #ee53f1);
 background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#821a80), to(#ee53f1));*/
@@ -179,9 +182,9 @@ div#<?php echo $id; ?> ul.maximenuck li div.floatck.fixRight {
 left:auto;
 right:-1px;
 top:auto;
--moz-border-radius: 5px 0px 5px 5px;
+/*-moz-border-radius: 5px 0px 5px 5px;
 -webkit-border-radius: 5px 0px 5px 5px;
-border-radius: 5px 0px 5px 5px;
+border-radius: 5px 0px 5px 5px;*/
 }
 
 
@@ -197,13 +200,13 @@ background:url("../images/drop-left.gif") no-repeat left 8px;
 /* margin for right elements that rolls to the left */
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck div.floatck div.floatck.fixRight,
 div#<?php echo $id; ?> ul.maximenuck li.level1.parent.menu_right div.floatck div.floatck  {
-margin-right : 180px;
+margin-right : 150px;
 }
 
 div#<?php echo $id; ?> ul.maximenuck li div.floatck.fixRight{
--moz-border-radius: 5px 0px 5px 5px;
+/*-moz-border-radius: 5px 0px 5px 5px;
 -webkit-border-radius: 5px 0px 5px 5px;
-border-radius: 5px 0px 5px 5px;
+border-radius: 5px 0px 5px 5px;*/
 }
 
 
@@ -213,7 +216,7 @@ border-radius: 5px 0px 5px 5px;
 
 div#<?php echo $id; ?> ul.maximenuck li div.floatck ul.maximenuck2,
 div#<?php echo $id; ?> ul.maximenuck2 {
-background : transparent;
+background : #19a6b5;
 margin : 0 !important;
 padding : 0 !important;
 border : none !important;
@@ -224,6 +227,7 @@ overflow: visible !important;
 display: block !important;
 float: none !important;
 visibility: visible !important;
+height:20px;
 }
 
 div#<?php echo $id; ?> ul.maximenuck li ul.maximenuck2 li.maximenuck,
@@ -232,18 +236,23 @@ font-size:12px;
 position:static;
 /*text-shadow: 1px 1px 1px #ffffff;*/
 padding: 2px 0px;
-margin: 0px 0px 0px 0px;
+margin: 0;
 float:none !important;
 text-align:left;
-background : none;
+background : #19a6b5;
 list-style : none;
 display: block !important;
 border-bottom: 1px dotted #FFFFFF;
+height:20px;
 }
 
 div#<?php echo $id; ?> ul.maximenuck li ul.maximenuck2 li.maximenuck:hover,
 div#<?php echo $id; ?> ul.maximenuck2 li.maximenuck:hover {
-background: transparent;
+background: #e749e4;
+border-top: 1px solid #e749e4;
+border-left: 1px solid #e749e4;
+border-right: 1px solid #e749e4;
+border-bottom: 1px dotted #FFFFFF;
 }
 
 /* all links styles */
@@ -262,7 +271,7 @@ outline : none;
 background : none;
 filter: none;
 border : none;
-padding : 0 5px;
+padding : 5px;
 white-space: normal;
 box-shadow: none;
 }
@@ -273,7 +282,9 @@ div#<?php echo $id; ?> ul.maximenuck2 li a {
 color:#FFF;
 /*text-shadow: 1px 1px 1px #ffffff;*//*mn*/
 text-align: left;
-margin: 0 10px;
+margin: -5px 0 0 10px;
+text-transform: uppercase;
+height: 25px;
 }
 
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck ul.maximenuck2 a,
@@ -334,18 +345,19 @@ color : #EEE;
 
 /* submenus container */
 div#<?php echo $id; ?> div.floatck {
-width : 180px; /* default width */
-margin: 3px 0 0 -1px;
+width : 150px; /* default width */
+margin: 4px 0 0 -1px;
+height: 25px;
 text-align:left;
 /*padding:5px 5px 0 5px;*/
-border:1px solid #ee53f1;
+/*border:1px solid #19a6b5;*/
 border-top:none;
-background:#e749e4;
+background:#19a6b5;
 /*background: -moz-linear-gradient(top, #EE53F1, #E19EE2);
 background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EE53F1), to(#E19EE2));*/
--moz-border-radius: 0px 5px 5px 5px;
+/*-moz-border-radius: 0px 5px 5px 5px;
 -webkit-border-radius: 0px 5px 5px 5px;
-border-radius: 0px 5px 5px 5px;
+border-radius: 0px 5px 5px 5px;*/
 filter: none;
 }
 
@@ -359,15 +371,15 @@ margin: 0;
 
 /* child blocks position (from level2 to n) */
 div#<?php echo $id; ?> ul.maximenuck li.maximenuck div.floatck div.floatck {
-margin : -30px 0 0 180px;
--moz-border-radius: 5px;
+margin : -30px 0 0 150px;
+/*-moz-border-radius: 5px;
 -webkit-border-radius: 5px;
-border-radius: 5px;
+border-radius: 5px;*/
 border:1px solid #777777;
 }
 
 div#<?php echo $id; ?> ul.maximenuck li div.floatck div.maximenuck2 {
-width : 180px; /* default width */
+width : 150px; /* default width */
 margin: 0;
 padding: 0;
 }
@@ -383,7 +395,7 @@ font-weight:400;
 letter-spacing:-1px;
 margin:7px 0 14px 0;
 padding-bottom:14px;
-border-bottom:1px solid #666666;
+/*border-bottom:1px solid #666666;*/
 line-height:21px;
 text-align:left;
 }
@@ -432,12 +444,12 @@ color: #eeeeee;
 text-shadow: 1px 1px 1px #000;
 padding:4px 6px 4px 6px !important;
 margin: 0px 4px 4px 4px !important;
--moz-border-radius: 5px;
+/*-moz-border-radius: 5px;
 -webkit-border-radius: 5px;
 border-radius: 5px;
 -webkit-box-shadow:inset 0 0 3px #000000;
 -moz-box-shadow:inset 0 0 3px #000000;
-box-shadow:inset 0 0 3px #000000;
+box-shadow:inset 0 0 3px #000000;*/
 }
 
 div#<?php echo $id; ?> ul.maximenuck li ul.maximenuck2 li.blackbox:hover,
@@ -464,10 +476,10 @@ background:#f0f0f0 !important;
 border:1px solid #bbbbbb;
 padding: 4px 6px 4px 6px !important;
 margin: 0px 4px 4px 4px !important;
--moz-border-radius: 5px;
+/*-moz-border-radius: 5px;
 -webkit-border-radius: 5px;
 -khtml-border-radius: 5px;
-border-radius: 5px;
+border-radius: 5px;*/
 }
 
 div#<?php echo $id; ?> ul.maximenuck li ul.maximenuck2 li.greybox:hover,
