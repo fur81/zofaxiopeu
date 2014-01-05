@@ -131,7 +131,7 @@ else
                   <td style="padding-bottom: 5px;">
                       <ul>
                             <li>
-                                <a href="index.php?option=com_content&amp;view=article&amp;id=15&amp;catid=17&amp;Itemid=104">
+                                <a href="index.php?option=com_xmap&view=html&id=0">
                                 	<?php echo JText::_('TPL_MN_SITE_MAP');?></a>
                             </li>
                             <li>|</li>
@@ -158,37 +158,34 @@ else
             </table>
         </div>
         <div id="top_menu">
-        	<jdoc:include type="modules" name="position-1" style="xhtml" />
-            
-          <!--Zona del menú principal del sitio-->
+        	<!--Zona del menú principal del sitio-->
+            <jdoc:include type="modules" name="position-1" style="xhtml" /> 
         </div>
         <div id="front_img_header"></div>
     </div>
-    
-    
-     <!-- end .header --></div>
-     
-     
-    
-  <!--<jdoc:include type="modules" name="banner" style="xhtml" />-->
-    
+     <!-- end .header --></div>    
     <div id="sitemap_zone">
       <jdoc:include type="modules" name="position-2" style="none" />
     </div>
+    <div><jdoc:include type="message" /></div>
   <div class="sidebar">
-  <jdoc:include type="modules" name="position-8" style="xhtml" />
-    <div id="authentication_zone">
-      <div id="box_title_sidebar">
+  	<jdoc:include type="modules" name="position-8" style="xhtml" />
+  	<div class="side_box">
+      <div class="title_bar content_sidebar title_sidebar_text">
         <!--<h1>AUTENTICACIÓN</h1>-->
         <jdoc:include type="modules" name="position-7" style="xhtml" />
       </div>
     </div>
     <div id="contact_zone">   
-      <div id="box_title_sidebar">
-        <h1><?php echo JText::_('TPL_MN_CONTACT_UPPER');?></h1>  
-      </div>
-      <h2><?php echo JText::_('TPL_MN_ATTEND_SERVICE');?></h2>
       
+      <div class="title_bar content_sidebar title_sidebar_text">
+      	<div class="box_title_right"><?php echo JText::_('TPL_MN_CONTACT_UPPER');?></div>
+      </div>
+      
+      <div class="contact_title">
+      	<?php echo JText::_('TPL_MN_ATTEND_SERVICE');?>
+      </div>
+           
       <div id="contact_table">
       	<table width="90%" cellpadding="1" cellspacing="1" border="0">
             <tr>
@@ -209,16 +206,19 @@ else
     </div>
     <!-- end .sidebar1 --></div>
     
-    <div class="welcome_site_zone">
-        <div id="box_title">
-        	<!--<h1>BIENVENIDOS A MEDICNEXUS</h1>-->
-        </div>
+    <div class="content_box">
+        <!--<div id="box_title">
+        	<h1>BIENVENIDOS A MEDICNEXUS</h1>
+        </div>-->
     
-    <main id="content" role="main" class="<?php echo $span;?>">
+    	<main id="content" role="main" class="<?php echo $span;?>">
           <!-- Begin Content -->
           <jdoc:include type="modules" name="position-3" style="xhtml" />
-          <jdoc:include type="message" />
+          <div class="content_boxbar title_bar title_content_text">
+          <!--<jdoc:include type="message" />-->
+          </div>
           <jdoc:include type="component" />
+          
           
           <!-- End Content -->
         </main>
@@ -228,24 +228,27 @@ else
     <!--Info cambiante-->
      
   	</div>
-    <div id="news-article_zone">
-    <div id="box_title">
-    <h1>INFORMACIÓN GENERAL</h1>
-        <div id="articles_zone">
-        	<h1>ARTÍCULOS</h1>
-            <div id="articles">
-            
+    
+    <!--<jdoc:include type="modules" name="articles-preview" style="general_info" />-->
+    
+    <!--<div id="news-article_zone">
+        <div id="box_title">
+        	<h1>INFORMACIÓN GENERAL</h1>
+            <div id="articles_zone">
+                <h1>ARTÍCULOS</h1>
+                <div id="articles">
+                	<jdoc:include type="modules" name="articles-preview" style="xhtml" />
+                </div>
+            </div>
+            <div id="articles-news_separator"></div>
+            <div id="articles_zone">
+                <h1>NOTICIAS</h1>
+                <div id="articles">
+                	<jdoc:include type="modules" name="articles-preview" style="xhtml" />
+                </div>
             </div>
         </div>
-        <div id="articles-news_separator"></div>
-        <div id="articles_zone">
-        	<h1>NOTICIAS</h1>
-            <div id="articles">
-            
-            </div>
-        </div>
-    </div>
-    </div>
+    </div>-->
     
   <div class="footer">
     <div id="bottom_menu_site">
@@ -303,7 +306,7 @@ else
                 	- <?php echo JText::_('TPL_MN_CONDITIONS_TERMS');?></a>
                 </li>
                 <li>
-                <a href="index.php?option=com_content&amp;view=article&amp;id=15&amp;catid=17&amp;Itemid=104">
+                <a href="index.php?option=com_xmap&view=html&id=0">
                 	- <?php echo JText::_('TPL_MN_SITE_MAP');?></a>
                 </li>
             </ul>
@@ -335,12 +338,10 @@ else
         <h1><?php echo JText::_('TPL_MN_GENERAL_SERVICES_SITE_UPPER');?></h1>
             <ul>
             <li>
-                <a href="index.php?option=com_content&amp;view=article&amp;id=9&amp;catid=9&amp;Itemid=112">
-                	- <?php echo JText::_('TPL_MN_NOTICES');?></a>
+                <a href="#">- <?php echo JText::_('TPL_MN_NOTICES');?></a>
                 </li>
                 <li>
-                <a href="index.php?option=com_content&amp;view=article&amp;id=10&amp;catid=10&amp;Itemid=113">
-                	- <?php echo JText::_('TPL_MN_ARTICLES');?></a>
+                <a href="#">- <?php echo JText::_('TPL_MN_ARTICLES');?></a>
                 </li>
             </ul>
         </div>
@@ -349,12 +350,10 @@ else
         <h1><?php echo JText::_('TPL_MN_GENERAL_INFORMATION_UPPER');?></h1>
             <ul>
             <li>
-                <a href="index.php?option=com_content&amp;view=article&amp;id=13&amp;catid=14&amp;Itemid=116">
-                	- <?php echo JText::_('TPL_MN_FRECUENTLY_QUESTIONS');?></a>
+                <a href="#">- <?php echo JText::_('TPL_MN_FRECUENTLY_QUESTIONS');?></a>
                 </li>
                 <li>
-                <a href="index.php?option=com_content&amp;view=article&amp;id=20&amp;catid=20&amp;Itemid=104">
-                	- <?php echo JText::_('TPL_MN_GENERAL_MEDICAL_DOCUMENTATION');?></a>
+                <a href="#">- <?php echo JText::_('TPL_MN_GENERAL_MEDICAL_DOCUMENTATION');?></a>
                 </li>
             </ul>
         </div>
@@ -363,13 +362,13 @@ else
         <h1><?php echo JText::_('TPL_MN_SOCIAL_NETWORK_UPPER');?></h1>
             <table width="100%" cellpadding="0" cellspacing="0">
             <tr align="right">
-                <td><?php echo JText::_('TPL_MN_TWITTER');?></td>
+                <td><a href="#"><?php echo JText::_('TPL_MN_TWITTER');?></a></td>
                     <td>
                     <a href="#">
                             <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_twitter_icon.gif" border="0" />
                         </a>
                     </td>
-                    <td><?php echo JText::_('TPL_MN_FACEBOOK');?></td>
+                    <td><a href="#"><?php echo JText::_('TPL_MN_FACEBOOK');?></a></td>
                     <td>
                     <a href="#">
                             <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_fb_icon.gif" border="0" />
@@ -382,13 +381,13 @@ else
                     </td>
                 </tr>
                 <tr align="right">
-                <td><?php echo JText::_('TPL_MN_YOUTUBE');?></td>
+                <td><a href="#"><?php echo JText::_('TPL_MN_YOUTUBE');?></a></td>
                     <td>
                     <a href="#">
                             <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_youtube_icon.gif" border="0" />
                         </a>
                     </td>
-                    <td><?php echo JText::_('TPL_MN_RSS');?></td>
+                    <td><a href="#"><?php echo JText::_('TPL_MN_RSS');?></a></td>
                     <td>
                     <a href="#">
                             <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_rss_icon.gif" border="0" />

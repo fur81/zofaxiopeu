@@ -21,11 +21,15 @@ h1, h2, h3, h4, h5, h6, p {
 	padding-right: 15px;
 	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
 }
-h1 {
+p {
+	text-align: justify;	
+	color: #666;
+}
+h1 { 
 	color: #666;
 	font-size: 12px;
 	text-transform: uppercase;		
-}
+}/*sustituir con una clase especifica*/
 a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
 	border: none;
 }
@@ -68,6 +72,41 @@ select {
 label {
 	color: #333;
 	font-size: 11px;	
+}
+
+/*Estilos generales para títulos*/
+
+.box_title_right {
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #FFF;
+	background: url(../images/bg_title_box.png) no-repeat right 5px;
+	text-align: right;
+	margin-top: 2px;
+	margin-right: 3px;
+	padding-right: 15px;
+	font-weight: bold;
+}
+
+.box_title_left {
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #FFF;
+	background: url(../images/bg_title_box.png) no-repeat left 5px;
+	text-align: left;
+	margin-top: 2px;
+	margin-left: 3px;
+	padding-left: 15px;
+	font-weight: bold;
+}
+
+.contact_title {
+	font-size: 17px;
+	color: #1aa9b8;
+	text-transform: uppercase;
+	/*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
+	margin: 35px 0 30px 100px;
+	font-weight: bold;	
 }
 
 /* ~~this fixed width container surrounds the other divs~~ */
@@ -117,13 +156,16 @@ label {
 }
 
 #header_newsflash {
-	margin: 15px 0 0 0;
+	margin: 20px 0 0 10px;
 	width: 280px;
 	height: 180px;
 	float: left;	
 	background: url(../images/bg_header_newsflash.gif) repeat-x;
-	border-left: 10px #FFF solid;
-	border-right: 10px #FFF solid;
+	/*border-left: 10px #FFF solid;
+	border-right: 10px #FFF solid;*/
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
 }
 
 #right_header_zone {
@@ -140,7 +182,7 @@ label {
 	/*margin-top: 2px;*/
 	float: left;
 	/*margin-left: 490px;*/
-	margin: 5px 5px 0 476px;
+	margin: 8px 5px 0 476px;
 }
 
 #promo_lang_zone ul li {
@@ -155,7 +197,7 @@ label {
 
 #language_flag_zone {
 	text-align: right;
-	margin-top: 5px;
+	margin-top: 8px;
 	float: left;
 }
 
@@ -164,7 +206,7 @@ label {
 	color: #999999;
     font-size: 11px;
 	width: 690px;
-    margin: 3px 0 0 0;
+    margin: 5px 0 0 0;
 	padding: 0 10px 0 0;
 }
 
@@ -185,17 +227,13 @@ label {
 
 #top_menu {
 	width: 699px;
-	/*height: 30px; Para el maximenu*/
 	float: left;
-	border-right: 1px solid #FFF;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
 	background: url(../images/box_site_bg.gif) repeat-x;	
-	border-radius: 5px 5px 5px 5px;
-	-webkit-border-radius: 5px 5px 5px 5px;
-	-moz-border-radius: 5px 5px 5px 5px;
-	behavior:url(border.htc);
 	margin: 0;
 	padding: 0;
-	/*height: 37px;*/
 }
 
 #front_img_header {
@@ -208,12 +246,9 @@ label {
 
 #sitemap_zone {
 	height: 20px;
-    margin-top: 1px;
     padding: 5px 0 0 30px;
-    /*width: 995px;*/
+	margin: 5px 0 2px 0;
 	background: url(../images/sitemap_bg.gif) no-repeat 5px 5px;
-	/*border: 1px solid #930;*/
-	margin-top: 1px;
 }
 
 /*#sitemap_zone h6 {
@@ -240,32 +275,74 @@ label {
 	border: 1px solid #1aa9b8;*/
 }
 
-#authentication_zone {
+.side_box {
+	padding: 5px 5px 0 5px;
+	margin: 1px 0 10px 0px;
 	width: 240px;
-	/*height: 225px;*/
-	/*border: 1px solid #1aa9b8;*/	
-	margin: 0 0 5px 0;
-    padding: 5px;
+	/*border: 1px solid #1aa9b8;*/
 	float: left;
+	box-shadow: 2px 2px 3px #999;
+	-webkit-box-shadow: 2px 2px 3px #999;
+	-moz-box-shadow: 2px 2px 3px #999;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
 }
+
+.side_box h3 {
+	font-size: 12px;
+	color: #FFF;
+	background: url(../images/bg_title_box.png) no-repeat right center;
+	margin-top: 2px;
+	margin-right: 3px;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+/*#authentication_zone {
+	width: 240px;
+	height: 225px;
+	border: 1px solid #1aa9b8;	
+	margin: 0 0 5px 0;
+    padding: 5px 5px 0 5px;
+	box-shadow: 2px 2px 2px #999;
+	-webkit-box-shadow: 2px 2px 2px #999;
+	-moz-box-shadow: 2px 2px 2px #999;
+	float: left;
+}*/
+
+/*#authentication_zone h3 {
+	font-size: 12px;
+	color: #FFF;
+	background: url(../images/bg_title_box.png) no-repeat right center;
+	margin-top: 2px;
+	text-align: right;
+	text-transform: uppercase;
+}*/
 
 #contact_zone {
 	width: 240px;
 	height: 220px;
 	border: 1px solid #1aa9b8;
 	margin: 0 0 10px;
-    padding: 5px;
+    padding: 5px 5px 10px 5px;
 	float: left;
 	background: url("../images/contact_img.gif") no-repeat 10px 50px;
+	box-shadow: 2px 2px 2px #999;
+	-webkit-box-shadow: 2px 2px 2px #999;
+	-moz-box-shadow: 2px 2px 2px #999;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
 }
 
-#contact_zone h2 {
+/*#contact_zone h2 {
 	font-size: 17px;
 	color: #1aa9b8;
 	text-transform: uppercase;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	margin: 35px 0 30px 84px;
-}
+}*/
 
 #contact_table
  {
@@ -277,9 +354,9 @@ label {
 	width: 230px;
     height: 20px;
     padding: 5px;  	
-	box-shadow: 2px 2px 3px #000;
+	/*box-shadow: 2px 2px 3px #000;
 	-webkit-box-shadow: 2px 2px 3px #000;
-	-moz-box-shadow: 2px 2px 3px #000;
+	-moz-box-shadow: 2px 2px 3px #000;*/
 	background: url("../images/box_site_bg.gif") repeat-x;
 }
 
@@ -289,17 +366,62 @@ label {
 	background: url(../images/bg_title_box.png) no-repeat right 5px;
 	text-align: right;
 	margin-top: 2px;
+	margin-right: 3px;
 }
 
-.welcome_site_zone {
+.content_box{
 	padding: 5px 5px 0 5px;
 	margin: 0 0 10px 0;
 	width: 730px;
 	border: 1px solid #1aa9b8;
 	float: left;
+	box-shadow: 2px 2px 3px #999;
+	-webkit-box-shadow: 2px 2px 2px #999;
+	-moz-box-shadow: 2px 2px 2px #999;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
 }
 
-#box_title {
+.content_boxbar{
+	width: 720px;
+}
+
+.title_bar{
+	height: 20px;
+    padding: 5px;  
+	background: url("../images/box_site_bg.gif") repeat-x;	
+	/*box-shadow: 2px 2px 3px #999;
+	-webkit-box-shadow: 2px 2px 2px #999;
+	-moz-box-shadow: 2px 2px 2px #999;*/
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+}
+
+.title_content_text {
+	font-size: 12px;
+	color: #FFF;
+	text-transform: uppercase;
+	text-align: left;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+	/*margin-top: 2px;*/
+}
+
+/*.welcome_site_zone {
+	padding: 5px 5px 0 5px;
+	margin: 0 0 10px 0;
+	width: 730px;
+	border: 1px solid #1aa9b8;
+	float: left;
+	box-shadow: 2px 2px 2px #999;
+	-webkit-box-shadow: 2px 2px 2px #999;
+	-moz-box-shadow: 2px 2px 2px #999;
+}*/
+
+/*#box_title {
 	width: 720px;
     height: 20px;
     padding: 5px;  
@@ -314,7 +436,7 @@ label {
 	color: #FFF;
 	background: url(../images/bg_title_box.png) no-repeat 2px center;
 	margin-top: 2px;
-}
+}*/
 
 #welcome_text {
 	width: 740px;
@@ -336,20 +458,20 @@ label {
 #site_services_zone h1 {
 	font-size: 12px;
 	color: #666;
-	background: url(../images/services_title_bg.gif) no-repeat 140px 12px;
+	background: url(../images/services_title_bg.gif) no-repeat 150px 12px;
 }
 
-#site_service_box {
+.site_service_box {
 	width: 150px;
 	float: left;	
 }
 
-#site_service_box img {
+.site_service_box img {
 	margin: 0 0 0 45px;	
 }
 
 
-#site_service_box h1 {
+.site_service_box h1 {
 	color: #1aa9b8;
 	font-size: 11px;
 	background: none;
@@ -357,14 +479,14 @@ label {
 	text-align: center;
 }
 
-#site_service_box p {
+.site_service_box p {
 	text-align: justify;
 	font-size: 10px;
 	color: #666;
 	margin: 3px 0 0 0;
 }
 
-#site_service_box #service_box_btn img {
+.site_service_box #service_box_btn img {
 	margin: 5px 0 0 25px;	
 }
 
@@ -506,6 +628,9 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	background: #CCC;
 	position: relative;/* this gives IE6 hasLayout to properly clear */
 	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
 }
 
 .bottom_menu_site_separator {
@@ -587,6 +712,14 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	font-size: 11px;
 }
 
+#bottom_social_networks_zone a {
+	color: #FFF;	
+}
+
+#bottom_social_networks_zone a:hover {
+	text-decoration: underline;	
+}
+
 #final_site_band {
 	width: 1000px;
 	margin: 10px auto 0;
@@ -630,15 +763,6 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 
 /*Inicio estilos del módulo mod_login*/
 
-#authentication_zone h3 {
-	font-size: 12px;
-	color: #FFF;
-	background: url(../images/bg_title_box.png) no-repeat right center;
-	margin-top: 2px;
-	text-align: right;
-	text-transform: uppercase;
-}
-
 .mn-element-invisible {
 	color: #333;
 	font-size: 11px;	
@@ -659,13 +783,16 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 
 .mn-userdata {
 	float: right;
-	margin: -41px -11px 0 0;
+	margin: -42px -11px 0 0;
     padding: 40px 0 10px 35px;
     width: 215px;
-	border: 1px solid #1aa9b8;	
+	border: 1px solid #1aa9b8;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;	
 }
 
-.mn-btn-login {
+/*.mn-btn-login {
 	width: 100px;
 	height: 22px;
 	background: url(../images/btn_bg100.png) no-repeat;
@@ -673,7 +800,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	color: #FFF;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: 12px;
-}
+}*/
 
 .mn-unstyled {
 	list-style: none;
@@ -707,7 +834,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	margin-right: 10px;	
 }
 
-.mn-btn-logout {
+/*.mn-btn-logout {
 	width: 100px;
 	height: 22px;
 	background: url(../images/btn_bg100.png) no-repeat;
@@ -717,15 +844,15 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
     font-size: 12px;
 	margin: 5px 10px 0 0;
 	float: right;	
-}
+}*/
 
 /*Fin estilos del módulo mod_login*/
 /*Inicio estilos del módulo mod_menu*/
 
 #top_menu ul.nav {
-	border-radius: 5px 5px 5px 5px;
+	/*border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
-	-moz-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;*/
 }
 
 #top_menu ul.nav li {
@@ -733,9 +860,9 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	border: none;	
 	/*margin-top: 5px;*/
 	/*background: url(../images/top_menu_separator.png) no-repeat left center;*/
-	border-radius: 5px 5px 5px 5px;
+	/*border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
-	-moz-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;*/
 }
 
 #top_menu ul.nav a {
@@ -806,7 +933,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 /*Estilo generales de Joomla*/
 
 .item-page {
-	margin: -22px 0 0 -5px;	
+	margin: -23px 0 0 -5px;	
 	width: 740px;
 }
 
@@ -832,18 +959,38 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 /*Inicio estilos de área de mensajes de Joomla*/
 
 #system-message-container {
-	color: #666;
-	font-size: 12px;
+	margin: 0;
+	/*border: 1px solid #1AA9B8;*/
+	margin-bottom: 5px;
 }
+#system-message {
+	color: #333;
+	font-size: 12px;
+	/*border: 1px solid #1AA9B8;*/
+}
+#system-message p {
+	padding: 10px 0 0 35px;
+	border-top: 1px solid #1AA9B8;
+	margin-top: -10px;
+}
+.alert {}
+
+.alert-warning {}
 
 .close {
-	color: red;	
+	color: #333;	
+	padding: 0 5px;
+	float: left;
+	border: 1px solid #1AA9B8;
+	margin: 5px;
+	cursor: pointer;	
 }
 
-/*#system-message-container h4 {
-	color: #FFF;
-	font-size: 24px;	
-}*/
+.alert-heading {
+	padding: 10px 0 0 35px;
+	text-transform: uppercase;
+	color: #333;	
+}
 
 /*Fin estilos de área de mensajes de Joomla*/
 
@@ -887,7 +1034,8 @@ fieldset {
 
 .nav.nav-tabs.nav-stacked {
 	line-height: 16px;
-	font-size: 11px;	
+	font-size: 11px;
+	margin-bottom: 10px;	
 }
 .nav-stacked > li {
 	float: none;
@@ -946,13 +1094,34 @@ fieldset {
 
 .controls button {
 	margin-top: 5px;
-	width: 100px;
-	height: 22px;
-	background: url(../images/btn_bg100.png) no-repeat;
+	min-width: 100px;
+	height: 25px;
+	background: url(../images/button_bg.gif) repeat-x;
 	border: 0;
 	color: #FFF;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: 12px;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+	/*text-transform: uppercase;*/
+	font-weight: bold;
+}
+
+.controls button:hover {
+	margin-top: 5px;
+	min-width: 100px;
+	height: 25px;
+	background: url(../images/button_bg_hover.gif) repeat-x;
+	border: 0;
+	color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+	/*text-transform: uppercase;*/
+	font-weight: bold;
 }
 
 .control-label {
@@ -1151,6 +1320,18 @@ fieldset {
 #client_service_box img {
 	margin: 0 0 0 55px;	
 }
+#quick_consult_service_icon {
+	width: 50px;
+	height: 45px;
+	background: url(../images/quick_consult_service_icon.gif) no-repeat;
+	margin-left: 55px;	
+}
+#quick_consult_service_icon:hover, #quick_consult_service_icon.active {
+	width: 50px;
+	height: 45px;
+	background: url(../images/quick_consult_service_icon_hover.gif) no-repeat;
+	margin-left: 55px;	
+}
 #client_service_box h1 {
 	color: #1aa9b8;
 	font-size: 11px;
@@ -1241,6 +1422,44 @@ fieldset {
 #user_guide_info h1 {
     background: url(../images/user_guide_title_bg.gif) no-repeat 15px 20px;
 	height: 25px;
+}
+#user_guide_info p {
+    padding-right: 5px;
+}
+
+/*faq_zone*/
+
+#faq_zone {
+	float: left;
+    padding: 0;
+    width: 740px;	
+}
+
+.faq_info_block {
+	float: left;
+    margin: 5px 0 0 0;
+    padding: 0;
+    width: 730px;
+}
+#faq_bullet {
+	float: left;
+    height: 30px;
+    margin: 0 0 0 15px;
+    width: 30px;
+	background: url(../images/faq_bullet.gif) no-repeat;	
+}
+#faq_info {
+    float: left;
+    padding-top: 5px;
+    width: 685px;
+}
+#faq_info h1 {
+    background: url(../images/user_guide_title_bg.gif) no-repeat 15px 20px;
+	height: 25px;
+}
+#faq_info p {
+    padding-top: 5px;
+	padding-right: 5px;
 }
 
 /*Fin estilos user guide zone*/
@@ -1440,15 +1659,15 @@ fieldset {
 	text-transform: uppercase;	
 }
 
-#medical_services_block {
+.medical_services_block {
 	width: 730px;
-	margin: 10px 0 0 0;
+	margin: 5px 0 0 0;
 	padding: 0;
 	float: left;
 }
 
-#medical_services_block_separator {
-	margin: 0 0 5px 15px;
+.medical_services_block_separator {
+	margin: -15px 0 5px 15px;
     width: 705px;
 	float: left;
 	border-bottom: 1px dotted #1aa9b8;	
@@ -1489,7 +1708,7 @@ fieldset {
 	float: left;	
 }
 
-#service_step_block {
+.service_step_block {
 	width: 160px;
 	margin: 0;
 	padding: 0;
@@ -1497,14 +1716,14 @@ fieldset {
 	margin: 10px 0 0 10px;
 }
 
-#service_step_block #header {
+.service_step_block #header {
 	width: 160px;
 	height: 34px;
     padding-top: 1px;
 	/*background: url(../images/service_block_header_bg1.gif) no-repeat;*/
 }
 
-#service_step_block #header h2 {
+.service_step_block #header h2 {
 	color: #666;
 	font-size: 11px;
 	text-align: left;
@@ -1513,31 +1732,31 @@ fieldset {
     padding: 0;
 }
 
-#service_step_block #body {
+.service_step_block #body {
 	width: 160px;
 	min-height: 100px;
 	border-top: 5px solid #FFF;
 }
 
-#service_step_block #body #top {
+.service_step_block #body #top {
 	width: 160px;
 	height: 5px;
 	background: url(../images/service_block_body_top_bg.gif) no-repeat;
 	float: left;
 }
 
-#service_step_block #body #middle {
+.service_step_block #body #middle {
 	width: 160px;
 	background: #3db8c5;
 	text-align: center;
 	float: left;
 }
 
-#service_step_block #body #middle img {
+.service_step_block #body #middle img {
 	margin-top: 5px;
 }
 
-#service_step_block #body #middle p {
+.service_step_block #body #middle p {
 	color: #FFF;
 	font-size: 11px;
 	text-align: left;
@@ -1545,7 +1764,7 @@ fieldset {
 	margin-top: 5px;
 }
 
-#service_step_block #body #bottom {
+.service_step_block #body #bottom {
 	width: 160px;
 	height: 5px;
 	background: url(../images/service_block_body_bot_bg.gif) no-repeat;
