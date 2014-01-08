@@ -60,6 +60,9 @@ if ($this->displayer->canEdit) {
     $doc->addScriptDeclaration ($js);
 }
 ?>
+<link href="../../../../../templates/medicnexus/css/template.css" rel="stylesheet" type="text/css" />
+<link href="../../../assets/css/xmap.css" rel="stylesheet" type="text/css" />
+
 <div id="xmap">
 <?php if ($params->get('show_page_heading', 1) && $params->get('page_heading') != '') : ?>
     <h1>
@@ -94,10 +97,4 @@ if ($this->displayer->canEdit) {
 <?php endif; ?>
 
     <?php echo $this->loadTemplate('items'); ?>
-
-<?php if ($params->get('include_link', 1) )  : ?>
-    <div class="muted" style="font-size:10px;width:100%;clear:both;text-align:center;">Powered by <a href="http://www.jooxmap.com/">Xmap</a></div>
-<?php endif; ?>
-
-    <span class="article_separator">&nbsp;</span>
 </div>

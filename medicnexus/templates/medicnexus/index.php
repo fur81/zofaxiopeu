@@ -113,7 +113,7 @@ else
 			<div id="right_header_zone">
 				<div id="promo_lang_zone">
 					<ul>
-						<li><?php echo JText::_('TPL_MN_FoLLOW_US_IN');?>:</li>
+						<li><?php echo JText::_('TPL_MN_FOLLOW_US_IN');?>:</li>
 						<li><a href="#"> <img
 								src="<?php echo $this->baseurl;?>/templates/medicnexus/images/fb_icon.gif"
 								border="0" /> </a>
@@ -152,8 +152,8 @@ else
 									</li>
 								</ul>
 							</td>
-							<td align="right" style="padding-bottom: 7px;"><jdoc:include
-									type="modules" name="general-search" style="xhtml" /> <!--<input name="" type="text" />-->
+							<td align="right" style="padding-bottom: 7px;">
+								<jdoc:include type="modules" name="general-search" style="xhtml" />
 							</td>
 						</tr>
 					</table>
@@ -218,11 +218,10 @@ else
 		<div class="content_box">
 			<main id="content" role="main" class="<?php echo $span;?>"> <!-- Begin Content -->
 			<jdoc:include type="modules" name="position-3" style="xhtml" />
-			<div class="content_boxbar title_bar title_content_text">
-			</div>
+			<div class="content_boxbar title_bar title_content_text"></div>
 			<jdoc:include type="component" /> <!-- End Content --> </main>
 		</div>
-		
+
 		<div class="footer">
 			<div id="bottom_menu_site">
 				<ul>
@@ -315,9 +314,13 @@ else
 					<?php echo JText::_('TPL_MN_GENERAL_SERVICES_SITE_UPPER');?>
 					</h1>
 					<ul>
-						<li><a href="index.php?option=com_content&amp;view=article&amp;id=9&amp;catid=9&amp;Itemid=112">- <?php echo JText::_('TPL_MN_NOTICES');?> </a>
+						<li><a
+							href="index.php?option=com_content&amp;view=article&amp;id=9&amp;catid=9&amp;Itemid=112">-
+							<?php echo JText::_('TPL_MN_NOTICES');?> </a>
 						</li>
-						<li><a href="index.php?option=com_content&amp;view=article&amp;id=10&amp;catid=10&amp;Itemid=113">- <?php echo JText::_('TPL_MN_ARTICLES');?> </a>
+						<li><a
+							href="index.php?option=com_content&amp;view=article&amp;id=10&amp;catid=10&amp;Itemid=113">-
+							<?php echo JText::_('TPL_MN_ARTICLES');?> </a>
 						</li>
 					</ul>
 				</div>
@@ -327,11 +330,13 @@ else
 					<?php echo JText::_('TPL_MN_GENERAL_INFORMATION_UPPER');?>
 					</h1>
 					<ul>
-						<li><a href="index.php?option=com_content&amp;view=article&amp;id=13&amp;catid=14&amp;Itemid=116">- <?php echo JText::_('TPL_MN_FRECUENTLY_QUESTIONS');?>
-						</a>
+						<li><a
+							href="index.php?option=com_content&amp;view=article&amp;id=13&amp;catid=14&amp;Itemid=116">-
+							<?php echo JText::_('TPL_MN_FRECUENTLY_QUESTIONS');?> </a>
 						</li>
-						<li><a href="index.php?option=com_content&amp;view=article&amp;id=20&amp;catid=20&amp;Itemid=104">- <?php echo JText::_('TPL_MN_GENERAL_MEDICAL_DOCUMENTATION');?>
-						</a>
+						<li><a
+							href="index.php?option=com_content&amp;view=article&amp;id=20&amp;catid=20&amp;Itemid=104">-
+							<?php echo JText::_('TPL_MN_GENERAL_MEDICAL_DOCUMENTATION');?> </a>
 						</li>
 					</ul>
 				</div>
@@ -373,15 +378,6 @@ else
 							</td>
 						</tr>
 					</table>
-					<!--
-            <ul>
-            <li>Twitter</li>
-                <li>
-                <a href="#">
-                    <img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_twitter_icon.gif" border="0" />
-                    </a>
-                </li>
-            </ul> -->
 				</div>
 			</div>
 		</div>
@@ -405,6 +401,6 @@ else
 				</li>
 			</ul>
 		</div>
-
+	</div>
 </body>
 </html>

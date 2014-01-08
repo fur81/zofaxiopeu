@@ -160,7 +160,9 @@ class XmapHtmlDisplayer extends XmapDisplayer {
         if( $this->sitemap->params->get('columns') > 1 )            // use columns
             echo '<div style="float:left;width:'.$this->_width.'%;">';
         if( $this->sitemap->params->get('show_menutitle') )         // show menu titles
-            echo '<h2 class="menutitle">'.$menu->name.'</h2>';
+            //echo '<h2 class="menutitle">'.$menu->name.'</h2>';    // línea original donde no funciona el segmento de código 
+			                                                        // '.$menu->name.' que debería imprimir el nombre del menu
+			echo '<h2 class="box_title_left" style="margin: -23px 0 0 8px;">'.'Mapa del sitio'.'</h2>';   
     }
 
     function endMenu(&$menu) {
