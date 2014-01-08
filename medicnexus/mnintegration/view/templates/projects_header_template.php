@@ -2,16 +2,26 @@
 <div id="client_zone_options">
 	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_RAPID_CONSULTATION;?>')" 
     title="<?php getValue('label_project_rapid_consultation_title');?>"	style="cursor: pointer;">
-        <div id="quick_consult_service_icon"></div>
+        <?php 
+           	if (getProjectId() == PROJECT_RAPID_CONSULTATION) {
+        		echo '<div id="quick_consult_service_icon_active"></div>';
+        	}else {
+        		echo '<div id="quick_consult_service_icon"></div>';
+        	}
+        ?>
 		<h1><?php getValue('label_project_rapid_consultation_title');?></h1>
 	</div>
 	<div class="client_options_separator"></div>
 	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_VIRTUAL_CONSULTATION;?>')"
 			title="<?php getValue('label_project_virtual_consultation_title');?>"
 			style="cursor: pointer;">
-		<img src="images/medicnexus/home/virtual_consult_service_icon.gif"
-			name="virtual_consult_service_icon" width="50" height="45" border="0" id="virtual_consult_service_icon" 
-			alt="<?php getValue('label_project_virtual_consultation_title');?>"/>
+		<?php 
+           	if (getProjectId() == PROJECT_VIRTUAL_CONSULTATION) {
+        		echo '<div id="virtual_consult_service_icon_active"></div>';
+        	}else {
+        		echo '<div id="virtual_consult_service_icon"></div>';
+        	}
+        ?>
 		<h1><?php getValue('label_project_virtual_consultation_title');?></h1>
 
 	</div>
@@ -19,9 +29,13 @@
 	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_SECOND_OPINION;?>')"
 			title="<?php getValue('label_project_second_opinion_title');?>"
 			style="cursor: pointer;">
-		<img src="images/medicnexus/home/second_opinion_service_icon.gif"
-			name="virtual_consult_service_icon" width="50" height="45" border="0" id="virtual_consult_service_icon"
-			alt="<?php getValue('label_project_second_opinion_title');?>"/>
+		<?php 
+           	if (getProjectId() == PROJECT_SECOND_OPINION) {
+        		echo '<div id="second_opinion_service_icon_active"></div>';
+        	}else {
+        		echo '<div id="second_opinion_service_icon"></div>';
+        	}
+        ?>
 		<h1><?php getValue('label_project_second_opinion_title');?></h1>
 
 	</div>
