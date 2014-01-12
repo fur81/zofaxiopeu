@@ -59,7 +59,7 @@ function getApiContext() {
 
 	$apiContext->setConfig(
 		array(
-			'mode' => 'sandbox', 
+			'mode' => 'sandbox', // cambiar a 'live' cuando esté en producción
 			'http.ConnectionTimeOut' => 30,
 			'log.LogEnabled' => true,
 			'log.FileName' => '../PayPal.log',
