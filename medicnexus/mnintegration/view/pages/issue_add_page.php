@@ -96,7 +96,7 @@
 		<tr>
 			<td><label>*<?php getValue('label_description');?>:</label>
 			</td>
-			<td colspan="3"><textarea style="width: 100%;"
+			<td colspan="3"><textarea style="width: 100%;" rows="6"
 					name="descriptionTextAreaData" id="descriptionTextAreaData"></textarea></td>
 		</tr>
 		<tr align="right">
