@@ -29,7 +29,7 @@ class JConfig {
 	public $ftp_root = '';
 	public $ftp_enable = '0';
 	public $offset = 'UTC';
-	public $mailer = 'smtp';
+	public $mailer = 'mail';
 	public $mailfrom = 'no-reply@medicnexus.com';
 	public $fromname = 'Medicnexus';
 	public $sendmail = '/usr/sbin/sendmail';
