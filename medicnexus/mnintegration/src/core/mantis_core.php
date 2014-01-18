@@ -107,14 +107,24 @@ class MantisCore {
 		return $exist;
 	}
 
+	public function getUserData() {
+		$result = '';
+		try {
+			// se obtiene el identificador del usuario
+			$userData = $this->proxySoap->mc_login ( $this->currentUser, $this->currentPassword );
+			$result = $userData->account_data;
+		} catch (Exception $e) {
+		}
+		return $result;
+	}
+
 	/**
 	 * Se adiciona el usuario registrado al proyecto por defecto.
 	 */
 	private function addAccountToProject($projectId) {
 		try {
 			// se obtiene el identificador del usuario
-			$userData = $this->proxySoap->mc_login ( $this->currentUser, $this->currentPassword );
-			$idUser = $userData->account_data->id;
+			$idUser = $this->getUserData()->id;
 
 			// se inserta en la base de datos
 			$values = $projectId . ',' . $idUser . ',' . MANTIS_INFORMER_ACCESS;
@@ -293,20 +303,21 @@ class MantisCore {
 		return $totalRows;
 	}
 
+	/**
+	 * Chequea si la incidencia ha sido leída o no. Primero se chequea que pertenezca al mismo usuario
+	 * registrado. Si coincide significa que no se ha leído. De ser así se inserta el registro de historia
+	 * para quitar la marca de incidencia leída si es que este no es el último registro.
+	 * Si coincide pues no hay que hacer nada.
+	 * @param int $issueId
+	 * @return boolean
+	 */
 	public function isIssueRead($issueId) {
 		$result = '';
 		$lastModificationUserId = '';
 		$isIssueRead = TRUE;
 		try {
-			// se obtiene el último historial para esa incidencia
-			// se chequea que pertenezca al mismo usuario registrado
-			// si no coincide significa que no se ha leido
-			//  -- se inserta historial de quitar la etiqueta si es que no es el utlimo registro.
-			// si coincide no hay que hacer nada
-
 			// se obtiene el id del usuario registrado en este momento
-			$userData = $this->proxySoap->mc_login ( $this->currentUser, $this->currentPassword );
-			$idUser = $userData->account_data->id;
+			$idUser = $this->getUserData()->id;
 
 			// se obtiene el ultimo historial
 			$historyBug = $this->getLastHistoryBug($issueId);
@@ -329,12 +340,15 @@ class MantisCore {
 		}
 		return $isIssueRead;
 	}
-	
+
+	/**
+	 * Se crea un registro de la historia de la incidencia para marcar a la incidencia como leida.
+	 * @param int $issueId
+	 */
 	public function createHistoryBug($issueId) {
-		
+
 		// se obtiene el id del usuario registrado en este momento
-			$userData = $this->proxySoap->mc_login ( $this->currentUser, $this->currentPassword );
-			$idUser = $userData->account_data->id;
+		$idUser = $this->getUserData()->id;
 			
 		// se ponen los valores del elemento a adicionar
 		$historyBug = new stdClass();
@@ -639,7 +653,7 @@ class MantisCore {
 	}
 
 	/**
-	 * Obtiene la información existente en la tabla temporal del sistema
+	 * Obtiene la información existente en la tabla temporal del sistema.
 	 * @return string $result
 	 */
 	public function loadTempData($idData) {
@@ -655,6 +669,10 @@ class MantisCore {
 		return $results;
 	}
 
+	/**
+	 * Elimina la información existente en la tabla temporal del sistema.
+	 * @param int $idData
+	 */
 	public function removeTempData($idData) {
 		try {
 			$query = str_replace ( '%idData%', $idData, getQuery ( 'removeTemporalData' ) );
