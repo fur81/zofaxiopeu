@@ -224,6 +224,128 @@ class MantisCore {
 	}
 
 	/**
+	 * Se obtiene el último registro de historia asociado a una incidencia
+	 * pasada por parámetro.
+	 * @param int $issuId
+	 * @return stdClass historyBug
+	 */
+	public function getLastHistoryBug($issueId) {
+		$result = '';
+		$historyBug = new stdClass();
+		try {
+			$query = str_replace ( '%value%', $issueId, getQuery ( 'getLastHistoryBug' ) );
+			$result = $this->proxyMySql->query ( $query );
+			while ( $data = $result->fetch_object () ) {
+				$historyBug->id = $data->id;
+				$historyBug->userId = $data->user_id;
+				$historyBug->bugId = $data->bug_id;
+				$historyBug->oldValue = $data->old_value;
+				$historyBug->type = $data->type;
+			}
+		} catch (Exception $e) {
+		}
+		return $historyBug;
+	}
+
+	/**
+	 * Se inserta un registro dentro del historial de la incidencia. Se utiliza principalmente para
+	 * adicionar y eliminar etiquetas de los mensajes y poder conocer en qué momento el usuario ha
+	 * leído o revisado la incidencia.
+	 * @param unknown_type $historyBug
+	 */
+	private function addHistoryBug($historyBug) {
+		try {
+			// Se colocan los datos para realizar la inserción.
+			$values =  $historyBug->userId . ',';
+			$values .= $historyBug->bugId . ', "" ,';
+			$values .= '"'. $historyBug->oldValue . '", "",';
+			$values .= $historyBug->type . ',';
+			$values .= date_timestamp_get(new DateTime());
+
+			// se sustituyen los valores
+			$query = str_replace ( '%values%', $values, getQuery ( 'addHistoryBug' ) );
+
+			// se ejecuta la consulta
+			$this->proxyMySql->query ( $query );
+
+		} catch (Exception $e) {
+		}
+	}
+
+	/**
+	 * Se cuentan todas las historias de tipo etiquetas relacionadas a una
+	 * incidencia.
+	 * @param int $issuId
+	 */
+	public function getHistoiesBugTag($issueId) {
+		$totalRows = 0;
+		try {
+			// se sustituyen los valores
+			$query = str_replace ( '%value%', $issueId, getQuery ( 'getHistoriesBugTag' ) );
+
+			// se ejecuta la consulta
+			$result = $this->proxyMySql->query ( $query );
+			while ( $data = $result->fetch_object () ) {
+				$totalRows = $data->totalRows;
+			}
+		} catch (Exception $e) {
+		}
+		return $totalRows;
+	}
+
+	public function isIssueRead($issueId) {
+		$result = '';
+		$lastModificationUserId = '';
+		$isIssueRead = TRUE;
+		try {
+			// se obtiene el último historial para esa incidencia
+			// se chequea que pertenezca al mismo usuario registrado
+			// si no coincide significa que no se ha leido
+			//  -- se inserta historial de quitar la etiqueta si es que no es el utlimo registro.
+			// si coincide no hay que hacer nada
+
+			// se obtiene el id del usuario registrado en este momento
+			$userData = $this->proxySoap->mc_login ( $this->currentUser, $this->currentPassword );
+			$idUser = $userData->account_data->id;
+
+			// se obtiene el ultimo historial
+			$historyBug = $this->getLastHistoryBug($issueId);
+
+			// se chequea que no pertenezca al mismo usuario registrado
+			if ( $historyBug->userId == NULL || $idUser != $historyBug->userId) {
+				$isIssueRead = FALSE;
+
+				// se quita la etiqueta de leido solo si todavia existe
+				$totalHistoriesBugTag = $this->getHistoiesBugTag($issueId);
+				if (bcmod($totalHistoriesBugTag, 2) == 0) {
+					// se inserta un history bug
+					$historyBug->oldValue = MANTIS_READ_LABEL_HISTORY;
+					$historyBug->type = MANTIS_REMOVE_TYPE_HISTORY;
+					$this->addHistoryBug($historyBug);
+				}
+			}
+
+		} catch (Exception $e) {
+		}
+		return $isIssueRead;
+	}
+	
+	public function createHistoryBug($issueId) {
+		
+		// se obtiene el id del usuario registrado en este momento
+			$userData = $this->proxySoap->mc_login ( $this->currentUser, $this->currentPassword );
+			$idUser = $userData->account_data->id;
+			
+		// se ponen los valores del elemento a adicionar
+		$historyBug = new stdClass();
+		$historyBug->userId = $idUser;
+		$historyBug->bugId = $issueId;
+		$historyBug->oldValue = MANTIS_READ_LABEL_HISTORY;
+		$historyBug->type = MANTIS_ADD_TYPE_HISTORY;
+		$this->addHistoryBug($historyBug);
+	}
+
+	/**
 	 * Se obtiene un adjunto a partir de su identificador.
 	 *
 	 * @param int $issueAttachmentId
@@ -271,7 +393,7 @@ class MantisCore {
 			$project = new stdClass();
 			while ( $data = $result->fetch_object () ) {
 				$project->id = $projectId;
-				$project->name = $data->name;	
+				$project->name = $data->name;
 			}
 		} catch (Exception $e) {
 		}
@@ -292,7 +414,7 @@ class MantisCore {
 		}
 		return $retult;
 	}
-	
+
 	/**
 	 * Se obtienen los desarrolladores que se encuentran asignados a un proyecto.
 	 * @param int $projectId
@@ -315,7 +437,7 @@ class MantisCore {
 		}
 		return $users;
 	}
-	
+
 	/**
 	 * Se obtienen todos los datos de un usuario a partir de su identificador.
 	 * @param int $userId
@@ -478,7 +600,7 @@ class MantisCore {
 		} catch (Exception $e) {
 		}
 	}
-	
+
 	/**
 	 * Salva la información necesaria para crear una incidencia.
 	 * @param string $summary
@@ -498,7 +620,7 @@ class MantisCore {
 		}
 		return $idData;
 	}
-	
+
 	/**
 	 * Salva la información en la tabla temporal del sistema
 	 * @param string $data
@@ -515,7 +637,7 @@ class MantisCore {
 		}
 		return $queryId;
 	}
-	
+
 	/**
 	 * Obtiene la información existente en la tabla temporal del sistema
 	 * @return string $result
@@ -532,7 +654,7 @@ class MantisCore {
 		}
 		return $results;
 	}
-	
+
 	public function removeTempData($idData) {
 		try {
 			$query = str_replace ( '%idData%', $idData, getQuery ( 'removeTemporalData' ) );

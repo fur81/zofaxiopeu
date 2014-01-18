@@ -5,9 +5,11 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 
 <div id="client_zone">
 	<!-- se incluye el encabezado con los proyectos -->
-	<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
+<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
 
-	<h1 align="left"><?php echo getProjectName(); echo ' - '; getValue('label_reports');?></h1>
+	<h1 align="left">
+	<?php echo getProjectName(); echo ' - '; getValue('label_reports');?>
+	</h1>
 	<div id="issue_report" onclick="redirectToAddIssue()">
 		<ul>
 			<li><a><?php getValue('label_report_consultation');?> </a>
@@ -40,31 +42,41 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 		for($i = 0; $i < count ( $issuesByUser ); $i ++) {
 			$issue = $issuesByUser [$i];
 			$issueProject = $mantisCore->getProject($issue->project);
+			$isIssueRead = $mantisCore->isIssueRead($issue->id);
 			if ($i % 2 == 0) {
 				?>
 		<tr class="managed-table-tr" onclick="data(<?php echo $issue->id;?>)"
 			style="cursor: pointer;">
-		<?php } else {?>
-		<tr class="managed-table-tr-alternate" onclick="data(<?php echo $issue->id;?>)" style="cursor: pointer;">
+			<?php } else {?>
+		
+		
+		<tr class="managed-table-tr-alternate"
+			onclick="data(<?php echo $issue->id;?>)" style="cursor: pointer;">
 			<?php }?>
-			<td><?php echo getDateFormat($issue->last_updated);?>
+			<td><?php if (!$isIssueRead) {
+				echo '<strong>' . getDateFormat($issue->last_updated) . '</strong>';
+			} else { echo getDateFormat($issue->last_updated);}?>
 			</td>
-			<td><?php echo $issue->summary;?>
+			<td><?php if (!$isIssueRead) { echo '<strong>' . $issue->summary . '</strong>';}
+					else {echo $issue->summary;}?>
 			</td>
-			<td><?php echo $issueProject->name;?>
+			<td><?php if (!$isIssueRead) { echo '<strong>' . $issueProject->name . '</strong>';}
+					else {echo $issueProject->name;}?>
 			</td>
-			<td align="center"><?php echo $issue->attachments_count;?>
+			<td align="center"><?php if (!$isIssueRead) { echo '<strong>' . $issue->attachments_count . '</strong>';}
+							else {echo $issue->attachments_count;}?>
 			</td>
-			<td align="center"><?php echo $issue->notes_count;?>
+			<td align="center"><?php if (!$isIssueRead) { echo '<strong>' . $issue->notes_count . '</strong>' ;}
+						else {echo $issue->notes_count;}?>
 			</td>
 		</tr>
 		<?php
 		}
 		if (count ( $issuesByUser ) == 0) {
-		?>
-			<tr class="empty-data-table">
-				<td colspan="5"><i><?php getValue('label_empty_list');?> </i></td>
-			</tr>
+			?>
+		<tr class="empty-data-table">
+			<td colspan="5"><i><?php getValue('label_empty_list');?> </i></td>
+		</tr>
 		<?php
 		}
 		?>

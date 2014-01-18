@@ -33,6 +33,13 @@ $values['query'] = array(
 		'getDeveloperUsersByProject' => 'SELECT  user_id, realname FROM mantis_user_table 
 										INNER JOIN mantis_project_user_list_table ON user_id = id
 										WHERE project_id = %value% AND mantis_project_user_list_table.access_level = 55;',
+		
+		/** -- historial de incidencias -- */
+		'getLastHistoryBug' => 'SELECT * FROM mantis_bug_history_table WHERE bug_id = %value% ORDER BY id DESC LIMIT 1',
+		'addHistoryBug' => 'INSERT INTO mantis_bug_history_table(user_id, bug_id, field_name, old_value, new_value, type, date_modified) 
+							VALUES (%values%)',
+		'getHistoriesBugTag' => 'SELECT COUNT(bug_id) AS totalRows FROM mantis_bug_history_table WHERE bug_id = %value% AND 
+								(type = 25 OR type = 26)',
 
 		/** -- temporal data -- */
 		'createTemporalData' => 'INSERT INTO mantis_temp_table(data) VALUES ("%value%");',

@@ -8,8 +8,7 @@ $GLOBALS ['CURRENT_PAGE'] = JFactory::getURI();
 // se registra el usuario con las credenciales de joomla
 $mantisCore->login ( $GLOBALS ['CURRENT_USERNAME'], $GLOBALS ['CURRENT_USERFULLNAME'], $GLOBALS ['CURRENT_USEREMAIL'] );
 
-//$mantisCore->getFunctions ();
-
+//print_r($mantisCore->getFunctions ());
 // se utiliza para el retorno de paypal
 if ( isset($_GET['success'])) {
 	$_POST ['flow'] = 'headersIssue';

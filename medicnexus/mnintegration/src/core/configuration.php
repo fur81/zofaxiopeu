@@ -6,6 +6,10 @@ define('MANTIS_ROOT_PASSWORD', 'carabobo');
 define('MANTIS_SERVER_IP', 'localhost');
 define('MANTIS_INFORMER_ACCESS', 25);
 define('MANTIS_DEVELOPER_ACCESS', 55);
+define('MANTIS_READ_LABEL_HISTORY', 'Visto');
+define('MANTIS_ADD_TYPE_HISTORY', 25);
+define('MANTIS_REMOVE_TYPE_HISTORY', 26);
+
 define('SUB_PROJECT_PATH','/medicnexus');
 
 // variables globales de los servicios web
