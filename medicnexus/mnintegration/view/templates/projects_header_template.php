@@ -43,9 +43,13 @@
 	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_HEALTH_PROGRAM;?>')"
 			title="<?php getValue('label_project_health_program_title');?>"
 			style="cursor: pointer;">
-		<img src="images/medicnexus/home/health_programs_service_icon.gif"
-			name="health_programs_service_icon" width="50" height="45" border="0" id="health_programs_service_icon"
-			alt="<?php getValue('label_project_health_program_title');?>"/>
+			<?php 
+           	if (getProjectId() == PROJECT_HEALTH_PROGRAM) {
+        		echo '<div id="health_programs_service_icon_active"></div>';
+        	}else {
+        		echo '<div id="health_programs_service_icon"></div>';
+        	}
+        ?>
 		<h1><?php getValue('label_project_health_program_title');?></h1>
 	</div>
 </div>
