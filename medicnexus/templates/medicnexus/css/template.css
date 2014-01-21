@@ -1329,76 +1329,76 @@ fieldset {
 }
 #quick_consult_service_icon {
 	width: 50px;
-	height: 45px;
+	height: 50px;
 	background: url(../images/quick_consult_service_icon.gif) no-repeat;
 	margin-left: 55px;	
 }
 #quick_consult_service_icon_active {
 	width: 50px;
-	height: 45px;
-	background: url(../images/quick_consult_service_icon_hover.gif) no-repeat;
+	height: 50px;
+	background: url(../images/quick_consult_service_hover_icon.gif) no-repeat;
 	margin-left: 55px;
 	color: #81197F;	
 }
 #quick_consult_service_icon:hover, #quick_consult_service_icon.active {
 	width: 50px;
-	height: 45px;
-	background: url(../images/quick_consult_service_icon_hover.gif) no-repeat;
+	height: 50px;
+	background: url(../images/quick_consult_service_hover_icon.gif) no-repeat;
 	margin-left: 55px;
 	color: #81197F;
 }
 #virtual_consult_service_icon {
 	width: 50px;
-	height: 45px;
+	height: 50px;
 	background: url(../images/virtual_consult_service_icon.gif) no-repeat;
 	margin-left: 55px;	
 }
 #virtual_consult_service_icon_active {
 	width: 50px;
-	height: 45px;
-	background: url(../images/virtual_consult_service_icon_hover.gif) no-repeat;
+	height: 50px;
+	background: url(../images/virtual_consult_service_hover_icon.gif) no-repeat;
 	margin-left: 55px;	
 }
 #virtual_consult_service_icon:hover, #virtual_consult_service_icon.active {
 	width: 50px;
-	height: 45px;
-	background: url(../images/virtual_consult_service_icon_hover.gif) no-repeat;
+	height: 50px;
+	background: url(../images/virtual_consult_service_hover_icon.gif) no-repeat;
 	margin-left: 55px;	
 }
 #second_opinion_service_icon {
 	width: 50px;
-	height: 45px;
+	height: 50px;
 	background: url(../images/second_opinion_service_icon.gif) no-repeat;
 	margin-left: 55px;	
 }
 #second_opinion_service_icon_active {
 	width: 50px;
-	height: 45px;
-	background: url(../images/second_opinion_service_icon_hover.gif) no-repeat;
+	height: 50px;
+	background: url(../images/second_opinion_service_hover_icon.gif) no-repeat;
 	margin-left: 55px;	
 }
 #second_opinion_service_icon:hover, #second_opinion_service_icon.active {
 	width: 50px;
-	height: 45px;
-	background: url(../images/second_opinion_service_icon_hover.gif) no-repeat;
+	height: 50px;
+	background: url(../images/second_opinion_service_hover_icon.gif) no-repeat;
 	margin-left: 55px;	
 }
 #health_programs_service_icon {
 	width: 50px;
-	height: 45px;
+	height: 50px;
 	background: url(../images/health_programs_service_icon.gif) no-repeat;
 	margin-left: 55px;	
 }
 #health_programs_service_icon_active {
 	width: 50px;
-	height: 45px;
-	background: url(../images/health_programs_service_icon_hover.gif) no-repeat;
+	height: 50px;
+	background: url(../images/health_programs_service_hover_icon.gif) no-repeat;
 	margin-left: 55px;	
 }
 #health_programs_service_icon:hover, #health_programs_service_icon.active {
 	width: 50px;
-	height: 45px;
-	background: url(../images/health_programs_service_icon_hover.gif) no-repeat;
+	height: 50px;
+	background: url(../images/health_programs_service_hover_icon.gif) no-repeat;
 	margin-left: 55px;	
 }
 #client_service_box h1 {
