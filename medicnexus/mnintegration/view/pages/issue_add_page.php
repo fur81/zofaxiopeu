@@ -1,115 +1,121 @@
-<div id="client_zone">
-
-	<!-- se agrega el encabezado con los proyectos -->
-<?php setProjectPaypalConfiguration();?>
-<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
-	<h1>
-	<?php getProjectName(); echo ' - '; getValue('label_report_consultation');?>
-	</h1>
-	<table width="100%" cellpadding="1" cellspacing="1"
-		style="float: left;">
-		<tr>
-			<td colspan="4" align="right"><a onclick="redirectToBack()"
-				style="cursor: pointer;"><?php getValue('label_back');?>
-			</a></td>
-		</tr>
-		<tr>
-			<td><label><?php getValue('label_price');?>:</label></td>
-			<td align="right" width="6%"><label><?php echo $GLOBALS['PAYPAL_PRICE']; echo ' ' . PAYPAL_CURRENCY_EUR;?></label>
-			</td>
-		</tr>
-		<form name="subprojectSelectionForm" method="post" action="#">
-		<tr>
-			<td width="15%"><label for="subproject">*<?php getValue('label_specialities');?>:</label>
-			</td>
-			<td width="30%"><select name="subprojectId" id="subproject"
-				onchange="subprojectSelectionAction()" style="width: 100%">
-				<?php
-				$countProjects = 0;
-				$tempProject = NULL;
-				$subprojects = $mantisCore->getSubProjects();
-				foreach ($subprojects as $subproject) {
-					$project = $mantisCore->getProject($subproject);
-					// si no existe lo creo la primera vez
-					if (!isset($_SESSION['subProjectId'])) {
-						$_SESSION['subProjectId'] = $project->id;
-					}
-					// almaceno el primer proyecto
-					if ($tempProject == NULL) {
-						$tempProject = $project;
-					}
-					// se selecciona en el combo el elemento marcado en el submit
-					if ($_SESSION['subProjectId'] == $project->id) {
-						echo '<option selected="selected" value="'.$project->id.'">'.$project->name.'</option>';
-					}else {
-						echo '<option value="'.$project->id.'">'.$project->name.'</option>';
-						// cuenta los proyectos que no coinciden
-						$countProjects++;
-					}
-				}
-				// si en el recorrido no coincide ninguno pues se actualiza con el primero
-				if (count($subprojects) == $countProjects) {
-					$_SESSION['subProjectId'] = $tempProject->id;
-				}
-				?>
-			</select></td>
-		</tr>
-		<tr>
-			<td><label for="specialist">*<?php getValue('label_specialists');?>:</label>
-			</td>
-			<?php if (isset($_SESSION['viewSpecialistsCheckbox']) && $_SESSION['viewSpecialistsCheckbox'] == true)
-			{
-				?>
-			<td width="30%"><select name="specialistData" id="specialistData"
-				style="width: 100%">
-				<?php $users = $mantisCore->getDeveloperUsersByProject($_SESSION['subProjectId']);
-				foreach ($users as $user) {
-					echo '<option value="'.$user->id.'">'.$user->realname.'</option>';
-				}
-				?>
-			</select></td>
-			<?php }else {?>
-			<td width="30%"><select	disabled="disabled" style="width: 100%">
-					<option><?php getValue('label_general_specialist');?></option>
-			</select></td>
-			<?php }?>
-
-			<td width="20%" align="right"><label for="subproject"><?php getValue('label_select_specialist');?>:</label>
-			</td>
-			<td align="left">
-				
-					<input type="checkbox" id="viewSpecialistsCheckbox"
-						name="viewSpecialistsCheckbox" onclick="showSpecialists()"
-			<?php if (isset($_SESSION['viewSpecialistsCheckbox']) &&  $_SESSION['viewSpecialistsCheckbox'] == true) {
-				echo 'checked="checked"';
-			}?> /> <input type="hidden" name="flow" id="flow" value="addIssue"> <input
-						type="hidden" name="issueAction" id="issueAction"
-						value="subprojectSelectionAction">
-				</td>
-		</tr>
-		</form>
-		<tr>
-			<td><label>*<?php getValue('label_summary');?>:</label></td>
-			<td colspan="3"><input id="summaryTextData" name="summaryTextData"
-				style="width: 100%;"></td>
-		</tr>
-		<tr>
-			<td><label>*<?php getValue('label_description');?>:</label>
-			</td>
-			<td colspan="3"><textarea style="width: 100%;" rows="6"
-					name="descriptionTextAreaData" id="descriptionTextAreaData"></textarea></td>
-		</tr>
-		<tr align="right">
-			<td colspan="4">
-				<ul>
-					<li><a onclick="createIssue()" style="cursor: pointer;"><?php getValue('label_report_consultation');?>
-					</a></li>
-					<li style="color: #1aa9b8; font-size: 11px;">|</li>
-					<li><a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?>
-					</a></li>
-				</ul></td>
-		</tr>
-	</table>
+<div id="consultation_details">
+	<div class="back_option">
+        <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
+    </div>    
+    <div>
+        <div>
+            <div class="consultation_detail_icon">
+                <img src="templates/medicnexus/images/consult_report_icon.gif" />
+            </div>
+            <div class="consultation_detail_title">REPORTE DE CONSULTAS</div>
+        </div>
+        <div class="consultation_detail_body">
+            <table width="100%" cellpadding="2" cellspacing="2">
+                <form name="subprojectSelectionForm" method="post" action="#">
+                <tr valign="top">
+                    <td width="110px" class="consult_det_title_td">
+                    	<label for="subproject">*<?php getValue('label_specialities');?>:</label>
+                    </td>
+                    <td width="600px" colspan="2">
+                        <select name="subprojectId" id="subproject" onchange="subprojectSelectionAction()" >
+							<?php
+								$countProjects = 0;
+								$tempProject = NULL;
+								$subprojects = $mantisCore->getSubProjects();
+								
+								foreach ($subprojects as $subproject) 
+								{
+									$project = $mantisCore->getProject($subproject);
+									// si no existe lo creo la primera vez
+									if (!isset($_SESSION['subProjectId'])) {
+										$_SESSION['subProjectId'] = $project->id;
+									}
+									// almaceno el primer proyecto
+									if ($tempProject == NULL) {
+										$tempProject = $project;
+									}
+									// se selecciona en el combo el elemento marcado en el submit
+									if ($_SESSION['subProjectId'] == $project->id) {
+										echo '<option selected="selected" value="'.$project->id.'">'.$project->name.'</option>';
+									}else {
+										echo '<option value="'.$project->id.'">'.$project->name.'</option>';
+										// cuenta los proyectos que no coinciden
+										$countProjects++;
+									}
+								}
+								
+								// si en el recorrido no coincide ninguno pues se actualiza con el primero
+								if (count($subprojects) == $countProjects) 
+								{
+									$_SESSION['subProjectId'] = $tempProject->id;
+								}
+                            ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td width="110px" class="consult_det_title_td">
+                    	<label for="specialist">*<?php getValue('label_specialists');?>:</label>
+                    </td>
+                    <?php if (isset($_SESSION['viewSpecialistsCheckbox']) && $_SESSION['viewSpecialistsCheckbox'] == true)
+					{
+					?>
+					<td width="150px" valign="top">
+                        <select name="specialistData" id="specialistData" style="width: 100%">
+                            <?php $users = $mantisCore->getDeveloperUsersByProject($_SESSION['subProjectId']);
+                            foreach ($users as $user) {
+                                echo '<option value="'.$user->id.'">'.$user->realname.'</option>';
+                            }
+                            ?>
+                        </select>
+                    </td>
+                    <?php }else {?>
+                    <td width="150px">                    	                       
+                        <select	disabled="disabled" style="width: 100%;">
+                        	<option><?php getValue('label_general_specialist');?></option>
+						</select>
+                    </td>
+                    <?php }?>
+                    <td width="400px" class="consult_det_title_td" valign="top">
+                        <label for="subproject"><?php getValue('label_select_specialist');?>:</label> &nbsp;
+                        <input align="texttop" type="checkbox" id="viewSpecialistsCheckbox" name="viewSpecialistsCheckbox" onclick="showSpecialists()"
+                        <?php if (isset($_SESSION['viewSpecialistsCheckbox']) &&  $_SESSION['viewSpecialistsCheckbox'] == true) {
+                            echo 'checked="checked"';
+                        }?> /> 
+                        <input type="hidden" name="flow" id="flow" value="addIssue"> 
+                        <input type="hidden" name="issueAction" id="issueAction" value="subprojectSelectionAction">
+                    </td>
+                </tr>
+                </form>
+                <tr>
+                    <td class="consult_det_title_td">
+                        <label>*<?php getValue('label_summary');?>:</label>
+                    </td>
+                    <td colspan="2">
+                        <input id="summaryTextData" name="summaryTextData" style="width: 100%;">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="consult_det_title_td">
+                        <label>*<?php getValue('label_description');?>:</label>
+                    </td>
+                    <td colspan="2">
+                        <textarea style="width: 100%;" rows="6" name="descriptionTextAreaData" id="descriptionTextAreaData"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="710px" colspan="3" class="controls">
+                        <button onclick="createIssue()" name="Submit" type="submit" style="cursor: pointer;">
+							<?php getValue('label_report_consultation');?>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="back_option">
+        <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
+    </div> 
 </div>
 
 <!-- formularios para el funcionamiento de la pagina adicionar consulta -->
@@ -123,6 +129,12 @@
 	<?php if (isset($_SESSION['viewSpecialistsCheckbox']) && $_SESSION['viewSpecialistsCheckbox'] == true){?>
 		<input type="hidden" id="specialist" name="specialist">
 	<?php }?>
+</form>
+
+<form id="headersIssueForm" name="headersIssueForm" action="#" method="post">
+	<input type="hidden" name="flow" id="flow" value="headersIssue"> <input type="hidden"
+	id="projectId" name="projectId"><input type="hidden" id="issueAction" name="issueAction" 
+	value="projectSelectionAction">
 </form>
 
 <!-- scripts de la página -->
