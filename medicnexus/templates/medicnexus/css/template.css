@@ -57,10 +57,12 @@ input{
 }
 
 textarea {
-	font-size: 11px;
-	border: 1px solid #999;
-	color: #666;	
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border: 1px solid #666666;
+    border-radius: 2px 2px 2px 2px;
+    color: #666666;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    padding: 3px;
 }
 
 select {
@@ -71,7 +73,7 @@ select {
 
 label {
 	color: #333;
-	font-size: 11px;	
+	font-size: 12px;	
 }
 
 /*Estilos generales para títulos*/
@@ -1335,13 +1337,15 @@ fieldset {
 	width: 50px;
 	height: 45px;
 	background: url(../images/quick_consult_service_icon_hover.gif) no-repeat;
-	margin-left: 55px;	
+	margin-left: 55px;
+	color: #81197F;	
 }
 #quick_consult_service_icon:hover, #quick_consult_service_icon.active {
 	width: 50px;
 	height: 45px;
 	background: url(../images/quick_consult_service_icon_hover.gif) no-repeat;
-	margin-left: 55px;	
+	margin-left: 55px;
+	color: #81197F;
 }
 #virtual_consult_service_icon {
 	width: 50px;
@@ -1511,6 +1515,96 @@ fieldset {
 
 /*Fin estilos user guide zone*/
 
+/*Inicio estilos detalles de cosulta*/
+
+#consultation_details {
+	margin: 0 0 0 10px;
+	padding: 0;
+	float: left;
+	width: 715px;	
+}
+
+#consultation_details table {
+	margin: 0;
+}
+
+.back_option {
+	float: left;
+	width: 690px;
+	margin: 0 15px 10px 0;
+	height: 16px;
+    padding: 6px 25px 0 0;
+    text-align: right;
+	background: url(../images/back_option_bg.gif) no-repeat right center;	
+}
+
+.back_option a {
+	color: #12828e;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+.back_option a:hover {
+	text-decoration: underline;
+}
+
+.consultation_detail_icon {
+	float: left;	
+}
+
+.consultation_detail_title {
+	border-bottom: 2px solid #12828e;
+    color: #12828e;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 20px 0 0 10px;
+    padding-bottom: 5px;
+    width: 660px;
+}
+
+.consultation_detail_body {
+	float: left;
+	margin: 20px 0 30px;	
+}
+
+.consult_det_title_td {
+	color: #333;
+	font-size: 12px;
+	text-align: justify;	
+	font-weight: bold;
+}
+
+.consult_det_info_td {
+	color: #666;
+	font-size: 12px;
+	text-align: justify;	
+}
+
+.active_text {
+	font-style: italic;	
+}
+
+.empty-data-table {
+    color: #666;
+    font-size: 11px;
+    text-align: center;
+	font-style: italic;
+}
+
+.notes_form {
+	float: left;
+	margin-bottom: 20px;	
+}
+
+.new_note {
+	color: #333;
+	font-weight: bold;
+	font-size: 12px;	
+}
+
+/*Fin estilos detalles de cosulta*/
+
 #issue_report {
 	float: right;	
 	margin-bottom: 10px;
@@ -1529,10 +1623,6 @@ fieldset {
 }
 #issue_report ul li a:hover{
 	text-decoration: underline;
-}
-.client_data {
-	color: #666;
-	font-size: 11px;	
 }
 #attachment_info {
 	margin: 10px 0 0 -10px;
