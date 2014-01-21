@@ -464,7 +464,7 @@ class MantisCore {
 			$result = $this->proxyMySql->query ( $query );
 			$user = new stdClass();
 			while ( $data = $result->fetch_object () ) {
-				$user->id = $data->user_id;
+				$user->id = $data->id;
 				$user->username = $data->username;
 				$user->realname = $data->realname;
 				$user->email = $data->email;
