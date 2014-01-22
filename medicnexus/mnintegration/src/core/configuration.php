@@ -1,9 +1,5 @@
 <?php
 // variables globales de los sistemas
-define('MANTIS_DATABASE', 'mninside');
-define('MANTIS_ROOT_USERNAME', 'root');
-define('MANTIS_ROOT_PASSWORD', 'carabobo');
-define('MANTIS_SERVER_IP', 'localhost');
 define('MANTIS_INFORMER_ACCESS', 25);
 define('MANTIS_DEVELOPER_ACCESS', 55);
 define('MANTIS_READ_LABEL_HISTORY', 'Visto');
@@ -13,7 +9,7 @@ define('MANTIS_REMOVE_TYPE_HISTORY', 26);
 define('SUB_PROJECT_PATH','/medicnexus');
 
 // variables globales de los servicios web
-define('MANTIS_WEBSERVICES_DIR', 'http://'.MANTIS_SERVER_IP.SUB_PROJECT_PATH.'/mninside/api/soap/mantisconnect.php?wsdl');
+define('MANTIS_WEBSERVICES_DIR', 'http://'.MN_MYSQL_HOST.SUB_PROJECT_PATH.'/mninside/api/soap/mantisconnect.php?wsdl');
 
 // variables globales del proyecto
 define('PROJECT_SECOND_OPINION', 1);
@@ -44,7 +40,7 @@ $GLOBALS['MNI_CONNECTION'] =    $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mni
 
 // -- paypal
 $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE'] = $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/src/paypal/payments/PayPalPaymentClientZone.php';
-$GLOBALS['PAYPAL_EXECUTE_SECOND_OPINION'] = 'http://'.MANTIS_SERVER_IP.SUB_PROJECT_PATH.'/mnintegration/src/paypal/payments/ExecutePayment.php'; 
+$GLOBALS['PAYPAL_EXECUTE_SECOND_OPINION'] = 'http://'.MN_MYSQL_HOST.SUB_PROJECT_PATH.'/mnintegration/src/paypal/payments/ExecutePayment.php'; 
 
 // -- utils
 $GLOBALS['MNI_UTILS'] =         $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/src/utils/utils.php';
