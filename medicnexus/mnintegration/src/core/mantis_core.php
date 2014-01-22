@@ -249,7 +249,7 @@ class MantisCore {
 				$historyBug->id = $data->id;
 				$historyBug->userId = $data->user_id;
 				$historyBug->bugId = $data->bug_id;
-				$historyBug->oldValue = $data->old_value;
+				$historyBug->oldValue = utf8_encode($data->old_value);
 				$historyBug->type = $data->type;
 			}
 		} catch (Exception $e) {
@@ -330,7 +330,7 @@ class MantisCore {
 				$totalHistoriesBugTag = $this->getHistoiesBugTag($issueId);
 				if (bcmod($totalHistoriesBugTag, 2) == 0) {
 					// se inserta un history bug
-					$historyBug->oldValue = MANTIS_READ_LABEL_HISTORY;
+					$historyBug->oldValue = utf8_decode(MANTIS_READ_LABEL_HISTORY);
 					$historyBug->type = MANTIS_REMOVE_TYPE_HISTORY;
 					$this->addHistoryBug($historyBug);
 				}
@@ -354,7 +354,7 @@ class MantisCore {
 		$historyBug = new stdClass();
 		$historyBug->userId = $idUser;
 		$historyBug->bugId = $issueId;
-		$historyBug->oldValue = MANTIS_READ_LABEL_HISTORY;
+		$historyBug->oldValue = utf8_decode(MANTIS_READ_LABEL_HISTORY);
 		$historyBug->type = MANTIS_ADD_TYPE_HISTORY;
 		$this->addHistoryBug($historyBug);
 	}
@@ -407,7 +407,7 @@ class MantisCore {
 			$project = new stdClass();
 			while ( $data = $result->fetch_object () ) {
 				$project->id = $projectId;
-				$project->name = $data->name;
+				$project->name = utf8_encode($data->name);
 			}
 		} catch (Exception $e) {
 		}
@@ -444,7 +444,7 @@ class MantisCore {
 			while ( $data = $result->fetch_object () ) {
 				$user = new stdClass();
 				$user->id = $data->user_id;
-				$user->realname = $data->realname;
+				$user->realname = utf8_encode($data->realname);
 				$users->append($user);
 			}
 		} catch (Exception $e) {
@@ -465,8 +465,8 @@ class MantisCore {
 			$user = new stdClass();
 			while ( $data = $result->fetch_object () ) {
 				$user->id = $data->id;
-				$user->username = $data->username;
-				$user->realname = $data->realname;
+				$user->username = utf8_encode($data->username);
+				$user->realname = utf8_encode($data->realname);
 				$user->email = $data->email;
 				$user->access_level = $data->access_level;
 				$user->login_count = $data->login_count;
@@ -519,7 +519,7 @@ class MantisCore {
 			while ( $data = $result->fetch_object () ) {
 				$category = new stdClass ();
 				$category->id = $data->id;
-				$category->name = $data->name;
+				$category->name = utf8_encode($data->name);
 				$categories->append ( $category );
 			}
 		} catch ( Exception $e ) {
@@ -555,7 +555,7 @@ class MantisCore {
 			while ( $data = $result->fetch_object () ) {
 				$user = new stdClass ();
 				$user->id = $data->id;
-				$user->realname = $data->realname;
+				$user->realname = utf8_encode($data->realname);
 				$users->append ( $user );
 			}
 		} catch (Exception $e) {
@@ -578,7 +578,7 @@ class MantisCore {
 			while ( $data = $result->fetch_object () ) {
 				$user = new stdClass ();
 				$user->id = $data->id;
-				$user->realname = $data->realname;
+				$user->realname = utf8_encode($data->realname);
 				$users->append ( $user );
 			}
 		} catch (Exception $e) {

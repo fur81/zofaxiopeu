@@ -2,7 +2,7 @@
 // variables globales de los sistemas
 define('MANTIS_INFORMER_ACCESS', 25);
 define('MANTIS_DEVELOPER_ACCESS', 55);
-define('MANTIS_READ_LABEL_HISTORY', 'Visto');
+define('MANTIS_READ_LABEL_HISTORY', 'Leída');
 define('MANTIS_ADD_TYPE_HISTORY', 25);
 define('MANTIS_REMOVE_TYPE_HISTORY', 26);
 
