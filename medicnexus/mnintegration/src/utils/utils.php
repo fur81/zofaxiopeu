@@ -86,7 +86,11 @@ function setProjectPaypalConfiguration() {
 }
 
 function getProjectId() {
-	return $_SESSION['projectId'];
+	$result = '';
+	if (isset($_SESSION['projectId'])) {
+		$result = $_SESSION['projectId'];
+	}
+	return $result;
 }
 
 function getValueByString($text) {

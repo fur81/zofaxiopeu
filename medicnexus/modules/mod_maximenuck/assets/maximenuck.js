@@ -2,7 +2,7 @@
  * @copyright	Copyright (C) 2012 Cedric KEIFLIN alias ced1870
  * http://www.joomlack.fr
  * Module Maximenu CK
- * @license		GNU/GPL
+ * @license	GNU/GPL
  * */
 
 (function($) {

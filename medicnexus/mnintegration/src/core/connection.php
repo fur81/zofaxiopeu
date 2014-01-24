@@ -13,10 +13,10 @@ class Connection {
 	public static $instance;
 	private $proxySoap;
 	private $proxyMySql;
-	private $dataBase = MANTIS_DATABASE;
-	private $user = MANTIS_ROOT_USERNAME;
-	private $password = MANTIS_ROOT_PASSWORD;
-	private $server = MANTIS_SERVER_IP;
+	private $dataBase = MN_MANTIS_DATABASE;
+	private $user = MN_MANTIS_ROOT_USERNAME;
+	private $password = MN_MANTIS_ROOT_PASSWORD;
+	private $server = MN_HOST;
 	private $mantisWebServiceDir = MANTIS_WEBSERVICES_DIR;
 	
 	// para incluir en el joomla este fichero

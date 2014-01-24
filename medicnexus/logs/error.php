@@ -8,3 +8,7 @@
 2013-09-15T22:31:18+00:00	INFO	joomlafailure	Contrasenya incorrecta
 2013-10-01T06:04:26+00:00	INFO	joomlafailure	Contrasenya incorrecta
 2013-10-15T07:50:12+00:00	INFO	joomlafailure	No se permiten contraseñas vacías
+2014-01-10T17:46:07+00:00	INFO	joomlacanceled	
+2014-01-10T17:46:13+00:00	INFO	joomlacanceled	
+2014-01-10T17:46:20+00:00	INFO	joomlacanceled	
+2014-01-10T17:47:22+00:00	INFO	joomlacanceled	

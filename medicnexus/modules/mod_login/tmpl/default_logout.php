@@ -21,8 +21,8 @@ JHtml::_('behavior.keepalive');
 	} endif; ?>
 	</div>
 <?php endif; ?>
-	<div class="mn-logout-button">
-		<input type="submit" name="Submit" class="mn-btn-logout" value="<?php echo JText::_('JLOGOUT'); ?>" />
+	<div class="controls" align="right" style="margin-right: 5px;">
+		<button type="submit" name="Submit"><?php echo JText::_('JLOGOUT'); ?></button>
 		<input type="hidden" name="option" value="com_users" />
 		<input type="hidden" name="task" value="user.logout" />
 		<input type="hidden" name="return" value="<?php echo $return; ?>" />

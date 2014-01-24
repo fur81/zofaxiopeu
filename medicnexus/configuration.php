@@ -1,22 +1,25 @@
 <?php
+// se incluyen las variables globales de configuración
+include_once 'general_config.php';
+
 class JConfig {
 	public $offline = '0';
 	public $offline_message = 'Este sitio está cerrado por tareas de mantenimiento.<br /> Por favor, inténtelo nuevamente más tarde.';
 	public $display_offline_message = '1';
 	public $offline_image = '';
 	public $sitename = 'Medicnexus';
-	public $editor = 'tinymce';
+	public $editor = 'jckeditor';
 	public $captcha = 'recaptcha';
 	public $list_limit = '20';
 	public $access = '1';
 	public $debug = '0';
 	public $debug_lang = '0';
 	public $dbtype = 'mysql';
-	public $host = 'localhost';
-	public $user = 'joomla_cero';
-	public $password = 'j00ml4#2013';
-	public $db = 'cero';
-	public $dbprefix = 'cero_';
+	public $host = MN_HOST;
+	public $user = MN_JOOMLA_ROOT_USERNAME;
+	public $password = MN_JOOMLA_ROOT_PASSWORD;
+	public $db = MN_JOOMLA_DATABASE;
+	public $dbprefix = MN_JOOMLA_DATABASE_PREFIX;
 	public $live_site = '';
 	public $secret = 'aDtDIwo3OSlv2woP';
 	public $gzip = '0';
@@ -29,7 +32,7 @@ class JConfig {
 	public $ftp_root = '';
 	public $ftp_enable = '0';
 	public $offset = 'UTC';
-	public $mailer = 'smtp';
+	public $mailer = 'mail';
 	public $mailfrom = 'no-reply@medicnexus.com';
 	public $fromname = 'Medicnexus';
 	public $sendmail = '/usr/sbin/sendmail';

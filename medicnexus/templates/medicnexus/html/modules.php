@@ -48,3 +48,48 @@ function modChrome_well($module, &$params, &$attribs)
 	}
 }
 ?>
+
+
+<?php 
+
+/*function modChrome_generalinfo($module, &$params, &$attribs)
+{
+	if ($module->content)
+	{
+		echo "<div class=\"well " . htmlspecialchars($params->get('moduleclass_sfx')) . "\">";
+		
+		
+		if ($module->showtitle)
+		{
+			echo "<h3 class=\"page-header\">" . $module->title . "</h3>";
+		}
+		echo $module->content;
+		echo "</div>";
+	}
+}*/
+
+/*
+<div id="news-article_zone">
+        <div id="box_title">
+        	<h1>INFORMACIÓN GENERAL</h1>
+            <div id="articles_zone">
+                <h1>ARTÍCULOS</h1>
+                <div id="articles">
+                
+                	
+                
+                	<jdoc:include type="modules" name="articles-preview" style="xhtml" />
+                </div>
+            </div>
+            <div id="articles-news_separator"></div>
+            <div id="articles_zone">
+                <h1>NOTICIAS</h1>
+                <div id="articles">
+                	<jdoc:include type="modules" name="articles-preview" style="xhtml" />
+                </div>
+            </div>
+        </div>
+    </div>
+*/ 
+?>
+

@@ -1,6 +1,6 @@
 <?php
-// establish conecction with data base
-$proxyMySql = new mysqli ( 'localhost', 'mninside', 'm4nt1s#2013', 'mninside' );
+// se establece la conexión con la base de datos
+$proxyMySql = new mysqli ( MN_HOST, MN_MANTIS_ROOT_USERNAME, MN_MANTIS_ROOT_PASSWORD, MN_MANTIS_DATABASE );
 if (mysqli_connect_errno ()) {
 	echo ("Failed to connect, the error message is : " . mysqli_connect_error ());
 	exit ();
