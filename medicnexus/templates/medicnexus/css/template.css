@@ -1615,6 +1615,7 @@ fieldset {
     margin: 20px 0 0 10px;
     padding-bottom: 5px;
     width: 660px;
+    text-transform: uppercase;
 }
 
 .consultation_detail_body {
@@ -1655,7 +1656,8 @@ fieldset {
 .new_note {
 	color: #333;
 	font-weight: bold;
-	font-size: 12px;	
+	font-size: 12px;
+	text-transform: uppercase;	
 }
 
 /*Fin estilos detalles de cosulta*/

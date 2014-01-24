@@ -14,7 +14,7 @@ $issue = $mantisCore->getIssueById ( $issueId );
             <div class="consultation_detail_icon">
                 <img src="templates/medicnexus/images/consult_detail_icon.gif" />
             </div>
-            <div class="consultation_detail_title">DETALLES DE LA CONSULTA</div>
+            <div class="consultation_detail_title"><?php getValue('label_consultation_details');?></div>
         </div>
         <div class="consultation_detail_body">
             <table width="100%" cellpadding="3" cellspacing="0">
@@ -50,9 +50,6 @@ $issue = $mantisCore->getIssueById ( $issueId );
                     	<?php echo $issue->description;?>
                     </td>                
                 </tr>
-                <!--<tr>
-                    <td colspan="2" class="empty-data-table">-- No existen datos para mostrar --</td>
-                </tr>-->
             </table>
         </div>
     </div>
@@ -61,7 +58,7 @@ $issue = $mantisCore->getIssueById ( $issueId );
             <div class="consultation_detail_icon">
                 <img src="templates/medicnexus/images/document_attachment_icon.gif" />
             </div>
-            <div class="consultation_detail_title">DOCUMENTOS ADJUNTOS</div>
+            <div class="consultation_detail_title"><?php getValue('label_attached_documents');?></div>
         </div>
         <div class="consultation_detail_body">
             <div class="controls">
@@ -85,7 +82,8 @@ $issue = $mantisCore->getIssueById ( $issueId );
                         	<?php echo $attached->filename;?>
                         </td>
                         <td width="330px">
-                        	<a onclick="downloadAttached(<?php echo $attached->id;?>, '<?php echo $attached->filename;?>')" style="cursor: pointer;">
+                        	<a onclick="downloadAttached(<?php echo $attached->id;?>, '<?php echo $attached->filename;?>')" 
+                        		style="cursor: pointer;">
                             	<img src="templates/medicnexus/images/download_icon.gif" />
                             </a>
                         </td>
@@ -120,7 +118,7 @@ $issue = $mantisCore->getIssueById ( $issueId );
             <div class="consultation_detail_icon">
                 <img src="templates/medicnexus/images/notes_history_icon.gif" />
             </div>
-            <div class="consultation_detail_title">HISTORIAL DE NOTAS</div>
+            <div class="consultation_detail_title"><?php getValue('label_notes_history');?></div>
         </div>
         <div class="consultation_detail_body">
             <table width="100%" cellpadding="3" cellspacing="0">
@@ -140,11 +138,11 @@ $issue = $mantisCore->getIssueById ( $issueId );
 							
 							if ($issue->reporter->id == $note->reporter->id) 
 							{
-								echo'<tr valign="top" class="active_text"><td width="150px" class="consult_det_title_td">';
+								echo'<tr valign="top" class="active_text"><td width="200px" class="consult_det_title_td">';
 							}
 							else 
 							{
-								echo'<tr valign="top"><td class="consult_det_title_td">';
+								echo'<tr valign="top"><td width="200px" class="consult_det_title_td">';
 							}
 							
 							echo $note->reporter->real_name . ':';
@@ -158,15 +156,12 @@ $issue = $mantisCore->getIssueById ( $issueId );
 					}
 				}
 			?>
-                <!--<tr>
-                    <td colspan="3" class="empty-data-table">-- No existen datos para mostrar --</td>
-                </tr>-->
             </table>
         </div>
         <div class="notes_form controls">
             <table width="100%" cellpadding="2" cellspacing="2">
                 <tr>
-                    <td width="710px" class="new_note">NUEVA NOTA</td>
+                    <td width="710px" class="new_note"><?php getValue('label_new_note');?></td>
                 </tr>
                 <tr>
                     <td width="710px">
@@ -180,7 +175,7 @@ $issue = $mantisCore->getIssueById ( $issueId );
                 </tr>
                 <tr>
                     <td width="710px">
-                        <button name="Submit" type="submit" onclick="addNoteIssue()">Enviar</button>
+                        <button name="Submit" type="submit" onclick="addNoteIssue()"><?php getValue('label_send');?></button>
                     </td>
                 </tr>
             </table>

@@ -22,6 +22,7 @@ $values[L_ENGLISH] = array(
 		/** formularios */
 		'label_empty_list' => '-- There\'s no items to list --',
 		'label_consultation_details' => 'Consultation details',
+		'label_attached_documents' => 'Attached documents',
 		'label_assigned_to' => 'Assigned to',
 		'label_lastUpdate' => 'Last Update',
 		'label_summary' => 'Summary',
@@ -40,8 +41,9 @@ $values[L_ENGLISH] = array(
 		'label_upload_by' => 'Upload by',
 		'label_notes_history' => 'Notes history',
 		'label_back' => 'Back',
-		'label_insert_note' => 'Insert note',
+		'label_new_note' => 'New note',
 		'label_download' => 'Download',
-		'label_reports' => 'Reports'
+		'label_reports' => 'Reports',
+		'label_send' => 'Send'
 );
 ?>
