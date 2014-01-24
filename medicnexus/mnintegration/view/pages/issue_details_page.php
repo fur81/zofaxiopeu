@@ -49,9 +49,6 @@ $issue = $mantisCore->getIssueById ( $issueId );
                     	<?php echo $issue->description;?>
                     </td>                
                 </tr>
-                <!--<tr>
-                    <td colspan="2" class="empty-data-table">-- No existen datos para mostrar --</td>
-                </tr>-->
             </table>
         </div>
     </div>

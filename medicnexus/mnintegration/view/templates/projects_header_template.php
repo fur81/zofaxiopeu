@@ -3,26 +3,61 @@
 	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_RAPID_CONSULTATION;?>')" 
     title="<?php getValue('label_project_rapid_consultation_title');?>"	style="cursor: pointer;">
         <?php 
+        	$totalIssueForRead = $mantisCore->getIssuesWithHistoryCount(PROJECT_RAPID_CONSULTATION);
+        	//echo $totalIssueForRead;
+        	
            	if (getProjectId() == PROJECT_RAPID_CONSULTATION) {
-        		echo '<div id="quick_consult_service_icon_active"></div>';
+           		if ($totalIssueForRead > 0) {
+					echo '<div class="service_icon" id="quick_consult_service_unread_icon_active"></div>';           			
+           		}else {
+	        		echo '<div class="service_icon" id="quick_consult_service_icon_active"></div>';
+           		}
         	}else {
-        		echo '<div id="quick_consult_service_icon"></div>';
+        		if ($totalIssueForRead > 0) {
+        			echo '<div class="service_icon" id="quick_consult_service_unread_icon"></div>';
+        		}else {
+        			echo '<div class="service_icon" id="quick_consult_service_icon"></div>';
+        		}
         	}
         ?>
-		<h1><?php getValue('label_project_rapid_consultation_title');?></h1>
+		<h1>
+		<?php 
+			getValue('label_project_rapid_consultation_title');
+			if ($totalIssueForRead > 0) {
+				echo ' (' . $totalIssueForRead . ')';
+			}
+		?>
+		</h1>
 	</div>
 	<div class="client_options_separator"></div>
 	<div id="client_service_box" onclick="redirectToProject('<?php echo PROJECT_VIRTUAL_CONSULTATION;?>')"
 			title="<?php getValue('label_project_virtual_consultation_title');?>"
 			style="cursor: pointer;">
 		<?php 
+			$totalIssueForRead = $mantisCore->getIssuesWithHistoryCount(PROJECT_VIRTUAL_CONSULTATION);
+        	
            	if (getProjectId() == PROJECT_VIRTUAL_CONSULTATION) {
-        		echo '<div id="virtual_consult_service_icon_active"></div>';
+          	 	if ($totalIssueForRead > 0) {
+					echo '<div class="service_icon" id="virtual_consult_service_unread_icon_active"></div>';           			
+           		}else {
+	        		echo '<div class="service_icon" id="virtual_consult_service_icon_active"></div>';
+           		}
         	}else {
-        		echo '<div id="virtual_consult_service_icon"></div>';
+        		if ($totalIssueForRead > 0) {
+        			echo '<div class="service_icon" id="virtual_consult_service_unread_icon"></div>';
+        		}else {
+        			echo '<div class="service_icon" id="virtual_consult_service_icon"></div>';
+        		}
         	}
         ?>
-		<h1><?php getValue('label_project_virtual_consultation_title');?></h1>
+		<h1>
+		<?php 
+			getValue('label_project_virtual_consultation_title');
+			if ($totalIssueForRead > 0) {
+				echo ' (' . $totalIssueForRead . ')';
+			}
+		?>
+		</h1>
 
 	</div>
 	<div class="client_options_separator"></div>
@@ -30,13 +65,30 @@
 			title="<?php getValue('label_project_second_opinion_title');?>"
 			style="cursor: pointer;">
 		<?php 
+			$totalIssueForRead = $mantisCore->getIssuesWithHistoryCount(PROJECT_SECOND_OPINION);
+        	
            	if (getProjectId() == PROJECT_SECOND_OPINION) {
-        		echo '<div id="second_opinion_service_icon_active"></div>';
+           		if ($totalIssueForRead > 0) {
+					echo '<div class="service_icon" id="second_opinion_service_unread_icon_active"></div>';           			
+           		}else {
+	        		echo '<div class="service_icon" id="second_opinion_service_icon_active"></div>';
+           		}
         	}else {
-        		echo '<div id="second_opinion_service_icon"></div>';
+        		if ($totalIssueForRead > 0) {
+        			echo '<div class="service_icon" id="second_opinion_service_unread_icon"></div>';
+        		}else {
+        			echo '<div class="service_icon" id="second_opinion_service_icon"></div>';
+        		}
         	}
         ?>
-		<h1><?php getValue('label_project_second_opinion_title');?></h1>
+        <h1>
+		<?php 
+			getValue('label_project_second_opinion_title');
+			if ($totalIssueForRead > 0) {
+				echo ' (' . $totalIssueForRead . ')';
+			}
+		?>
+		</h1>
 
 	</div>
 	<div class="client_options_separator"></div>
@@ -44,13 +96,30 @@
 			title="<?php getValue('label_project_health_program_title');?>"
 			style="cursor: pointer;">
 			<?php 
+			$totalIssueForRead = $mantisCore->getIssuesWithHistoryCount(PROJECT_HEALTH_PROGRAM);
+        	
            	if (getProjectId() == PROJECT_HEALTH_PROGRAM) {
-        		echo '<div id="health_programs_service_icon_active"></div>';
+         	  	if ($totalIssueForRead > 0) {
+					echo '<div class="service_icon" id="health_programs_service_unread_icon_active"></div>';           			
+           		}else {
+	        		echo '<div class="service_icon" id="health_programs_service_icon_active"></div>';
+           		}
         	}else {
-        		echo '<div id="health_programs_service_icon"></div>';
+        		if ($totalIssueForRead > 0) {
+        			echo '<div class="service_icon" id="health_programs_service_unread_icon"></div>';
+        		}else {
+        			echo '<div class="service_icon" id="health_programs_service_icon"></div>';
+        		}
         	}
         ?>
-		<h1><?php getValue('label_project_health_program_title');?></h1>
+        <h1>
+		<?php 
+			getValue('label_project_health_program_title');
+			if ($totalIssueForRead > 0) {
+				echo ' (' . $totalIssueForRead . ')';
+			}
+		?>
+		</h1>
 	</div>
 </div>
 <div id="client_options_divider"></div>

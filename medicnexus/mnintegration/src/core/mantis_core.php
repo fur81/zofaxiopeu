@@ -174,6 +174,30 @@ class MantisCore {
 	}
 
 	/**
+	 * Se obtiene la cantidad de incidencias que tiene por leer un proyecto.
+	 * @param int $projectId
+	 * @return number
+	 */
+	public function getIssuesWithHistoryCount($projectId) {
+		$total = 0;
+		try {
+			// se obtiene las incidencias asociadas a un proyecto
+			$issuesByUser = $this->proxySoap->mc_project_get_issue_headers (
+			$this->currentUser, $this->currentPassword, $projectId, PAGE_NUMBER, ELEMENTS_PER_PAGE );
+			// para cada incidencia se busca si ha sido leida o no
+			for($i = 0; $i < count ( $issuesByUser ); $i ++) {
+				$issue = $issuesByUser [$i];
+				$isIssueRead = $this->isIssueRead($issue->id);
+				if (!$isIssueRead) {
+					$total++;
+				}
+			}
+		} catch (Exception $e) {
+		}
+		return $total;
+	}
+
+	/**
 	 * Se obtiene la descripcion completa de las incidencias del usuario registrado.
 	 */
 	public function getIssuesDetail() {

@@ -42,7 +42,11 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 		for($i = 0; $i < count ( $issuesByUser ); $i ++) {
 			$issue = $issuesByUser [$i];
 			$issueProject = $mantisCore->getProject($issue->project);
-			$isIssueRead = $mantisCore->isIssueRead($issue->id);
+			$totalHistoriesBugTag = $mantisCore->getHistoiesBugTag($issue->id);
+			$isIssueRead = TRUE;
+			if (bcmod($totalHistoriesBugTag, 2) != 0) {
+				$isIssueRead = FALSE;
+			}
 			if ($i % 2 == 0) {
 				?>
 		<tr class="managed-table-tr" onclick="data(<?php echo $issue->id;?>)"
@@ -96,6 +100,7 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 <form id="addIssueForm" name="addIssueForm" action="#" method="post">
 	<input type="hidden" name="flow" id="flow" value="addIssue">
 </form>
+
 <form id="detailsForm" name="detailsForm" action="#" method="post">
 	<input type="hidden" name="issueId" id="issueId"> <input type="hidden"
 		name="flow" id="flow" value="detailsIssue"><input type="hidden"
