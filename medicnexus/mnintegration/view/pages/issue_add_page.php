@@ -1,6 +1,7 @@
 <div id="consultation_details">
 	<div class="back_option">
         <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
+        <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
     </div>    
     <div>
         <div>
@@ -10,14 +11,14 @@
             <div class="consultation_detail_title">REPORTE DE CONSULTAS</div>
         </div>
         <div class="consultation_detail_body">
-            <table width="100%" cellpadding="2" cellspacing="2">
+            <table width="100%" cellpadding="3" cellspacing="3">
                 <form name="subprojectSelectionForm" method="post" action="#">
                 <tr valign="top">
                     <td width="110px" class="consult_det_title_td">
                     	<label for="subproject">*<?php getValue('label_specialities');?>:</label>
                     </td>
                     <td width="600px" colspan="2">
-                        <select name="subprojectId" id="subproject" onchange="subprojectSelectionAction()" >
+                        <select name="subprojectId" id="subproject" onchange="subprojectSelectionAction()" style="width: 157px;">
 							<?php
 								$countProjects = 0;
 								$tempProject = NULL;
@@ -71,14 +72,14 @@
                     </td>
                     <?php }else {?>
                     <td width="150px">                    	                       
-                        <select	disabled="disabled" style="width: 100%;">
+                        <select	disabled="disabled"  style="width: 100%">
                         	<option><?php getValue('label_general_specialist');?></option>
 						</select>
                     </td>
                     <?php }?>
                     <td width="400px" class="consult_det_title_td" valign="top">
-                        <label for="subproject"><?php getValue('label_select_specialist');?>:</label> &nbsp;
-                        <input align="texttop" type="checkbox" id="viewSpecialistsCheckbox" name="viewSpecialistsCheckbox" onclick="showSpecialists()"
+                        <label for="subproject" style="vertical-align: inherit !important"><?php getValue('label_select_specialist');?>:</label> &nbsp;
+                        <input align="texttop" style="vertical-align: top" type="checkbox" id="viewSpecialistsCheckbox" name="viewSpecialistsCheckbox" onclick="showSpecialists()"
                         <?php if (isset($_SESSION['viewSpecialistsCheckbox']) &&  $_SESSION['viewSpecialistsCheckbox'] == true) {
                             echo 'checked="checked"';
                         }?> /> 
@@ -88,7 +89,7 @@
                 </tr>
                 </form>
                 <tr>
-                    <td class="consult_det_title_td">
+                    <td class="consult_det_title_td" valign="top">
                         <label>*<?php getValue('label_summary');?>:</label>
                     </td>
                     <td colspan="2">
@@ -96,11 +97,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="consult_det_title_td">
+                    <td class="consult_det_title_td" valign="top">
                         <label>*<?php getValue('label_description');?>:</label>
                     </td>
                     <td colspan="2">
-                        <textarea style="width: 100%;" rows="6" name="descriptionTextAreaData" id="descriptionTextAreaData"></textarea>
+                        <textarea style="width: 99%;" rows="6" name="descriptionTextAreaData" id="descriptionTextAreaData"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -113,8 +114,49 @@
             </table>
         </div>
     </div>
+    <div>
+        	<div>
+            	<div class="consultation_detail_icon">
+                	<img src="templates/medicnexus/images/payment_icon.gif" />
+                </div>
+                <div class="consultation_detail_title">PAGO</div>
+            </div>
+            <div class="consultation_detail_body">
+            	<table width="100%" cellpadding="3" cellspacing="3">
+                	<tr valign="top">
+                    	<td width="110px" class="consult_det_title_td">Precio:</td>
+                        <td width="600px" colspan="2">
+                        	<label>70 EUR (€)</label>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                    	<td width="110px" class="consult_det_title_td">Impuesto:</td>
+                        <td width="600px">
+                        	<label>6 EUR (3%)</label>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                    	<td class="consult_det_title_td" valign="top">
+                        	<label>Tipo de pago:</label>
+                        </td>
+                        <td colspan="2" valign="top">
+                        	<label style="vertical-align: inherit !important">PayPal:</label>
+                        	<input style="vertical-align: inherit !important" name="" type="radio" value="paypal" />
+                            &nbsp;&nbsp;<label style="vertical-align: inherit !important">TPV:</label>
+                        	<input style="vertical-align: inherit !important" name="" type="radio" value="paypal" />
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td width="710px" colspan="3" class="controls">
+                        	<button name="Submit" type="submit">Efectuar pago</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     <div class="back_option">
         <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
+        <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
     </div> 
 </div>
 

@@ -834,6 +834,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
     padding: 40px 0 10px 35px;
     width: 215px;
 	border: 1px solid #1aa9b8;	
+	border-radius: 2px 2px 2px 2px;
 }
 
 .mn-login-greeting {
@@ -1327,6 +1328,15 @@ fieldset {
 #client_service_box img {
 	margin: 0 0 0 55px;	
 }
+.title_client_zone_menu {
+	float: left;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 60px 0 0 -50px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 150px;
+}
 .service_icon {
 	width: 50px;
 	height: 50px;
@@ -1334,72 +1344,99 @@ fieldset {
 }
 #quick_consult_service_icon {
 	background: url(../images/quick_consult_service_icon.gif) no-repeat;
+	color: #1aa9b8;
 }
 #quick_consult_service_unread_icon {
 	background: url(../images/quick_consult_service_unread_icon.gif) no-repeat;
+	color: #1aa9b8;
 }
 #quick_consult_service_icon_active {
 	background: url(../images/quick_consult_service_hover_icon.gif) no-repeat;
+	color: #81197F;	
 }
 #quick_consult_service_unread_icon_active {
 	background: url(../images/quick_consult_service_hover_unread_icon.gif) no-repeat;
+	color: #81197F;	
 }
-#quick_consult_service_icon:hover, #quick_consult_service_icon.active {
+#quick_consult_service_icon:hover {
 	background: url(../images/quick_consult_service_hover_icon.gif) no-repeat;
+	color: #81197F;
 }
-#quick_consult_service_unread_icon:hover, #quick_consult_service_unread_icon.active {
+#quick_consult_service_unread_icon:hover {
 	background: url(../images/quick_consult_service_hover_unread_icon.gif) no-repeat;
+	color: #81197F;
 }
 #virtual_consult_service_icon {
 	background: url(../images/virtual_consult_service_icon.gif) no-repeat;
+	color: #1aa9b8;
 }
 #virtual_consult_service_unread_icon {
 	background: url(../images/virtual_consult_service_unread_icon.gif) no-repeat;
+	color: #1aa9b8;
 }
 #virtual_consult_service_icon_active {
 	background: url(../images/virtual_consult_service_hover_icon.gif) no-repeat;
+	color: #81197F;		
 }
 #virtual_consult_service_unread_icon_active {
 	background: url(../images/virtual_consult_service_hover_unread_icon.gif) no-repeat;
+	color: #81197F;		
 }
-#virtual_consult_service_icon:hover, #virtual_consult_service_icon.active {
+#virtual_consult_service_icon:hover {
 	background: url(../images/virtual_consult_service_hover_icon.gif) no-repeat;
+	color: #81197F;	
 }
-#virtual_consult_service_unread_icon:hover, #virtual_consult_service_unread_icon.active {
+#virtual_consult_service_unread_icon:hover {
 	background: url(../images/virtual_consult_service_hover_unread_icon.gif) no-repeat;
+	color: #81197F;	
 }
 #second_opinion_service_icon {
 	background: url(../images/second_opinion_service_icon.gif) no-repeat;
+	color: #1aa9b8;	
 }
 #second_opinion_service_unread_icon {
 	background: url(../images/second_opinion_service_unread_icon.gif) no-repeat;
+	color: #1aa9b8;	
 }
 #second_opinion_service_icon_active {
 	background: url(../images/second_opinion_service_hover_icon.gif) no-repeat;
+	color: #81197F;	
 }
 #second_opinion_service_unread_icon_active {
 	background: url(../images/second_opinion_service_hover_unread_icon.gif) no-repeat;
+	color: #81197F;	
 }
-#second_opinion_service_icon:hover, #second_opinion_service_icon.active {
+#second_opinion_service_icon:hover {
 	background: url(../images/second_opinion_service_hover_icon.gif) no-repeat;
+	color: #81197F;	
 }
-#second_opinion_service_unread_icon:hover, #second_opinion_service_unread_icon.active {
+#second_opinion_service_unread_icon:hover {
 	background: url(../images/second_opinion_service_hover_unread_icon.gif) no-repeat;
+	color: #81197F;	
 }
 #health_programs_service_icon {
 	background: url(../images/health_programs_service_icon.gif) no-repeat;
+	color: #1aa9b8;	
 }
 #health_programs_service_unread_icon {
 	background: url(../images/health_programs_service_unread_icon.gif) no-repeat;
+	color: #1aa9b8;	
+}
+#health_programs_service_icon_active {
+	background: url(../images/health_programs_service_hover_icon.gif) no-repeat;
+	color: #81197F;	
 }
 #health_programs_service_unread_icon_active {
 	background: url(../images/health_programs_service_hover_unread_icon.gif) no-repeat;
+	color: #81197F;	
 }
-#health_programs_service_icon:hover, #health_programs_service_icon.active {
+#health_programs_service_icon:hover {
 	background: url(../images/health_programs_service_hover_icon.gif) no-repeat;
+	color: #81197F;	
 }
-#health_programs_service_unread_icon:hover, #health_programs_service_unread_icon.active {
+#health_programs_service_unread_icon:hover {
 	background: url(../images/health_programs_service_hover_unread_icon.gif) no-repeat;
+	color: #81197F;	
 }
 #client_service_box h1 {
 	color: #1aa9b8;
@@ -1548,17 +1585,16 @@ fieldset {
 
 .back_option {
 	float: left;
-	width: 690px;
-	margin: 0 15px 10px 0;
+	width: 715px;
 	height: 16px;
-    padding: 6px 25px 0 0;
+	margin: 0 0 20px 0;
     text-align: right;
-	background: url(../images/back_option_bg.gif) no-repeat right center;	
+	/*background: url(../images/back_option_bg.gif) no-repeat right center;*/	
 }
 
 .back_option a {
 	color: #12828e;
-    font-size: 11px;
+    font-size: 12px;
     text-decoration: none;
 }
 
@@ -1591,6 +1627,7 @@ fieldset {
 	font-size: 12px;
 	text-align: justify;	
 	font-weight: bold;
+	vertical-align: top;
 }
 
 .consult_det_info_td {

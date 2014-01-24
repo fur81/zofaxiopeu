@@ -7,6 +7,7 @@ $issue = $mantisCore->getIssueById ( $issueId );
 <div id="consultation_details">
 	<div class="back_option">
         <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
+        <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
     </div>
     <div>
         <div>
@@ -49,6 +50,9 @@ $issue = $mantisCore->getIssueById ( $issueId );
                     	<?php echo $issue->description;?>
                     </td>                
                 </tr>
+                <!--<tr>
+                    <td colspan="2" class="empty-data-table">-- No existen datos para mostrar --</td>
+                </tr>-->
             </table>
         </div>
     </div>
@@ -184,16 +188,11 @@ $issue = $mantisCore->getIssueById ( $issueId );
     </div>
     <div class="back_option">
         <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
+        <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
     </div>
 </div>
 
 <!-- formularios para ser utilizados en el javascript -->
-
-<form id="headersIssueForm" name="headersIssueForm" action="#" method="post">
-	<input type="hidden" name="flow" id="flow" value="headersIssue"> <input type="hidden"
-	id="projectId" name="projectId"><input type="hidden" id="issueAction" name="issueAction" 
-	value="projectSelectionAction">
-</form>
 
 <form id="downloadAttachedForm" name="downloadAttachedForm"
 	method="post" action="#">
@@ -201,6 +200,12 @@ $issue = $mantisCore->getIssueById ( $issueId );
 	<input type="hidden" name="attachedId"> <input type="hidden"
 		name="attachedFileName"> <input type="hidden" name="flow" id="flow"
 		value="detailsIssue" />
+</form>
+
+<form id="headersIssueForm" name="headersIssueForm" action="#" method="post">
+	<input type="hidden" name="flow" id="flow" value="headersIssue"> <input type="hidden"
+	id="projectId" name="projectId"><input type="hidden" id="issueAction" name="issueAction" 
+	value="projectSelectionAction">
 </form>
 
 <!-- scripts para el funcionamiento de la página -->
