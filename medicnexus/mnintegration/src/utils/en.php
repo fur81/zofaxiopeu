@@ -5,11 +5,11 @@ $values[L_ENGLISH] = array(
 		/**  projects */
 		'label_project_second_opinion_title' => 'Second Opinion',
 		'label_project_second_opinion_description' => 'Los médicos dan una segunda opinión del servicio.',
-		'label_project_virtual_consultation_title' => 'Consulta Virtual',
+		'label_project_virtual_consultation_title' => 'Virtual Consultation',
 		'label_project_virtual_consultation_description' => 'Los médicos brindan una consulta virtual para los clientes.',
-		'label_project_rapid_consultation_title' => 'Consulta Rápida',
+		'label_project_rapid_consultation_title' => 'Rapid Consultation',
 		'label_project_rapid_consultation_description' => 'Los médicos brindan una consulta rápida para necesidades inmediatas.',
-		'label_project_health_program_title' => 'Programa de Salud',
+		'label_project_health_program_title' => 'Health Program',
 		'label_project_health_program_description' => 'Se brinda un programa de salud para los consultantes.',
 
 		/** etiquetas generales*/
