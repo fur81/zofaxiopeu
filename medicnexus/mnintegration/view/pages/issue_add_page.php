@@ -18,7 +18,7 @@
                     	<label for="subproject">*<?php getValue('label_specialities');?>:</label>
                     </td>
                     <td width="600px" colspan="2">
-                        <select name="subprojectId" id="subproject" onchange="subprojectSelectionAction()" style="width: 157px;">
+                        <select name="subprojectId" id="subproject" onchange="subprojectSelectionAction()" style="width: 193px;">
 							<?php
 								$countProjects = 0;
 								$tempProject = NULL;
@@ -61,7 +61,7 @@
                     <?php if (isset($_SESSION['viewSpecialistsCheckbox']) && $_SESSION['viewSpecialistsCheckbox'] == true)
 					{
 					?>
-					<td width="150px" valign="top">
+					<td width="200px" valign="top">
                         <select name="specialistData" id="specialistData" style="width: 100%">
                             <?php $users = $mantisCore->getDeveloperUsersByProject($_SESSION['subProjectId']);
                             foreach ($users as $user) {
@@ -71,7 +71,7 @@
                         </select>
                     </td>
                     <?php }else {?>
-                    <td width="150px">                    	                       
+                    <td width="200px">                    	                       
                         <select	disabled="disabled"  style="width: 100%">
                         	<option><?php getValue('label_general_specialist');?></option>
 						</select>
