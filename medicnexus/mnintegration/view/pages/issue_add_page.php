@@ -8,7 +8,7 @@
             <div class="consultation_detail_icon">
                 <img src="templates/medicnexus/images/consult_report_icon.gif" />
             </div>
-            <div class="consultation_detail_title">REPORTE DE CONSULTAS</div>
+            <div class="consultation_detail_title"><?php getValue('label_report_consultation_info');?></div>
         </div>
         <div class="consultation_detail_body">
             <table width="100%" cellpadding="3" cellspacing="3">
@@ -37,9 +37,13 @@
 									}
 									// se selecciona en el combo el elemento marcado en el submit
 									if ($_SESSION['subProjectId'] == $project->id) {
-										echo '<option selected="selected" value="'.$project->id.'">'.$project->name.'</option>';
+										echo '<option selected="selected" value="'.$project->id.'">';
+										getValueByString($project->name);
+										echo '</option>';
 									}else {
-										echo '<option value="'.$project->id.'">'.$project->name.'</option>';
+										echo '<option value="'.$project->id.'">';
+										getValueByString($project->name);
+										echo '</option>';
 										// cuenta los proyectos que no coinciden
 										$countProjects++;
 									}
@@ -104,13 +108,6 @@
                         <textarea style="width: 99%;" rows="6" name="descriptionTextAreaData" id="descriptionTextAreaData"></textarea>
                     </td>
                 </tr>
-                <tr>
-                    <td width="710px" colspan="3" class="controls">
-                        <button onclick="createIssue()" name="Submit" type="submit" style="cursor: pointer;">
-							<?php getValue('label_report_consultation');?>
-                        </button>
-                    </td>
-                </tr>
             </table>
         </div>
     </div>
@@ -119,36 +116,40 @@
             	<div class="consultation_detail_icon">
                 	<img src="templates/medicnexus/images/payment_icon.gif" />
                 </div>
-                <div class="consultation_detail_title">PAGO</div>
+                <div class="consultation_detail_title"><?php getValue('label_payment');?></div>
             </div>
             <div class="consultation_detail_body">
             	<table width="100%" cellpadding="3" cellspacing="3">
                 	<tr valign="top">
-                    	<td width="110px" class="consult_det_title_td">Precio:</td>
+                    	<td width="110px" class="consult_det_title_td"><?php getValue('label_price');?>:</td>
                         <td width="600px" colspan="2">
                         	<label>70 EUR (€)</label>
                         </td>
                     </tr>
                     <tr valign="top">
-                    	<td width="110px" class="consult_det_title_td">Impuesto:</td>
+                    	<td width="110px" class="consult_det_title_td"><?php getValue('label_tax');?>:</td>
                         <td width="600px">
                         	<label>6 EUR (3%)</label>
                         </td>
                     </tr>
                     <tr valign="top">
                     	<td class="consult_det_title_td" valign="top">
-                        	<label>Tipo de pago:</label>
+                        	<label><?php getValue('label_payment_type');?>:</label>
                         </td>
                         <td colspan="2" valign="top">
                         	<label style="vertical-align: inherit !important">PayPal:</label>
-                        	<input style="vertical-align: inherit !important" name="" type="radio" value="paypal" />
+                        	<input id="paymentTypePaypal" style="vertical-align: inherit !important" 
+                        		name="paymentType" type="radio" value="paypal"/>
                             &nbsp;&nbsp;<label style="vertical-align: inherit !important">TPV:</label>
-                        	<input style="vertical-align: inherit !important" name="" type="radio" value="paypal" />
+                        	<input id="paymentTypeTPV" style="vertical-align: inherit !important" 
+                        		name="paymentType" type="radio" value="tpv" />
                         </td>
                     </tr>
                     <tr>
                     	<td width="710px" colspan="3" class="controls">
-                        	<button name="Submit" type="submit">Efectuar pago</button>
+                        	<button onclick="createIssue()" name="Submit" type="submit" style="cursor: pointer;">
+								<?php getValue('button_send');?>
+                        	</button>
                         </td>
                     </tr>
                 </table>

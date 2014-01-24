@@ -12,12 +12,24 @@ $values[L_ENGLISH] = array(
 		'label_project_health_program_title' => 'Health Program',
 		'label_project_health_program_description' => 'Se brinda un programa de salud para los consultantes.',
 
+		/**  sub projects */
+		'label_subproject_rapid_consult_general' => 'General Rapid Consult',
+		'label_subproject_virtual_consult_general' => 'General Virtual Consutl',
+		'label_subproject_health_program_general' => 'General Health Program',
+		'label_subproject_second_opinion_general' => 'General Second Opinion',
+		'label_subproject_cardiology' => 'Cardiology',
+		'label_subproject_gynecology' => 'Gynecology',
+		'label_subproject_pediatrics' => 'Pediatrics',
+
 		/** etiquetas generales*/
 		'label_report_consultation' => 'Report consultation',
+		'label_report_consultation_info' => 'Report consultation',
+		'label_payment' => 'Payment',
 		'label_price' => 'Price',
 		'label_shipping' => 'Shipping',
 		'label_tax' => 'Tax',
 		'label_total_amount' => 'Total Amount',
+		'label_payment_type' => 'Payment Type',
 		
 		/** formularios */
 		'label_empty_list' => '-- There\'s no items to list --',
@@ -34,7 +46,6 @@ $values[L_ENGLISH] = array(
 		'label_attached' => 'Attached',
 		'label_notes' => 'Notes',
 		'label_description' => 'Description',
-		'label_upload_file' => 'Upload File',
 		'label_name' => 'Name',
 		'label_upload_date' => 'Upload date',
 		'label_size' => 'Size',
@@ -44,6 +55,9 @@ $values[L_ENGLISH] = array(
 		'label_new_note' => 'New note',
 		'label_download' => 'Download',
 		'label_reports' => 'Reports',
-		'label_send' => 'Send'
+
+		/** botones */
+		'button_send' => 'Send',
+		'button_upload_file' => 'Upload File',
 );
 ?>

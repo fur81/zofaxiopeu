@@ -23,7 +23,13 @@ $issue = $mantisCore->getIssueById ( $issueId );
                     	<label><?php getValue('label_assigned_to');?>:</label>
                     </td>
                     <td width="600px" class="consult_det_info_td">
-                    	<?php echo $issue->handler->real_name;?>
+                    	<?php 
+                    		if ('Especialista General' != $issue->handler->real_name) {
+                    			echo $issue->handler->real_name;
+                    		}else {
+                    			getValueByString($issue->handler->real_name);
+                    		}
+                    	?>
                     </td>
                 </tr>
                 <tr valign="top">
@@ -31,7 +37,7 @@ $issue = $mantisCore->getIssueById ( $issueId );
                     	<label><?php getValue('label_speciality');?>:</label>
                     </td>
                     <td class="consult_det_info_td">
-                    	<?php echo $issue->project->name;?>
+                    	<?php getValueByString($issue->project->name);?>
                     </td>
                 </tr>
                 <tr valign="top">
@@ -105,7 +111,7 @@ $issue = $mantisCore->getIssueById ( $issueId );
                                 <input type="hidden" name="flow" id="flow" value="detailsIssue" />
                                 <input type="hidden" name="issueId" id="issueId" value="<?php echo $issueId;?>">
                                 <button type="submit" name="uploadFile" style="cursor: pointer;">
-                                	<?php getValue('label_upload_file');?></button>
+                                	<?php getValue('button_upload_file');?></button>
                             </form>
                         </td>
                     </tr>
@@ -175,7 +181,7 @@ $issue = $mantisCore->getIssueById ( $issueId );
                 </tr>
                 <tr>
                     <td width="710px">
-                        <button name="Submit" type="submit" onclick="addNoteIssue()"><?php getValue('label_send');?></button>
+                        <button name="Submit" type="submit" onclick="addNoteIssue()"><?php getValue('button_send');?></button>
                     </td>
                 </tr>
             </table>

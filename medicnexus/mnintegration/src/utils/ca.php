@@ -12,12 +12,24 @@ $values[L_CATALAN] = array(
 		'label_project_health_program_title' => 'Programa de Salut',
 		'label_project_health_program_description' => 'Es brinda un programa de salut per als consultants.',
 
+		/**  sub projects */
+		'label_subproject_rapid_consult_general' => 'Consulta Rápida General',
+		'label_subproject_virtual_consult_general' => 'Consulta Virtual General',
+		'label_subproject_health_program_general' => 'Programa de Salud General',
+		'label_subproject_second_opinion_general' => 'Segunda Opinión General',
+		'label_subproject_cardiology' => 'Cardiología',
+		'label_subproject_gynecology' => 'Ginecología',
+		'label_subproject_pediatrics' => 'Pediatría',
+
 		/** etiquetas generales*/
 		'label_report_consultation' => 'Informar consulta',
+		'label_report_consultation_info' => 'Reporte de consulta',
+		'label_payment' => 'Pago',
 		'label_price' => 'Preu',
 		'label_shipping' => 'Enviament',
 		'label_tax' => 'Impost',
 		'label_total_amount' => 'Total a Pagar',
+		'label_payment_type' => 'Tipo de pago',
 		
 		/** formularios */
 		'label_empty_list' => '-- No hi ha dades per mostrar --',
@@ -44,6 +56,9 @@ $values[L_CATALAN] = array(
 		'label_new_note' => 'Nueva nota',
 		'label_download' => 'Descarregar',
 		'label_reports' => 'Informes',
-		'label_send' => 'Enviar'
+
+		/** botones */
+		'button_send' => 'Enviar',
+		'button_upload_file' => 'Subir Fichero',
 );
 ?>
