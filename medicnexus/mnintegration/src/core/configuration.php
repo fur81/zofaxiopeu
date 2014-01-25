@@ -1,6 +1,9 @@
 <?php
 // variables globales de los sistemas
 define('MN_HOST', 'localhost');
+define('MN_MANTIS_ROOT_USERNAME', 'mninside');
+define('MN_MANTIS_ROOT_PASSWORD', 'm4nt1s#2013');
+define('MN_MANTIS_DATABASE', 'mninside');
 define('MANTIS_INFORMER_ACCESS', 25);
 define('MANTIS_DEVELOPER_ACCESS', 55);
 define('MANTIS_READ_LABEL_HISTORY', 'Leída');
