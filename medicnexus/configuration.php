@@ -15,9 +15,9 @@ class JConfig {
 	public $debug = '0';
 	public $debug_lang = '0';
 	public $dbtype = 'mysql';
-	public $host = MN_MYSQL_HOST;
-	public $user = MN_MYSQL_USER;
-	public $password = MN_MYSQL_PASSWORD;
+	public $host = MN_HOST;
+	public $user = MN_JOOMLA_ROOT_USERNAME;
+	public $password = MN_JOOMLA_ROOT_PASSWORD;
 	public $db = MN_JOOMLA_DATABASE;
 	public $dbprefix = MN_JOOMLA_DATABASE_PREFIX;
 	public $live_site = '';

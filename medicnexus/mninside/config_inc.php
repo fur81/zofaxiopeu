@@ -1,9 +1,9 @@
 <?php
-	$g_hostname = MN_MYSQL_HOST;
+	$g_hostname = MN_HOST;
 	$g_db_type = 'mysql';
 	$g_database_name = MN_MANTIS_DATABASE;
-	$g_db_username = MN_MYSQL_USER;
-	$g_db_password = MN_MYSQL_PASSWORD;
+	$g_db_username = MN_MANTIS_ROOT_USERNAME;
+	$g_db_password = MN_MANTIS_ROOT_PASSWORD;
 	
 	# --- language --- #
         $g_default_language = 'spanish';
