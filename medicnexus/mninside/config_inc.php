@@ -29,6 +29,11 @@
         $g_short_date_format = 'd/m/Y H:i';
         $g_normal_date_format = 'd/m/Y H:i';
         $g_complete_date_format = 'd/m/Y H:i';
+        
+        # --- Attachments / File Uploads ---
+		$g_allow_file_upload	= ON;
+		$g_file_upload_method	= DATABASE;
+		$g_max_file_size		= 5000000;	# in bytes
 		
         # --- branding --- #
         $g_window_title         = 'Medicnexus';
