@@ -1,5 +1,6 @@
 <?php
 // variables globales de los sistemas
+include_once 'general_config.php';
 define('MANTIS_INFORMER_ACCESS', 25);
 define('MANTIS_DEVELOPER_ACCESS', 55);
 define('MANTIS_READ_LABEL_HISTORY', 'Leída');
