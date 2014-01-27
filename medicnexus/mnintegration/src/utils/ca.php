@@ -20,6 +20,8 @@ $values[L_CATALAN] = array(
 		'label_subproject_cardiology' => 'Cardiología',
 		'label_subproject_gynecology' => 'Ginecología',
 		'label_subproject_pediatrics' => 'Pediatría',
+		'label_subproject_urology' => 'Urología',
+		'label_subproject_neurology' => 'Neurología',
 
 		/** etiquetas generales*/
 		'label_report_consultation' => 'Informar consulta',

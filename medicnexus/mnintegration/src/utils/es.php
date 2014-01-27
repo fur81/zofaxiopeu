@@ -20,6 +20,8 @@ $values[L_SPANISH] = array(
 		'label_subproject_cardiology' => 'Cardiología',
 		'label_subproject_gynecology' => 'Ginecología',
 		'label_subproject_pediatrics' => 'Pediatría',
+		'label_subproject_urology' => 'Urología',
+		'label_subproject_neurology' => 'Neurología',
 
 
 		/** etiquetas generales */
