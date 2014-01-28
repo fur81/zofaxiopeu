@@ -62,5 +62,12 @@ $values[L_CATALAN] = array(
 		/** botones */
 		'button_send' => 'Enviar',
 		'button_upload_file' => 'Subir Fichero',
+
+		/** mensajes */
+		'msg_info' => 'message',
+		'msg_info_consult_inserted' => 'La consulta ha sido creada correctamente.',
+		'msg_error' => 'error',
+		'msg_error_consult_inserted' => 'La consulta no se ha podido crear. Consulte a los teléfonos del sitio para mayor información.',
+		'msg_advice' => 'notice'
 );
 ?>

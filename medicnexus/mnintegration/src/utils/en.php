@@ -61,5 +61,12 @@ $values[L_ENGLISH] = array(
 		/** botones */
 		'button_send' => 'Send',
 		'button_upload_file' => 'Upload File',
+
+		/** mensajes */
+		'msg_info' => 'message',
+		'msg_info_consult_inserted' => 'La consulta ha sido creada correctamente.',
+		'msg_error' => 'error',
+		'msg_error_consult_inserted' => 'La consulta no se ha podido crear. Consulte a los teléfonos del sitio para mayor información.',
+		'msg_advice' => 'notice'
 );
 ?>

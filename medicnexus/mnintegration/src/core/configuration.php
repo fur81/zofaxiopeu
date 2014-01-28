@@ -62,6 +62,7 @@ $GLOBALS['MNI_MANAGEMENT_FLOW'] =   $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'
 $GLOBALS['MNI_MANAGEMENT_WELCOME'] =   $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/view/pages/management_welcome_page.php';
 $GLOBALS['MNI_USER_CATEGORY_LIST'] =   $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/view/pages/user_category_list_page.php';
 $GLOBALS['MNI_USER_CATEGORY_ASSIGNMENT'] =   $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/view/pages/user_category_assignment_page.php';
+$GLOBALS['MNI_MSG_FLOW'] =  $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/view/pages/msg_flow_page.php';
 
 // -- -- actions
 $GLOBALS['MNI_ISSUE_CREATE_ACTION'] =     	$_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/view/actions/issue_create_action.php';

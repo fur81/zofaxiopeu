@@ -110,9 +110,11 @@ if (isset ( $_POST ['flow'] )) {
 			break;
 	}
 	
+	// se identifica el mensaje que será mostrado
+	include_once $GLOBALS ['MNI_MSG_FLOW'];
+	
 } else {
 	// para ver los encabezados de las incidencias
 	include_once $GLOBALS ['MNI_ISSUES_WELCOME'];
 }
-//JFactory::getApplication()->enqueueMessage('nombre nombre nombre nombre', 'notice');
 ?>
