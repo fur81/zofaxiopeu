@@ -83,6 +83,7 @@ else
 	src="<?php echo $this->baseurl;?>/templates/medicnexus/js/medicnexus.js"></script>
 <script type="text/javascript"
 	src="<?php echo $this->baseurl;?>/templates/medicnexus/js/template.js"></script>
+<script src="<?php echo $this->baseurl;?>/templates/medicnexus/js/jquery-1.7.2.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>MEDICNEXUS</title>
 </head>
