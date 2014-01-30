@@ -1,4 +1,9 @@
 <div id="consultation_details">
+	<div class="redirect_client_zone_home" style="cursor: pointer;">
+    	<img  src="templates/medicnexus/images/home_cz_icon.gif"/>
+    	<span style="color: #12828e; font-size: 12px;">&nbsp;::&nbsp;</span>
+    	<a onclick="redirectToBeginningClientZone()"><?php getValue('label_beginning_client_zone');?></a>
+    </div>
 	<div class="back_option">
         <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
         <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
@@ -108,6 +113,15 @@
                         <textarea style="width: 99%;" rows="6" name="descriptionTextAreaData" id="descriptionTextAreaData"></textarea>
                     </td>
                 </tr>
+                <tr>
+                	<td>
+                		<select>
+                			<option>Manolo</option>
+                			<option>Hansel</option>
+                		</select>
+                		<input type="checkbox" value="Manolo" name="Demo">
+                	</td>
+                </tr>
             </table>
         </div>
     </div>
@@ -159,6 +173,7 @@
         <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
         <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
     </div> 
+    <a href="http://jquery.com/">jQuery</a>
 </div>
 
 <!-- formularios para el funcionamiento de la pagina adicionar consulta -->
@@ -178,6 +193,11 @@
 	<input type="hidden" name="flow" id="flow" value="headersIssue"> <input type="hidden"
 	id="projectId" name="projectId"><input type="hidden" id="issueAction" name="issueAction" 
 	value="projectSelectionAction">
+</form>
+
+<form id="beginningZoneClientForm" name="beginningZoneClientForm" action="#" method="post">
+	<input type="hidden" name="flow" id="flow" value="default">
+	<input type="hidden" id="issueAction" name="issueAction" value="issueWelcomeAction">
 </form>
 
 <!-- scripts de la página -->
@@ -206,5 +226,9 @@
 	function redirectToBack() {
 		document.getElementById('projectId').value = <?php echo $_SESSION['projectId'];?>;
 		document.forms["headersIssueForm"].submit();
+	}
+
+	function redirectToBeginningClientZone() {
+		document.forms["beginningZoneClientForm"].submit();
 	}
 </script>

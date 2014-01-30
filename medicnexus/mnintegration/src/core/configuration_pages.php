@@ -35,6 +35,7 @@ $GLOBALS['MNI_MSG_FLOW'] =  $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mninteg
 $GLOBALS['MNI_ISSUE_CREATE_ACTION'] =     	$_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/view/actions/issue_create_action.php';
 $GLOBALS['MNI_ISSUE_ADD_NOTE_ACTION'] =   	$_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/view/actions/issue_add_note_action.php';
 $GLOBALS['MNI_ISSUE_DETAILS_ACTION'] =   	$_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/view/actions/issue_details_action.php';
+$GLOBALS['MNI_ISSUE_WELCOME_ACTION'] =   	$_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/view/actions/issue_welcome_action.php';
 $GLOBALS['MNI_ATTACHED_DOWNLOAD_ACTION'] =  $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/view/actions/attached_download_action.php';
 $GLOBALS['MNI_ATTACHED_UPLOAD_ACTION'] =  $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/view/actions/attached_upload_action.php';
 $GLOBALS['MNI_PROJECT_SELECTION_ACTION'] =  $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/view/actions/project_selection_action.php';

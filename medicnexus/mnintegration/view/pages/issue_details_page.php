@@ -3,8 +3,12 @@ $issueId = $_SESSION ['issueId'];
 $issue = $mantisCore->getIssueById ( $issueId );
 ?>
 
-
-<div id="consultation_details">
+<div id="consultation_details" onclick="redirectToBeginningClientZone()">
+	<div class="redirect_client_zone_home" style="cursor: pointer;">
+    	<img  src="templates/medicnexus/images/home_cz_icon.gif"/>
+    	<span style="color: #12828e; font-size: 12px;">&nbsp;::&nbsp;</span>
+    	<a><?php getValue('label_beginning_client_zone');?></a>
+    </div>
 	<div class="back_option">
         <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
         <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
@@ -209,6 +213,11 @@ $issue = $mantisCore->getIssueById ( $issueId );
 	value="projectSelectionAction">
 </form>
 
+<form id="beginningZoneClientForm" name="beginningZoneClientForm" action="#" method="post">
+	<input type="hidden" name="flow" id="flow" value="default">
+	<input type="hidden" id="issueAction" name="issueAction" value="issueWelcomeAction">
+</form>
+
 <!-- scripts para el funcionamiento de la página -->
 <script type="text/javascript">
 	function redirectToBack() {
@@ -228,5 +237,9 @@ $issue = $mantisCore->getIssueById ( $issueId );
 		document.forms["downloadAttachedForm"].attachedId.value = id;
 		document.forms["downloadAttachedForm"].attachedFileName.value = filename;
 		document.forms["downloadAttachedForm"].submit();
+	}
+	
+	function redirectToBeginningClientZone() {
+		document.forms["beginningZoneClientForm"].submit();
 	}
 </script>

@@ -4,8 +4,9 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 ?>
 
 <div id="client_zone">
+        
 	<!-- se incluye el encabezado con los proyectos -->
-<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
+	<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
 
 	<h1 align="left">
 	<?php echo getProjectName(); echo ' - '; getValue('label_reports');?>
@@ -18,7 +19,7 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 			</li>
 		</ul>
 	</div>
-
+	
 	<table width="100%" cellpadding="1" cellspacing="1"
 		style="float: left;">
 		<tr class="managed-table-th">
