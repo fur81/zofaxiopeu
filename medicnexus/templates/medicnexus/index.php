@@ -79,11 +79,10 @@ else
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <jdoc:include type="head" />
 <link rel="stylesheet" type="text/css" href="css/template.css" />
-<script type="text/javascript"
-	src="<?php echo $this->baseurl;?>/templates/medicnexus/js/medicnexus.js"></script>
-<script type="text/javascript"
-	src="<?php echo $this->baseurl;?>/templates/medicnexus/js/template.js"></script>
-<script src="<?php echo $this->baseurl;?>/templates/medicnexus/js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/medicnexus/js/medicnexus.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/medicnexus/js/template.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/medicnexus/js/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/medicnexus/js/jquery.nicefileinput.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>MEDICNEXUS</title>
 </head>
