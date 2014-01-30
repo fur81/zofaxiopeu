@@ -1186,8 +1186,9 @@ function email_bug_info_to_one_user( $p_visible_bug_data, $p_message_id, $p_proj
 	}
 
 	# build subject
-	$t_subject = '[' . $p_visible_bug_data['email_project'] . ' ' . bug_format_id( $p_visible_bug_data['email_bug'] ) . ']: ' . $p_visible_bug_data['email_summary'];
-
+	//$t_subject = '[' . $p_visible_bug_data['email_project'] . ' ' . bug_format_id( $p_visible_bug_data['email_bug'] ) . ']: ' . $p_visible_bug_data['email_summary'];
+	$t_subject = '[Medicnexus]: ' . lang_project_name( $p_visible_bug_data['email_project'] );
+	
 	# build message
 
 	$t_message = lang_get_defaulted( $p_message_id, null );
@@ -1200,7 +1201,9 @@ function email_bug_info_to_one_user( $p_visible_bug_data, $p_message_id, $p_proj
 		$t_message .= " \n";
 	}
 
-	$t_message .= email_format_bug_message( $p_visible_bug_data );
+	//$t_message .= email_format_bug_message( $p_visible_bug_data );
+	
+	$t_message .= email_format_bug_message_medicnexus( $p_visible_bug_data );
 
 	# build headers
 	$t_bug_id = $p_visible_bug_data['email_bug'];
@@ -1218,6 +1221,60 @@ function email_bug_info_to_one_user( $p_visible_bug_data, $p_message_id, $p_proj
 	$t_ok = email_store( $t_user_email, $t_subject, $t_message, $t_mail_headers );
 
 	return $t_ok;
+}
+
+/**
+ * Función de Medicnexus
+ * Se crea el formato del mensaje que será enviado al los involucrado en los cambios.
+ * @param array $p_visible_bug_data
+ * @return string
+ */
+function email_format_bug_message_medicnexus( $p_visible_bug_data ) {
+	// tiene que ser configurado cada usuario en el idioma que se desea que llege el mensaje
+	// 
+	$t_message = email_format_attribute( $p_visible_bug_data, 'email_summary' );
+	return $t_message;
+}
+
+/**
+ * Función de Medicnexus
+ * Se garantiza la optención de la etiqueta del proyecto empleada en los ficheros de recursos.
+ * @param string $project_name
+ * @return string
+ */
+function lang_project_name($project_name) {
+	$project_label = '';
+	switch ($project_name) {
+		case 'Consulta Rápida General':
+			$project_label = 'label_subproject_rapid_consult_general';
+			break;
+		case 'Consulta Virtual General':
+			$project_label = 'label_subproject_virtual_consult_general';
+			break;
+		case 'Programa de Salud General':
+			$project_label = 'label_subproject_health_program_general';
+			break;
+		case 'Segunda Opinión General':
+			$project_label = 'label_subproject_second_opinion_general';
+			break;
+		case 'Cardiología':
+			$project_label = 'label_subproject_cardiology';
+			break;
+		case 'Ginecología':
+			$project_label = 'label_subproject_gynecology';
+			break;
+		case 'Pediatría':
+			$project_label = 'label_subproject_pediatrics';
+			break;
+		case 'Urología':
+			$project_label = 'label_subproject_urology';
+			break;
+		case 'Neurología':
+			$project_label = 'label_subproject_neurology';
+			break;
+	}
+	
+	return lang_get($project_label);
 }
 
 /**

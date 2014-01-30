@@ -1589,3 +1589,22 @@ $s_month_september = 'September';
 $s_month_october = 'October';
 $s_month_november = 'November';
 $s_month_december = 'December';
+
+# medicnexus
+$s_medical_record = 'Historia Clínica del Paciente';
+$s_female = 'Female';
+$s_male = 'Male';
+$s_sex = 'Sex';
+$s_date_of_birth = 'Date of Birth';
+$s_records = 'Antecedentes';
+$s_observations = 'Observations';
+
+$s_label_subproject_rapid_consult_general = 'General Rapid Consult';
+$s_label_subproject_virtual_consult_general = 'General Virtual Consutl';
+$s_label_subproject_health_program_general = 'General Health Program';
+$s_label_subproject_second_opinion_general = 'General Second Opinion';
+$s_label_subproject_cardiology = 'Cardiology';
+$s_label_subproject_gynecology = 'Gynecology';
+$s_label_subproject_pediatrics = 'Pediatrics';
+$s_label_subproject_urology = 'Urology';
+$s_label_subproject_neurology = 'Neurology';

@@ -1248,3 +1248,13 @@ $s_sex = 'Sexe';
 $s_date_of_birth = 'Data de Naixement';
 $s_records = 'Antecedents';
 $s_observations = 'Obsevacions';
+
+$s_label_subproject_rapid_consult_general = 'General Rapid Consult';
+$s_label_subproject_virtual_consult_general = 'General Virtual Consutl';
+$s_label_subproject_health_program_general = 'General Health Program';
+$s_label_subproject_second_opinion_general = 'General Second Opinion';
+$s_label_subproject_cardiology = 'Cardiology';
+$s_label_subproject_gynecology = 'Gynecology';
+$s_label_subproject_pediatrics = 'Pediatrics';
+$s_label_subproject_urology = 'Urology';
+$s_label_subproject_neurology = 'Neurology';

@@ -345,7 +345,7 @@ $s_email_notification_title_for_action_bug_updated = 'La siguiente incidencia ha
 $s_email_notification_title_for_action_sponsorship_added = 'La siguiente incidencia ha sido PATROCINADA.';
 $s_email_notification_title_for_action_sponsorship_updated = 'Se ha modificado un patrocinio de la siguiente incidencia.';
 $s_email_notification_title_for_action_sponsorship_deleted = 'Se ha retirado un patrocinio de la siguiente incidencia.';
-$s_email_notification_title_for_action_bugnote_submitted = 'Se ha añadido una NOTA a esta incidencia.';
+$s_email_notification_title_for_action_bugnote_submitted = 'Se ha añadido una NOTA a esta consulta.';
 $s_email_notification_title_for_action_duplicate_of_relationship_added = 'La siguiente incidencia se ha marcado como DUPLICADA de %1$s';
 $s_email_notification_title_for_action_has_duplicate_relationship_added = 'La incidencia %1$s ha sido marcada como DUPLICADA de la siguiente incidencia';
 $s_email_notification_title_for_action_related_to_relationship_added = 'La siguiente incidencia ha sido marcada como RELACIONADA CON la incidencia %1$s';
@@ -1247,6 +1247,7 @@ $s_month_october = 'Octubre';
 $s_month_november = 'Noviembre';
 $s_month_december = 'Diciembre';
 
+# medicnexus
 $s_medical_record = 'Historia Clínica del Paciente';
 $s_female = 'Femenino';
 $s_male = 'Masculino';
@@ -1254,3 +1255,13 @@ $s_sex = 'Sexo';
 $s_date_of_birth = 'Fecha de Nacimiento';
 $s_records = 'Antecedentes';
 $s_observations = 'Observaciones';
+
+$s_label_subproject_rapid_consult_general = 'Consulta Rápida General';
+$s_label_subproject_virtual_consult_general = 'Consulta Virtual General';
+$s_label_subproject_health_program_general = 'Programa de Salud General';
+$s_label_subproject_second_opinion_general = 'Segunda Opinión General';
+$s_label_subproject_cardiology = 'Cardiología';
+$s_label_subproject_gynecology = 'Ginecología';
+$s_label_subproject_pediatrics = 'Pediatría';
+$s_label_subproject_urology = 'Urología';
+$s_label_subproject_neurology = 'Neurología';
