@@ -3,8 +3,8 @@ $issueId = $_SESSION ['issueId'];
 $issue = $mantisCore->getIssueById ( $issueId );
 ?>
 
-<div id="consultation_details" onclick="redirectToBeginningClientZone()">
-	<div class="redirect_client_zone_home" style="cursor: pointer;">
+<div id="consultation_details">
+	<div class="redirect_client_zone_home" style="cursor: pointer;" onclick="redirectToBeginningClientZone()">
     	<img  src="templates/medicnexus/images/home_cz_icon.gif"/>
     	<span style="color: #12828e; font-size: 12px;">&nbsp;::&nbsp;</span>
     	<a><?php getValue('label_beginning_client_zone');?></a>
@@ -107,10 +107,10 @@ $issue = $mantisCore->getIssueById ( $issueId );
                 		</tr>
 					</tr>
 					<?php }?>
-                    <tr>
-                        <td colspan="3">
+                    <tr valign="top">
+                    	<td colspan="3" class="controls" valign="top">
                             <form enctype="multipart/form-data" method="post" action="#" id="uploadFileForm">
-                                <input class="btn" type="file" id="fileAttached" name="fileAttached" />
+                                <input class="nicefileinput nice" type="file" id="fileAttached" name="fileAttached">
                                 <input type="hidden" name="issueAction" value="uploadAttachedAction">
                                 <input type="hidden" name="flow" id="flow" value="detailsIssue" />
                                 <input type="hidden" name="issueId" id="issueId" value="<?php echo $issueId;?>">
