@@ -25,6 +25,7 @@ $values[L_SPANISH] = array(
 
 
 		/** etiquetas generales */
+		'label_beginning_client_zone' => 'Inicio Zona Clientes',
 		'label_report_consultation' => 'Reportar consulta',
 		'label_report_consultation_info' => 'Reporte de consulta',
 		'label_payment' => 'Pago',

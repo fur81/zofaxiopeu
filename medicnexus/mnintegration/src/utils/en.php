@@ -24,6 +24,7 @@ $values[L_ENGLISH] = array(
 		'label_subproject_neurology' => 'Neurology',
 
 		/** etiquetas generales*/
+		'label_beginning_client_zone' => 'Beginning Zone Client',
 		'label_report_consultation' => 'Report consultation',
 		'label_report_consultation_info' => 'Report consultation',
 		'label_payment' => 'Payment',
