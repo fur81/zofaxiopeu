@@ -63,6 +63,7 @@ $values[L_SPANISH] = array(
 		/** botones */
 		'button_send' => 'Enviar',
 		'button_upload_file' => 'Subir Fichero',
+		'button_browse' => 'Examinar ...',
 		
 		/** mensajes */
 		'msg_info' => 'message',

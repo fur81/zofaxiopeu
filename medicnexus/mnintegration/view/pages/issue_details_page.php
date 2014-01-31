@@ -114,7 +114,7 @@ $issue = $mantisCore->getIssueById ( $issueId );
                                 <input type="hidden" name="issueAction" value="uploadAttachedAction">
                                 <input type="hidden" name="flow" id="flow" value="detailsIssue" />
                                 <input type="hidden" name="issueId" id="issueId" value="<?php echo $issueId;?>">
-                                <button type="submit" name="uploadFile" style="cursor: pointer;">
+                                <button type="submit" name="uploadFile" style="vertical-align: top !important; cursor: pointer;">
                                 	<?php getValue('button_upload_file');?></button>
                             </form>
                         </td>
@@ -242,4 +242,14 @@ $issue = $mantisCore->getIssueById ( $issueId );
 	function redirectToBeginningClientZone() {
 		document.forms["beginningZoneClientForm"].submit();
 	}
+
+	// garantiza modificar el estilo del botón Browse...
+	$(document).ready(function(){
+		$("input[type=file]").nicefileinput();
+	});
+
+	$("input[type=file]").nicefileinput({ 
+		label : 'Examinar...'
+	});
+	
 </script>
