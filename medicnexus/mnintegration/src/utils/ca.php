@@ -24,7 +24,7 @@ $values[L_CATALAN] = array(
 		'label_subproject_neurology' => 'Neurología',
 
 		/** etiquetas generales*/
-		'label_beginning_client_zone' => 'Inicio Zona Clientes',
+		'label_beginning_client_zone' => 'Zona Clientes',
 		'label_report_consultation' => 'Informar consulta',
 		'label_report_consultation_info' => 'Reporte de consulta',
 		'label_payment' => 'Pago',
