@@ -67,11 +67,10 @@
                     <td width="110px" class="consult_det_title_td">
                     	<label for="specialist">*<?php getValue('label_specialists');?>:</label>
                     </td>
-                    <?php if (isset($_SESSION['viewSpecialistsCheckbox']) && $_SESSION['viewSpecialistsCheckbox'] == true)
-					{
-					?>
+                   
 					<td width="200px" valign="top">
-                        <select name="specialistData" id="specialistData" style="width: 100%">
+                        <select name="specialistData" id="specialistData" disabled="disabled" style="width: 100%">
+                        	<option value="null"><?php getValue('label_general_specialist');?></option>
                             <?php $users = $mantisCore->getDeveloperUsersByProject($_SESSION['subProjectId']);
                             foreach ($users as $user) {
                                 echo '<option value="'.$user->id.'">'.$user->realname.'</option>';
@@ -79,19 +78,11 @@
                             ?>
                         </select>
                     </td>
-                    <?php }else {?>
-                    <td width="200px">                    	                       
-                        <select	disabled="disabled"  style="width: 100%">
-                        	<option><?php getValue('label_general_specialist');?></option>
-						</select>
-                    </td>
-                    <?php }?>
+                    
                     <td width="400px" class="consult_det_title_td" valign="top">
                         <label for="subproject" style="vertical-align: inherit !important"><?php getValue('label_select_specialist');?>:</label> &nbsp;
-                        <input align="texttop" style="vertical-align: top" type="checkbox" id="viewSpecialistsCheckbox" name="viewSpecialistsCheckbox" onclick="showSpecialists()"
-                        <?php if (isset($_SESSION['viewSpecialistsCheckbox']) &&  $_SESSION['viewSpecialistsCheckbox'] == true) {
-                            echo 'checked="checked"';
-                        }?> /> 
+                        <input align="texttop" style="vertical-align: top" type="checkbox" 
+                        	id="viewSpecialistsCheckbox" name="viewSpecialistsCheckbox" onclick="showSpecialists()"> 
                         <input type="hidden" name="flow" id="flow" value="addIssue"> 
                         <input type="hidden" name="issueAction" id="issueAction" value="subprojectSelectionAction">
                     </td>
@@ -112,15 +103,6 @@
                     <td colspan="2">
                         <textarea style="width: 99%;" rows="6" name="descriptionTextAreaData" id="descriptionTextAreaData"></textarea>
                     </td>
-                </tr>
-                <tr>
-                	<td>
-                		<select>
-                			<option>Manolo</option>
-                			<option>Hansel</option>
-                		</select>
-                		<input type="checkbox" value="Manolo" name="Demo">
-                	</td>
                 </tr>
             </table>
         </div>
@@ -172,8 +154,7 @@
     <div class="back_option">
         <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
         <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
-    </div> 
-    <a href="http://jquery.com/">jQuery</a>
+    </div>
 </div>
 
 <!-- formularios para el funcionamiento de la pagina adicionar consulta -->
@@ -184,9 +165,7 @@
 		value="createIssueAction"><input type="hidden" id="summaryText" name="summaryText">
 	<input type="hidden" id="descriptionTextArea" name="descriptionTextArea">
 	<input type="hidden" id="subProjectId" name="subProjectId">
-	<?php if (isset($_SESSION['viewSpecialistsCheckbox']) && $_SESSION['viewSpecialistsCheckbox'] == true){?>
-		<input type="hidden" id="specialist" name="specialist">
-	<?php }?>
+	<input type="hidden" id="specialist" name="specialist">
 </form>
 
 <form id="headersIssueForm" name="headersIssueForm" action="#" method="post">
@@ -198,7 +177,7 @@
 <form id="beginningZoneClientForm" name="beginningZoneClientForm" action="#" method="post">
 	<input type="hidden" name="flow" id="flow" value="default">
 	<input type="hidden" id="issueAction" name="issueAction" value="issueWelcomeAction">
-</form>>
+</form>
 
 <!-- scripts de la página -->
 <script type="text/javascript">
@@ -206,21 +185,24 @@
 		document.getElementById('summaryText').value = document.getElementById('summaryTextData').value;
 		document.getElementById('descriptionTextArea').value = document.getElementById('descriptionTextAreaData').value;
 		document.getElementById('subProjectId').value = document.getElementById('subproject').value;
-		if (document.getElementById('specialistData') != null) {
+		if ($('#viewSpecialistsCheckbox').attr('checked')) {
 			document.getElementById('specialist').value = document.getElementById('specialistData').value;
+		} else {
+			document.getElementById('specialist').value = 'null';
 		}
 		document.forms["createIssueForm"].submit();
 	}
 
 	function subprojectSelectionAction() {
-		var lfckv = document.getElementById("viewSpecialistsCheckbox").checked;
-		if (lfckv) {
-			document.forms["subprojectSelectionForm"].submit();
-		}
+		document.forms["subprojectSelectionForm"].submit();
 	}
 
 	function showSpecialists() {
-		document.forms["subprojectSelectionForm"].submit();
+		if ($('#viewSpecialistsCheckbox').attr('checked')) {
+			$('#specialistData').removeAttr('disabled');
+		}else {
+			$('#specialistData').attr('disabled','disabled');
+		}
 	}
 
 	function redirectToBack() {
