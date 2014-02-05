@@ -15,6 +15,8 @@ if ( isset($_GET['success'])) {
 	$_POST ['issueAction'] = 'createIssueAction';
 } 
 
+// se utiliza para poder mostrar las páginas de servicio
+// cuando son accedidas desde links externos al módulo mnintegration
 if (isset($_GET['rd'])) {
 	$_SESSION ['flow'] = 'headersIssue';
 	switch ($_GET['rd']){
@@ -76,6 +78,11 @@ if (isset ( $_POST ['flow'] )) {
 				// seleccionar un proyecto
 				include_once $GLOBALS ['MNI_PROJECT_SELECTION_ACTION'];
 				break;
+				
+			case 'issueWelcomeAction' :
+				// seleccionar un proyecto
+				include_once $GLOBALS ['MNI_ISSUE_WELCOME_ACTION'];
+				break;
 		}
 	}
 	
@@ -110,9 +117,11 @@ if (isset ( $_POST ['flow'] )) {
 			break;
 	}
 	
+	// se identifica el mensaje que será mostrado
+	include_once $GLOBALS ['MNI_MSG_FLOW'];
+	
 } else {
 	// para ver los encabezados de las incidencias
 	include_once $GLOBALS ['MNI_ISSUES_WELCOME'];
 }
-//JFactory::getApplication()->enqueueMessage('nombre nombre nombre nombre', 'notice');
 ?>

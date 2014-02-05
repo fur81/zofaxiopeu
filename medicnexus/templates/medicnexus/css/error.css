@@ -17,9 +17,8 @@ ul, ol, dl { /* Due to variations between browsers, it's best practices to zero 
 	margin: 0;
 }
 h1, h2, h3, h4, h5, h6, p {
-	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
-	padding-right: 15px;
-	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	margin-top: 0;
+	padding: 0;
 }
 p {
 	text-align: justify;	
@@ -229,7 +228,7 @@ label {
 
 /* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
 .header {
-	height: 290px;
+	height: 295px;
 	background: #FFF;
 }
 
@@ -279,6 +278,29 @@ label {
 	-moz-border-radius: 2px 2px 2px 2px;
 }
 
+.error_welcome_text {
+	color: #666;
+	margin: 10px 15px 0 15px;
+}
+
+.title_error_welcome_text {
+	color: #81197F;	
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.error_welcome_text p {
+	font-size: 12px;
+	margin-top: 10px;
+}
+
+.footer_error_welcome_text {
+	color: #CC66CC;	
+	font-size: 14px;
+	text-transform: uppercase;
+	float: right;
+}
+
 #right_header_zone {
 	width: 700px;
 	height: 290px;
@@ -293,7 +315,7 @@ label {
 	/*margin-top: 2px;*/
 	float: left;
 	/*margin-left: 490px;*/
-	margin: 8px 5px 0 476px;
+	margin: 8px 5px 0 566px;
 }
 
 #promo_lang_zone ul li {
@@ -349,9 +371,9 @@ label {
 
 #front_img_header {
 	width: 700px;
-	height: 200px;
+	height: 230px;
 	float: left;
-	background: url(../images/front_img_header.jpg) no-repeat;
+	background: url(../images/header_error_img.jpg) no-repeat;
 	border-top: 1px solid #FFF;
 }
 
@@ -435,7 +457,7 @@ label {
 	width: 240px;
 	height: 220px;
 	border: 1px solid #1aa9b8;
-	margin: 0 0 10px;
+	margin: 10px 0 10px;
     padding: 5px 5px 10px 5px;
 	float: left;
 	background: url("../images/contact_img.gif") no-repeat 10px 50px;
@@ -482,7 +504,7 @@ label {
 
 .content_box{
 	padding: 5px 5px 0 5px;
-	margin: 0 0 10px 0;
+	margin: 10px 0 10px 0;
 	width: 730px;
 	border: 1px solid #1aa9b8;
 	float: left;
@@ -492,6 +514,19 @@ label {
 	border-radius: 2px 2px 2px 2px;
 	-webkit-border-radius: 2px 2px 2px 2px;
 	-moz-border-radius: 2px 2px 2px 2px;
+}
+
+.page-header {
+	color: #333;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #333;	
+}
+
+.row-fluid ul li {
+	list-style: none;
+	background: url(../images/link_bullet_bg.gif) no-repeat center left;
+	padding-left: 10px;
+	line-height: 20px;
 }
 
 .content_boxbar{
@@ -519,6 +554,18 @@ label {
 	-webkit-border-radius: 2px 2px 2px 2px;
 	-moz-border-radius: 2px 2px 2px 2px;
 	/*margin-top: 2px;*/
+}
+
+.home_site_link {
+	color: #1AA9B8;
+}
+
+.span6 a {
+	color: #1AA9B8;	
+}
+
+.span6 a:hover {
+	text-decoration: underline;	
 }
 
 /*.welcome_site_zone {
@@ -1126,7 +1173,7 @@ fieldset {
 .well {
 	font-size: 12px;
 	color: #666;
-	border: 1px solid #1AA9B8;	
+	/*border: 1px solid #1AA9B8;*/	
 	padding: 10px;
 	margin-bottom: 10px;
 	/*min-height: 20px;
@@ -1441,105 +1488,88 @@ fieldset {
     text-transform: uppercase;
     width: 150px;
 }
-.service_icon {
+#quick_consult_service_icon {
 	width: 50px;
 	height: 50px;
-	margin-left: 55px;
-}
-#quick_consult_service_icon {
 	background: url(../images/quick_consult_service_icon.gif) no-repeat;
-	color: #1aa9b8;
-}
-#quick_consult_service_unread_icon {
-	background: url(../images/quick_consult_service_unread_icon.gif) no-repeat;
+	margin-left: 55px;	
 	color: #1aa9b8;
 }
 #quick_consult_service_icon_active {
+	width: 50px;
+	height: 50px;
 	background: url(../images/quick_consult_service_hover_icon.gif) no-repeat;
-	color: #81197F;	
-}
-#quick_consult_service_unread_icon_active {
-	background: url(../images/quick_consult_service_hover_unread_icon.gif) no-repeat;
+	margin-left: 55px;
 	color: #81197F;	
 }
 #quick_consult_service_icon:hover {
-	background: url(../images/quick_consult_service_hover_icon.gif) no-repeat;
-	color: #81197F;
-}
-#quick_consult_service_unread_icon:hover {
+	width: 50px;
+	height: 50px;
 	background: url(../images/quick_consult_service_hover_unread_icon.gif) no-repeat;
+	margin-left: 55px;
 	color: #81197F;
 }
 #virtual_consult_service_icon {
+	width: 50px;
+	height: 50px;
 	background: url(../images/virtual_consult_service_icon.gif) no-repeat;
-	color: #1aa9b8;
-}
-#virtual_consult_service_unread_icon {
-	background: url(../images/virtual_consult_service_unread_icon.gif) no-repeat;
+	margin-left: 55px;	
 	color: #1aa9b8;
 }
 #virtual_consult_service_icon_active {
+	width: 50px;
+	height: 50px;
 	background: url(../images/virtual_consult_service_hover_icon.gif) no-repeat;
-	color: #81197F;		
-}
-#virtual_consult_service_unread_icon_active {
-	background: url(../images/virtual_consult_service_hover_unread_icon.gif) no-repeat;
+	margin-left: 55px;
 	color: #81197F;		
 }
 #virtual_consult_service_icon:hover {
+	width: 50px;
+	height: 50px;
 	background: url(../images/virtual_consult_service_hover_icon.gif) no-repeat;
-	color: #81197F;	
-}
-#virtual_consult_service_unread_icon:hover {
-	background: url(../images/virtual_consult_service_hover_unread_icon.gif) no-repeat;
+	margin-left: 55px;
 	color: #81197F;	
 }
 #second_opinion_service_icon {
+	width: 50px;
+	height: 50px;
 	background: url(../images/second_opinion_service_icon.gif) no-repeat;
-	color: #1aa9b8;	
-}
-#second_opinion_service_unread_icon {
-	background: url(../images/second_opinion_service_unread_icon.gif) no-repeat;
+	margin-left: 55px;
 	color: #1aa9b8;	
 }
 #second_opinion_service_icon_active {
+	width: 50px;
+	height: 50px;
 	background: url(../images/second_opinion_service_hover_icon.gif) no-repeat;
-	color: #81197F;	
-}
-#second_opinion_service_unread_icon_active {
-	background: url(../images/second_opinion_service_hover_unread_icon.gif) no-repeat;
+	margin-left: 55px;	
 	color: #81197F;	
 }
 #second_opinion_service_icon:hover {
+	width: 50px;
+	height: 50px;
 	background: url(../images/second_opinion_service_hover_icon.gif) no-repeat;
-	color: #81197F;	
-}
-#second_opinion_service_unread_icon:hover {
-	background: url(../images/second_opinion_service_hover_unread_icon.gif) no-repeat;
+	margin-left: 55px;	
 	color: #81197F;	
 }
 #health_programs_service_icon {
+	width: 50px;
+	height: 50px;
 	background: url(../images/health_programs_service_icon.gif) no-repeat;
-	color: #1aa9b8;	
-}
-#health_programs_service_unread_icon {
-	background: url(../images/health_programs_service_unread_icon.gif) no-repeat;
+	margin-left: 55px;	
 	color: #1aa9b8;	
 }
 #health_programs_service_icon_active {
+	width: 50px;
+	height: 50px;
 	background: url(../images/health_programs_service_hover_icon.gif) no-repeat;
-	color: #81197F;	
-}
-#health_programs_service_unread_icon_active {
-	background: url(../images/health_programs_service_hover_unread_icon.gif) no-repeat;
+	margin-left: 55px;	
 	color: #81197F;	
 }
 #health_programs_service_icon:hover {
+	width: 50px;
+	height: 50px;
 	background: url(../images/health_programs_service_hover_icon.gif) no-repeat;
-	color: #81197F;	
-}
-#health_programs_service_unread_icon:hover {
-	background: url(../images/health_programs_service_hover_unread_icon.gif) no-repeat;
+	margin-left: 55px;	
 	color: #81197F;	
 }
 #client_service_box h1 {

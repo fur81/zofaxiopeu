@@ -20,8 +20,11 @@ $values[L_ENGLISH] = array(
 		'label_subproject_cardiology' => 'Cardiology',
 		'label_subproject_gynecology' => 'Gynecology',
 		'label_subproject_pediatrics' => 'Pediatrics',
+		'label_subproject_urology' => 'Urology',
+		'label_subproject_neurology' => 'Neurology',
 
 		/** etiquetas generales*/
+		'label_beginning_client_zone' => 'Client Zone',
 		'label_report_consultation' => 'Report consultation',
 		'label_report_consultation_info' => 'Report consultation',
 		'label_payment' => 'Payment',
@@ -30,6 +33,8 @@ $values[L_ENGLISH] = array(
 		'label_tax' => 'Tax',
 		'label_total_amount' => 'Total Amount',
 		'label_payment_type' => 'Payment Type',
+		'label_paypal' => 'PayPal',
+		'label_tpv' => 'TPV',
 		
 		/** formularios */
 		'label_empty_list' => '-- There\'s no items to list --',
@@ -59,5 +64,13 @@ $values[L_ENGLISH] = array(
 		/** botones */
 		'button_send' => 'Send',
 		'button_upload_file' => 'Upload File',
+		'button_browse' => 'Browse ...',
+
+		/** mensajes */
+		'msg_info' => 'message',
+		'msg_info_consult_inserted' => 'La consulta ha sido creada correctamente.',
+		'msg_error' => 'error',
+		'msg_error_consult_inserted' => 'La consulta no se ha podido crear. Consulte a los teléfonos del sitio para mayor información.',
+		'msg_advice' => 'notice'
 );
 ?>

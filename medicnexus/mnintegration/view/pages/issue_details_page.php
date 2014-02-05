@@ -3,8 +3,12 @@ $issueId = $_SESSION ['issueId'];
 $issue = $mantisCore->getIssueById ( $issueId );
 ?>
 
-
 <div id="consultation_details">
+	<div class="redirect_client_zone_home" style="cursor: pointer;" onclick="redirectToBeginningClientZone()">
+    	<img  src="templates/medicnexus/images/home_cz_icon.gif"/>
+    	<span style="color: #12828e; font-size: 12px;">&nbsp;::&nbsp;</span>
+    	<a><?php getValue('label_beginning_client_zone');?></a>
+    </div>
 	<div class="back_option">
         <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
         <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
@@ -103,14 +107,14 @@ $issue = $mantisCore->getIssueById ( $issueId );
                 		</tr>
 					</tr>
 					<?php }?>
-                    <tr>
-                        <td colspan="3">
+                    <tr valign="top">
+                    	<td colspan="3" class="controls" valign="top">
                             <form enctype="multipart/form-data" method="post" action="#" id="uploadFileForm">
-                                <input class="btn" type="file" id="fileAttached" name="fileAttached" />
+                                <input class="nicefileinput nice" type="file" id="fileAttached" name="fileAttached">
                                 <input type="hidden" name="issueAction" value="uploadAttachedAction">
                                 <input type="hidden" name="flow" id="flow" value="detailsIssue" />
                                 <input type="hidden" name="issueId" id="issueId" value="<?php echo $issueId;?>">
-                                <button type="submit" name="uploadFile" style="cursor: pointer;">
+                                <button type="submit" name="uploadFile" style="vertical-align: top !important; cursor: pointer;">
                                 	<?php getValue('button_upload_file');?></button>
                             </form>
                         </td>
@@ -209,6 +213,11 @@ $issue = $mantisCore->getIssueById ( $issueId );
 	value="projectSelectionAction">
 </form>
 
+<form id="beginningZoneClientForm" name="beginningZoneClientForm" action="#" method="post">
+	<input type="hidden" name="flow" id="flow" value="default">
+	<input type="hidden" id="issueAction" name="issueAction" value="issueWelcomeAction">
+</form>
+
 <!-- scripts para el funcionamiento de la página -->
 <script type="text/javascript">
 	function redirectToBack() {
@@ -229,4 +238,18 @@ $issue = $mantisCore->getIssueById ( $issueId );
 		document.forms["downloadAttachedForm"].attachedFileName.value = filename;
 		document.forms["downloadAttachedForm"].submit();
 	}
+	
+	function redirectToBeginningClientZone() {
+		document.forms["beginningZoneClientForm"].submit();
+	}
+
+	// garantiza modificar el estilo del botón Browse...
+	$(document).ready(function(){
+		$("input[type=file]").nicefileinput();
+	});
+
+	$("input[type=file]").nicefileinput({ 
+		label : 'Examinar...'
+	});
+	
 </script>

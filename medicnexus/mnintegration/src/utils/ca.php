@@ -20,8 +20,11 @@ $values[L_CATALAN] = array(
 		'label_subproject_cardiology' => 'Cardiología',
 		'label_subproject_gynecology' => 'Ginecología',
 		'label_subproject_pediatrics' => 'Pediatría',
+		'label_subproject_urology' => 'Urología',
+		'label_subproject_neurology' => 'Neurología',
 
 		/** etiquetas generales*/
+		'label_beginning_client_zone' => 'Zona Clientes',
 		'label_report_consultation' => 'Informar consulta',
 		'label_report_consultation_info' => 'Reporte de consulta',
 		'label_payment' => 'Pago',
@@ -30,6 +33,8 @@ $values[L_CATALAN] = array(
 		'label_tax' => 'Impost',
 		'label_total_amount' => 'Total a Pagar',
 		'label_payment_type' => 'Tipo de pago',
+		'label_paypal' => 'PayPal',
+		'label_tpv' => 'TPV',
 		
 		/** formularios */
 		'label_empty_list' => '-- No hi ha dades per mostrar --',
@@ -60,5 +65,13 @@ $values[L_CATALAN] = array(
 		/** botones */
 		'button_send' => 'Enviar',
 		'button_upload_file' => 'Subir Fichero',
+		'button_browse' => 'Examinar ...',
+
+		/** mensajes */
+		'msg_info' => 'message',
+		'msg_info_consult_inserted' => 'La consulta ha sido creada correctamente.',
+		'msg_error' => 'error',
+		'msg_error_consult_inserted' => 'La consulta no se ha podido crear. Consulte a los teléfonos del sitio para mayor información.',
+		'msg_advice' => 'notice'
 );
 ?>

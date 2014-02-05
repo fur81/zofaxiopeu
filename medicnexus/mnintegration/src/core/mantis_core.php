@@ -704,6 +704,15 @@ class MantisCore {
 		} catch (Exception $e) {
 		}
 	}
+	
+	/**
+	 * Envia mensajes al usuario una vez que ha sido creada la consulta
+	 * con los datos de pago que ha enviado.
+	 * @todo falta la implementación de este método.
+	 */
+	public function sendEmail() {
+		;
+	}
 
 	/**
 	 * [attachments] =>

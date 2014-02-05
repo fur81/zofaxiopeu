@@ -1,4 +1,14 @@
+<?php 
+// se establece la configuración para las variables de paypal
+setProjectPaypalConfiguration();
+?>
+
 <div id="consultation_details">
+	<div class="redirect_client_zone_home" style="cursor: pointer;" onclick="redirectToBeginningClientZone()">
+    	<img  src="templates/medicnexus/images/home_cz_icon.gif"/>
+    	<span style="color: #12828e; font-size: 12px;">&nbsp;::&nbsp;</span>
+    	<a><?php getValue('label_beginning_client_zone');?></a>
+    </div>
 	<div class="back_option">
         <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
         <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
@@ -62,11 +72,10 @@
                     <td width="110px" class="consult_det_title_td">
                     	<label for="specialist">*<?php getValue('label_specialists');?>:</label>
                     </td>
-                    <?php if (isset($_SESSION['viewSpecialistsCheckbox']) && $_SESSION['viewSpecialistsCheckbox'] == true)
-					{
-					?>
+                   
 					<td width="200px" valign="top">
-                        <select name="specialistData" id="specialistData" style="width: 100%">
+                        <select name="specialistData" id="specialistData" disabled="disabled" style="width: 100%">
+                        	<option value="null"><?php getValue('label_general_specialist');?></option>
                             <?php $users = $mantisCore->getDeveloperUsersByProject($_SESSION['subProjectId']);
                             foreach ($users as $user) {
                                 echo '<option value="'.$user->id.'">'.$user->realname.'</option>';
@@ -74,19 +83,11 @@
                             ?>
                         </select>
                     </td>
-                    <?php }else {?>
-                    <td width="200px">                    	                       
-                        <select	disabled="disabled"  style="width: 100%">
-                        	<option><?php getValue('label_general_specialist');?></option>
-						</select>
-                    </td>
-                    <?php }?>
+                    
                     <td width="400px" class="consult_det_title_td" valign="top">
                         <label for="subproject" style="vertical-align: inherit !important"><?php getValue('label_select_specialist');?>:</label> &nbsp;
-                        <input align="texttop" style="vertical-align: top" type="checkbox" id="viewSpecialistsCheckbox" name="viewSpecialistsCheckbox" onclick="showSpecialists()"
-                        <?php if (isset($_SESSION['viewSpecialistsCheckbox']) &&  $_SESSION['viewSpecialistsCheckbox'] == true) {
-                            echo 'checked="checked"';
-                        }?> /> 
+                        <input align="texttop" style="vertical-align: top" type="checkbox" 
+                        	id="viewSpecialistsCheckbox" name="viewSpecialistsCheckbox" onclick="showSpecialists()"> 
                         <input type="hidden" name="flow" id="flow" value="addIssue"> 
                         <input type="hidden" name="issueAction" id="issueAction" value="subprojectSelectionAction">
                     </td>
@@ -97,7 +98,7 @@
                         <label>*<?php getValue('label_summary');?>:</label>
                     </td>
                     <td colspan="2">
-                        <input id="summaryTextData" name="summaryTextData" style="width: 100%;">
+                        <input id="summaryTextData" name="summaryTextData" maxlength="128" style="width: 100%;">
                     </td>
                 </tr>
                 <tr>
@@ -122,29 +123,40 @@
             	<table width="100%" cellpadding="3" cellspacing="3">
                 	<tr valign="top">
                     	<td width="110px" class="consult_det_title_td"><?php getValue('label_price');?>:</td>
-                        <td width="600px" colspan="2">
-                        	<label>70 EUR (€)</label>
+                        <td width="100px" colspan="2">
+                        	<label><?php echo $GLOBALS['PAYPAL_PRICE'] . '  ' . PAYPAL_CURRENCY_EUR;?></label>
                         </td>
                     </tr>
                     <tr valign="top">
                     	<td width="110px" class="consult_det_title_td"><?php getValue('label_tax');?>:</td>
-                        <td width="600px">
-                        	<label>6 EUR (3%)</label>
+                        <td width="100px">
+                        	<label><?php echo $GLOBALS['PAYPAL_TAX'] . '  ' . PAYPAL_CURRENCY_EUR;?></label>
                         </td>
                     </tr>
                     <tr valign="top">
                     	<td class="consult_det_title_td" valign="top">
                         	<label><?php getValue('label_payment_type');?>:</label>
                         </td>
-                        <td colspan="2" valign="top">
-                        	<label style="vertical-align: inherit !important">PayPal:</label>
-                        	<input id="paymentTypePaypal" style="vertical-align: inherit !important" 
+                        <td valign="top">
+                        	<label style="vertical-align: inherit !important"><?php getValue('label_paypal');?>:</label>
+                        	<input id="paymentTypePaypal" checked="checked" style="vertical-align: inherit !important" 
                         		name="paymentType" type="radio" value="paypal"/>
-                            &nbsp;&nbsp;<label style="vertical-align: inherit !important">TPV:</label>
+                        </td>
+                        <td valign="top">
+                        	<label style="vertical-align: inherit !important"><?php getValue('label_tpv');?>:</label>
                         	<input id="paymentTypeTPV" style="vertical-align: inherit !important" 
                         		name="paymentType" type="radio" value="tpv" />
                         </td>
                     </tr>
+                   	<tr>
+                   		<td></td>
+                   		<td>
+                   			<img src="templates/medicnexus/images/paypal.jpeg">
+                   		</td>
+                   		<td>
+                   			<img src="templates/medicnexus/images/tpv.jpeg">
+                   		</td>
+                   	</tr>
                     <tr>
                     	<td width="710px" colspan="3" class="controls">
                         	<button onclick="createIssue()" name="Submit" type="submit" style="cursor: pointer;">
@@ -155,10 +167,11 @@
                 </table>
             </div>
         </div>
+        
     <div class="back_option">
         <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
         <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
-    </div> 
+    </div>
 </div>
 
 <!-- formularios para el funcionamiento de la pagina adicionar consulta -->
@@ -169,9 +182,7 @@
 		value="createIssueAction"><input type="hidden" id="summaryText" name="summaryText">
 	<input type="hidden" id="descriptionTextArea" name="descriptionTextArea">
 	<input type="hidden" id="subProjectId" name="subProjectId">
-	<?php if (isset($_SESSION['viewSpecialistsCheckbox']) && $_SESSION['viewSpecialistsCheckbox'] == true){?>
-		<input type="hidden" id="specialist" name="specialist">
-	<?php }?>
+	<input type="hidden" id="specialist" name="specialist">
 </form>
 
 <form id="headersIssueForm" name="headersIssueForm" action="#" method="post">
@@ -180,31 +191,43 @@
 	value="projectSelectionAction">
 </form>
 
+<form id="beginningZoneClientForm" name="beginningZoneClientForm" action="#" method="post">
+	<input type="hidden" name="flow" id="flow" value="default">
+	<input type="hidden" id="issueAction" name="issueAction" value="issueWelcomeAction">
+</form>
+
 <!-- scripts de la página -->
 <script type="text/javascript">
 	function createIssue() {
 		document.getElementById('summaryText').value = document.getElementById('summaryTextData').value;
 		document.getElementById('descriptionTextArea').value = document.getElementById('descriptionTextAreaData').value;
 		document.getElementById('subProjectId').value = document.getElementById('subproject').value;
-		if (document.getElementById('specialistData') != null) {
+		if ($('#viewSpecialistsCheckbox').attr('checked')) {
 			document.getElementById('specialist').value = document.getElementById('specialistData').value;
+		} else {
+			document.getElementById('specialist').value = 'null';
 		}
 		document.forms["createIssueForm"].submit();
 	}
 
 	function subprojectSelectionAction() {
-		var lfckv = document.getElementById("viewSpecialistsCheckbox").checked;
-		if (lfckv) {
-			document.forms["subprojectSelectionForm"].submit();
-		}
+		document.forms["subprojectSelectionForm"].submit();
 	}
 
 	function showSpecialists() {
-		document.forms["subprojectSelectionForm"].submit();
+		if ($('#viewSpecialistsCheckbox').attr('checked')) {
+			$('#specialistData').removeAttr('disabled');
+		}else {
+			$('#specialistData').attr('disabled','disabled');
+		}
 	}
 
 	function redirectToBack() {
 		document.getElementById('projectId').value = <?php echo $_SESSION['projectId'];?>;
 		document.forms["headersIssueForm"].submit();
+	}
+
+	function redirectToBeginningClientZone() {
+		document.forms["beginningZoneClientForm"].submit();
 	}
 </script>
