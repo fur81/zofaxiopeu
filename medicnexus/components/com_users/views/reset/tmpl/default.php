@@ -40,7 +40,7 @@ JHtml::_('behavior.formvalidation');
 		</fieldset>
 		<?php endforeach; ?>
 
-		<div class="form-actions">
+		<div class="form-actions" style="padding-bottom: 20px;">
 			<button type="submit" class="btn btn-primary validate"><?php echo JText::_('JSUBMIT'); ?></button>
 			<?php echo JHtml::_('form.token'); ?>
 		</div>
