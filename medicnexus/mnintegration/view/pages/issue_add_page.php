@@ -93,7 +93,7 @@
                         <label>*<?php getValue('label_summary');?>:</label>
                     </td>
                     <td colspan="2">
-                        <input id="summaryTextData" name="summaryTextData" style="width: 100%;">
+                        <input id="summaryTextData" name="summaryTextData" maxlength="128" style="width: 100%;">
                     </td>
                 </tr>
                 <tr>
