@@ -1,3 +1,8 @@
+<?php 
+// se establece la configuración para las variables de paypal
+setProjectPaypalConfiguration();
+?>
+
 <div id="consultation_details">
 	<div class="redirect_client_zone_home" style="cursor: pointer;" onclick="redirectToBeginningClientZone()">
     	<img  src="templates/medicnexus/images/home_cz_icon.gif"/>
@@ -119,13 +124,13 @@
                 	<tr valign="top">
                     	<td width="110px" class="consult_det_title_td"><?php getValue('label_price');?>:</td>
                         <td width="600px" colspan="2">
-                        	<label>70 EUR (€)</label>
+                        	<label><?php echo $GLOBALS['PAYPAL_PRICE'] . '  ' . PAYPAL_CURRENCY_EUR;?> (€)</label>
                         </td>
                     </tr>
                     <tr valign="top">
                     	<td width="110px" class="consult_det_title_td"><?php getValue('label_tax');?>:</td>
                         <td width="600px">
-                        	<label>6 EUR (3%)</label>
+                        	<label><?php echo $GLOBALS['PAYPAL_TAX'] . '  ' . PAYPAL_CURRENCY_EUR;?></label>
                         </td>
                     </tr>
                     <tr valign="top">
@@ -134,7 +139,7 @@
                         </td>
                         <td colspan="2" valign="top">
                         	<label style="vertical-align: inherit !important">PayPal:</label>
-                        	<input id="paymentTypePaypal" style="vertical-align: inherit !important" 
+                        	<input id="paymentTypePaypal" checked="checked" style="vertical-align: inherit !important" 
                         		name="paymentType" type="radio" value="paypal"/>
                             &nbsp;&nbsp;<label style="vertical-align: inherit !important">TPV:</label>
                         	<input id="paymentTypeTPV" style="vertical-align: inherit !important" 
