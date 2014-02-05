@@ -29,7 +29,7 @@ define('L_CATALAN', 'ca-ES');
 define('L_ENGLISH', 'en-GB');
 
 // variables de paypal
-include_once 'configuration_paypal.php';
+include_once 'configuration_pay.php';
 
 // variables de joomla
 $GLOBALS['lang'] = JRequest::getVar('language');

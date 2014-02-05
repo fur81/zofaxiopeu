@@ -34,6 +34,8 @@ $values[L_SPANISH] = array(
 		'label_tax' => 'Impuesto',
 		'label_total_amount' => 'Total a Pagar',
 		'label_payment_type' => 'Tipo de pago',
+		'label_paypal' => 'PayPal',
+		'label_tpv' => 'TPV',
 		
 		/** formularios */
 		'label_empty_list' => '-- No existen datos para mostrar --',

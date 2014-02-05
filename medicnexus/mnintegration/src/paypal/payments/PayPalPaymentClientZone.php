@@ -1,7 +1,6 @@
 <?php
 
 require __DIR__ . '/../bootstrap.php';
-//include_once './../../core/configuration_paypal.php';
 
 use PayPal\Api\Amount;
 use PayPal\Api\Details;

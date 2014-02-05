@@ -33,6 +33,8 @@ $values[L_ENGLISH] = array(
 		'label_tax' => 'Tax',
 		'label_total_amount' => 'Total Amount',
 		'label_payment_type' => 'Payment Type',
+		'label_paypal' => 'PayPal',
+		'label_tpv' => 'TPV',
 		
 		/** formularios */
 		'label_empty_list' => '-- There\'s no items to list --',

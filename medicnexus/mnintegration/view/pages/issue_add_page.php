@@ -123,13 +123,13 @@ setProjectPaypalConfiguration();
             	<table width="100%" cellpadding="3" cellspacing="3">
                 	<tr valign="top">
                     	<td width="110px" class="consult_det_title_td"><?php getValue('label_price');?>:</td>
-                        <td width="600px" colspan="2">
-                        	<label><?php echo $GLOBALS['PAYPAL_PRICE'] . '  ' . PAYPAL_CURRENCY_EUR;?> (€)</label>
+                        <td width="100px" colspan="2">
+                        	<label><?php echo $GLOBALS['PAYPAL_PRICE'] . '  ' . PAYPAL_CURRENCY_EUR;?></label>
                         </td>
                     </tr>
                     <tr valign="top">
                     	<td width="110px" class="consult_det_title_td"><?php getValue('label_tax');?>:</td>
-                        <td width="600px">
+                        <td width="100px">
                         	<label><?php echo $GLOBALS['PAYPAL_TAX'] . '  ' . PAYPAL_CURRENCY_EUR;?></label>
                         </td>
                     </tr>
@@ -137,15 +137,26 @@ setProjectPaypalConfiguration();
                     	<td class="consult_det_title_td" valign="top">
                         	<label><?php getValue('label_payment_type');?>:</label>
                         </td>
-                        <td colspan="2" valign="top">
-                        	<label style="vertical-align: inherit !important">PayPal:</label>
+                        <td valign="top">
+                        	<label style="vertical-align: inherit !important"><?php getValue('label_paypal');?>:</label>
                         	<input id="paymentTypePaypal" checked="checked" style="vertical-align: inherit !important" 
                         		name="paymentType" type="radio" value="paypal"/>
-                            &nbsp;&nbsp;<label style="vertical-align: inherit !important">TPV:</label>
+                        </td>
+                        <td valign="top">
+                        	<label style="vertical-align: inherit !important"><?php getValue('label_tpv');?>:</label>
                         	<input id="paymentTypeTPV" style="vertical-align: inherit !important" 
                         		name="paymentType" type="radio" value="tpv" />
                         </td>
                     </tr>
+                   	<tr>
+                   		<td></td>
+                   		<td>
+                   			<img src="templates/medicnexus/images/paypal.jpeg">
+                   		</td>
+                   		<td>
+                   			<img src="templates/medicnexus/images/tpv.jpeg">
+                   		</td>
+                   	</tr>
                     <tr>
                     	<td width="710px" colspan="3" class="controls">
                         	<button onclick="createIssue()" name="Submit" type="submit" style="cursor: pointer;">
@@ -156,6 +167,7 @@ setProjectPaypalConfiguration();
                 </table>
             </div>
         </div>
+        
     <div class="back_option">
         <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
         <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
