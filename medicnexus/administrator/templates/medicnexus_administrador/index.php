@@ -84,7 +84,7 @@ $stickyToolbar = $this->params->get('stickyToolbar', '1');
 	<style type="text/css">
 		.navbar-inner, .navbar-inverse .navbar-inner, .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover, .navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle, #status.status-top
 		{
-			background: <?php echo $this->params->get('templateColor');?>;
+			background: #841b82; <?php //echo $this->params->get('templateColor');?>;
 		}
 		.navbar-inner, .navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle{
 			-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
@@ -103,7 +103,7 @@ $stickyToolbar = $this->params->get('stickyToolbar', '1');
 	<style type="text/css">
 		.header
 		{
-			background: <?php echo $this->params->get('headerColor');?>;
+			background: #1aa9b8;<?php //echo $this->params->get('headerColor');?>;
 		}
 	</style>
 	<?php
@@ -115,7 +115,7 @@ $stickyToolbar = $this->params->get('stickyToolbar', '1');
 	<style type="text/css">
 		.nav-list > .active > a, .nav-list > .active > a:hover
 		{
-			background: <?php echo $this->params->get('sidebarColor'); ?>;
+			background: #1aa9b8;<?php //echo $this->params->get('sidebarColor'); ?>;
 		}
 	</style>
 	<?php endif; ?>
