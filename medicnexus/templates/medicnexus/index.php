@@ -143,10 +143,10 @@ else
 									</a>
 									</li>
 									<li>|</li>
-									<li><a href="#"><?php echo JText::_('TPL_MN_USER_REGISTER');?>
+									<li><a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>"><?php echo JText::_('TPL_MN_USER_REGISTER');?>
 									</a>
 									</li>
-									<li style="margin: 2px 10px 0 5px;"><a href="#"> <img
+									<li style="margin: 2px 10px 0 5px;"><a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>"> <img
 											src="<?php echo $this->baseurl;?>/templates/medicnexus/images/register_user_icon.gif"
 											border="0" /> </a>
 									</li>
