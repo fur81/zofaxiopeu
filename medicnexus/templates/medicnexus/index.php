@@ -221,6 +221,27 @@ else
 			<div class="content_boxbar title_bar title_content_text"></div>
 			<jdoc:include type="component" /> <!-- End Content --> </main>
 		</div>
+		
+		<div id="news-article_zone">
+            <div class="title_bar content_sidebar title_sidebar_text">
+                <div class="box_title_left">
+                    INFORMACIÓN GENERAL
+                </div>
+            </div>
+            <div id="articles_zone">
+                <h1>ARTÍCULOS</h1>
+                <div id="articles">
+                	<jdoc:include type="modules" name="articles-preview" style="xhtml" />
+                </div>
+            </div>
+            <div id="articles-news_separator">&nbsp;</div>
+            <div id="articles_zone">
+                <h1>NOTICIAS</h1>
+                <div id="articles">
+                	<jdoc:include type="modules" name="news-preview" style="xhtml" />
+                </div>
+            </div>
+        </div>
 
 		<div class="footer">
 			<div id="bottom_menu_site">

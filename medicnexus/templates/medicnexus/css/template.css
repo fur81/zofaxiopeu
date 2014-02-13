@@ -669,11 +669,14 @@ label {
 
 #news-article_zone {
 	padding: 5px 5px;
-	margin: 0 0 -1px -1px;
+	margin: 0 0 10px -1px;
 	width: 730px;
 	border: 1px solid #1aa9b8;
 	float: left;
 	/*clear: both;*/
+	box-shadow: 2px 2px 3px #999;
+	-webkit-box-shadow: 2px 2px 2px #999;
+	-moz-box-shadow: 2px 2px 2px #999;
 }
 
 #articles_zone {
