@@ -129,7 +129,7 @@ setProjectPaypalConfiguration();
                     </tr>
                     <tr valign="top">
                     	<td width="110px" class="consult_det_title_td"><?php getValue('label_tax');?>:</td>
-                        <td width="100px">
+                        <td width="80px">
                         	<label><?php echo $GLOBALS['PAYPAL_TAX'] . '  ' . PAYPAL_CURRENCY_EUR;?></label>
                         </td>
                     </tr>
@@ -142,17 +142,17 @@ setProjectPaypalConfiguration();
                         	<input id="paymentTypePaypal" checked="checked" style="vertical-align: inherit !important" 
                         		name="paymentType" type="radio" value="paypal"/>
                         </td>
-                        <td valign="top">
+                        <td>
+                   			<img src="templates/medicnexus/images/paypal.jpeg">
+                   		</td>
+                    </tr>
+                   	<tr>
+                   		<td></td>
+                   		<td valign="top">
                         	<label style="vertical-align: inherit !important"><?php getValue('label_tpv');?>:</label>
                         	<input id="paymentTypeTPV" style="vertical-align: inherit !important" 
                         		name="paymentType" type="radio" value="tpv" />
                         </td>
-                    </tr>
-                   	<tr>
-                   		<td></td>
-                   		<td>
-                   			<img src="templates/medicnexus/images/paypal.jpeg">
-                   		</td>
                    		<td>
                    			<img src="templates/medicnexus/images/tpv.jpeg">
                    		</td>
