@@ -95,7 +95,7 @@ else
 		<div class="header">
 			<div id="left_header_zone">
 				<div id="logo_img">
-					<a href="#"> <img
+					<a href="index.php"> <img
 						src="<?php echo $this->baseurl;?>/templates/medicnexus/images/medicnexus_logo.gif"
 						width="85" height="85" border="0" /> </a>
 				</div>
