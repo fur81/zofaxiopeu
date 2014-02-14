@@ -1,4 +1,5 @@
 <?php
+require_once ('general_config.php');
 class JConfig {
 	public $offline = '0';
 	public $offline_message = 'Este sitio está cerrado por tareas de mantenimiento.<br /> Por favor, inténtelo nuevamente más tarde.';
@@ -12,11 +13,11 @@ class JConfig {
 	public $debug = '0';
 	public $debug_lang = '0';
 	public $dbtype = 'mysql';
-	public $host = 'localhost';
-	public $user = 'root';
-	public $password = 'carabobo';
-	public $db = 'cero';
-	public $dbprefix = 'cero_';
+	public $host = MN_HOST;
+	public $user = MN_JOOMLA_ROOT_USERNAME;
+	public $password = MN_JOOMLA_ROOT_PASSWORD;
+	public $db = MN_JOOMLA_DATABASE;
+	public $dbprefix = MN_JOOMLA_DATABASE_PREFIX;
 	public $live_site = '';
 	public $secret = 'aDtDIwo3OSlv2woP';
 	public $gzip = '0';
