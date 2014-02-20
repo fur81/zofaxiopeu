@@ -11,6 +11,14 @@ body {
 	color: #000;
 }
 
+.body_int {
+	font: 100%/1.4 "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background: #FFF url(../images/gradient_bg_site_int.gif) repeat-x;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
 /* ~~ Element/tag selectors ~~ */
 ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
 	padding: 0;
@@ -66,6 +74,7 @@ textarea {
 }
 
 select {
+	border: 1px solid #999999;
 	font-size: 11px;
 	color: #666;
 	height: 22px;	
@@ -227,9 +236,13 @@ label {
 	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
 }
 
-/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
 .header {
 	height: 290px;
+	background: #FFF;
+}
+
+.header_int {
+	height: 245px;
 	background: #FFF;
 }
 
@@ -259,7 +272,44 @@ label {
 	padding: 0 0 0 105px;
 }
 
+#left_header_zone_int {
+	width: 290px;
+	height: 140px;
+    margin: 5px 0 0 0;
+    padding-top: 100px;
+	float: left;
+	border-left: 5px solid #FFFFFF;
+    border-right: 5px solid #FFFFFF;
+	background: url(../images/logo_zone_int_bg.gif) repeat-x 25px 60px;
+}
+
+#left_header_zone_int h1 {
+	font-size: 28px;
+	color: #1aa9b8;
+	text-decoration: none;
+	font-weight: normal;
+	height: 50px;
+    margin: 0;
+    padding: 10px 0 0 105px;
+	background: url(../images/bg_site-_title.gif) no-repeat 105px 57px;
+}
+
+#left_header_zone_int h2 {
+	font-size: 11px;
+	color: #1aa9b8;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 0 0 0 105px;
+}
+
 #logo_img {
+	width: 85px;
+	height: 85px;
+	padding: 10px 0 0 10px;
+	float: left;
+}
+
+#logo_img_int {
 	width: 85px;
 	height: 85px;
 	padding: 10px 0 0 10px;
@@ -279,7 +329,15 @@ label {
 	-moz-border-radius: 2px 2px 2px 2px;
 }
 
+
 #right_header_zone {
+	width: 700px;
+	height: 240px;
+	float: left;
+	margin: 0;	
+}
+
+#right_header_zone_int {
 	width: 700px;
 	height: 290px;
 	float: left;
@@ -333,7 +391,6 @@ label {
 }
 
 #searching_zone ul li a:hover {
-
 	text-decoration: underline;	
 }
 
@@ -354,6 +411,14 @@ label {
 	float: left;
 	background: url(../images/front_img_header.jpg) no-repeat;
 	border-top: 1px solid #FFF;
+}
+
+#front_img_header_int {
+	width: 700px;
+	height: 150px;
+	float: left;
+	background: url(../images/front_img_header_inside.jpg) no-repeat;
+	border-top: 1px solid #FFF;	
 }
 
 #sitemap_zone {
@@ -436,7 +501,7 @@ label {
 	width: 240px;
 	height: 220px;
 	border: 1px solid #1aa9b8;
-	margin: 0 0 10px;
+	margin: 0 0 10px -1px;
     padding: 5px 5px 10px 5px;
 	float: left;
 	background: url("../images/contact_img.gif") no-repeat 10px 50px;
@@ -461,7 +526,6 @@ label {
 	/*padding-top: 25px;*/
 	margin-left: 45px;
 }
-
 
 #box_title_sidebar {
 	width: 230px;
@@ -887,6 +951,10 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	font-size: 11px;	
 }
 
+.control-group {
+	line-height: 22px;	
+}
+
 .mn-control-label {
 	color: #333;
 	font-size: 11px;	
@@ -1257,6 +1325,22 @@ fieldset {
 	color: #FFF;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: 12px;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+}
+
+.form-actions button:hover {
+	min-width: 100px;
+	height: 25px;
+	background: url(../images/button_bg_hover.gif) repeat-x;
+	border: 0;
+	color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
 }
 
 .form-actions a {
@@ -2202,7 +2286,11 @@ fieldset {
 
 .profile_info_title {
 	color: #FFF;
-	margin-top: -20px;	
+	margin: -23px 0 20px 8px;
+	font-size: 12px;
+	font-weight: bold;
+	background: url(../images/bg_title_box.png) no-repeat left 5px !important;
+	padding-left: 15px;
 }
 
 .profile {
@@ -2225,23 +2313,26 @@ fieldset {
 }
 
 .profile legend {
-	/*color: #1AA9B8;*/
+	color: #333;
 	font-weight: bold;	
 }
 
 .dl-horizontal {
-	line-height: 18px;
+	line-height: 20px;
 	margin: 0 0 10px 10px;
 }
 
 .dl-horizontal dt {
-	color: #1AA9B8;
+	color: #333;
 	font-weight: bold;	
+	width: 120px;
+	float: left;
 }
 
 .dl-horizontal dd {
 	margin: 0;
 	padding: 0;
+	width: 300px;
 }
 
 /*Fin estilos Profile*/
