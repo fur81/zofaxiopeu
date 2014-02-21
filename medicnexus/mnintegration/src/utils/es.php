@@ -61,6 +61,8 @@ $values[L_SPANISH] = array(
 		'label_new_note' => 'Nueva nota',
 		'label_download' => 'Descargar',
 		'label_reports' => 'Reportes',
+		'label_document' => 'Documento',
+		'label_select' => '-- Seleccione --',
 
 		/** botones */
 		'button_send' => 'Enviar',
@@ -72,6 +74,7 @@ $values[L_SPANISH] = array(
 		'msg_info_consult_inserted' => 'La consulta ha sido creada correctamente.',
 		'msg_error' => 'error',
 		'msg_error_consult_inserted' => 'La consulta no se ha podido crear. Consulte a los teléfonos del sitio para mayor información.',
+		'msg_error_empty_data' => 'Existen todavía datos en el formulario que deben ser llenados.',
 		'msg_advice' => 'notice'
 );
 ?>

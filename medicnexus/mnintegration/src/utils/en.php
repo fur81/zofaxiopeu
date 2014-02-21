@@ -60,6 +60,8 @@ $values[L_ENGLISH] = array(
 		'label_new_note' => 'New note',
 		'label_download' => 'Download',
 		'label_reports' => 'Reports',
+		'label_document' => 'Document',
+		'label_select' => '-- Select --',
 
 		/** botones */
 		'button_send' => 'Send',
@@ -71,6 +73,7 @@ $values[L_ENGLISH] = array(
 		'msg_info_consult_inserted' => 'La consulta ha sido creada correctamente.',
 		'msg_error' => 'error',
 		'msg_error_consult_inserted' => 'La consulta no se ha podido crear. Consulte a los teléfonos del sitio para mayor información.',
+		'msg_error_empty_data' => 'The form steel have data that needs be writer.',
 		'msg_advice' => 'notice'
 );
 ?>
