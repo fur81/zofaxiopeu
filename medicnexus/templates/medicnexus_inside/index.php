@@ -78,7 +78,8 @@ else
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <jdoc:include type="head" />
-<link rel="stylesheet" type="text/css" href="css/template.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo $this->baseurl;?>/templates/medicnexus/css/template.css" />
+<!--<link rel="stylesheet" type="text/css" href="css/template.css" />-->
 <script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/medicnexus/js/medicnexus.js"></script>
 <script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/medicnexus/js/template.js"></script>
 <script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/medicnexus/js/jquery.min.js"></script>
@@ -221,8 +222,8 @@ else
 			<div class="content_boxbar title_bar title_content_text"></div>
 			<jdoc:include type="component" /> <!-- End Content --> </main>
 		</div>
-
-		<div class="footer">
+	</div>
+    <div class="footer">
 			<div id="bottom_menu_site">
 				<ul>
 					<li><a href="index.php"><?php echo JText::_('TPL_MN_HOME_UPPER');?>
@@ -401,6 +402,5 @@ else
 				</li>
 			</ul>
 		</div>
-	</div>
 </body>
 </html>

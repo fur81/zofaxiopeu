@@ -242,7 +242,7 @@ else
                 </div>
             </div>
         </div>
-
+	</div>
 		<div class="footer">
 			<div id="bottom_menu_site">
 				<ul>
@@ -422,6 +422,5 @@ else
 				</li>
 			</ul>
 		</div>
-	</div>
 </body>
 </html>

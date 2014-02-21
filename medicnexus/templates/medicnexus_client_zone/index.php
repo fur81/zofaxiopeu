@@ -78,7 +78,8 @@ else
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <jdoc:include type="head" />
-<link rel="stylesheet" type="text/css" href="css/template.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo $this->baseurl;?>/templates/medicnexus/css/template.css" />
+<!--<link rel="stylesheet" type="text/css" href="css/template.css" />-->
 <script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/medicnexus/js/medicnexus.js"></script>
 <script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/medicnexus/js/template.js"></script>
 <script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/medicnexus/js/jquery.min.js"></script>
@@ -87,14 +88,11 @@ else
 <title>MEDICNEXUS</title>
 </head>
 
-<body
-	onload="MM_preloadImages('<?php echo $this->baseurl;?>/templates/medicnexus/images/g_quick_consult_service_icon.gif',
-	'<?php echo $this->baseurl;?>/templates/medicnexus/images/virtual_consult_service_icon_new.gif',
-	'<?php echo $this->baseurl;?>/templates/medicnexus/images/second_opinion_service_icon.gif')">
+<body class="body_int">
 	<div class="container">
-		<div class="header">
-			<div id="left_header_zone">
-				<div id="logo_img">
+		<div class="header_int">
+            <div id="left_header_zone_int">
+                <div id="logo_img_int">
 					<a href="index.php"> <img
 						src="<?php echo $this->baseurl;?>/templates/medicnexus/images/medicnexus_logo.gif"
 						width="85" height="85" border="0" /> </a>
@@ -105,12 +103,8 @@ else
 				<h2>
 				<?php echo JText::_('TPL_MN_DIRECT_CONNECTION');?>
 				</h2>
-				<div id="header_newsflash">
-					<jdoc:include type="modules" name="newsflash" style="xhtml" />
-					<!--Zona de las noticias rápidas de la portada del sitio-->
-				</div>
 			</div>
-			<div id="right_header_zone">
+			<div id="right_header_zone_int">
 				<div id="promo_lang_zone">
 					<ul>
 						<li><?php echo JText::_('TPL_MN_FOLLOW_US_IN');?>:</li>
@@ -162,7 +156,7 @@ else
 					<!--Zona del menú principal del sitio-->
 					<jdoc:include type="modules" name="position-1" style="xhtml" />
 				</div>
-				<div id="front_img_header"></div>
+                <div id="front_img_header_int"></div>
 			</div>
 			<!-- end .header -->
 		</div>
@@ -221,8 +215,8 @@ else
 			<div class="content_boxbar title_bar title_content_text"></div>
 			<jdoc:include type="component" /> <!-- End Content --> </main>
 		</div>
-
-		<div class="footer">
+	</div>
+    <div class="footer">
 			<div id="bottom_menu_site">
 				<ul>
 					<li><a href="index.php"><?php echo JText::_('TPL_MN_HOME_UPPER');?>
@@ -401,6 +395,5 @@ else
 				</li>
 			</ul>
 		</div>
-	</div>
 </body>
 </html>
