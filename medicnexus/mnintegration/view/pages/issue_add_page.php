@@ -1,233 +1,273 @@
-<?php 
+<?php
 // se establece la configuración para las variables de paypal
 setProjectPaypalConfiguration();
 ?>
 
 <div id="consultation_details">
-	<div class="redirect_client_zone_home" style="cursor: pointer;" onclick="redirectToBeginningClientZone()">
-    	<img  src="templates/medicnexus/images/home_cz_icon.gif"/>
-    	<span style="color: #12828e; font-size: 12px;">&nbsp;::&nbsp;</span>
-    	<a><?php getValue('label_beginning_client_zone');?></a>
-    </div>
 	<div class="back_option">
-        <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
-        <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
-    </div>    
-    <div>
-        <div>
-            <div class="consultation_detail_icon">
-                <img src="templates/medicnexus/images/consult_report_icon.gif" />
-            </div>
-            <div class="consultation_detail_title"><?php getValue('label_report_consultation_info');?></div>
-        </div>
-        <div class="consultation_detail_body">
-            <table width="100%" cellpadding="3" cellspacing="3">
-                <form name="subprojectSelectionForm" method="post" action="#">
-                <tr valign="top">
-                    <td width="110px" class="consult_det_title_td">
-                    	<label for="subproject">*<?php getValue('label_specialities');?>:</label>
-                    </td>
-                    <td width="600px" colspan="2">
-                        <select name="subprojectId" id="subproject" onchange="subprojectSelectionAction()" style="width: 193px;">
-							<?php
-								$countProjects = 0;
-								$tempProject = NULL;
+		<a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?>
+		</a> <img style="cursor: pointer;" onclick="redirectToBack()"
+			src="templates/medicnexus/images/back_option_bg.gif" />
+	</div>
+	<form id="createIssueForm" name="createIssueForm" method="post"
+		action="#">
+		<div>
+			<div>
+				<div class="consultation_detail_icon">
+					<img src="templates/medicnexus/images/consult_report_icon.gif" />
+				</div>
+				<div class="consultation_detail_title">
+				<?php getProjectName(); echo ' - ';  getValue('label_report_consultation_info');?>
+				</div>
+			</div>
+			<div class="consultation_detail_body controls">
+				<table width="100%" cellpadding="3" cellspacing="3">
+					<tr valign="top">
+						<td width="110px" class="consult_det_title_td"><label
+							for="subproject">*<?php getValue('label_specialities');?>:</label>
+						</td>
+						<td width="600px" colspan="2"><select name="subproject"
+							class="subproject" id="subproject" style="width: 193px;">
+								<option selected="selected" value="null">
+								<?php getValue('label_select');?>
+								</option>
+								<?php
 								$subprojects = $mantisCore->getSubProjects();
-								
-								foreach ($subprojects as $subproject) 
+								foreach ($subprojects as $subproject)
 								{
 									$project = $mantisCore->getProject($subproject);
-									// si no existe lo creo la primera vez
-									if (!isset($_SESSION['subProjectId'])) {
-										$_SESSION['subProjectId'] = $project->id;
-									}
-									// almaceno el primer proyecto
-									if ($tempProject == NULL) {
-										$tempProject = $project;
-									}
-									// se selecciona en el combo el elemento marcado en el submit
-									if ($_SESSION['subProjectId'] == $project->id) {
-										echo '<option selected="selected" value="'.$project->id.'">';
-										getValueByString($project->name);
-										echo '</option>';
-									}else {
-										echo '<option value="'.$project->id.'">';
-										getValueByString($project->name);
-										echo '</option>';
-										// cuenta los proyectos que no coinciden
-										$countProjects++;
-									}
+									echo '<option value="'.$project->id.'">';
+									getValueByString($project->name);
+									echo '</option>';
 								}
-								
-								// si en el recorrido no coincide ninguno pues se actualiza con el primero
-								if (count($subprojects) == $countProjects) 
-								{
-									$_SESSION['subProjectId'] = $tempProject->id;
-								}
-                            ?>
-                        </select>
-                    </td>
-                </tr>
-                <tr valign="top">
-                    <td width="110px" class="consult_det_title_td">
-                    	<label for="specialist">*<?php getValue('label_specialists');?>:</label>
-                    </td>
-                   
-					<td width="200px" valign="top">
-                        <select name="specialistData" id="specialistData" disabled="disabled" style="width: 100%">
-                        	<option value="null"><?php getValue('label_general_specialist');?></option>
-                            <?php $users = $mantisCore->getDeveloperUsersByProject($_SESSION['subProjectId']);
-                            foreach ($users as $user) {
-                                echo '<option value="'.$user->id.'">'.$user->realname.'</option>';
-                            }
-                            ?>
-                        </select>
-                    </td>
-                    
-                    <td width="400px" class="consult_det_title_td" valign="top">
-                        <label for="subproject" style="vertical-align: inherit !important"><?php getValue('label_select_specialist');?>:</label> &nbsp;
-                        <input align="texttop" style="vertical-align: top" type="checkbox" 
-                        	id="viewSpecialistsCheckbox" name="viewSpecialistsCheckbox" onclick="showSpecialists()"> 
-                        <input type="hidden" name="flow" id="flow" value="addIssue"> 
-                        <input type="hidden" name="issueAction" id="issueAction" value="subprojectSelectionAction">
-                    </td>
-                </tr>
-                </form>
-                <tr>
-                    <td class="consult_det_title_td" valign="top">
-                        <label>*<?php getValue('label_summary');?>:</label>
-                    </td>
-                    <td colspan="2">
-                        <input id="summaryTextData" name="summaryTextData" maxlength="128" style="width: 100%;">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="consult_det_title_td" valign="top">
-                        <label>*<?php getValue('label_description');?>:</label>
-                    </td>
-                    <td colspan="2">
-                        <textarea style="width: 99%;" rows="6" name="descriptionTextAreaData" id="descriptionTextAreaData"></textarea>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-    <div>
-        	<div>
-            	<div class="consultation_detail_icon">
-                	<img src="templates/medicnexus/images/payment_icon.gif" />
-                </div>
-                <div class="consultation_detail_title"><?php getValue('label_payment');?></div>
-            </div>
-            <div class="consultation_detail_body">
-            	<table width="100%" cellpadding="3" cellspacing="3">
-                	<tr valign="top">
-                    	<td width="110px" class="consult_det_title_td"><?php getValue('label_price');?>:</td>
-                        <td width="100px" colspan="2">
-                        	<label><?php echo $GLOBALS['PAYPAL_PRICE'] . '  ' . PAYPAL_CURRENCY_EUR;?></label>
-                        </td>
-                    </tr>
-                    <tr valign="top">
-                    	<td width="110px" class="consult_det_title_td"><?php getValue('label_tax');?>:</td>
-                        <td width="80px">
-                        	<label><?php echo $GLOBALS['PAYPAL_TAX'] . '  ' . PAYPAL_CURRENCY_EUR;?></label>
-                        </td>
-                    </tr>
-                    <tr valign="top">
-                    	<td class="consult_det_title_td" valign="top">
-                        	<label><?php getValue('label_payment_type');?>:</label>
-                        </td>
-                        <td valign="top">
-                        	<label style="vertical-align: inherit !important"><?php getValue('label_paypal');?>:</label>
-                        	<input id="paymentTypePaypal" checked="checked" style="vertical-align: inherit !important" 
-                        		name="paymentType" type="radio" value="paypal"/>
-                        </td>
-                        <td>
-                   			<img src="templates/medicnexus/images/paypal.jpeg">
-                   		</td>
-                    </tr>
-                   	<tr>
-                   		<td></td>
-                   		<td valign="top">
-                        	<label style="vertical-align: inherit !important"><?php getValue('label_tpv');?>:</label>
-                        	<input id="paymentTypeTPV" style="vertical-align: inherit !important" 
-                        		name="paymentType" type="radio" value="tpv" />
-                        </td>
-                   		<td>
-                   			<img src="templates/medicnexus/images/tpv.jpeg">
-                   		</td>
-                   	</tr>
-                    <tr>
-                    	<td width="710px" colspan="3" class="controls">
-                        	<button onclick="createIssue()" name="Submit" type="submit" style="cursor: pointer;">
+								?>
+						</select>
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="110px" class="consult_det_title_td"><label
+							for="specialist"><?php getValue('label_specialists');?>:</label>
+						</td>
+
+						<td width="200px" valign="top"><select name="specialist"
+							class="specialist" id="specialist" style="width: 100%"
+							disabled="disabled">
+								<option selected="selected">
+								<?php getValue('label_general_specialist');?>
+								</option>
+						</select>
+						</td>
+
+						<td width="400px" class="consult_det_title_td" valign="top"><label
+							for="viewSpecialistsCheckbox"
+							style="vertical-align: inherit !important"><?php getValue('label_select_specialist');?>:</label>
+							&nbsp; <input style="vertical-align: top" type="checkbox"
+							id="viewSpecialistsCheckbox" name="viewSpecialistsCheckbox"
+							onclick="showSpecialists()">
+						</td>
+					</tr>
+					<tr>
+						<td class="consult_det_title_td" valign="top"><label>*<?php getValue('label_summary');?>:</label>
+						</td>
+						<td colspan="2"><input id="summaryText" type="text"
+							name="summaryText" maxlength="128" style="width: 100%;">
+						</td>
+					</tr>
+					<tr>
+						<td class="consult_det_title_td" valign="top"><label>*<?php getValue('label_description');?>:</label>
+						</td>
+						<td colspan="2"><textarea style="width: 99%;" rows="6"
+								name="descriptionTextArea" id="descriptionTextArea"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td class="consult_det_title_td" valign="top"><label><?php getValue('label_document');?>:</label>
+						</td>
+						<td colspan="3" class="controls" valign="top"><input
+							class="nicefileinput nice" type="file" id="fileAttached"
+							name="fileAttached">
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!-- se agregan los datos para el flujo de páginas 
+			<input type="hidden" id="flow" name="flow" value="headersIssue"> <input
+				type="hidden" id="issueAction" name="issueAction"
+				value="createIssueAction"> -->
+
+		</div>
+		<div>
+			<div>
+				<div class="consultation_detail_icon">
+					<img src="templates/medicnexus/images/payment_icon.gif" />
+				</div>
+				<div class="consultation_detail_title">
+				<?php getValue('label_payment');?>
+				</div>
+			</div>
+			<div class="consultation_detail_body">
+				<table width="100%" cellpadding="3" cellspacing="3">
+					<tr valign="top">
+						<td width="120px" class="consult_det_title_td"><?php getValue('label_price');?>:</td>
+						<td colspan="2"><label><?php echo $GLOBALS['PAYPAL_PRICE'] . '  ' . PAYPAL_CURRENCY_EUR;?>
+						</label>
+						</td>
+					</tr>
+					<tr valign="top">
+						<td class="consult_det_title_td"><?php getValue('label_tax');?>:</td>
+						<td colspan="2"><label><?php echo $GLOBALS['PAYPAL_TAX'] . '  ' . PAYPAL_CURRENCY_EUR;?>
+						</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="consult_det_title_td" rowspan="2"><label
+							style="vertical-align: middle !important;"><?php getValue('label_payment_type');?>:</label>
+						</td>
+						<td valign="top" style="height: 30px;"><input
+							id="paymentTypePaypal" checked="checked"
+							style="vertical-align: middle !important;" name="paymentType"
+							type="radio" value="paypal" /> <label
+							style="vertical-align: middle !important"><?php getValue('label_paypal');?>
+						</label>
+						</td>
+						<td valign="middle"><img
+							src="templates/medicnexus/images/credit_cards_icons.gif"
+							style="vertical-align: bottom !important;">
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" style="height: 30px;"><input id="paymentTypeTPV"
+							style="vertical-align: middle !important;" name="paymentType"
+							type="radio" value="tpv" /> <label
+							style="vertical-align: bottom !important"><?php getValue('label_tpv');?>
+						</label>
+						</td>
+						<td valign="middle"><img
+							src="templates/medicnexus/images/sabadell_bank_icon.gif"
+							style="vertical-align: bottom !important;">
+						</td>
+					</tr>
+					<tr>
+						<td width="710px" colspan="3" class="controls">
+							<button name="send" type="button" style="cursor: pointer;"
+								onclick="validateData()">
 								<?php getValue('button_send');?>
-                        	</button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        
-    <div class="back_option">
-        <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
-        <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
-    </div>
+							</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</form>
+	<div class="back_option">
+		<a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?>
+		</a> <img style="cursor: pointer;" onclick="redirectToBack()"
+			src="templates/medicnexus/images/back_option_bg.gif" />
+	</div>
 </div>
 
 <!-- formularios para el funcionamiento de la pagina adicionar consulta -->
 
-<form name="createIssueForm" method="post" action="#">
-	<input type="hidden" id="flow" name="flow" value="headersIssue"> <input
-		type="hidden" id="issueAction" name="issueAction"
-		value="createIssueAction"><input type="hidden" id="summaryText" name="summaryText">
-	<input type="hidden" id="descriptionTextArea" name="descriptionTextArea">
-	<input type="hidden" id="subProjectId" name="subProjectId">
-	<input type="hidden" id="specialist" name="specialist">
-</form>
-
-<form id="headersIssueForm" name="headersIssueForm" action="#" method="post">
-	<input type="hidden" name="flow" id="flow" value="headersIssue"> <input type="hidden"
-	id="projectId" name="projectId"><input type="hidden" id="issueAction" name="issueAction" 
-	value="projectSelectionAction">
-</form>
-
-<form id="beginningZoneClientForm" name="beginningZoneClientForm" action="#" method="post">
-	<input type="hidden" name="flow" id="flow" value="default">
-	<input type="hidden" id="issueAction" name="issueAction" value="issueWelcomeAction">
+<form id="headersIssueForm" name="headersIssueForm" action="#"
+	method="post">
+	<input type="hidden" name="flow" id="flow" value="headersIssue"> <input
+		type="hidden" id="projectId" name="projectId"><input type="hidden"
+		id="issueAction" name="issueAction" value="projectSelectionAction">
 </form>
 
 <!-- scripts de la página -->
 <script type="text/javascript">
-	function createIssue() {
-		document.getElementById('summaryText').value = document.getElementById('summaryTextData').value;
-		document.getElementById('descriptionTextArea').value = document.getElementById('descriptionTextAreaData').value;
-		document.getElementById('subProjectId').value = document.getElementById('subproject').value;
-		if ($('#viewSpecialistsCheckbox').attr('checked')) {
-			document.getElementById('specialist').value = document.getElementById('specialistData').value;
-		} else {
-			document.getElementById('specialist').value = 'null';
-		}
-		document.forms["createIssueForm"].submit();
+
+	// se obtiene el camino relativo del servidor
+	function getPath() {
+    	var path = "";
+	    nodes = window.location. pathname. split('/');
+	    for (var index = 0; index < nodes.length - 3; index++) {
+    	    path += "../";
+    	}
+	    return path;
 	}
 
-	function subprojectSelectionAction() {
-		document.forms["subprojectSelectionForm"].submit();
+	//se utiliza para agregar ajax al combo de especialidades
+	$(document).ready(function()
+	{
+		// acción de modificar el combo de especialisas cuando
+		// se cambia del subproyecto.
+		$(".subproject").change(function()
+		{
+			if ( $('#viewSpecialistsCheckbox').attr('checked') ) {
+			var id=$(this).val();
+			var dataString = 'id='+ id;
+
+			$.ajax
+			({
+				type: "POST",
+				url: getPath()+"mnintegration/view/ajax/issue_add_specialist_inc.php",
+				data: dataString,
+				cache: false,
+				success: function(html)
+				{
+				$(".specialist").html(html);
+				}
+			});
+		}
+		});
+	});
+	
+	function validateData() {
+		// se validan los datos
+		$('span.error').remove();
+		dataCorrect = true;
+		// se verifica la especialidad seleccionada
+		if ( $('#subproject').attr('value') == 'null' ) {
+			dataCorrect = false;
+			$('#subproject').after('<br><span class="error">Speciality Combo required</span>');	
+		}
+		
+		// se verifica  que el resumen de la consulta que no esté vacía
+		if(  $('#summaryText').attr('value') == '' ) {
+			dataCorrect = false;
+			$('#summaryText').after('<span class="error">Summary Text required</span>');
+		}
+
+		// se verifica que la descripción no esté vacía
+		if(  $('#descriptionTextArea').attr('value') == '' ) {
+			dataCorrect = false;
+			$('#descriptionTextArea').after('<span class="error">Description Text required</span>');
+		}
+
+		if( dataCorrect == true ) {
+			// como todos los campos obligatorios están llenos se le da 
+			// submit al formulario.
+			document.forms["createIssueForm"].submit();
+		}
 	}
 
 	function showSpecialists() {
+		var value = "<?php echo getValue('label_general_specialist');?>";
 		if ($('#viewSpecialistsCheckbox').attr('checked')) {
-			$('#specialistData').removeAttr('disabled');
+			$('#specialist').removeAttr('disabled');
+			$(".subproject").change();
 		}else {
-			$('#specialistData').attr('disabled','disabled');
+			$('#specialist').attr('disabled','disabled');
+			$("#specialist").html("");
+			$("#specialist").append("<option value=\"null\">"+value+"</option>");
 		}
 	}
 
 	function redirectToBack() {
 		document.getElementById('projectId').value = <?php echo $_SESSION['projectId'];?>;
 		document.forms["headersIssueForm"].submit();
-	}
+	}		
 
-	function redirectToBeginningClientZone() {
-		document.forms["beginningZoneClientForm"].submit();
-	}
+	// garantiza modificar el estilo del botón Browse...
+	$(document).ready(function(){
+		$("input[type=file]").nicefileinput();
+	});
+
+	$("input[type=file]").nicefileinput({ 
+		label : '<?php getValue('button_browse');?>'
+	});
+
+	
 </script>
