@@ -17,17 +17,17 @@ $lang = JFactory::getLanguage();
 $lang->load('plg_user_profile', JPATH_ADMINISTRATOR);
 ?>
 <div class="profile-edit<?php echo $this->pageclass_sfx?>">
+<div class="profile_info_title">USER PROFILE</div>
 <?php if ($this->params->get('show_page_heading')) : ?>
 	<div class="page-header">
 		<h1><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
 	</div>
 <?php endif; ?>
-
 <form id="member-profile" action="<?php echo JRoute::_('index.php?option=com_users&task=profile.save'); ?>" method="post" class="form-validate form-horizontal" enctype="multipart/form-data">
 <?php foreach ($this->form->getFieldsets() as $group => $fieldset):// Iterate through the form fieldsets and display each one.?>
 	<?php $fields = $this->form->getFieldset($group);?>
 	<?php if (count($fields)):?>
-	<fieldset>
+	<fieldset style="padding-bottom: 10px;">
 		<?php if (isset($fieldset->label)):// If the fieldset has a label set, display it as the legend.?>
 		<legend><?php echo JText::_($fieldset->label); ?></legend>
 		<?php endif;?>
@@ -49,7 +49,7 @@ $lang->load('plg_user_profile', JPATH_ADMINISTRATOR);
 					<div class="controls">
 						<?php echo $field->input; ?>
 					</div>
-					<br>
+					
 				</div>
 			<?php endif;?>
 		<?php endforeach;?>
@@ -58,9 +58,10 @@ $lang->load('plg_user_profile', JPATH_ADMINISTRATOR);
 <?php endforeach;?>
 
 		<div class="form-actions">
-			<button type="submit" class="btn btn-primary validate"><span><?php echo JText::_('JSUBMIT'); ?></span></button>
-			<a href="<?php echo JRoute::_('');?>" title="<?php echo JText::_('JCANCEL');?>"><button class="btn btn-primary validate" type="button"><?php echo JText::_('JCANCEL');?></button></a>
-
+			<button type="submit" class="btn btn-primary validate"><span><?php echo JText::_('JSUBMIT'); ?></span></button>&nbsp;&nbsp;
+			<a href="<?php echo JRoute::_('');?>" title="<?php echo JText::_('JCANCEL');?>">
+            	<button class="btn btn-primary validate" type="button"><?php echo JText::_('JCANCEL');?></button>
+            </a>
 			<input type="hidden" name="option" value="com_users" />
 			<input type="hidden" name="task" value="profile.save" />
 			<?php echo JHtml::_('form.token'); ?>
