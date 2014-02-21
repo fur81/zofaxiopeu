@@ -50,21 +50,8 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 	<?php endif; ?>
 	<?php if (!$this->print) : ?>
 		<?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
-		<div class="btn-group pull-right">
-			<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <span class="icon-cog"></span> <span class="caret"></span> </a>
-			<?php // Note the actions class is deprecated. Use dropdown-menu instead. ?>
-			<ul class="dropdown-menu actions">
-				<?php if ($params->get('show_print_icon')) : ?>
-				<li class="print-icon"> <?php echo JHtml::_('icon.print_popup', $this->item, $params); ?> </li>
-				<?php endif; ?>
-				<?php if ($params->get('show_email_icon')) : ?>
-				<li class="email-icon"> <?php echo JHtml::_('icon.email', $this->item, $params); ?> </li>
-				<?php endif; ?>
-				<?php if ($canEdit) : ?>
-				<li class="edit-icon"> <?php echo JHtml::_('icon.edit', $this->item, $params); ?> </li>
-				<?php endif; ?>
-			</ul>
-		</div>
+		<!-- se eliminó la zona para poder editar los artículos desde el sitio web -->
+		<!-- hay que hacerlo ahora desde el sitio de administración -->
 		<?php endif; ?>
 		<?php else : ?>
 		<div class="pull-right">
