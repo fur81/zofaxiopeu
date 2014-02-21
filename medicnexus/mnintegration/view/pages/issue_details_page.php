@@ -4,11 +4,6 @@ $issue = $mantisCore->getIssueById ( $issueId );
 ?>
 
 <div id="consultation_details">
-	<div class="redirect_client_zone_home" style="cursor: pointer;" onclick="redirectToBeginningClientZone()">
-    	<img  src="templates/medicnexus/images/home_cz_icon.gif"/>
-    	<span style="color: #12828e; font-size: 12px;">&nbsp;::&nbsp;</span>
-    	<a><?php getValue('label_beginning_client_zone');?></a>
-    </div>
 	<div class="back_option">
         <a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?></a>
         <img style="cursor: pointer;" onclick="redirectToBack()" src="templates/medicnexus/images/back_option_bg.gif" />
@@ -18,7 +13,7 @@ $issue = $mantisCore->getIssueById ( $issueId );
             <div class="consultation_detail_icon">
                 <img src="templates/medicnexus/images/consult_detail_icon.gif" />
             </div>
-            <div class="consultation_detail_title"><?php getValue('label_consultation_details');?></div>
+            <div class="consultation_detail_title"><?php getProjectName(); echo ' - ';   getValue('label_consultation_details');?></div>
         </div>
         <div class="consultation_detail_body">
             <table width="100%" cellpadding="3" cellspacing="0">
@@ -249,7 +244,7 @@ $issue = $mantisCore->getIssueById ( $issueId );
 	});
 
 	$("input[type=file]").nicefileinput({ 
-		label : 'Examinar...'
+		label : '<?php getValue('button_browse');?>'
 	});
 	
 </script>
