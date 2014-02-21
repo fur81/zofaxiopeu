@@ -41,7 +41,7 @@ $values[L_SPANISH] = array(
 		'label_empty_list' => '-- No existen datos para mostrar --',
 		'label_consultation_details' => 'Detalles de la consulta',
 		'label_attached_documents' => 'Documentos adjuntos',
-		'label_assigned_to' => 'Asignado a',
+		'label_assigned_to' => 'Asignada a',
 		'label_lastUpdate' => 'Última actualización',
 		'label_summary' => 'Resumen',
 		'label_speciality' => 'Especialidad',
@@ -68,6 +68,11 @@ $values[L_SPANISH] = array(
 		'button_send' => 'Enviar',
 		'button_upload_file' => 'Subir Fichero',
 		'button_browse' => 'Examinar ...',
+
+		/** campos necesarios */
+		'msg_required_summary' => 'Por favor, denos el resumen.',
+		'msg_required_descrition' => 'Por favor, denos la descripción.',
+		'msg_required_speciality' => 'Por favor, seleccione una especialidad.',
 		
 		/** mensajes */
 		'msg_info' => 'message',

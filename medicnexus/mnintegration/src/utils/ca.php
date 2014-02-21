@@ -69,6 +69,11 @@ $values[L_CATALAN] = array(
 		'button_upload_file' => 'Subir Fichero',
 		'button_browse' => 'Examinar ...',
 
+		/** campos necesarios */
+		'msg_required_summary' => 'Por favor, denos el resumen.',
+		'msg_required_descrition' => 'Por favor, denos la descripción.',
+		'msg_required_speciality' => 'Por favor, seleccione una especialidad.',
+
 		/** mensajes */
 		'msg_info' => 'message',
 		'msg_info_consult_inserted' => 'La consulta ha sido creada correctamente.',

@@ -25,7 +25,7 @@ if ( isset($_GET['success'])) {
 	$summary = $_POST['summaryText'];
 	$description = $_POST['descriptionTextArea'];
 	$specialistId = $_POST['specialist'];
-	$projectId = $_POST['subProjectId'];
+	$projectId = $_POST['subproject'];
 	$_SESSION['subProjectId'] = $projectId;
 	// se salva la información el la base de datos
 	$idData = $mantisCore->saveIssueCreateData($summary, $description, $projectId, $specialistId);
@@ -34,7 +34,10 @@ if ( isset($_GET['success'])) {
 	//include_once $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE'];
 	//exit();
 	// solo para cuando paypal no está funcionando
-	$mantisCore->addIssue($summary, $description, $projectId, $specialistId);
+	$_POST['issueId'] = $mantisCore->addIssue($summary, $description, $projectId, $specialistId);
+	if ( $_POST['issueId'] > 0) {
+		include_once $GLOBALS['MNI_ATTACHED_UPLOAD_ACTION'];
+	}
 	$_SESSION ['msg'] = 'msg_info_consult_inserted';
 }
 ?>

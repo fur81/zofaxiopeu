@@ -63,6 +63,11 @@ $values[L_ENGLISH] = array(
 		'label_document' => 'Document',
 		'label_select' => '-- Select --',
 
+		/** campos necesarios */
+		'msg_required_summary' => 'Please, give us your summary.',
+		'msg_required_descrition' => 'Please, give us your description.',
+		'msg_required_speciality' => 'Please, select one speciality.',
+
 		/** botones */
 		'button_send' => 'Send',
 		'button_upload_file' => 'Upload File',

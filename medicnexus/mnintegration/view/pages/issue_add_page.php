@@ -9,7 +9,7 @@ setProjectPaypalConfiguration();
 		</a> <img style="cursor: pointer;" onclick="redirectToBack()"
 			src="templates/medicnexus/images/back_option_bg.gif" />
 	</div>
-	<form id="createIssueForm" name="createIssueForm" method="post"
+	<form enctype="multipart/form-data" id="createIssueForm" name="createIssueForm" method="post"
 		action="#">
 		<div>
 			<div>
@@ -70,7 +70,8 @@ setProjectPaypalConfiguration();
 						<td class="consult_det_title_td" valign="top"><label>*<?php getValue('label_summary');?>:</label>
 						</td>
 						<td colspan="2"><input id="summaryText" type="text"
-							name="summaryText" maxlength="128" style="width: 100%;">
+							name="summaryText" maxlength="128" style="width: 100%;"
+							title="<?php getValue('msg_required_summary');?>" >
 						</td>
 					</tr>
 					<tr>
@@ -90,11 +91,6 @@ setProjectPaypalConfiguration();
 					</tr>
 				</table>
 			</div>
-			<!-- se agregan los datos para el flujo de páginas 
-			<input type="hidden" id="flow" name="flow" value="headersIssue"> <input
-				type="hidden" id="issueAction" name="issueAction"
-				value="createIssueAction"> -->
-
 		</div>
 		<div>
 			<div>
@@ -158,6 +154,10 @@ setProjectPaypalConfiguration();
 				</table>
 			</div>
 		</div>
+		
+		<!-- se agregan los datos para el flujo de páginas  -->
+			<input type="hidden" id="flow" name="flow" value="headersIssue"> 
+			<input type="hidden" id="issueAction" name="issueAction" value="createIssueAction">
 	</form>
 	<div class="back_option">
 		<a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?>
@@ -170,9 +170,8 @@ setProjectPaypalConfiguration();
 
 <form id="headersIssueForm" name="headersIssueForm" action="#"
 	method="post">
-	<input type="hidden" name="flow" id="flow" value="headersIssue"> <input
-		type="hidden" id="projectId" name="projectId"><input type="hidden"
-		id="issueAction" name="issueAction" value="projectSelectionAction">
+	<input type="hidden" name="flow" id="flow" value="headersIssue">
+	<input type="hidden" id="issueAction" name="issueAction" value="projectSelectionAction">
 </form>
 
 <!-- scripts de la página -->
@@ -213,7 +212,8 @@ setProjectPaypalConfiguration();
 		}
 		});
 	});
-	
+
+	// función para validar el formulario
 	function validateData() {
 		// se validan los datos
 		$('span.error').remove();
@@ -221,19 +221,19 @@ setProjectPaypalConfiguration();
 		// se verifica la especialidad seleccionada
 		if ( $('#subproject').attr('value') == 'null' ) {
 			dataCorrect = false;
-			$('#subproject').after('<br><span class="error">Speciality Combo required</span>');	
+			$('#subproject').after('<br><span class="error"><?php getValue('msg_required_speciality');?></span>');	
 		}
 		
 		// se verifica  que el resumen de la consulta que no esté vacía
 		if(  $('#summaryText').attr('value') == '' ) {
 			dataCorrect = false;
-			$('#summaryText').after('<span class="error">Summary Text required</span>');
+			$('#summaryText').after('<span class="error"><?php getValue('msg_required_summary');?></span>');
 		}
 
 		// se verifica que la descripción no esté vacía
 		if(  $('#descriptionTextArea').attr('value') == '' ) {
 			dataCorrect = false;
-			$('#descriptionTextArea').after('<span class="error">Description Text required</span>');
+			$('#descriptionTextArea').after('<span class="error"><?php getValue('msg_required_descrition');?></span>');
 		}
 
 		if( dataCorrect == true ) {
@@ -243,6 +243,8 @@ setProjectPaypalConfiguration();
 		}
 	}
 
+	// función para garantizar el funcionamiento de la opción marcar o desmarcar
+	// los especialistas.
 	function showSpecialists() {
 		var value = "<?php echo getValue('label_general_specialist');?>";
 		if ($('#viewSpecialistsCheckbox').attr('checked')) {
@@ -255,6 +257,7 @@ setProjectPaypalConfiguration();
 		}
 	}
 
+	// funcion que redirecciona la pagina para la vista anterior.
 	function redirectToBack() {
 		document.getElementById('projectId').value = <?php echo $_SESSION['projectId'];?>;
 		document.forms["headersIssueForm"].submit();
