@@ -6281,6 +6281,11 @@ div.modal.fade.in {
 	color: #0B707B;
 	content: "\31";
 }
+.icon-white:before,
+.icon-whited:before {
+	color: #FFF;
+	content: "\31";
+}
 .icon-power-cord:before {
 	content: "\32";
 }
@@ -6418,6 +6423,7 @@ div.modal.fade.in {
 }
 .icon-archive:before,
 .icon-drawer-2:before {
+	color: #0B707B;
 	content: "\50";
 }
 .icon-box-add:before {
