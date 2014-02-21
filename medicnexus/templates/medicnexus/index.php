@@ -312,19 +312,19 @@ else
 					</h1>
 					<ul>
 						<li><a
-							href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=rapid_consultation">
+							href="index.php?option=com_content&amp;view=article&amp;id=21&amp;catid=21&amp;Itemid=119">
 								- <?php echo JText::_('TPL_MN_RAPID_CONSULTATION');?> </a>
 						</li>
 						<li><a
-							href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=virtual_consultation">
+							href="index.php?option=com_content&amp;view=article&amp;id=29&amp;catid=29&amp;Itemid=121">
 								- <?php echo JText::_('TPL_MN_VIRTUAL_CONSULTATION');?> </a>
 						</li>
 						<li><a
-							href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=second_opinion">
+							href="index.php?option=com_content&amp;view=article&amp;id=30&amp;catid=30&amp;Itemid=118">
 								- <?php echo JText::_('TPL_MN_SECOND_OPINION');?> </a>
 						</li>
 						<li><a
-							href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=health_program">
+							href="index.php?option=com_content&amp;view=article&amp;id=31&amp;catid=31&amp;Itemid=120">
 								- <?php echo JText::_('TPL_MN_HEALTH_PROGRAM');?> </a>
 						</li>
 					</ul>
