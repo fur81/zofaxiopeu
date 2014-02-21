@@ -15,23 +15,31 @@ if ( isset($_GET['success'])) {
 	$_POST ['issueAction'] = 'createIssueAction';
 } 
 
-// se utiliza para poder mostrar las páginas de servicio
-// cuando son accedidas desde links externos al módulo mnintegration
+// se utiliza para poder mostrar 
+// las páginas de servicio cuando son accedidas desde links externos al módulo mnintegration
+// página principal de zona cliente para mostrar los servicios generales con sus descripciones
 if (isset($_GET['rd'])) {
-	$_SESSION ['flow'] = 'headersIssue';
+	
 	switch ($_GET['rd']){
 		case 'rapid_consultation':
+			$_SESSION ['flow'] = 'headersIssue';
 			$_SESSION['projectId'] = PROJECT_RAPID_CONSULTATION;
 			break;
 		case 'virtual_consultation':
+			$_SESSION ['flow'] = 'headersIssue';
 			$_SESSION['projectId'] = PROJECT_VIRTUAL_CONSULTATION;
 			break;
 		case 'second_opinion':
+			$_SESSION ['flow'] = 'headersIssue';
 			$_SESSION['projectId'] = PROJECT_SECOND_OPINION;
 			break;
 		case 'health_program':
+			$_SESSION ['flow'] = 'headersIssue';
 			$_SESSION['projectId'] = PROJECT_HEALTH_PROGRAM;
 			break;
+		case 'home':
+			unset( $_SESSION ['flow'] );
+			unset( $_SESSION ['projectId'] );
 	}
 }
 

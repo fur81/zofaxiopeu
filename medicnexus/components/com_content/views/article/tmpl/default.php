@@ -40,7 +40,11 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 			<?php endif; ?>
 			<?php if ($params->get('show_title')) : ?>
 				<?php if ($params->get('link_titles') && !empty($this->item->readmore_link)) : ?>
-					<a href="<?php echo $this->item->readmore_link; ?>"> <?php echo $this->escape($this->item->title); ?></a>
+					<?php if ($this->item->id == 3) : ?>
+						<a href="<?php echo $this->item->readmore_link . '?rd=home'; ?>"> <?php echo $this->escape($this->item->title); ?></a>
+					<?php else : ?>
+						<a href="<?php echo $this->item->readmore_link; ?>"> <?php echo $this->escape($this->item->title); ?></a>
+					<?php endif; ?>
 				<?php else : ?>
 					<?php echo $this->escape($this->item->title); ?>
 				<?php endif; ?>
