@@ -21,3 +21,8 @@
 	define('MN_JOOMLA_ROOT_PASSWORD', 'carabobo');
 	define('MN_JOOMLA_DATABASE', 'cero');
 	define('MN_JOOMLA_DATABASE_PREFIX', 'cero_');
+	
+	/**
+	 * Variable para el camino reslativo del sitio
+	 */
+	define('SUB_PROJECT_PATH','/medicnexus');

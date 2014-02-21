@@ -1,5 +1,4 @@
 <?php
-define('SUB_PROJECT_PATH','/medicnexus');
 
 // - paginas del sitio
 // -- src
@@ -8,7 +7,6 @@ $GLOBALS['MNI_CONNECTION'] =    $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mni
 
 // -- paypal
 $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE'] = $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/src/paypal/payments/PayPalPaymentClientZone.php';
-
 
 // -- utils
 $GLOBALS['MNI_UTILS'] =         $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/src/utils/utils.php';
