@@ -33,7 +33,7 @@ defined('_JEXEC') or die;
 	<?php if (($this->params->get('logoutdescription_show') == 1 && str_replace(' ', '', $this->params->get('logout_description')) != '')|| $this->params->get('logout_image') != '') : ?>
 	</div>
 	<?php endif; ?>
-
+	<br>
 	<form action="<?php echo JRoute::_('index.php?option=com_users&task=user.logout'); ?>" method="post" class="form-horizontal">
 		<div class="control-group">
 			<div class="controls">
@@ -43,4 +43,5 @@ defined('_JEXEC') or die;
 		<input type="hidden" name="return" value="<?php echo base64_encode($this->params->get('logout_redirect_url', $this->form->getValue('return'))); ?>" />
 		<?php echo JHtml::_('form.token'); ?>
 	</form>
+	<br>
 </div>
