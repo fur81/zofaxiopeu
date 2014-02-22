@@ -29,13 +29,13 @@ defined('_JEXEC') or die;
 			<?php echo htmlspecialchars($this->data->username); ?>
 		</dd>
 		<dt>
-			<?php echo JText::_('COM_USERS_PROFILE_REGISTERED_DATE_LABEL'); ?>
+			<?php echo JText::_('COM_USERS_PROFILE_REGISTERED_DATE_LABEL'); ?>:
 		</dt>
 		<dd>
 			<?php echo JHtml::_('date', $this->data->registerDate); ?>
 		</dd>
 		<dt>
-			<?php echo JText::_('COM_USERS_PROFILE_LAST_VISITED_DATE_LABEL'); ?>
+			<?php echo JText::_('COM_USERS_PROFILE_LAST_VISITED_DATE_LABEL'); ?>:
 		</dt>
 
 		<?php if ($this->data->lastvisitDate != '0000-00-00 00:00:00'){?>

@@ -37,7 +37,7 @@ $itemList->setItems(array($item1));
 // charges etc.
 $details = new Details();
 $details->setTax($GLOBALS['PAYPAL_TAX'])
-	->setSubtotal(PAYPAL_PRICE_SECOND_OPINION);
+	->setSubtotal($GLOBALS['PAYPAL_TOTAL_AMOUNT']);
 
 // ### Amount
 // Lets you specify a payment amount.
@@ -55,7 +55,7 @@ $amount->setCurrency(PAYPAL_CURRENCY_EUR)
 $transaction = new Transaction();
 $transaction->setAmount($amount)
 	->setItemList($itemList)
-	->setDescription(PAYPAL_DESCRIPTION_SECOND_OPINION);
+	->setDescription($GLOBALS['PAYPAL_DESCRIPTION']);
 
 // ### Redirect urls
 // Set the urls that the buyer must be redirected to after 

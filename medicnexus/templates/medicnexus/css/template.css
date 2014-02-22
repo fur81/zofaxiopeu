@@ -11,6 +11,14 @@ body {
 	color: #000;
 }
 
+.body_int {
+	font: 100%/1.4 "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background: #FFF url(../images/gradient_bg_site_int.gif) repeat-x;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
 /* ~~ Element/tag selectors ~~ */
 ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
 	padding: 0;
@@ -66,6 +74,7 @@ textarea {
 }
 
 select {
+	border: 1px solid #999999;
 	font-size: 11px;
 	color: #666;
 	height: 22px;	
@@ -212,11 +221,11 @@ label {
 }
 
 .contact_title {
-	font-size: 17px;
+	font-size: 18px;
 	color: #1aa9b8;
 	text-transform: uppercase;
 	/*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
-	margin: 35px 0 30px 100px;
+	margin: 35px 0 25px 100px;
 	font-weight: bold;	
 }
 
@@ -227,9 +236,13 @@ label {
 	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
 }
 
-/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
 .header {
 	height: 290px;
+	background: #FFF;
+}
+
+.header_int {
+	height: 245px;
 	background: #FFF;
 }
 
@@ -238,7 +251,7 @@ label {
 	height: 290px;
 	float: left;
 	margin: 0;	
-	background: url(../images/bg_site-_title.gif) no-repeat 105px 58px;
+	background: url(../images/bg_site-_title.gif) no-repeat 105px 57px;
 }
 
 #left_header_zone h1 {
@@ -259,7 +272,44 @@ label {
 	padding: 0 0 0 105px;
 }
 
+#left_header_zone_int {
+	width: 290px;
+	height: 140px;
+    margin: 5px 0 0 0;
+    padding-top: 100px;
+	float: left;
+	border-left: 5px solid #FFFFFF;
+    border-right: 5px solid #FFFFFF;
+	background: url(../images/logo_zone_int_bg.gif) repeat-x 25px 60px;
+}
+
+#left_header_zone_int h1 {
+	font-size: 28px;
+	color: #1aa9b8;
+	text-decoration: none;
+	font-weight: normal;
+	height: 50px;
+    margin: 0;
+    padding: 10px 0 0 105px;
+	background: url(../images/bg_site-_title.gif) no-repeat 105px 57px;
+}
+
+#left_header_zone_int h2 {
+	font-size: 11px;
+	color: #1aa9b8;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 0 0 0 105px;
+}
+
 #logo_img {
+	width: 85px;
+	height: 85px;
+	padding: 10px 0 0 10px;
+	float: left;
+}
+
+#logo_img_int {
 	width: 85px;
 	height: 85px;
 	padding: 10px 0 0 10px;
@@ -279,9 +329,17 @@ label {
 	-moz-border-radius: 2px 2px 2px 2px;
 }
 
+
 #right_header_zone {
 	width: 700px;
-	height: 290px;
+	height: 240px;
+	float: left;
+	margin: 0;	
+}
+
+#right_header_zone_int {
+	width: 700px;
+	height: 240px;
 	float: left;
 	margin: 0;	
 }
@@ -355,8 +413,16 @@ label {
 	border-top: 1px solid #FFF;
 }
 
+#front_img_header_int {
+	width: 700px;
+	height: 150px;
+	float: left;
+	background: url(../images/front_img_header_inside.jpg) no-repeat;
+	border-top: 1px solid #FFF;	
+}
+
 #sitemap_zone {
-	height: 20px;
+	/*height: 20px;*/
     padding: 5px 0 0 30px;
 	margin: 5px 0 2px 0;
 	background: url(../images/sitemap_bg.gif) no-repeat 5px 5px;
@@ -435,7 +501,7 @@ label {
 	width: 240px;
 	height: 220px;
 	border: 1px solid #1aa9b8;
-	margin: 0 0 10px;
+	margin: 0 0 10px -1px;
     padding: 5px 5px 10px 5px;
 	float: left;
 	background: url("../images/contact_img.gif") no-repeat 10px 50px;
@@ -669,10 +735,16 @@ label {
 
 #news-article_zone {
 	padding: 5px 5px;
-	margin: 0 0 -1px -1px;
+	margin: 0 0 10px 0;
 	width: 730px;
 	border: 1px solid #1aa9b8;
 	float: left;
+	box-shadow: 2px 2px 3px #999;
+	-webkit-box-shadow: 2px 2px 2px #999;
+	-moz-box-shadow: 2px 2px 2px #999;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
 	/*clear: both;*/
 }
 
@@ -877,6 +949,10 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 .mn-element-invisible {
 	color: #333;
 	font-size: 11px;	
+}
+
+.control-group {
+	line-height: 22px;	
 }
 
 .mn-control-label {
@@ -1242,13 +1318,29 @@ fieldset {
 }
 
 .form-actions button {
-	width: 100px;
-	height: 22px;
-	background: url(../images/btn_bg100.png) no-repeat;
+	min-width: 100px;
+	height: 25px;
+	background: url(../images/button_bg.gif) repeat-x;
 	border: 0;
 	color: #FFF;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: 12px;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+}
+
+.form-actions button:hover {
+	min-width: 100px;
+	height: 25px;
+	background: url(../images/button_bg_hover.gif) repeat-x;
+	border: 0;
+	color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
 }
 
 .form-actions a {
@@ -1426,7 +1518,7 @@ fieldset {
 	background: url(../images/services_title_bg.gif) no-repeat 140px 12px;
 }
 #client_service_box {
-	width: 160px;
+	width: 165px;
 	float: left;	
 }
 #client_service_box img {
@@ -1439,7 +1531,7 @@ fieldset {
     margin: 60px 0 0 -50px;
     text-align: center;
     text-transform: uppercase;
-    width: 150px;
+    width: 160px;
 }
 .service_icon {
 	width: 50px;
@@ -1557,7 +1649,7 @@ fieldset {
 	float: left;	
 }
 .client_options_separator {
-	margin: 10px 10px 0 20px;
+	margin: 10px 12px 0 12px;
 	width: 1px;
 	height: 46px;
 	background: url(../images/client_options_separator.gif) no-repeat;
@@ -2027,7 +2119,7 @@ fieldset {
 	float: left;	
 }
 
-.service_step_block {
+#service_step_block {
 	width: 160px;
 	margin: 0;
 	padding: 0;
@@ -2035,14 +2127,14 @@ fieldset {
 	margin: 10px 0 0 10px;
 }
 
-.service_step_block #header {
+#service_step_block #header {
 	width: 160px;
 	height: 34px;
     padding-top: 1px;
 	/*background: url(../images/service_block_header_bg1.gif) no-repeat;*/
 }
 
-.service_step_block #header h2 {
+#service_step_block #header h2 {
 	color: #666;
 	font-size: 11px;
 	text-align: left;
@@ -2051,31 +2143,31 @@ fieldset {
     padding: 0;
 }
 
-.service_step_block #body {
+#service_step_block #body {
 	width: 160px;
 	min-height: 100px;
 	border-top: 5px solid #FFF;
 }
 
-.service_step_block #body #top {
+#service_step_block #body #top {
 	width: 160px;
 	height: 5px;
 	background: url(../images/service_block_body_top_bg.gif) no-repeat;
 	float: left;
 }
 
-.service_step_block #body #middle {
+#service_step_block #body #middle {
 	width: 160px;
 	background: #3db8c5;
 	text-align: center;
 	float: left;
 }
 
-.service_step_block #body #middle img {
+#service_step_block #body #middle img {
 	margin-top: 5px;
 }
 
-.service_step_block #body #middle p {
+#service_step_block #body #middle p {
 	color: #FFF;
 	font-size: 11px;
 	text-align: left;
@@ -2083,7 +2175,7 @@ fieldset {
 	margin-top: 5px;
 }
 
-.service_step_block #body #bottom {
+#service_step_block #body #bottom {
 	width: 160px;
 	height: 5px;
 	background: url(../images/service_block_body_bot_bg.gif) no-repeat;
@@ -2189,3 +2281,58 @@ fieldset {
 }
 
 /*Fin estilos XMap*/
+
+/*Inicio estilos Profile*/
+
+.profile_info_title {
+	color: #FFF;
+	margin: -23px 0 20px 8px;
+	font-size: 12px;
+	font-weight: bold;
+	background: url(../images/bg_title_box.png) no-repeat left 5px !important;
+	padding-left: 15px;
+}
+
+.profile {
+	/*margin-top: -28px;*/
+}
+
+.profile ul li {
+	list-style: none;
+	margin-bottom: 20px;
+}
+
+.profile ul li a {
+	/*background: url(../images/bg_title_box.png) no-repeat left 5px !important;*/
+	/*color: #FFF !important;*/
+	background: none !important;
+	font-size: 12px !important;
+	text-transform: uppercase;
+	font-weight: bold;
+	/*padding-left: 15px;*/
+}
+
+.profile legend {
+	color: #333;
+	font-weight: bold;	
+}
+
+.dl-horizontal {
+	line-height: 20px;
+	margin: 0 0 10px 10px;
+}
+
+.dl-horizontal dt {
+	color: #333;
+	font-weight: bold;	
+	width: 120px;
+	float: left;
+}
+
+.dl-horizontal dd {
+	margin: 0;
+	padding: 0;
+	width: 300px;
+}
+
+/*Fin estilos Profile*/

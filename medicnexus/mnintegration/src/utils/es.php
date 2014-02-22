@@ -41,7 +41,7 @@ $values[L_SPANISH] = array(
 		'label_empty_list' => '-- No existen datos para mostrar --',
 		'label_consultation_details' => 'Detalles de la consulta',
 		'label_attached_documents' => 'Documentos adjuntos',
-		'label_assigned_to' => 'Asignado a',
+		'label_assigned_to' => 'Asignada a',
 		'label_lastUpdate' => 'Última actualización',
 		'label_summary' => 'Resumen',
 		'label_speciality' => 'Especialidad',
@@ -61,17 +61,30 @@ $values[L_SPANISH] = array(
 		'label_new_note' => 'Nueva nota',
 		'label_download' => 'Descargar',
 		'label_reports' => 'Reportes',
+		'label_documents' => 'Documentos',
+		'label_select' => '-- Seleccione --',
+		'label_uploadSize' => 'El fichero que se desee adjuntar no puede ser mayor a 10 KB',
+		'label_documentsInfo' => 'Usted podrá adjuntar todos los ficheros que desee a la consulta una vez que esta ha 
+							sido creada. Para acceder a esta opción dirígase a la vista detallada de la consulta creada.',
 
 		/** botones */
 		'button_send' => 'Enviar',
 		'button_upload_file' => 'Subir Fichero',
 		'button_browse' => 'Examinar ...',
+
+		/** campos necesarios */
+		'msg_required_summary' => 'Por favor, denos el resumen.',
+		'msg_required_descrition' => 'Por favor, denos la descripción.',
+		'msg_required_speciality' => 'Por favor, seleccione una especialidad.',
 		
 		/** mensajes */
 		'msg_info' => 'message',
 		'msg_info_consult_inserted' => 'La consulta ha sido creada correctamente.',
+		'msg_info_upload_inserted' => 'El fichero ha sido adjuntado correctamente.',
 		'msg_error' => 'error',
 		'msg_error_consult_inserted' => 'La consulta no se ha podido crear. Consulte a los teléfonos del sitio para mayor información.',
+		'msg_error_empty_data' => 'Existen todavía datos en el formulario que deben ser llenados.',
+		'msg_error_upload_size' => 'El fichero a adjuntar excede el tamaño máximo posible.',
 		'msg_advice' => 'notice'
 );
 ?>

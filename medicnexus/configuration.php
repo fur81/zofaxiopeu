@@ -1,7 +1,5 @@
 <?php
-// se incluyen las variables globales de configuración
-include_once 'general_config.php';
-
+require_once ('general_config.php');
 class JConfig {
 	public $offline = '0';
 	public $offline_message = 'Este sitio está cerrado por tareas de mantenimiento.<br /> Por favor, inténtelo nuevamente más tarde.';

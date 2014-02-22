@@ -95,7 +95,7 @@ else
 		<div class="header">
 			<div id="left_header_zone">
 				<div id="logo_img">
-					<a href="#"> <img
+					<a href="index.php"> <img
 						src="<?php echo $this->baseurl;?>/templates/medicnexus/images/medicnexus_logo.gif"
 						width="85" height="85" border="0" /> </a>
 				</div>
@@ -143,10 +143,10 @@ else
 									</a>
 									</li>
 									<li>|</li>
-									<li><a href="#"><?php echo JText::_('TPL_MN_USER_REGISTER');?>
+									<li><a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>"><?php echo JText::_('TPL_MN_USER_REGISTER');?>
 									</a>
 									</li>
-									<li style="margin: 2px 10px 0 5px;"><a href="#"> <img
+									<li style="margin: 2px 10px 0 5px;"><a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>"> <img
 											src="<?php echo $this->baseurl;?>/templates/medicnexus/images/register_user_icon.gif"
 											border="0" /> </a>
 									</li>
@@ -221,7 +221,28 @@ else
 			<div class="content_boxbar title_bar title_content_text"></div>
 			<jdoc:include type="component" /> <!-- End Content --> </main>
 		</div>
-
+		
+		<div id="news-article_zone">
+            <div class="title_bar content_sidebar title_sidebar_text">
+                <div class="box_title_left">
+                    INFORMACIÓN GENERAL
+                </div>
+            </div>
+            <div id="articles_zone">
+                <h1>ARTÍCULOS</h1>
+                <div id="articles">
+                	<jdoc:include type="modules" name="articles-preview" style="xhtml" />
+                </div>
+            </div>
+            <div id="articles-news_separator">&nbsp;</div>
+            <div id="articles_zone">
+                <h1>NOTICIAS</h1>
+                <div id="articles">
+                	<jdoc:include type="modules" name="news-preview" style="xhtml" />
+                </div>
+            </div>
+        </div>
+	</div>
 		<div class="footer">
 			<div id="bottom_menu_site">
 				<ul>
@@ -291,19 +312,19 @@ else
 					</h1>
 					<ul>
 						<li><a
-							href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=rapid_consultation">
+							href="index.php?option=com_content&amp;view=article&amp;id=21&amp;catid=21&amp;Itemid=119">
 								- <?php echo JText::_('TPL_MN_RAPID_CONSULTATION');?> </a>
 						</li>
 						<li><a
-							href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=virtual_consultation">
+							href="index.php?option=com_content&amp;view=article&amp;id=29&amp;catid=29&amp;Itemid=121">
 								- <?php echo JText::_('TPL_MN_VIRTUAL_CONSULTATION');?> </a>
 						</li>
 						<li><a
-							href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=second_opinion">
+							href="index.php?option=com_content&amp;view=article&amp;id=30&amp;catid=30&amp;Itemid=118">
 								- <?php echo JText::_('TPL_MN_SECOND_OPINION');?> </a>
 						</li>
 						<li><a
-							href="index.php?option=com_content&amp;view=article&amp;id=3&amp;catid=2&amp;Itemid=109&rd=health_program">
+							href="index.php?option=com_content&amp;view=article&amp;id=31&amp;catid=31&amp;Itemid=120">
 								- <?php echo JText::_('TPL_MN_HEALTH_PROGRAM');?> </a>
 						</li>
 					</ul>
@@ -401,6 +422,5 @@ else
 				</li>
 			</ul>
 		</div>
-	</div>
 </body>
 </html>

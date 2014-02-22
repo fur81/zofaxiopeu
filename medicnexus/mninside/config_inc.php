@@ -33,7 +33,7 @@
         # --- Attachments / File Uploads ---
 		$g_allow_file_upload	= ON;
 		$g_file_upload_method	= DATABASE;
-		$g_max_file_size		= 5000000;	# in bytes
+		$g_max_file_size		= MN_MANTIS_FILE_MAX_SIZE;	# in bytes
 		
         # --- branding --- #
         $g_window_title         = 'Medicnexus';

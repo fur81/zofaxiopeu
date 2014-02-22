@@ -60,6 +60,16 @@ $values[L_ENGLISH] = array(
 		'label_new_note' => 'New note',
 		'label_download' => 'Download',
 		'label_reports' => 'Reports',
+		'label_documents' => 'Documents',
+		'label_select' => '-- Select --',
+		'label_uploadSize' => 'The file\'s size you want to attach needs to be less than 10 KB',
+		'label_documentsInfo' => 'Usted podrá adjuntar todos los ficheros que desee a la consulta una vez que esta ha 
+							sido creada. Para acceder a esta opción dirígase a la vista detallada de la consulta creada.',
+
+		/** campos necesarios */
+		'msg_required_summary' => 'Please, give us your summary.',
+		'msg_required_descrition' => 'Please, give us your description.',
+		'msg_required_speciality' => 'Please, select one speciality.',
 
 		/** botones */
 		'button_send' => 'Send',
@@ -69,8 +79,11 @@ $values[L_ENGLISH] = array(
 		/** mensajes */
 		'msg_info' => 'message',
 		'msg_info_consult_inserted' => 'La consulta ha sido creada correctamente.',
+		'msg_info_upload_inserted' => 'El fichero ha sido adjuntado correctamente.',
 		'msg_error' => 'error',
 		'msg_error_consult_inserted' => 'La consulta no se ha podido crear. Consulte a los teléfonos del sitio para mayor información.',
+		'msg_error_empty_data' => 'The form steel have data that needs be writer.',
+		'msg_error_upload_size' => 'El fichero a adjuntar sobre pasa el tamaño máximo posible.',
 		'msg_advice' => 'notice'
 );
 ?>

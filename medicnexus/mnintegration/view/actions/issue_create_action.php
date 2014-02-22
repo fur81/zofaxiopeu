@@ -11,6 +11,7 @@ if ( isset($_GET['success'])) {
 		$projectId = $issueData['projectId'];
 		// se crea la incidencia con la información almacenada
 		$mantisCore->addIssue($summary, $description, $projectId, $specialistId);
+		// se envia un mensaje de terminacion correcta
 		$_SESSION ['msg'] = 'msg_info_consult_inserted';
 	}else{
 		$_SESSION ['msg'] = 'msg_info_consult_inserted';
@@ -25,7 +26,7 @@ if ( isset($_GET['success'])) {
 	$summary = $_POST['summaryText'];
 	$description = $_POST['descriptionTextArea'];
 	$specialistId = $_POST['specialist'];
-	$projectId = $_POST['subProjectId'];
+	$projectId = $_POST['subproject'];
 	$_SESSION['subProjectId'] = $projectId;
 	// se salva la información el la base de datos
 	$idData = $mantisCore->saveIssueCreateData($summary, $description, $projectId, $specialistId);
