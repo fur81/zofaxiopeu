@@ -170,6 +170,7 @@ setProjectPaypalConfiguration();
 <form id="headersIssueForm" name="headersIssueForm" action="#"
 	method="post">
 	<input type="hidden" name="flow" id="flow" value="headersIssue">
+	<input type="hidden" id="projectId" name="projectId">
 	<input type="hidden" id="issueAction" name="issueAction" value="projectSelectionAction">
 </form>
 
