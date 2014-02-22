@@ -14,8 +14,14 @@ if ( isset($_FILES['fileAttached']) ) {
 
 	// se carga el fichero al sistema si no está vacía la dirección
 	if ( strlen($name) > 0 ) {
-		// como la dirección tiene valor se inserta el adjunto
-		$mantisCore->addAttachment($issueId, $name, $fileType, $content);
+		// la dirección tiene valor
+		if ($size < MN_MANTIS_FILE_MAX_SIZE ) {
+			// cumple con el tamanno requerido y se inserta el adjunto.
+			$mantisCore->addAttachment($issueId, $name, $fileType, $content);
+			$_SESSION ['msg'] = 'msg_info_upload_inserted';
+		} else {
+			$_SESSION ['msg'] = 'msg_error_upload_size';
+		}
 	}
 }
 ?>

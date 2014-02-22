@@ -26,3 +26,8 @@
 	 * Variable para el camino reslativo del sitio
 	 */
 	define('SUB_PROJECT_PATH','/medicnexus');
+	
+	/**
+	 * Variable para el tamaño máximo de los ficheros
+	 */
+	define('MN_MANTIS_FILE_MAX_SIZE', 10240 );  # in bytes

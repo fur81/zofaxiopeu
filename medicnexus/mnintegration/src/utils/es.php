@@ -80,9 +80,11 @@ $values[L_SPANISH] = array(
 		/** mensajes */
 		'msg_info' => 'message',
 		'msg_info_consult_inserted' => 'La consulta ha sido creada correctamente.',
+		'msg_info_upload_inserted' => 'El fichero ha sido adjuntado correctamente.',
 		'msg_error' => 'error',
 		'msg_error_consult_inserted' => 'La consulta no se ha podido crear. Consulte a los teléfonos del sitio para mayor información.',
 		'msg_error_empty_data' => 'Existen todavía datos en el formulario que deben ser llenados.',
+		'msg_error_upload_size' => 'El fichero a adjuntar excede el tamaño máximo posible.',
 		'msg_advice' => 'notice'
 );
 ?>
