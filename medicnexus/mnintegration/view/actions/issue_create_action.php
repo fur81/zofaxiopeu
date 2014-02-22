@@ -11,6 +11,7 @@ if ( isset($_GET['success'])) {
 		$projectId = $issueData['projectId'];
 		// se crea la incidencia con la información almacenada
 		$mantisCore->addIssue($summary, $description, $projectId, $specialistId);
+		// se envia un mensaje de terminacion correcta
 		$_SESSION ['msg'] = 'msg_info_consult_inserted';
 	}else{
 		$_SESSION ['msg'] = 'msg_info_consult_inserted';
@@ -34,10 +35,7 @@ if ( isset($_GET['success'])) {
 	//include_once $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE'];
 	//exit();
 	// solo para cuando paypal no está funcionando
-	$_POST['issueId'] = $mantisCore->addIssue($summary, $description, $projectId, $specialistId);
-	if ( $_POST['issueId'] > 0) {
-		include_once $GLOBALS['MNI_ATTACHED_UPLOAD_ACTION'];
-	}
+	$mantisCore->addIssue($summary, $description, $projectId, $specialistId);
 	$_SESSION ['msg'] = 'msg_info_consult_inserted';
 }
 ?>

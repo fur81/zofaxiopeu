@@ -82,11 +82,10 @@ setProjectPaypalConfiguration();
 						</td>
 					</tr>
 					<tr>
-						<td class="consult_det_title_td" valign="top"><label><?php getValue('label_document');?>:</label>
+						<td class="consult_det_title_td" valign="top"><label><?php getValue('label_documents');?>:</label>
 						</td>
-						<td colspan="3" class="controls" valign="top"><input
-							class="nicefileinput nice" type="file" id="fileAttached"
-							name="fileAttached">
+						<td colspan="3" class="controls" valign="top">
+							<label><?php getValue('label_documentsInfo');?></label>
 						</td>
 					</tr>
 				</table>

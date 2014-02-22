@@ -65,7 +65,7 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 			<td><?php if (!$isIssueRead) { echo '<strong>' . $issue->summary . '</strong>';}
 					else {echo $issue->summary;}?>
 			</td>
-			<td><?php if (!$isIssueRead) { echo '<strong>' . getValueByString($issueProject->name) . '</strong>';}
+			<td><?php if (!$isIssueRead) { echo '<strong>'; echo getValueByString($issueProject->name);  echo '</strong>';}
 					else {getValueByString($issueProject->name);}?>
 			</td>
 			<td align="center"><?php if (!$isIssueRead) { echo '<strong>' . $issue->attachments_count . '</strong>';}

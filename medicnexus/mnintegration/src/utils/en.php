@@ -60,8 +60,11 @@ $values[L_ENGLISH] = array(
 		'label_new_note' => 'New note',
 		'label_download' => 'Download',
 		'label_reports' => 'Reports',
-		'label_document' => 'Document',
+		'label_documents' => 'Documents',
 		'label_select' => '-- Select --',
+		'label_uploadSize' => 'The file\'s size you want to attach needs to be less than 10 KB',
+		'label_documentsInfo' => 'Usted podrá adjuntar todos los ficheros que desee a la consulta una vez que esta ha 
+							sido creada. Para acceder a esta opción dirígase a la vista detallada de la consulta creada.',
 
 		/** campos necesarios */
 		'msg_required_summary' => 'Please, give us your summary.',

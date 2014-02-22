@@ -61,8 +61,11 @@ $values[L_CATALAN] = array(
 		'label_new_note' => 'Nueva nota',
 		'label_download' => 'Descarregar',
 		'label_reports' => 'Informes',
-		'label_document' => 'Documento',
+		'label_documents' => 'Documentos',
 		'label_select' => '-- Seleccione --',
+		'label_uploadSize' => 'El fichero que se desee adjuntar no puede ser mayor a 10 KB',
+		'label_documentsInfo' => 'Usted podrá adjuntar todos los ficheros que desee a la consulta una vez que esta ha 
+							sido creada. Para acceder a esta opción dirígase a la vista detallada de la consulta creada.',
 
 		/** botones */
 		'button_send' => 'Enviar',
