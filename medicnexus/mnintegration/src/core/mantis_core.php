@@ -708,10 +708,20 @@ class MantisCore {
 	/**
 	 * Envia mensajes al usuario una vez que ha sido creada la consulta
 	 * con los datos de pago que ha enviado.
-	 * @todo falta la implementación de este método.
 	 */
-	public function sendEmail() {
-		;
+	public function sendEmail($summary, $description, $projectId, $specialistId, $payName,
+							$payPrice, $payTax, $payTotalAmount) {
+		$userEmail = $this->getUserData()->email;
+		$subject = getValueIn('email_titleCreateConsult');
+		$message = getValueIn('email_bodyCreateConsult') . "\n";
+		$message .= getValueIn('label_summary') . ': ' . $summary . "\n";
+		$message .= getValueIn('label_description') . ': ' . $description . "\n";
+		$message .= getValueIn('label_service') . ': ' . $payName . "\n";
+		$message .= getValueIn('label_price') . ': ' . $payPrice . "\n";
+		$message .= getValueIn('label_tax') . ': ' . $payTax . "\n";
+		$message .= getValueIn('label_total_amount') . ': ' . $payTotalAmount . "\n\n";
+		$message .= getValueIn('email_bodyFooter');
+		mail($userEmail, $subject, $message, "From:".MN_JOOMLA_EMAIL_FROM);
 	}
 
 	/**

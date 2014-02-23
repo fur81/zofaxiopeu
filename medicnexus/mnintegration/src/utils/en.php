@@ -60,6 +60,7 @@ $values[L_ENGLISH] = array(
 		'label_new_note' => 'New note',
 		'label_download' => 'Download',
 		'label_reports' => 'Reports',
+		'label_service' => 'Service',
 		'label_documents' => 'Documents',
 		'label_select' => '-- Select --',
 		'label_uploadSize' => 'The file\'s size you want to attach needs to be less than 10 KB',
@@ -70,6 +71,11 @@ $values[L_ENGLISH] = array(
 		'msg_required_summary' => 'Please, give us your summary.',
 		'msg_required_descrition' => 'Please, give us your description.',
 		'msg_required_speciality' => 'Please, select one speciality.',
+
+		/** correo */
+		'email_titleCreateConsult' => '[Medicnexus] Consult created',
+		'email_bodyCreateConsult' => 'Estimado usuario(a), usted ha creado una consulta con los siguiente datos:',
+		'email_bodyFooter' => 'Gracias por utilizar nuestros servicios, Medicnexus.',
 
 		/** botones */
 		'button_send' => 'Send',

@@ -31,3 +31,8 @@
 	 * Variable para el tamaño máximo de los ficheros
 	 */
 	define('MN_MANTIS_FILE_MAX_SIZE', 10240 );  # in bytes
+	
+	/**
+	 * Variable para el correo del sitio
+	 */
+	define('MN_JOOMLA_EMAIL_FROM', 'no-reply@medicnexus.com' );
