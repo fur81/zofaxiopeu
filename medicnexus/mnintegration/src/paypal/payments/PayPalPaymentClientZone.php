@@ -23,10 +23,10 @@ $payer->setPaymentMethod("paypal");
 // (Optional) Lets you specify item wise
 // information
 $item1 = new Item();
-$item1->setName($GLOBALS['PAYPAL_NAME'])
+$item1->setName($GLOBALS['PAY_NAME'])
 	->setCurrency(PAYPAL_CURRENCY_EUR)
 	->setQuantity(1)
-	->setPrice($GLOBALS['PAYPAL_PRICE']);
+	->setPrice($GLOBALS['PAY_PRICE']);
 
 $itemList = new ItemList();
 $itemList->setItems(array($item1));
@@ -36,8 +36,8 @@ $itemList->setItems(array($item1));
 // payment information such as tax, shipping
 // charges etc.
 $details = new Details();
-$details->setTax($GLOBALS['PAYPAL_TAX'])
-	->setSubtotal($GLOBALS['PAYPAL_TOTAL_AMOUNT']);
+$details->setTax($GLOBALS['PAY_TAX'])
+	->setSubtotal($GLOBALS['PAY_TOTAL_AMOUNT']);
 
 // ### Amount
 // Lets you specify a payment amount.
@@ -45,7 +45,7 @@ $details->setTax($GLOBALS['PAYPAL_TAX'])
 // such as shipping, tax.
 $amount = new Amount();
 $amount->setCurrency(PAYPAL_CURRENCY_EUR)
-	->setTotal($GLOBALS['PAYPAL_PRICE'])
+	->setTotal($GLOBALS['PAY_PRICE'])
 	->setDetails($details);
 
 // ### Transaction
@@ -55,7 +55,7 @@ $amount->setCurrency(PAYPAL_CURRENCY_EUR)
 $transaction = new Transaction();
 $transaction->setAmount($amount)
 	->setItemList($itemList)
-	->setDescription($GLOBALS['PAYPAL_DESCRIPTION']);
+	->setDescription($GLOBALS['PAY_DESCRIPTION']);
 
 // ### Redirect urls
 // Set the urls that the buyer must be redirected to after 

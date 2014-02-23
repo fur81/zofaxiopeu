@@ -104,13 +104,13 @@ setProjectPaypalConfiguration();
 				<table width="100%" cellpadding="3" cellspacing="3">
 					<tr valign="top">
 						<td width="120px" class="consult_det_title_td"><?php getValue('label_price');?>:</td>
-						<td colspan="2"><label><?php echo $GLOBALS['PAYPAL_PRICE'] . '  ' . PAYPAL_CURRENCY_EUR;?>
+						<td colspan="2"><label><?php echo $GLOBALS['PAY_PRICE'] . '  ' . PAYPAL_CURRENCY_EUR;?>
 						</label>
 						</td>
 					</tr>
 					<tr valign="top">
 						<td class="consult_det_title_td"><?php getValue('label_tax');?>:</td>
-						<td colspan="2"><label><?php echo $GLOBALS['PAYPAL_TAX'] . '  ' . PAYPAL_CURRENCY_EUR;?>
+						<td colspan="2"><label><?php echo $GLOBALS['PAY_TAX'] . '  ' . PAYPAL_CURRENCY_EUR;?>
 						</label>
 						</td>
 					</tr>

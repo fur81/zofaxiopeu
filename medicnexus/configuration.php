@@ -31,7 +31,7 @@ class JConfig {
 	public $ftp_enable = '0';
 	public $offset = 'UTC';
 	public $mailer = 'mail';
-	public $mailfrom = 'no-reply@medicnexus.com';
+	public $mailfrom = MN_JOOMLA_EMAIL_FROM;
 	public $fromname = 'Medicnexus';
 	public $sendmail = '/usr/sbin/sendmail';
 	public $smtpauth = '1';

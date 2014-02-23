@@ -1,17 +1,54 @@
 <?php
+# Medicnexus - sistema de gestión médica desarrollado en php
+
+# Medicnexus es un programa para la realización de consultas
+# en línea con médicos especializados. El sitio cuenta con noticias
+# y artículos que podrán mantener actualizados al cliente con los
+# últimos acontecimientos existentes en el área. Cuenta con un sistema
+# de respuesta rápida a partir de las consultas realizadas por el cliente.
+
+
 include_once $GLOBALS ['MNI_CONNECTION'];
 
 /**
- * Class to manage all services related with Mantis.
- * bug tracker.
- *
+ * Esta clase gestiona todos los servicios de comnucación relacioandos
+ * con el sistema Mantis. Las instancias de esta clase son las utilizadas
+ * dentro de las vistas (páginas) de la aplicación para hacer uso de los
+ * servicios implementados.
+ * 
+ * Se establecen dos tipos de conexiones:
+ * - Servicios Web
+ * - Driver MYSQL
+ * 
  * @author Manuel Morejón
- *
+ * @copyright 2013 - 2014
+ * @access public
+ * 
+ * @uses connection.php
  */
+
+
 class MantisCore {
+	
+	/**
+	 * Usuario autenticado en el sitio.
+	 * @var string
+	 */
 	private $currentUser;
+	/**
+	 * Constraseña del usuario autenticado en el sitio.
+	 * @var string
+	 */
 	private $currentPassword;
+	/**
+	 * Puente de conexión para los consumir los servicios web del Mantis.
+	 * @var soap
+	 */
 	private $proxySoap;
+	/**
+	 * Puente de conexión para obtener información de la base de datos en mysql
+	 * @var unknown_type
+	 */
 	private $proxyMySql;
 
 	/**
@@ -24,7 +61,7 @@ class MantisCore {
 	}
 
 	/**
-	 * Se obtiene la opción de mantis.
+	 * Se obtiene la versión del sistema Mantis.
 	 */
 	public function getMantisVersion() {
 		$result = '';
@@ -36,12 +73,18 @@ class MantisCore {
 	}
 
 	/**
-	 * Se establece el usuario actual que va a consumir los servicios.
+	 * Se autentica el usuario en el sitio y se almacenan sus valores.
+	 * En el caso de que los usuarios no se encuentren registrados se
+	 * les crea una cuenta.
 	 *
 	 * @param string $username
+	 * @param string $realname
+	 * @param string $email
 	 */
 	public function login($username, $realname, $email) {
+		// se establece el usuario
 		$this->currentUser = "z_" . $username;
+		// se establece la contraseña con el patrón establecido
 		$this->currentPassword = $this->currentUser . "_%&";
 
 		// si no existe se crea
@@ -57,6 +100,7 @@ class MantisCore {
 	 */
 	private function createAccount($username, $realname, $email) {
 		try {
+			// se chequea que el usuario ya tenga creada una cuenta
 			$existUser = $this->existAccountByUsername ( $username );
 			if (! $existUser) {
 				// se recopilan los datos para crear una cuenta
@@ -77,24 +121,18 @@ class MantisCore {
 				// se ejecuta la consulta
 				$query = str_replace ( '%values%', $values, getQuery ( 'createAccount' ) );
 				$this->proxyMySql->query ( $query );
-
-				// se adiciona el usuario al proyecto por defecto
-				// $this->addAccountToProject (PROJECT_1);
-				// $this->addAccountToProject (PROJECT_2);
-				// $this->addAccountToProject (PROJECT_3);
 			}
 		} catch ( Exception $e ) {
 		}
 	}
 
 	/**
-	 * Busca si existe un nombre de usuario.
+	 * Busca si existe un nombre de usuario en la base de datos.
 	 *
 	 * @param string $username
 	 * @return boolean
 	 */
 	private function existAccountByUsername($username) {
-		// se obtienen todos los usuario
 		try {
 			$exist = false;
 			$query = str_replace ( '%value%', '"' . $username . '"', getQuery ( 'findAccountByUsername' ) );
@@ -107,10 +145,14 @@ class MantisCore {
 		return $exist;
 	}
 
+	/**
+	 * Obtiene toda la información del usuario almacenada en el sitio Mantis.
+	 * @return stdClass userData
+	 */
 	public function getUserData() {
 		$result = '';
 		try {
-			// se obtiene el identificador del usuario
+			// se obtiene la información del usuario
 			$userData = $this->proxySoap->mc_login ( $this->currentUser, $this->currentPassword );
 			$result = $userData->account_data;
 		} catch (Exception $e) {
@@ -120,6 +162,9 @@ class MantisCore {
 
 	/**
 	 * Se adiciona el usuario registrado al proyecto por defecto.
+	 * 
+	 * @param string $projectId
+	 * @deprecated
 	 */
 	private function addAccountToProject($projectId) {
 		try {
@@ -135,7 +180,7 @@ class MantisCore {
 	}
 
 	/**
-	 * Pregunta si existe una incidencia a partir del identificador.
+	 * Pregunta si existe una incidencia a partir del identificador de la incidencia.
 	 *
 	 * @param integer $issue_id
 	 * @return boolean
@@ -174,9 +219,10 @@ class MantisCore {
 	}
 
 	/**
-	 * Se obtiene la cantidad de incidencias que tiene por leer un proyecto.
+	 * Se obtiene la cantidad de incidencias que tiene un proyecto sin leer.
+	 * 
 	 * @param int $projectId
-	 * @return number
+	 * @return number total
 	 */
 	public function getIssuesWithHistoryCount($projectId) {
 		$total = 0;
@@ -187,8 +233,10 @@ class MantisCore {
 			// para cada incidencia se busca si ha sido leida o no
 			for($i = 0; $i < count ( $issuesByUser ); $i ++) {
 				$issue = $issuesByUser [$i];
+				// se chequea si la incidencia ha sido leída
 				$isIssueRead = $this->isIssueRead($issue->id);
 				if (!$isIssueRead) {
+					// como no ha sido leída se suma al total
 					$total++;
 				}
 			}
@@ -199,6 +247,8 @@ class MantisCore {
 
 	/**
 	 * Se obtiene la descripcion completa de las incidencias del usuario registrado.
+	 * 
+	 * @return ArrayObject $incidencias
 	 */
 	public function getIssuesDetail() {
 		$result = '';
@@ -228,12 +278,12 @@ class MantisCore {
 			$issueData->summary = $summary;
 			// descripción
 			$issueData->description = $description;
-			// asignación
+			// asignación a un especialista si es pasado por parámetros
 			if ($specialistId != null) {
 				$issueData->handler = new stdClass();
 				$issueData->handler->id = $specialistId;
 			}
-
+			// se crea la incidencia
 			$result = $this->proxySoap->mc_issue_add ( $this->currentUser, $this->currentPassword, $issueData );
 		} catch ( Exception $e ) {
 		}
@@ -249,8 +299,10 @@ class MantisCore {
 	public function addIssueNote($issueId, $issueNoteData) {
 		$result = '';
 		try {
+			// se crea la nota
 			$issueNote = new stdClass ();
 			$issueNote->text = $issueNoteData;
+			// se adiciona la nota al usuario registrado
 			$result = $this->proxySoap->mc_issue_note_add ( $this->currentUser, $this->currentPassword, $issueId, $issueNote );
 		} catch ( Exception $e ) {
 		}
@@ -258,17 +310,19 @@ class MantisCore {
 	}
 
 	/**
-	 * Se obtiene el último registro de historia asociado a una incidencia
+	 * Se obtiene el último registro de historia asociado a una incidencia.
 	 * pasada por parámetro.
 	 * @param int $issuId
 	 * @return stdClass historyBug
 	 */
 	public function getLastHistoryBug($issueId) {
 		$result = '';
+		// se crea un registro histórico vacío
 		$historyBug = new stdClass();
 		try {
 			$query = str_replace ( '%value%', $issueId, getQuery ( 'getLastHistoryBug' ) );
 			$result = $this->proxyMySql->query ( $query );
+			// se llena el registro histórico a partir de los datos obtenidos en la consulta
 			while ( $data = $result->fetch_object () ) {
 				$historyBug->id = $data->id;
 				$historyBug->userId = $data->user_id;
@@ -285,6 +339,7 @@ class MantisCore {
 	 * Se inserta un registro dentro del historial de la incidencia. Se utiliza principalmente para
 	 * adicionar y eliminar etiquetas de los mensajes y poder conocer en qué momento el usuario ha
 	 * leído o revisado la incidencia.
+	 * 
 	 * @param unknown_type $historyBug
 	 */
 	private function addHistoryBug($historyBug) {
@@ -309,7 +364,9 @@ class MantisCore {
 	/**
 	 * Se cuentan todas las historias de tipo etiquetas relacionadas a una
 	 * incidencia.
+	 * 
 	 * @param int $issuId
+	 * @return int $totalRows
 	 */
 	public function getHistoiesBugTag($issueId) {
 		$totalRows = 0;
@@ -332,6 +389,7 @@ class MantisCore {
 	 * registrado. Si coincide significa que no se ha leído. De ser así se inserta el registro de historia
 	 * para quitar la marca de incidencia leída si es que este no es el último registro.
 	 * Si coincide pues no hay que hacer nada.
+	 * 
 	 * @param int $issueId
 	 * @return boolean
 	 */
@@ -366,7 +424,8 @@ class MantisCore {
 	}
 
 	/**
-	 * Se crea un registro de la historia de la incidencia para marcar a la incidencia como leida.
+	 * Se crea un registro de la historia de la incidencia para marcar a la incidencia como leída.
+	 * 
 	 * @param int $issueId
 	 */
 	public function createHistoryBug($issueId) {
@@ -380,6 +439,7 @@ class MantisCore {
 		$historyBug->bugId = $issueId;
 		$historyBug->oldValue = utf8_decode(MANTIS_READ_LABEL_HISTORY);
 		$historyBug->type = MANTIS_ADD_TYPE_HISTORY;
+		// se adiciona el registro histórico
 		$this->addHistoryBug($historyBug);
 	}
 
@@ -387,7 +447,7 @@ class MantisCore {
 	 * Se obtiene un adjunto a partir de su identificador.
 	 *
 	 * @param int $issueAttachmentId
-	 * @return
+	 * @return string $id
 	 */
 	public function getAttachmentById($attachmentId) {
 		$result = '';
@@ -428,7 +488,9 @@ class MantisCore {
 			$value = $projectId;
 			$query = str_replace ( '%value%', $value, getQuery ( 'getProjectName' ) );
 			$result = $this->proxyMySql->query ( $query );
+			// se crea el proyecto vacío
 			$project = new stdClass();
+			// se llenan sus datos a partir del resultado de la consulta
 			while ( $data = $result->fetch_object () ) {
 				$project->id = $projectId;
 				$project->name = utf8_encode($data->name);
@@ -441,6 +503,7 @@ class MantisCore {
 	/**
 	 * Se obtienen los sub proyectos asociados a un proyecto a partir del identificador
 	 * del proyecto padre.
+	 * 
 	 * @param int $projectId
 	 * @return array
 	 */
@@ -455,6 +518,8 @@ class MantisCore {
 
 	/**
 	 * Se obtienen los desarrolladores que se encuentran asignados a un proyecto.
+	 * 
+	 * @deprecated
 	 * @param int $projectId
 	 * @return ArrayObject $users
 	 */
@@ -478,6 +543,7 @@ class MantisCore {
 
 	/**
 	 * Se obtienen todos los datos de un usuario a partir de su identificador.
+	 * 
 	 * @param int $userId
 	 * @return stdClass user
 	 */
@@ -486,7 +552,9 @@ class MantisCore {
 		try {
 			$query = str_replace ( '%value%', $userId, getQuery ( 'getUserById' ) );
 			$result = $this->proxyMySql->query ( $query );
+			// se crea un usuario vación
 			$user = new stdClass();
+			// se llena el usuario con los datos obtenidos en la consulta
 			while ( $data = $result->fetch_object () ) {
 				$user->id = $data->id;
 				$user->username = utf8_encode($data->username);
@@ -503,6 +571,8 @@ class MantisCore {
 
 	/**
 	 * Se listan todas las categorías pertenecientes al proyecto seleccionado.
+	 * 
+	 * @deprecated
 	 * @return array
 	 */
 	public function getCategoriesByProject() {
@@ -516,6 +586,8 @@ class MantisCore {
 
 	/**
 	 * Se adiciona una categoria para los usuarios existenes en el sistema.
+	 * 
+	 * @deprecated
 	 * @param string $name
 	 */
 	public function addUserCategory($name) {
@@ -532,6 +604,8 @@ class MantisCore {
 
 	/**
 	 * Se listan las categorías de los usuarios
+	 * 
+	 * @deprecated
 	 * @return stdClass
 	 */
 	public function getUserCategories() {
@@ -552,7 +626,9 @@ class MantisCore {
 	}
 
 	/**
-	 * Se elimina una categoria de usuario
+	 * Se elimina una categoria de usuario.
+	 * 
+	 * @deprecated
 	 * @param int $userCategoryId
 	 */
 	public function removeUserCategory($userCategoryId) {
@@ -566,7 +642,9 @@ class MantisCore {
 
 	/**
 	 * Se obtienen todos los desarrolladores (medicos) que no están asignados
-	 * a una categoría pasada por parámetro
+	 * a una categoría pasada por parámetro.
+	 * 
+	 * @deprecated
 	 * @param int $userCategoryId
 	 * @return ArrayObject
 	 */
@@ -589,7 +667,9 @@ class MantisCore {
 
 	/**
 	 * Se obtienen todos los desarrolladores (medicos) que no están asignados
-	 * a una categoría pasada por parámetro
+	 * a una categoría pasada por parámetro.
+	 * 
+	 * @deprecated
 	 * @param int $userCategoryId
 	 * @return ArrayObject
 	 */
@@ -611,7 +691,9 @@ class MantisCore {
 	}
 
 	/**
-	 * Se adiciona un desarrollador (medico) a una categoría
+	 * Se adiciona un desarrollador (medico) a una categoría.
+	 * 
+	 * @deprecated
 	 * @param int $userId
 	 * @param int $categoryId
 	 */
@@ -626,7 +708,9 @@ class MantisCore {
 	}
 
 	/**
-	 * Se elimina un desarrollador (medico) a una categoría
+	 * Se elimina un desarrollador (medico) a una categoría.
+	 * 
+	 * @deprecated
 	 * @param int $userId
 	 * @param int $categoryId
 	 */
@@ -640,7 +724,9 @@ class MantisCore {
 	}
 
 	/**
-	 * Salva la información necesaria para crear una incidencia.
+	 * Salva la información necesaria para crear una incidencia. Se encarga
+	 * de estructura la información de forma adecuada para poder almacenarla.
+	 * 
 	 * @param string $summary
 	 * @param string $description
 	 * @param string $projectId
@@ -660,7 +746,8 @@ class MantisCore {
 	}
 
 	/**
-	 * Salva la información en la tabla temporal del sistema
+	 * Salva la información en la tabla temporal del sistema.
+	 * 
 	 * @param string $data
 	 */
 	private function saveTempData($data) {
@@ -678,6 +765,7 @@ class MantisCore {
 
 	/**
 	 * Obtiene la información existente en la tabla temporal del sistema.
+	 * 
 	 * @return string $result
 	 */
 	public function loadTempData($idData) {
@@ -695,6 +783,7 @@ class MantisCore {
 
 	/**
 	 * Elimina la información existente en la tabla temporal del sistema.
+	 * 
 	 * @param int $idData
 	 */
 	public function removeTempData($idData) {
@@ -708,10 +797,29 @@ class MantisCore {
 	/**
 	 * Envia mensajes al usuario una vez que ha sido creada la consulta
 	 * con los datos de pago que ha enviado.
-	 * @todo falta la implementación de este método.
+	 * 
+	 * @param string $summary
+	 * @param string $description
+	 * @param int $projectId
+	 * @param int $specialistId
+	 * @param string $payName
+	 * @param string $payPrice
+	 * @param string $payTax
+	 * @param string $payTotalAmount
 	 */
-	public function sendEmail() {
-		;
+	public function sendEmail($summary, $description, $projectId, $specialistId, $payName,
+							$payPrice, $payTax, $payTotalAmount) {
+		$userEmail = $this->getUserData()->email;
+		$subject = getValueIn('email_titleCreateConsult');
+		$message = getValueIn('email_bodyCreateConsult') . "\n";
+		$message .= getValueIn('label_summary') . ': ' . $summary . "\n";
+		$message .= getValueIn('label_description') . ': ' . $description . "\n";
+		$message .= getValueIn('label_service') . ': ' . $payName . "\n";
+		$message .= getValueIn('label_price') . ': ' . $payPrice . "\n";
+		$message .= getValueIn('label_tax') . ': ' . $payTax . "\n";
+		$message .= getValueIn('label_total_amount') . ': ' . $payTotalAmount . "\n\n";
+		$message .= getValueIn('email_bodyFooter');
+		mail($userEmail, $subject, $message, "From:".MN_JOOMLA_EMAIL_FROM);
 	}
 
 	/**

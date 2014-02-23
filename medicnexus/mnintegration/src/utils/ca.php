@@ -61,6 +61,7 @@ $values[L_CATALAN] = array(
 		'label_new_note' => 'Nueva nota',
 		'label_download' => 'Descarregar',
 		'label_reports' => 'Informes',
+		'label_service' => 'Servicio',
 		'label_documents' => 'Documentos',
 		'label_select' => '-- Seleccione --',
 		'label_uploadSize' => 'El fichero que se desee adjuntar no puede ser mayor a 10 KB',
@@ -71,6 +72,11 @@ $values[L_CATALAN] = array(
 		'button_send' => 'Enviar',
 		'button_upload_file' => 'Subir Fichero',
 		'button_browse' => 'Examinar ...',
+
+		/** correo */
+		'email_titleCreateConsult' => '[Medicnexus] Consulta creada',
+		'email_bodyCreateConsult' => 'Estimado usuario(a), usted ha creado una consulta con los siguiente datos:',
+		'email_bodyFooter' => 'Gracias por utilizar nuestros servicios, Medicnexus.',
 
 		/** campos necesarios */
 		'msg_required_summary' => 'Por favor, denos el resumen.',
