@@ -112,7 +112,7 @@ else
 								src="<?php echo $this->baseurl;?>/templates/medicnexus/images/fb_icon.gif"
 								border="0" /> </a>
 						</li>
-						<li><a href="#"> <img
+						<li><a href="https://twitter.com/Medicnexus"> <img
 								src="<?php echo $this->baseurl;?>/templates/medicnexus/images/tw_icon.gif"
 								border="0" /> </a>
 						</li>
