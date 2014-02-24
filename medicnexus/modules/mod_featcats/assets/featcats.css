@@ -22,7 +22,7 @@ ul.featcats, ul.fc_leading {
 	padding: 0!important;
 	list-style: none!important;
 	list-style-type: none!important;
-	width: 330px;
+	/*width: 330px;*/
 }
 ul.featcats, ul.fc_leading p {
 	margin: 5px 0 0 0!important;
@@ -94,7 +94,7 @@ li.fc_more {}
 .fc_pag {
 	height: 18px;
 	line-height: 18px;
-	padding: 10px 20px 0;
+	padding: 10px 0 0 0;
 	text-align: right;
 }
 .fc_pag span {
