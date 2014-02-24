@@ -7,6 +7,8 @@
 # últimos acontecimientos existentes en el área. Cuenta con un sistema
 # de respuesta rápida a partir de las consultas realizadas por el cliente.
 
+# Todos los derechos reservados
+
 
 include_once $GLOBALS ['MNI_CONNECTION'];
 
