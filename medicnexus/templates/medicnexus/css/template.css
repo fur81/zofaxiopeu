@@ -761,7 +761,7 @@ label {
 }
 
 #articles {
-	height: 310px;	
+	/*height: 310px;	*/
 }
 
 #articles-news_separator {
@@ -2336,3 +2336,11 @@ fieldset {
 }
 
 /*Fin estilos Profile*/
+
+/*Inicio estilos Articles-Preview*/
+
+.featcats {
+	width: 150px;	
+}
+
+/*Fin estilos Articles-Preview*/

@@ -8,11 +8,27 @@
 # Technical Support:  Forum - http://www.joomlahill.com/forum
 -------------------------------------------------------------------------*/
 
+.fc_title {
+	text-transform: uppercase;
+	color: #333 !important;
+}
+p.fc_readmore .fc_title {
+	float: right;
+	color: #81197f !important;
+	text-transform: none;
+} 
 ul.featcats, ul.fc_leading {
 	margin: 0!important;
 	padding: 0!important;
 	list-style: none!important;
 	list-style-type: none!important;
+	width: 330px;
+}
+ul.featcats, ul.fc_leading p {
+	margin: 5px 0 0 0!important;
+	padding: 0!important;
+	font-size: 12px;
+	color: #666;
 }
 li.featcat {
 	background: none!important;
@@ -23,9 +39,11 @@ li.featcat {
 li.featcat h1, li.featcat h2, li.featcat h3, li.featcat h4, li.featcat h5, li.featcat h6 {
 	margin-top: 0!important;
 	padding-top: 0!important;
+	margin-bottom: 0!important;
+	padding-bottom: 0!important;
 }
 .fc_leading li {
-	border-top: 1px solid #DDDDDD;
+	border-top: 1px dotted #999;
 	padding: 10px 0!important;
 	background: none!important;
 }
@@ -46,6 +64,7 @@ li.featcat_clr {
 ul.fc_leading img {
 	float: left;
 	margin-right: 10px;
+	border: 1px solid #1AA9B8;
 }
 .fc_writtenby, .fc_date {
 	display: inline-block;
@@ -75,12 +94,12 @@ li.fc_more {}
 .fc_pag {
 	height: 18px;
 	line-height: 18px;
-	padding: 10px 5px 0;
+	padding: 10px 20px 0;
 	text-align: right;
 }
 .fc_pag span {
-	color: #CCC;
-	border: 1px solid #CCC;
+	color: #333;
+	border: 1px solid #81197f;
 	border-radius: 9px;
 	cursor: pointer;
 	display: inline-block;
@@ -97,7 +116,7 @@ li.fc_more {}
 }
 .fc_pag li span:hover, .fc_pag span.current {
 	color: #000;
-	background-color: rgb(250, 255, 189);
+	background-color: #ffccff;
 }
 .fc_pag span.totalcount:hover {
 	color: #CCC;
