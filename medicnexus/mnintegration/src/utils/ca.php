@@ -13,26 +13,26 @@ $values[L_CATALAN] = array(
 		'label_project_health_program_description' => 'Es brinda un programa de salut per als consultants.',
 
 		/**  sub projects */
-		'label_subproject_rapid_consult_general' => 'Consulta Rápida General',
+		'label_subproject_rapid_consult_general' => 'Consulta Ràpida General',
 		'label_subproject_virtual_consult_general' => 'Consulta Virtual General',
-		'label_subproject_health_program_general' => 'Programa de Salud General',
-		'label_subproject_second_opinion_general' => 'Segunda Opinión General',
-		'label_subproject_cardiology' => 'Cardiología',
-		'label_subproject_gynecology' => 'Ginecología',
-		'label_subproject_pediatrics' => 'Pediatría',
-		'label_subproject_urology' => 'Urología',
-		'label_subproject_neurology' => 'Neurología',
+		'label_subproject_health_program_general' => 'Programa de Salut General',
+		'label_subproject_second_opinion_general' => 'Segona Opinió General',
+		'label_subproject_cardiology' => 'Cardiologia',
+		'label_subproject_gynecology' => 'Ginecologia',
+		'label_subproject_pediatrics' => 'Pediatria',
+		'label_subproject_urology' => 'Urologia',
+		'label_subproject_neurology' => 'Neurologia',
 
 		/** etiquetas generales*/
-		'label_beginning_client_zone' => 'Zona Clientes',
-		'label_report_consultation' => 'Informar consulta',
-		'label_report_consultation_info' => 'Reporte de consulta',
-		'label_payment' => 'Pago',
+		'label_beginning_client_zone' => 'Zona Clients',
+		'label_report_consultation' => 'Informar Consulta',
+		'label_report_consultation_info' => 'Informe de Consulta',
+		'label_payment' => 'Pagament',
 		'label_price' => 'Preu',
 		'label_shipping' => 'Enviament',
 		'label_tax' => 'Impost',
 		'label_total_amount' => 'Total a Pagar',
-		'label_payment_type' => 'Tipo de pago',
+		'label_payment_type' => 'Tipus de Pagament',
 		'label_paypal' => 'PayPal',
 		'label_tpv' => 'TPV',
 		
@@ -58,39 +58,40 @@ $values[L_CATALAN] = array(
 		'label_upload_by' => 'Carregat per',
 		'label_notes_history' => 'Historial de Notes',
 		'label_back' => 'Tornar',
-		'label_new_note' => 'Nueva nota',
+		'label_new_note' => 'Nova Nota',
 		'label_download' => 'Descarregar',
 		'label_reports' => 'Informes',
 		'label_service' => 'Servicio',
-		'label_documents' => 'Documentos',
-		'label_select' => '-- Seleccione --',
-		'label_uploadSize' => 'El fichero que se desee adjuntar no puede ser mayor a 10 KB',
-		'label_documentsInfo' => 'Usted podrá adjuntar todos los ficheros que desee a la consulta una vez que esta ha 
-							sido creada. Para acceder a esta opción dirígase a la vista detallada de la consulta creada.',
+		'label_documents' => 'Documents',
+		'label_select' => '-- Seleccioneu --',
+		'label_uploadSize' => 'El fitxer que es vulgui adjuntar no pot ser major a 10 KB',
+		'label_documentsInfo' => 'Vostè podrà adjuntar tots els fitxers que vulgueu a la 
+								consulta una vegada que aquesta ha estat creada. Per accedir a 
+								aquesta opció dirígase a la vista detallada de la consulta creada.',
 
 		/** botones */
 		'button_send' => 'Enviar',
-		'button_upload_file' => 'Subir Fichero',
+		'button_upload_file' => 'Pujar Fitxer',
 		'button_browse' => 'Examinar ...',
 
 		/** correo */
 		'email_titleCreateConsult' => '[Medicnexus] Consulta creada',
-		'email_bodyCreateConsult' => 'Estimado usuario(a), usted ha creado una consulta con los siguiente datos:',
-		'email_bodyFooter' => 'Gracias por utilizar nuestros servicios, Medicnexus.',
+		'email_bodyCreateConsult' => 'Benvolgut usuari (a), vostè ha creat una consulta amb les següents dades:',
+		'email_bodyFooter' => 'Gràcies per utilitzar els nostres serveis, Medicnexus.',
 
 		/** campos necesarios */
-		'msg_required_summary' => 'Por favor, denos el resumen.',
-		'msg_required_descrition' => 'Por favor, denos la descripción.',
-		'msg_required_speciality' => 'Por favor, seleccione una especialidad.',
+		'msg_required_summary' => 'Si us plau, Doneu-nos el resum.',
+		'msg_required_descrition' => 'Si us plau, Doneu-nos la descripció.',
+		'msg_required_speciality' => 'Si us plau seleccioneu una especialitat.',
 
 		/** mensajes */
 		'msg_info' => 'message',
-		'msg_info_consult_inserted' => 'La consulta ha sido creada correctamente.',
-		'msg_info_upload_inserted' => 'El fichero ha sido adjuntado correctamente.',
+		'msg_info_consult_inserted' => 'La consulta ha estat creada correctament.',
+		'msg_info_upload_inserted' => 'El fitxer ha estat adjuntat correctament.',
 		'msg_error' => 'error',
-		'msg_error_consult_inserted' => 'La consulta no se ha podido crear. Consulte a los teléfonos del sitio para mayor información.',
-		'msg_error_empty_data' => 'Existen todavía datos en el formulario que deben ser llenados.',
-		'msg_error_upload_size' => 'El fichero a adjuntar sobre pasa el tamaño máximo posible.',
+		'msg_error_consult_inserted' => 'La consulta no s\'ha pogut crear. Consulti els telèfons del lloc per a més informació.',
+		'msg_error_empty_data' => 'Hi ha encara dades en el formulari que han de ser omplerts.',
+		'msg_error_upload_size' => 'El fitxer a adjuntar sobrepassa la mida màxima possible.',
 		'msg_advice' => 'notice'
 );
 ?>

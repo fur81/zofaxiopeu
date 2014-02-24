@@ -64,8 +64,8 @@ $values[L_ENGLISH] = array(
 		'label_documents' => 'Documents',
 		'label_select' => '-- Select --',
 		'label_uploadSize' => 'The file\'s size you want to attach needs to be less than 10 KB',
-		'label_documentsInfo' => 'Usted podrá adjuntar todos los ficheros que desee a la consulta una vez que esta ha 
-							sido creada. Para acceder a esta opción dirígase a la vista detallada de la consulta creada.',
+		'label_documentsInfo' => 'You can attach any files you want to the query once it has been 
+									created. To access this option simply stroll to the detail view of the created query.',
 
 		/** campos necesarios */
 		'msg_required_summary' => 'Please, give us your summary.',
@@ -74,8 +74,8 @@ $values[L_ENGLISH] = array(
 
 		/** correo */
 		'email_titleCreateConsult' => '[Medicnexus] Consult created',
-		'email_bodyCreateConsult' => 'Estimado usuario(a), usted ha creado una consulta con los siguiente datos:',
-		'email_bodyFooter' => 'Gracias por utilizar nuestros servicios, Medicnexus.',
+		'email_bodyCreateConsult' => 'Hello, (a), you have created a query with the following data:',
+		'email_bodyFooter' => 'Thank you for using our services, Medicnexus.',
 
 		/** botones */
 		'button_send' => 'Send',
@@ -84,12 +84,12 @@ $values[L_ENGLISH] = array(
 
 		/** mensajes */
 		'msg_info' => 'message',
-		'msg_info_consult_inserted' => 'La consulta ha sido creada correctamente.',
-		'msg_info_upload_inserted' => 'El fichero ha sido adjuntado correctamente.',
+		'msg_info_consult_inserted' => 'The query has been successfully created.',
+		'msg_info_upload_inserted' => 'The file has been successfully attached.',
 		'msg_error' => 'error',
-		'msg_error_consult_inserted' => 'La consulta no se ha podido crear. Consulte a los teléfonos del sitio para mayor información.',
+		'msg_error_consult_inserted' => 'The query could not be created. Consult phones site for more information.',
 		'msg_error_empty_data' => 'The form steel have data that needs be writer.',
-		'msg_error_upload_size' => 'El fichero a adjuntar sobre pasa el tamaño máximo posible.',
+		'msg_error_upload_size' => 'The file to attach surpasses the maximum possible size.',
 		'msg_advice' => 'notice'
 );
 ?>
