@@ -1,5 +1,5 @@
 <?php
-// siempre se cargan los datos del pago
+// siempre se cargan los datos del pago total
 setProjectPaypalConfiguration();
 // se chequea si se realizó el pago o no
 if ( isset($_GET['success'])) {
@@ -11,8 +11,6 @@ if ( isset($_GET['success'])) {
 		$description = $issueData['description'];
 		$specialistId = $issueData['specialist'];
 		$projectId = $issueData['projectId'];
-		$_SESSION['projectId'] = $projectId;
-		setProjectPaypalConfiguration();
 		// se crea la incidencia con la información almacenada
 		$mantisCore->addIssue($summary, $description, $projectId, $specialistId);
 		// se envia un mensaje al usuario del registro realizado
