@@ -811,17 +811,36 @@ class MantisCore {
 	 */
 	public function sendEmail($summary, $description, $projectId, $specialistId, $payName,
 							$payPrice, $payTax, $payTotalAmount) {
-		$userEmail = $this->getUserData()->email;
-		$subject = getValueIn('email_titleCreateConsult');
-		$message = getValueIn('email_bodyCreateConsult') . "\n";
-		$message .= getValueIn('label_summary') . ': ' . $summary . "\n";
-		$message .= getValueIn('label_description') . ': ' . $description . "\n";
-		$message .= getValueIn('label_service') . ': ' . $payName . "\n";
-		$message .= getValueIn('label_price') . ': ' . $payPrice . "\n";
-		$message .= getValueIn('label_tax') . ': ' . $payTax . "\n";
-		$message .= getValueIn('label_total_amount') . ': ' . $payTotalAmount . "\n\n";
-		$message .= getValueIn('email_bodyFooter');
-		mail($userEmail, $subject, $message, "From:".MN_JOOMLA_EMAIL_FROM);
+		// se obtiene el objeto JMail que es gestionado por Joomla
+		$mailer = JFactory::getMailer();						
+		// se obtiene las configuraciones generales de Joomla
+		$config = JFactory::getConfig();
+		// se asignan los valores generales de Joomla al correo nuevo
+		$sender = array(
+			$config->get( 'mailfrom' ),
+			$config->get( 'fromname' ) );
+		$mailer->setSender($sender);
+		// se obtiene el usuario actualmente registrado
+		$user = JFactory::getUser();
+		// se obtiene su correo
+		$recipient = $user->email;
+		// se asigna el correo del usuario al mensaje
+		$mailer->addRecipient($recipient);
+		// se agrega el titulo del mensaje
+		$mailer->setSubject( getValueIn('email_titleCreateConsult') );
+		// se crea el cuerpo del mensaje
+		$body = getValueIn('email_bodyCreateConsult') . "\n";
+		$body .= getValueIn('label_summary') . ': ' . $summary . "\n";
+		$body .= getValueIn('label_description') . ': ' . $description . "\n";
+		$body .= getValueIn('label_service') . ': ' . $payName . "\n";
+		$body .= getValueIn('label_price') . ': ' . $payPrice . "\n";
+		$body .= getValueIn('label_tax') . ': ' . $payTax . "\n";
+		$body .= getValueIn('label_total_amount') . ': ' . $payTotalAmount . "\n\n";
+		$body .= getValueIn('email_bodyFooter');
+		// se asigna el cuerpo del mensaje
+		$mailer->setBody( $body );
+		// se envia el correo
+		$send = $mailer->Send();
 	}
 
 	/**
