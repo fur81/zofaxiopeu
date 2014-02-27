@@ -14,7 +14,8 @@ if ( isset($_GET['success'])) {
 		// se crea la incidencia con la información almacenada
 		$mantisCore->addIssue($summary, $description, $projectId, $specialistId);
 		// se envia un mensaje al usuario del registro realizado
-		
+		$mantisCore->sendEmail($summary, $description, $projectId, $specialistId, $GLOBALS['PAY_NAME'],
+							$GLOBALS['PAY_PRICE'], $GLOBALS['PAY_TAX'], $GLOBALS['PAY_TOTAL_AMOUNT']);
 		// se envia un mensaje de terminacion correcta
 		$_SESSION ['msg'] = 'msg_info_consult_inserted';
 	}else{
