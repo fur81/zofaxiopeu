@@ -35,7 +35,7 @@ class JConfig {
 	public $fromname = 'Medicnexus';
 	public $sendmail = '/usr/sbin/sendmail';
 	public $smtpauth = '1';
-	public $smtpuser = 'no-reply@medicnexus.com';
+	public $smtpuser = MN_JOOMLA_EMAIL_FROM;
 	public $smtppass = '040320131';
 	public $smtphost = 'smtp.gmail.com';
 	public $smtpsecure = 'ssl';
