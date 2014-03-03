@@ -86,7 +86,7 @@ collapse_open( 'medical_record_form' );
 		<!-- Submit Buttom -->
 		<tr>
 			<td class="center" colspan="2"><input type="submit" class="button"
-				value="<?php echo lang_get( 'update_user_button' ) ?>" />
+				value="<?php echo lang_get( 'update_information_button' ) ?>" />
 				<input type="hidden" name="bug_id" value="<?php echo $f_bug_id ?>" size="4" />
 				</td>
 		</tr>
