@@ -16,7 +16,8 @@ if( isset( $_POST['id']) )
 	// se establece la consulta que se va a realizar
 	$query = 'SELECT  user_id, realname FROM mantis_user_table
 		INNER JOIN mantis_project_user_list_table ON user_id = id
-		WHERE project_id = %value% AND mantis_project_user_list_table.access_level = 55;';
+		WHERE project_id = %value% AND mantis_project_user_list_table.access_level = 55
+		ORDER BY realname;';
 
 	// se realiza la consulta en la base de datos
 	$result = '';
