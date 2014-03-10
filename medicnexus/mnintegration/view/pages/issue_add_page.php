@@ -221,19 +221,19 @@ setProjectPaypalConfiguration();
 		// se verifica la especialidad seleccionada
 		if ( $('#subproject').attr('value') == 'null' ) {
 			dataCorrect = false;
-			$('#subproject').after('<br><span class="error consult_det_title_td"><?php getValue('msg_required_speciality');?></span>');	
+			$('#subproject').after('<br><span class="error warning-message-forms"><?php getValue('msg_required_speciality');?></span>');	
 		}
 		
 		// se verifica  que el resumen de la consulta que no esté vacía
 		if(  $('#summaryText').attr('value') == '' ) {
 			dataCorrect = false;
-			$('#summaryText').after('<span class="error consult_det_title_td"><?php getValue('msg_required_summary');?></span>');
+			$('#summaryText').after('<span class="error warning-message-forms"><?php getValue('msg_required_summary');?></span>');
 		}
 
 		// se verifica que la descripción no esté vacía
 		if(  $('#descriptionTextArea').attr('value') == '' ) {
 			dataCorrect = false;
-			$('#descriptionTextArea').after('<span class="error consult_det_title_td"><?php getValue('msg_required_descrition');?></span>');
+			$('#descriptionTextArea').after('<span class="error warning-message-forms"><?php getValue('msg_required_descrition');?></span>');
 		}
 
 		if( dataCorrect == true ) {
