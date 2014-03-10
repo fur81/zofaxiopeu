@@ -221,11 +221,11 @@ label {
 }
 
 .contact_title {
-	font-size: 19px;
+	font-size: 18px;
 	color: #1aa9b8;
 	text-transform: uppercase;
 	/*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
-	margin: 35px 0 20px 100px;
+	margin: 35px 0 25px 100px;
 	font-weight: bold;	
 }
 
@@ -1147,6 +1147,15 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 
 .registration {
 	padding: 10px;	
+}
+
+.registration_info_title {
+	color: #FFF;
+	margin: -32px 0 20px 8px;
+	font-size: 12px;
+	font-weight: bold;
+	background: url(../images/bg_title_box.png) no-repeat left 5px !important;
+	padding-left: 15px;
 }
 
 fieldset {
@@ -2304,6 +2313,15 @@ fieldset {
 
 .featcats {
 	width: 150px;	
+}
+
+/*Fin estilos Articles-Preview*/
+
+/*Inicio estilos Articles-Preview*/
+
+.warning-message-forms {
+	color: #C00;
+	font-style: italic;
 }
 
 /*Fin estilos Articles-Preview*/

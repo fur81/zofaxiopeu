@@ -12,6 +12,7 @@ defined('_JEXEC') or die;
 JHtml::_('behavior.keepalive');
 ?>
 <div class="login <?php echo $this->pageclass_sfx?>">
+<div class="registration_info_title"><?php echo JText::_('TPL_MN_LOGIN_FORM_UPPER'); ?></div>
 	<?php if ($this->params->get('show_page_heading')) : ?>
 	<div class="page-header">
 		<h1>

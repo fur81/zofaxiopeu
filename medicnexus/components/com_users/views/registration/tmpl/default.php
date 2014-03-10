@@ -13,6 +13,7 @@ JHtml::_('behavior.keepalive');
 JHtml::_('behavior.formvalidation');
 ?>
 <div class="registration<?php echo $this->pageclass_sfx?>">
+<div class="registration_info_title"><?php echo JText::_('TPL_MN_REGISTRATION_INFORMATION_UPPER'); ?></div>
 <?php if ($this->params->get('show_page_heading')) : ?>
 	<div class="page-header">
 		<h1><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
