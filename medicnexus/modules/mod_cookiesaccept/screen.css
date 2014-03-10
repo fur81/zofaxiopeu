@@ -45,7 +45,7 @@
     height: 25px;
     width: 25px;
     border-radius: 16px;
-    background: #AA0000 url('img/close.png');
+    background: #1AA7B6 url('img/close.png');
     text-align: center;
     line-height: 1.3em;
     font-size: 18px;
@@ -71,6 +71,7 @@
     line-height:1.2em;
 	color:#000;
 	float:none!important;
+	text-align: center;
 }
 #ca_banner h2 {
     font-size:20px;
@@ -82,7 +83,7 @@
 
 #ca_banner p span {
     text-decoration:underline;
-    color:#0089F2;
+    color:#1aa7b6;
     cursor: pointer;
     font-weight: bold;
 	float:none!important;
@@ -92,16 +93,16 @@
     font-size:14px;
     margin:5px auto;
     width:120px;
-    background: #0089f2;
+    background: #1aa7b6;
     padding:3px;
     border-radius:3px;
     text-shadow:1px 1px 0 #0072ca;
     color:#fff;
-    background-image: -webkit-linear-gradient(#0089F2 0%, #0072ca 100%);
-    background-image: -moz-linear-gradient(#0089F2 0%, #0072ca 100%);
-    background-image: -o-linear-gradient(#0089F2 0%, #0072ca 100%);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0089F2), to(#0072ca));
-    background-image: linear-gradient(#0089F2 0%, #0072ca 100%);
+    background-image: -webkit-linear-gradient(#1aa7b6 0%, #11818d 100%);
+    background-image: -moz-linear-gradient(#1aa7b6 0%, #11818d 100%);
+    background-image: -o-linear-gradient(#1aa7b6 0%, #11818d 100%);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1aa7b6), to(#11818d));
+    background-image: linear-gradient(#1aa7b6 0%, #11818d 100%);
 	float:none!important;
 }
 #ca_banner .accept:hover {
