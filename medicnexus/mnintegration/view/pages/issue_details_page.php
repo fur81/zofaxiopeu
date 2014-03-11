@@ -108,7 +108,11 @@ $issue = $mantisCore->getIssueById ( $issueId );
 									type="hidden" name="flow" id="flow" value="detailsIssue" /> <input
 									type="hidden" name="issueId" id="issueId"
 									value="<?php echo $issueId;?>">
-							</form> <span class="consult_det_title_td"><?php getValue('label_uploadSize');?></span>
+							</form> 
+							<span class="consult_det_title_td">
+								<?php getValue('label_uploadSize'); echo MN_MANTIS_FILE_MAX_SIZE / 1024; 
+									echo ' ' . MN_MANTIS_FILE_UNITY_SIZE;?>
+							</span>
 						</td>
 						<td >
 							<button type="button" onclick="uploadFile()" name="uploadFile"

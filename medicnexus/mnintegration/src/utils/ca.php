@@ -64,7 +64,7 @@ $values[L_CATALAN] = array(
 		'label_service' => 'Servicio',
 		'label_documents' => 'Documents',
 		'label_select' => '-- Seleccioneu --',
-		'label_uploadSize' => 'El fitxer que es vulgui adjuntar no pot ser major a 10 KB',
+		'label_uploadSize' => 'El fitxer que es vulgui adjuntar no pot ser major a ',
 		'label_documentsInfo' => 'Vostè podrà adjuntar tots els fitxers que vulgueu a la 
 								consulta una vegada que aquesta ha estat creada. Per accedir a 
 								aquesta opció dirígase a la vista detallada de la consulta creada.',

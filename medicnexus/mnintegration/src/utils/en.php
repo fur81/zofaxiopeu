@@ -63,7 +63,7 @@ $values[L_ENGLISH] = array(
 		'label_service' => 'Service',
 		'label_documents' => 'Documents',
 		'label_select' => '-- Select --',
-		'label_uploadSize' => 'The file\'s size you want to attach needs to be less than 10 KB',
+		'label_uploadSize' => 'The file\'s size you want to attach needs to be less than ',
 		'label_documentsInfo' => 'You can attach any files you want to the query once it has been 
 									created. To access this option simply stroll to the detail view of the created query.',
 
