@@ -9,8 +9,8 @@ setProjectPaypalConfiguration();
 		</a> <img style="cursor: pointer;" onclick="redirectToBack()"
 			src="templates/medicnexus/images/back_option_bg.gif" />
 	</div>
-	<form enctype="multipart/form-data" id="createIssueForm" name="createIssueForm" method="post"
-		action="#">
+	<form enctype="multipart/form-data" id="createIssueForm"
+		name="createIssueForm" method="post" action="#">
 		<div>
 			<div>
 				<div class="consultation_detail_icon">
@@ -71,7 +71,7 @@ setProjectPaypalConfiguration();
 						</td>
 						<td colspan="2"><input id="summaryText" type="text"
 							name="summaryText" maxlength="128" style="width: 100%;"
-							title="<?php getValue('msg_required_summary');?>" >
+							title="<?php getValue('msg_required_summary');?>">
 						</td>
 					</tr>
 					<tr>
@@ -81,11 +81,25 @@ setProjectPaypalConfiguration();
 								name="descriptionTextArea" id="descriptionTextArea"></textarea>
 						</td>
 					</tr>
+				</table>
+			</div>
+		</div>
+		<div>
+			<div>
+				<div class="consultation_detail_icon">
+					<img src="templates/medicnexus/images/document_attachment_icon.gif" />
+				</div>
+				<div class="consultation_detail_title">
+				<?php getValue('label_attached_documents');?>
+				</div>
+			</div>
+			<div class="consultation_detail_body controls">
+				<table width="100%" cellpadding="3" cellspacing="3">
 					<tr>
 						<td class="consult_det_title_td" valign="top"><label><?php getValue('label_documents');?>:</label>
 						</td>
-						<td colspan="3" class="controls" valign="top">
-							<label><?php getValue('label_documentsInfo');?></label>
+						<td colspan="3" class="controls" valign="top"><label><?php getValue('label_documentsInfo');?>
+						</label>
 						</td>
 					</tr>
 				</table>
@@ -153,10 +167,11 @@ setProjectPaypalConfiguration();
 				</table>
 			</div>
 		</div>
-		
+
 		<!-- se agregan los datos para el flujo de páginas  -->
-			<input type="hidden" id="flow" name="flow" value="headersIssue"> 
-			<input type="hidden" id="issueAction" name="issueAction" value="createIssueAction">
+		<input type="hidden" id="flow" name="flow" value="headersIssue"> <input
+			type="hidden" id="issueAction" name="issueAction"
+			value="createIssueAction">
 	</form>
 	<div class="back_option">
 		<a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?>
@@ -169,9 +184,9 @@ setProjectPaypalConfiguration();
 
 <form id="headersIssueForm" name="headersIssueForm" action="#"
 	method="post">
-	<input type="hidden" name="flow" id="flow" value="headersIssue">
-	<input type="hidden" id="projectId" name="projectId">
-	<input type="hidden" id="issueAction" name="issueAction" value="projectSelectionAction">
+	<input type="hidden" name="flow" id="flow" value="headersIssue"> <input
+		type="hidden" id="projectId" name="projectId"> <input type="hidden"
+		id="issueAction" name="issueAction" value="projectSelectionAction">
 </form>
 
 <!-- scripts de la página -->
