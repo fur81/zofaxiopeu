@@ -1,15 +1,38 @@
-<?php
-// se obtinen todas los encabezados de las incidencias del usuario registrado.
-$issuesByUser = $mantisCore->getIssueHeaders ();
+<?php 
+# Medicnexus - sistema de gestión médica desarrollado en php
+
+# Medicnexus es un programa para la realización de consultas
+# en línea con médicos especializados. El sitio cuenta con noticias
+# y artículos que podrán mantener actualizados al cliente con los
+# últimos acontecimientos existentes en el área. Cuenta con un sistema
+# de respuesta rápida a partir de las consultas realizadas por el cliente.
+
+# Todos los derechos reservados
+
+/**
+ * Esta página se encarga de mostrar los encabezados de las consultas
+ * del proyecto seleccionado. Aparece una tabla organizada por fecha de 
+ * creación de la consulta donde aparece los siguientes datos de cada
+ * incidencia: fecha de la última actualización, resumen, especialidad,
+ * adjuntos y notas.
+ * 
+ * Brinda la opción de poder crear una nueva consulta asociada al proyecto
+ * seleccionado.
+ *  
+ * @author Manuel Morejón
+ * @copyright 2013 - 2014
+ * @access public
+ * 
+ */
 ?>
 
+<?php $issuesByUser = $mantisCore->getIssueHeaders (); // se obtiene los encabezados de las incidencias del usuario registrado.?>
+
 <div id="client_zone">
-        
-	<!-- se incluye el encabezado con los proyectos -->
-	<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
+	<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION']; // encabezado de los proyectos. ?>
 
 	<h1 align="left">
-	<?php echo getProjectName(); echo ' - '; getValue('label_reports');?>
+	<?php echo getProjectName(); echo ' - '; getValue('label_reports'); // nombre de proyectos. ?>
 	</h1>
 	<div id="issue_report" onclick="redirectToAddIssue()">
 		<ul>
@@ -19,7 +42,7 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 			</li>
 		</ul>
 	</div>
-	
+
 	<table width="100%" cellpadding="1" cellspacing="1"
 		style="float: left;">
 		<tr class="managed-table-th">
@@ -39,52 +62,73 @@ $issuesByUser = $mantisCore->getIssueHeaders ();
 			<?php getValue('label_notes');?>
 				</h1></td>
 		</tr>
-		<?php
-		for($i = 0; $i < count ( $issuesByUser ); $i ++) {
-			$issue = $issuesByUser [$i];
-			$issueProject = $mantisCore->getProject($issue->project);
-			$totalHistoriesBugTag = $mantisCore->getHistoiesBugTag($issue->id);
-			$isIssueRead = TRUE;
-			if (bcmod($totalHistoriesBugTag, 2) != 0) {
-				$isIssueRead = FALSE;
-			}
-			if ($i % 2 == 0) {
-				?>
+		<?php for($i = 0; $i < count ( $issuesByUser ); $i ++): // se itera por todos los encabezados de las incidencias. ?>
+			<?php $issue = $issuesByUser [$i]; ?>
+			<?php $issueProject = $mantisCore->getProject($issue->project); ?>
+			<?php $totalHistoriesBugTag = $mantisCore->getHistoiesBugTag($issue->id); ?>
+			<?php $isIssueRead = TRUE; ?>
+			<?php if (bcmod($totalHistoriesBugTag, 2) != 0): // se identifica si tiene cambios en la consulta por leer. ?>
+				<?php $isIssueRead = FALSE; ?>
+			<?php endif;?>
+			<?php if ($i % 2 == 0): ?>
 		<tr class="managed-table-tr" onclick="data(<?php echo $issue->id;?>)"
 			style="cursor: pointer;">
-			<?php } else {?>
+			<?php else: ?>
 		
 		
 		<tr class="managed-table-tr-alternate"
 			onclick="data(<?php echo $issue->id;?>)" style="cursor: pointer;">
-			<?php }?>
-			<td><?php if (!$isIssueRead) {
-				echo '<strong>' . getDateFormat($issue->last_updated) . '</strong>';
-			} else { echo getDateFormat($issue->last_updated);}?>
+			<?php endif;?>
+			<td>
+			<?php if (!$isIssueRead): ?>
+				<strong><?php  echo getDateFormat($issue->last_updated); ?> </strong>
+			<?php else:?>
+				<?php echo getDateFormat($issue->last_updated); ?>
+			<?php endif; ?>
 			</td>
-			<td><?php if (!$isIssueRead) { echo '<strong>' . $issue->summary . '</strong>';}
-					else {echo $issue->summary;}?>
+			<td>
+			<?php if ($issue->status == 80): ?>
+				<strike><?php echo $issue->summary; ?> </strike>
+			<?php elseif (!$isIssueRead):?>	
+				<strong><?php echo $issue->summary; ?> </strong>
+			<?php else:?>
+				<?php echo $issue->summary; ?>
+			<?php endif;?>
 			</td>
-			<td><?php if (!$isIssueRead) { echo '<strong>'; echo getValueByString($issueProject->name);  echo '</strong>';}
-					else {getValueByString($issueProject->name);}?>
+			<td>
+			<?php if ($issue->status == 80): ?>
+				<strike><?php echo getValueByString($issueProject->name); ?> </strike>
+			<?php elseif (!$isIssueRead):?>
+				<strong><?php echo getValueByString($issueProject->name); ?></strong>
+			<?php else:?>
+				<?php echo getValueByString($issueProject->name);?>
+			<?php endif;?>
 			</td>
-			<td align="center"><?php if (!$isIssueRead) { echo '<strong>' . $issue->attachments_count . '</strong>';}
-							else {echo $issue->attachments_count;}?>
+			<td align="center">
+			<?php if ($issue->status == 80): ?>
+				<strike><?php echo $issue->attachments_count; ?></strike>
+			<?php elseif (!$isIssueRead): ?>
+				<strong><?php echo $issue->attachments_count; ?></strong>
+			<?php else:?>
+				<?php echo $issue->attachments_count;?>
+			<?php endif;?>
 			</td>
-			<td align="center"><?php if (!$isIssueRead) { echo '<strong>' . $issue->notes_count . '</strong>' ;}
-						else {echo $issue->notes_count;}?>
+			<td align="center">
+			<?php if ($issue->status == 80): ?>
+				<strike><?php echo $issue->notes_count;?></strike>
+			<?php elseif (!$isIssueRead):?> 
+				<strong><?php echo $issue->notes_count; ?></strong>
+			<?php else:?>
+				<?php echo $issue->notes_count;?>
+			<?php endif;?>
 			</td>
 		</tr>
-		<?php
-		}
-		if (count ( $issuesByUser ) == 0) {
-			?>
+		<?php endfor;?>
+		<?php if (count ( $issuesByUser ) == 0): ?>
 		<tr class="empty-data-table">
 			<td colspan="5"><i><?php getValue('label_empty_list');?> </i></td>
 		</tr>
-		<?php
-		}
-		?>
+		<?php endif;?>
 
 	</table>
 	<div id="issue_report" onclick="redirectToAddIssue()">
