@@ -132,7 +132,11 @@
 							</form> 
 							<span class="consult_det_info_td">
 								<?php getValue('label_uploadSize');?>
-								<?php echo MN_MANTIS_FILE_MAX_SIZE / 1024;?>
+								<?php if(MN_MANTIS_FILE_UNITY_SIZE == 'KB'):?>
+								<?php echo round(MN_MANTIS_FILE_MAX_SIZE / 1024, 2) ;?>
+								<?php elseif(MN_MANTIS_FILE_UNITY_SIZE == 'MB'):?>
+								<?php echo round(MN_MANTIS_FILE_MAX_SIZE / 1024000, 2) ;?>
+								<?php endif;?>
 								<?php echo ' ' . MN_MANTIS_FILE_UNITY_SIZE;?>
 							</span>
 						</td>
