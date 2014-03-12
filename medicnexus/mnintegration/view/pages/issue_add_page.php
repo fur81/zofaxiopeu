@@ -1,7 +1,28 @@
-<?php
-// se establece la configuración para las variables de paypal
-setProjectPaypalConfiguration();
+<?php 
+# Medicnexus - sistema de gestión médica desarrollado en php
+
+# Medicnexus es un programa para la realización de consultas
+# en línea con médicos especializados. El sitio cuenta con noticias
+# y artículos que podrán mantener actualizados al cliente con los
+# últimos acontecimientos existentes en el área. Cuenta con un sistema
+# de respuesta rápida a partir de las consultas realizadas por el cliente.
+
+# Todos los derechos reservados
+
+/**
+ * Esta página se encarga adicionar una nueva consulta al sistema. Contiene
+ * dos secciones para la recopilación de la información necesaria.
+ * 
+ * Le advierte al usuario que los documentos solo podrán ser adjuntados
+ * una vez que es creada la consulta. Se utilizan dos métodos de pago: Paypal y TPV.
+ *  
+ * @author Manuel Morejón
+ * @copyright 2013 - 2014
+ * @access public
+ * 
+ */
 ?>
+<?php setProjectPaypalConfiguration(); // se establece la configuración para las variables de paypal. ?>
 
 <div id="consultation_details">
 	<div class="back_option">
@@ -31,16 +52,13 @@ setProjectPaypalConfiguration();
 								<option selected="selected" value="null">
 								<?php getValue('label_select');?>
 								</option>
-								<?php
-								$subprojects = $mantisCore->getSubProjects();
-								foreach ($subprojects as $subproject)
-								{
-									$project = $mantisCore->getProject($subproject);
-									echo '<option value="'.$project->id.'">';
-									getValueByString($project->name);
-									echo '</option>';
-								}
-								?>
+								<?php $subprojects = $mantisCore->getSubProjects();?>
+								<?php foreach ($subprojects as $subproject):?>
+									<?php $project = $mantisCore->getProject($subproject);?>
+									<option value="<?php $project->id?>">
+									<?php getValueByString($project->name);?>
+									</option>
+								<?php endforeach;?>
 						</select>
 						</td>
 					</tr>
