@@ -55,7 +55,7 @@
 								<?php $subprojects = $mantisCore->getSubProjects();?>
 								<?php foreach ($subprojects as $subproject):?>
 									<?php $project = $mantisCore->getProject($subproject);?>
-									<option value="<?php $project->id?>">
+									<option value="<?php echo $project->id?>">
 									<?php getValueByString($project->name);?>
 									</option>
 								<?php endforeach;?>
