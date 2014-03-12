@@ -952,14 +952,9 @@ function user_get_accessible_subprojects( $p_user_id, $p_project_id, $p_show_dis
 					  LEFT JOIN $t_project_hierarchy_table ph
 					    ON ph.child_id = p.id
 					  WHERE " . ( $p_show_disabled ? '' : ( 'p.enabled = ' . db_param() . ' AND ' ) ) . '
-					  	ph.parent_id IS NOT NULL AND
-						( p.view_state=' . db_param() . '
-						    OR (p.view_state=' . db_param() . '
-							    AND
-						        u.user_id=' . db_param() . ' )
-						)
+					  	ph.parent_id IS NOT NULL
 					  ORDER BY p.name';
-		$result = db_query_bound( $query, ( $p_show_disabled ? Array( $p_user_id, $t_public, $t_private, $p_user_id ) : Array( $p_user_id, 1, $t_public, $t_private, $p_user_id ) ) );
+		$result = db_query_bound( $query, ( $p_show_disabled ? Array( $p_user_id) : Array( $p_user_id, 1 ) ) );
 	}
 
 	$row_count = db_num_rows( $result );
