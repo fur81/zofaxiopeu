@@ -89,7 +89,7 @@ else
 					<ul>
 						<li><?php echo JText::_('TPL_MN_FOLLOW_US_IN');?>:</li>
 						<li>
-                        	<a href="#"> 
+                        	<a href="https://www.facebook.com/pages/Medicnexus/473756712691914" target="_blank"> 
                             	<img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/fb_icon.gif" border="0" />
                             </a>
 						</li>
@@ -339,13 +339,13 @@ else
 					</h1>
 					<table width="100%" cellpadding="0" cellspacing="0">
 						<tr align="right">
-							<td><a href="#"><?php echo JText::_('TPL_MN_TWITTER');?> </a></td>
-							<td><a href="#"> <img
+							<td><a target="_blank" href="https://twitter.com/Medicnexus"><?php echo JText::_('TPL_MN_TWITTER');?> </a></td>
+							<td><a target="_blank" href="https://twitter.com/Medicnexus"> <img
 									src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_twitter_icon.gif"
 									border="0" /> </a>
 							</td>
-							<td><a href="#"><?php echo JText::_('TPL_MN_FACEBOOK');?> </a></td>
-							<td><a href="#"> <img
+							<td><a href="https://www.facebook.com/pages/Medicnexus/473756712691914" target="_blank"><?php echo JText::_('TPL_MN_FACEBOOK');?> </a></td>
+							<td><a href="https://www.facebook.com/pages/Medicnexus/473756712691914" target="_blank"> <img
 									src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_fb_icon.gif"
 									border="0" /> </a>
 							</td>
