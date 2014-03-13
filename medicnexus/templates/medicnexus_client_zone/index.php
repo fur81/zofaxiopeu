@@ -93,7 +93,7 @@ else
 		<div class="header_int">
             <div id="left_header_zone_int">
                 <div id="logo_img_int">
-					<a href="index.php"> <img
+					<a href="<?php echo $this->baseurl; ?>/index.php"> <img
 						src="<?php echo $this->baseurl;?>/templates/medicnexus/images/medicnexus_logo.gif"
 						width="85" height="85" border="0" /> </a>
 				</div>
@@ -230,7 +230,7 @@ else
     <div class="footer">
 			<div id="bottom_menu_site">
 				<ul>
-					<li><a href="index.php"><?php echo JText::_('TPL_MN_HOME_UPPER');?>
+					<li><a href="<?php echo $this->baseurl; ?>/index.php"><?php echo JText::_('TPL_MN_HOME_UPPER');?>
 					</a>
 					</li>
 					<li class="bottom_menu_site_separator">::</li>
