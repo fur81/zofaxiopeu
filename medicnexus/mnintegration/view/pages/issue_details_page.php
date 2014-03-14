@@ -181,7 +181,8 @@
 						<?php echo '(' . getDateFormat($note->date_submitted) . ')';?>
 						</td>
 						<td width="560px" class="consult_det_info_td">
-						<?php echo $note->text;?>
+						<?php $noteModify = str_replace("\r", "<br>", $note->text);?>
+						<?php echo $noteModify;?>
 						</td>
 						</tr><tr>
 						<td colspan="2" height="20px">
