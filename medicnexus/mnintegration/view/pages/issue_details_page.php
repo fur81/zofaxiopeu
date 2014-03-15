@@ -67,12 +67,11 @@
 					<td class="consult_det_info_td"><?php echo $issue->summary;?>
 					
 					<td>
-				
 				</tr>
 				<tr valign="top">
 					<td class="consult_det_title_td"><label><?php getValue('label_description');?>:</label>
 					</td>
-					<td class="consult_det_info_td"><?php echo $issue->description;?>
+					<td class="consult_det_info_td"><?php echo replaceRToBr($issue->description);?>
 					</td>
 				</tr>
 			</table>
@@ -181,8 +180,7 @@
 						<?php echo '(' . getDateFormat($note->date_submitted) . ')';?>
 						</td>
 						<td width="560px" class="consult_det_info_td">
-						<?php $noteModify = str_replace("\r", "<br>", $note->text);?>
-						<?php echo $noteModify;?>
+						<?php echo replaceRToBr($note->text);?>
 						</td>
 						</tr><tr>
 						<td colspan="2" height="20px">
