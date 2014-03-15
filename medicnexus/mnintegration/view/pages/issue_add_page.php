@@ -1,7 +1,28 @@
-<?php
-// se establece la configuración para las variables de paypal
-setProjectPaypalConfiguration();
+<?php 
+# Medicnexus - sistema de gestión médica desarrollado en php
+
+# Medicnexus es un programa para la realización de consultas
+# en línea con médicos especializados. El sitio cuenta con noticias
+# y artículos que podrán mantener actualizados al cliente con los
+# últimos acontecimientos existentes en el área. Cuenta con un sistema
+# de respuesta rápida a partir de las consultas realizadas por el cliente.
+
+# Todos los derechos reservados
+
+/**
+ * Esta página se encarga adicionar una nueva consulta al sistema. Contiene
+ * dos secciones para la recopilación de la información necesaria.
+ * 
+ * Le advierte al usuario que los documentos solo podrán ser adjuntados
+ * una vez que es creada la consulta. Se utilizan dos métodos de pago: Paypal y TPV.
+ *  
+ * @author Manuel Morejón
+ * @copyright 2013 - 2014
+ * @access public
+ * 
+ */
 ?>
+<?php setProjectPaypalConfiguration(); // se establece la configuración para las variables de paypal. ?>
 
 <div id="consultation_details">
 	<div class="back_option">
@@ -9,8 +30,8 @@ setProjectPaypalConfiguration();
 		</a> <img style="cursor: pointer;" onclick="redirectToBack()"
 			src="templates/medicnexus/images/back_option_bg.gif" />
 	</div>
-	<form enctype="multipart/form-data" id="createIssueForm" name="createIssueForm" method="post"
-		action="#">
+	<form enctype="multipart/form-data" id="createIssueForm"
+		name="createIssueForm" method="post" action="#">
 		<div>
 			<div>
 				<div class="consultation_detail_icon">
@@ -31,16 +52,13 @@ setProjectPaypalConfiguration();
 								<option selected="selected" value="null">
 								<?php getValue('label_select');?>
 								</option>
-								<?php
-								$subprojects = $mantisCore->getSubProjects();
-								foreach ($subprojects as $subproject)
-								{
-									$project = $mantisCore->getProject($subproject);
-									echo '<option value="'.$project->id.'">';
-									getValueByString($project->name);
-									echo '</option>';
-								}
-								?>
+								<?php $subprojects = $mantisCore->getSubProjects();?>
+								<?php foreach ($subprojects as $subproject):?>
+									<?php $project = $mantisCore->getProject($subproject);?>
+									<option value="<?php echo $project->id?>">
+									<?php getValueByString($project->name);?>
+									</option>
+								<?php endforeach;?>
 						</select>
 						</td>
 					</tr>
@@ -71,7 +89,7 @@ setProjectPaypalConfiguration();
 						</td>
 						<td colspan="2"><input id="summaryText" type="text"
 							name="summaryText" maxlength="128" style="width: 100%;"
-							title="<?php getValue('msg_required_summary');?>" >
+							title="<?php getValue('msg_required_summary');?>">
 						</td>
 					</tr>
 					<tr>
@@ -81,11 +99,25 @@ setProjectPaypalConfiguration();
 								name="descriptionTextArea" id="descriptionTextArea"></textarea>
 						</td>
 					</tr>
+				</table>
+			</div>
+		</div>
+		<div>
+			<div>
+				<div class="consultation_detail_icon">
+					<img src="templates/medicnexus/images/document_attachment_icon.gif" />
+				</div>
+				<div class="consultation_detail_title">
+				<?php getValue('label_attached_documents');?>
+				</div>
+			</div>
+			<div class="consultation_detail_body controls">
+				<table width="100%" cellpadding="3" cellspacing="3">
 					<tr>
 						<td class="consult_det_title_td" valign="top"><label><?php getValue('label_documents');?>:</label>
 						</td>
-						<td colspan="3" class="controls" valign="top">
-							<label><?php getValue('label_documentsInfo');?></label>
+						<td colspan="3" class="controls" valign="top"><label><?php getValue('label_documentsInfo');?>
+						</label>
 						</td>
 					</tr>
 				</table>
@@ -153,10 +185,11 @@ setProjectPaypalConfiguration();
 				</table>
 			</div>
 		</div>
-		
+
 		<!-- se agregan los datos para el flujo de páginas  -->
-			<input type="hidden" id="flow" name="flow" value="headersIssue"> 
-			<input type="hidden" id="issueAction" name="issueAction" value="createIssueAction">
+		<input type="hidden" id="flow" name="flow" value="headersIssue"> <input
+			type="hidden" id="issueAction" name="issueAction"
+			value="createIssueAction">
 	</form>
 	<div class="back_option">
 		<a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?>
@@ -169,9 +202,9 @@ setProjectPaypalConfiguration();
 
 <form id="headersIssueForm" name="headersIssueForm" action="#"
 	method="post">
-	<input type="hidden" name="flow" id="flow" value="headersIssue">
-	<input type="hidden" id="projectId" name="projectId">
-	<input type="hidden" id="issueAction" name="issueAction" value="projectSelectionAction">
+	<input type="hidden" name="flow" id="flow" value="headersIssue"> <input
+		type="hidden" id="projectId" name="projectId"> <input type="hidden"
+		id="issueAction" name="issueAction" value="projectSelectionAction">
 </form>
 
 <!-- scripts de la página -->
@@ -221,19 +254,19 @@ setProjectPaypalConfiguration();
 		// se verifica la especialidad seleccionada
 		if ( $('#subproject').attr('value') == 'null' ) {
 			dataCorrect = false;
-			$('#subproject').after('<br><span class="error consult_det_title_td"><?php getValue('msg_required_speciality');?></span>');	
+			$('#subproject').after('<br><span class="error warning-message-forms"><?php getValue('msg_required_speciality');?></span>');	
 		}
 		
 		// se verifica  que el resumen de la consulta que no esté vacía
 		if(  $('#summaryText').attr('value') == '' ) {
 			dataCorrect = false;
-			$('#summaryText').after('<span class="error consult_det_title_td"><?php getValue('msg_required_summary');?></span>');
+			$('#summaryText').after('<span class="error warning-message-forms"><?php getValue('msg_required_summary');?></span>');
 		}
 
 		// se verifica que la descripción no esté vacía
 		if(  $('#descriptionTextArea').attr('value') == '' ) {
 			dataCorrect = false;
-			$('#descriptionTextArea').after('<span class="error consult_det_title_td"><?php getValue('msg_required_descrition');?></span>');
+			$('#descriptionTextArea').after('<span class="error warning-message-forms"><?php getValue('msg_required_descrition');?></span>');
 		}
 
 		if( dataCorrect == true ) {

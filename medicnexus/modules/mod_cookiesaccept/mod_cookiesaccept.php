@@ -88,10 +88,10 @@ if (!isset($_COOKIE['cookieaccept'])) :
     <?php if($color=="black" && $ca_banner=="") echo "background:url('".JURI::base()."modules/mod_cookiesaccept/img/przez_b.png');border-color:#000;color:#fff;" ?>
     <?php echo $ca_banner; ?>
     ">
-    <h2 style="
+    <span style="
 	<?php if($color=="black" && $ca_banner_h2=="") echo "color:#fff;" ?>
-	<?php echo $ca_banner_h2; ?>"><?php echo $info1; ?></h2> 
-    <p style="
+	<?php echo $ca_banner_h2; ?>"><?php echo $info1; ?></span>
+    <span style="
 		<?php if($color=="black" && $ca_banner_p=="") echo "color:#fff;" ?>
 		<?php echo $ca_banner_p; ?>"><?php echo $info2; ?>
         <?php if($enable_info) : ?>
@@ -101,7 +101,7 @@ if (!isset($_COOKIE['cookieaccept'])) :
 				<span class="infoplus info_modal" style="<?php echo $ca_banner_p_span; ?>"><?php if(!$more_info) { echo JText::_('MOD_COOKIESACCEPT_PLUS_INFO'); } else { echo $more_info; }; ?></span>
 			<?php endif; ?>
 		<?php endif; ?>
-        </p>
+        </span>
     <div class="accept" style="<?php echo $ca_banner_div_accept; ?>"><?php if(!$accept) { echo JText::_('MOD_COOKIESACCEPT_ACCEPT'); } else { echo $accept; }; ?></div>
 </div>
 <?php if($enable_info && !$article_info) : ?>

@@ -2,7 +2,7 @@
     position: fixed!important;
     z-index: 16777270;
     width: 100%!important;
-    height: 80px;
+    height: 40px;
     background: url('img/przez.png');
     text-align: center;
     border-width: 1px 0 1px 0!important;
@@ -17,6 +17,7 @@
 	text-shadow:none;
 	border-radius: 0!important;
 	margin: 0 auto!important;
+	opacity: 0.9;
 }
 #ca_info {
     background: #fff;
@@ -45,7 +46,7 @@
     height: 25px;
     width: 25px;
     border-radius: 16px;
-    background: #AA0000 url('img/close.png');
+    background: #1AA7B6 url('img/close.png');
     text-align: center;
     line-height: 1.3em;
     font-size: 18px;
@@ -59,51 +60,56 @@
 	color:#000;
 	text-align:left;
 }
-#ca_info_plus  p{
+#ca_info_plus span{
 	color:#000;
 	text-align:left;
 	font-size:12px;
 }
 
-#ca_banner p,#ca_banner h2 {
-    margin:4px 0;
+#ca_banner p,#ca_banner span {
+    margin:0;
     padding:0;
     line-height:1.2em;
 	color:#000;
 	float:none!important;
+	text-align: center;
 }
-#ca_banner h2 {
-    font-size:20px;
+#ca_banner span {
+    font-size:12px;
     font-weight:bold;
 }
-#ca_banner p {
-    font-size:14px
+#ca_banner span {
+    font-size:12px
 }
 
 #ca_banner p span {
     text-decoration:underline;
-    color:#0089F2;
+    color:#1aa7b6;
     cursor: pointer;
     font-weight: bold;
 	float:none!important;
 }
 #ca_banner .accept {
     cursor:pointer;
-    font-size:14px;
+    font-size:12px;
     margin:5px auto;
-    width:120px;
-    background: #0089f2;
+    width:90px;
+    background: #1aa7b6;
     padding:3px;
     border-radius:3px;
     text-shadow:1px 1px 0 #0072ca;
+	font-weight: bold;
     color:#fff;
-    background-image: -webkit-linear-gradient(#0089F2 0%, #0072ca 100%);
-    background-image: -moz-linear-gradient(#0089F2 0%, #0072ca 100%);
-    background-image: -o-linear-gradient(#0089F2 0%, #0072ca 100%);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0089F2), to(#0072ca));
-    background-image: linear-gradient(#0089F2 0%, #0072ca 100%);
+    background-image: -webkit-linear-gradient(#1aa7b6 0%, #11818d 100%);
+    background-image: -moz-linear-gradient(#1aa7b6 0%, #11818d 100%);
+    background-image: -o-linear-gradient(#1aa7b6 0%, #11818d 100%);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1aa7b6), to(#11818d));
+    background-image: linear-gradient(#1aa7b6 0%, #11818d 100%);
 	float:none!important;
 }
 #ca_banner .accept:hover {
     box-shadow:0 0 15px #000;
 }
+.infoplus a {
+	color:#1aa7b6;	
+} 

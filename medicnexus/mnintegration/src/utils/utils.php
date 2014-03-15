@@ -1,4 +1,25 @@
 <?php
+# Medicnexus - sistema de gestión médica desarrollado en php
+
+# Medicnexus es un programa para la realización de consultas
+# en línea con médicos especializados. El sitio cuenta con noticias
+# y artículos que podrán mantener actualizados al cliente con los
+# últimos acontecimientos existentes en el área. Cuenta con un sistema
+# de respuesta rápida a partir de las consultas realizadas por el cliente.
+
+# Todos los derechos reservados
+
+/**
+ * Este fichero contiene las funcionalidades de uso común dentro del sistema. Garantiza
+ * el empleo de funcionalidades básicas y simples, pero que se repiten en más de una
+ * ocasión.
+ *  
+ * @author Manuel Morejón
+ * @copyright 2013 - 2014
+ * @access public
+ * 
+ */
+
 require_once $GLOBALS['MNI_ES'];
 require_once $GLOBALS['MNI_EN'];
 require_once $GLOBALS['MNI_CA'];
@@ -111,5 +132,9 @@ function getDateFormat($date) {
 	// hora
 	$dateFormat .= substr ( $date, 11, 5 );
 	return $dateFormat;
+}
+
+function replaceRToBr($string) {
+	return str_replace("\r", "<br>", $string);
 }
 ?>

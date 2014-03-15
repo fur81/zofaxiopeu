@@ -65,8 +65,10 @@ input{
 }
 
 textarea {
-    border: 1px solid #666666;
-    border-radius: 2px 2px 2px 2px;
+    border: 1px solid #666666; 
+	-moz-border-radius: 2px; 
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
     color: #666666;
     font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
     font-size: 11px;
@@ -221,11 +223,11 @@ label {
 }
 
 .contact_title {
-	font-size: 18px;
+	font-size: 19px;
 	color: #1aa9b8;
 	text-transform: uppercase;
 	/*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
-	margin: 35px 0 25px 100px;
+	margin: 35px 0 20px 100px;
 	font-weight: bold;	
 }
 
@@ -1149,6 +1151,15 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	padding: 10px;	
 }
 
+.registration_info_title {
+	color: #FFF;
+	margin: -32px 0 20px 8px;
+	font-size: 12px;
+	font-weight: bold;
+	background: url(../images/bg_title_box.png) no-repeat left 5px !important;
+	padding-left: 15px;
+}
+
 fieldset {
 	font-size: 12px;
 	color: #666;
@@ -1315,20 +1326,6 @@ fieldset {
 	text-decoration: underline;
 }
 
-.remind p {
-	font-size: 12px;
-	color: #666;
-	text-align: justify;
-	margin-top: 10px;	
-}
-
-.reset p {
-	font-size: 12px;
-	color: #666;
-	text-align: justify;
-	margin-top: 10px;	
-}
-
 #content {
 	float: left;
     width: 730px;
@@ -1432,7 +1429,7 @@ fieldset {
 /*Inicio Estilos Clientes*/
 
 #client_zone {
-	width: 720px;	
+	width: 730px;	
 }
 #client_zone p {
 	width: 710px;	
@@ -1797,6 +1794,7 @@ fieldset {
     margin: 20px 0 0 10px;
     padding-bottom: 5px;
     width: 660px;
+	text-transform: uppercase;
 }
 
 .consultation_detail_body {
@@ -1812,10 +1810,20 @@ fieldset {
 	vertical-align: top;
 }
 
+.consult_det_title_td:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 .consult_det_info_td {
 	color: #666;
 	font-size: 12px;
 	text-align: justify;	
+}
+
+.consult_det_info_td:hover {
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 .active_text {
@@ -1843,8 +1851,9 @@ fieldset {
 /*Fin estilos detalles de cosulta*/
 
 #issue_report {
-	float: right;	
+	text-align: right;	
 	margin-bottom: 10px;
+	width: 700px;
 }
 #issue_report ul li{
 	display: inline;
@@ -2152,7 +2161,7 @@ fieldset {
     float: left;
     font-size: 12px;
     font-style: italic;
-    margin: 0 0 0 10px;
+    margin: 0;
     padding: 10px;
     text-align: justify;
 }
@@ -2173,7 +2182,7 @@ fieldset {
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    margin: 10px 0 0 5px;
+    margin: 10px 0 0 -5px;
     text-transform: uppercase;
 }
 
@@ -2182,9 +2191,9 @@ fieldset {
 /*Inicio estilo Captcha*/
 
 #dynamic_recaptcha_1 {
-	border: 1px solid #CCC;
+	border: 1px solid #666;
 	margin-bottom: 10px;
-	margin-top: 10px;
+	margin-top: 0;
 	padding: 10px;	
 }
 
@@ -2300,6 +2309,35 @@ fieldset {
 
 /*Fin estilos Profile*/
 
+/*Inicio estilos Remind*/
+
+.remind-reset-form-title {
+	color: #FFF;
+	margin: -23px 0 20px 8px;
+	font-size: 12px;
+	font-weight: bold;
+	background: url(../images/bg_title_box.png) no-repeat left 4px !important;
+	padding-left: 15px;
+}
+
+.remind p {
+	padding: 0 10px;
+}
+
+#user-registration {
+	padding: 0 5px;
+}
+
+/*Fin estilos Remind*/
+
+/*Inicio estilos Reset*/
+
+.reset p {
+	padding: 0 10px;	
+}
+
+/*Fin estilos Reset*/
+
 /*Inicio estilos Articles-Preview*/
 
 .featcats {
@@ -2307,3 +2345,98 @@ fieldset {
 }
 
 /*Fin estilos Articles-Preview*/
+
+/*Inicio estilos Articles-Preview*/
+
+.warning-message-forms {
+	color: #C00;
+	font-style: italic;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+/*Fin estilos Articles-Preview*/
+
+/*Inicio estilos Blog Noticias*/
+
+.news-blog {
+	color: #FFF;
+	margin: -23px 0 20px -5px;
+	font-size: 12px;
+	font-weight: bold;
+	background: url(../images/bg_title_box.png) no-repeat left 4px !important;
+	padding-left: 15px;
+}
+
+.blog {
+	padding: 0 15px;
+}
+
+.blog .page-header h2 {
+	padding: 0;
+}
+
+.blog .page-header h2 a {
+	color: #666;
+	margin: 0;
+	padding: 0;
+	background: none;
+}
+
+.blog p {
+	font-size: 12px;
+	text-align: justify;	
+	padding: 0;
+}
+
+p.readmore {
+	border-bottom: 1px dotted #333;	
+	padding-bottom: 10px;
+	text-align: right;
+}
+
+.readmore a {
+	color: #81197f;
+}
+
+/*Fin estilos Blog Noticias*/
+
+/*Inicio estilos Blog Noticias*/
+
+.resolved-issue-msg-notification {
+	font-size: 12px;
+	margin-bottom: 10px;
+	padding: 10px 10px 10px 50px;
+	background: #EEE url(../images/resolved_issue_notif_icon.png) no-repeat 10px 10px;
+	float: left;
+	-webkit-box-shadow: 0px 1px 0px #fff, 0px -1px 0px rgba(0,0,0,.1);
+	-moz-box-shadow: 0px 1px 0px #fff, 0px -1px 0px rgba(0,0,0,.1);
+	box-shadow: 0px 1px 0px #fff, 0px -1px 0px rgba(0,0,0,.1); 
+	-moz-border-radius: 2px; 
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	text-align: justify;
+	color: #666;
+}
+
+.upload-size-msg-notification {
+	font-size: 12px;
+	float: left;
+	text-align: justify;
+	color: #666;
+}
+
+/*Fin estilos Blog Noticias*/
+
+/*Inicio estilos DM Pinboard*/
+
+.dmpinboard-title {
+	color: #FFF;
+	margin: -23px 0 20px 8px;
+	font-size: 12px;
+	font-weight: bold;
+	background: url(../images/bg_title_box.png) no-repeat left 4px !important;
+	padding-left: 15px;
+}
+
+/*Fin estilos DM Pinboard*/

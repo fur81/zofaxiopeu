@@ -123,6 +123,12 @@ class MantisCore {
 				// se ejecuta la consulta
 				$query = str_replace ( '%values%', $values, getQuery ( 'createAccount' ) );
 				$this->proxyMySql->query ( $query );
+
+				// se adiciona el usuario al proyecto por defecto
+				$this->addAccountToProject (PROJECT_RAPID_CONSULTATION);
+				$this->addAccountToProject (PROJECT_VIRTUAL_CONSULTATION);
+				$this->addAccountToProject (PROJECT_SECOND_OPINION);
+				$this->addAccountToProject (PROJECT_HEALTH_PROGRAM);
 			}
 		} catch ( Exception $e ) {
 		}
@@ -166,7 +172,6 @@ class MantisCore {
 	 * Se adiciona el usuario registrado al proyecto por defecto.
 	 * 
 	 * @param string $projectId
-	 * @deprecated
 	 */
 	private function addAccountToProject($projectId) {
 		try {
@@ -177,6 +182,12 @@ class MantisCore {
 			$values = $projectId . ',' . $idUser . ',' . MANTIS_INFORMER_ACCESS;
 			$query = str_replace ( '%values%', $values, getQuery ( 'addAccountToProject' ) );
 			$this->proxyMySql->query ( $query );
+			
+			// se buscan los subproyectos asociados a este proyecto principal
+			$subprojects = $this->getAllSubProjects($projectId);
+			foreach ($subprojects as $subproject){
+				$this->addAccountToProject ($subproject);
+			}
 		} catch ( Exception $e ) {
 		}
 	}
@@ -471,12 +482,12 @@ class MantisCore {
 	 * @return Ambiguous
 	 */
 	public function addAttachment($issueId, $name, $fileType, $content) {
-		$retult = '';
+		$result = '';
 		try {
-			$retult = $this->proxySoap->mc_issue_attachment_add ( $this->currentUser, $this->currentPassword, $issueId, $name, $fileType, $content );
+			$result = $this->proxySoap->mc_issue_attachment_add ( $this->currentUser, $this->currentPassword, $issueId, $name, $fileType, $content );
 		} catch ( Exception $e ) {
 		}
-		return $retult;
+		return $result;
 	}
 
 	/**
@@ -503,19 +514,40 @@ class MantisCore {
 	}
 
 	/**
-	 * Se obtienen los sub proyectos asociados a un proyecto a partir del identificador
-	 * del proyecto padre.
+	 * Se obtienen los sub proyectos asociados al proyecto actualmente seleccionado.
 	 * 
 	 * @param int $projectId
 	 * @return array
 	 */
 	public function getSubProjects() {
-		$retult = '';
+		$result = '';
 		try {
-			$retult = $this->proxySoap->mc_project_get_all_subprojects( $this->currentUser, $this->currentPassword, getProjectId());
+			$result = $this->proxySoap->mc_project_get_all_subprojects( $this->currentUser, $this->currentPassword, getProjectId());
 		} catch (Exception $e) {
 		}
-		return $retult;
+		return $result;
+	}
+	
+	/**
+	 * Se obtienen los sub proyectos asociados a un proyecto a partir del identificador
+	 * pasado por parámetro.
+	 * 
+	 * @param int $projectId
+	 * @return array
+	 */
+	public function getAllSubProjects($projectId) {
+		$result = '';
+		try {
+			$value = $projectId;
+			$query = str_replace ( '%value%', $value, getQuery ( 'getSubprojects' ) );
+			$response = $this->proxyMySql->query ( $query );
+			$result = new ArrayObject();
+			while ( $data = $response->fetch_object () ) {
+				$result->append($data->subprojectId);
+			}
+		} catch (Exception $e) {
+		}
+		return $result;
 	}
 
 	/**

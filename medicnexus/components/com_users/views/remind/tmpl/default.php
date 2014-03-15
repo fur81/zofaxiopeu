@@ -13,6 +13,7 @@ JHtml::_('behavior.keepalive');
 JHtml::_('behavior.formvalidation');
 ?>
 <div class="remind <?php echo $this->pageclass_sfx?>">
+	<div class="remind-reset-form-title"><?php echo JText::_('TPL_MN_REMEMBER_USER_UPPER'); ?></div>
 	<?php if ($this->params->get('show_page_heading')) : ?>
 	<div class="page-header">
 		<h1>

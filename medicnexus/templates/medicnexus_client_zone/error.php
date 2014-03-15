@@ -64,7 +64,7 @@ else
 			<div class="header">
 			<div id="left_header_zone">
 				<div id="logo_img">
-					<a href="index.php"> <img
+					<a href="<?php echo $this->baseurl; ?>/index.php"> <img
 						src="<?php echo $this->baseurl;?>/templates/medicnexus/images/medicnexus_logo.gif"
 						width="85" height="85" border="0" /> </a>
 				</div>
@@ -89,12 +89,12 @@ else
 					<ul>
 						<li><?php echo JText::_('TPL_MN_FOLLOW_US_IN');?>:</li>
 						<li>
-                        	<a href="#"> 
+                        	<a href="https://www.facebook.com/pages/Medicnexus/473756712691914" target="_blank"> 
                             	<img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/fb_icon.gif" border="0" />
                             </a>
 						</li>
 						<li>
-                        	<a href="#">
+                        	<a target="_blank" href="https://twitter.com/Medicnexus">
                             	<img src="<?php echo $this->baseurl;?>/templates/medicnexus/images/tw_icon.gif" border="0" />
                             </a>
 						</li>
@@ -111,10 +111,10 @@ else
 									</a>
 									</li>
 									<li>|</li>
-									<li><a href="#"><?php echo JText::_('TPL_MN_USER_REGISTER');?>
+									<li><a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>"><?php echo JText::_('TPL_MN_USER_REGISTER');?>
 									</a>
 									</li>
-									<li style="margin: 2px 10px 0 5px;"><a href="#"> <img
+									<li style="margin: 2px 10px 0 5px;"><a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>"> <img
 											src="<?php echo $this->baseurl;?>/templates/medicnexus/images/register_user_icon.gif"
 											border="0" /> </a>
 									</li>
@@ -217,7 +217,7 @@ else
 	<div class="footer">
 			<div id="bottom_menu_site">
 				<ul>
-					<li><a href="index.php"><?php echo JText::_('TPL_MN_HOME_UPPER');?>
+					<li><a href="<?php echo $this->baseurl; ?>/index.php"><?php echo JText::_('TPL_MN_HOME_UPPER');?>
 					</a>
 					</li>
 					<li class="bottom_menu_site_separator">::</li>
@@ -339,13 +339,13 @@ else
 					</h1>
 					<table width="100%" cellpadding="0" cellspacing="0">
 						<tr align="right">
-							<td><a href="#"><?php echo JText::_('TPL_MN_TWITTER');?> </a></td>
-							<td><a href="#"> <img
+							<td><a target="_blank" href="https://twitter.com/Medicnexus"><?php echo JText::_('TPL_MN_TWITTER');?> </a></td>
+							<td><a target="_blank" href="https://twitter.com/Medicnexus"> <img
 									src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_twitter_icon.gif"
 									border="0" /> </a>
 							</td>
-							<td><a href="#"><?php echo JText::_('TPL_MN_FACEBOOK');?> </a></td>
-							<td><a href="#"> <img
+							<td><a href="https://www.facebook.com/pages/Medicnexus/473756712691914" target="_blank"><?php echo JText::_('TPL_MN_FACEBOOK');?> </a></td>
+							<td><a href="https://www.facebook.com/pages/Medicnexus/473756712691914" target="_blank"> <img
 									src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_fb_icon.gif"
 									border="0" /> </a>
 							</td>

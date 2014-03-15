@@ -1,7 +1,31 @@
-<?php
-$issueId = $_SESSION ['issueId'];
-$issue = $mantisCore->getIssueById ( $issueId );
+<?php 
+# Medicnexus - sistema de gestión médica desarrollado en php
+
+# Medicnexus es un programa para la realización de consultas
+# en línea con médicos especializados. El sitio cuenta con noticias
+# y artículos que podrán mantener actualizados al cliente con los
+# últimos acontecimientos existentes en el área. Cuenta con un sistema
+# de respuesta rápida a partir de las consultas realizadas por el cliente.
+
+# Todos los derechos reservados
+
+/**
+ * Esta página se encarga de mostrar los detalles de la consulta seleccionada.
+ * Aparecen secciones donde se detallan cada uno de los elementos que la contienen.
+ * 
+ * Brinda la opción de adjuntar documentos que brinden información adicional
+ * a los médicos. También se pueden agregar notas aclaratorias por parte del paciente
+ * y el médico en aras de establecer una correcta comunicación.
+ *  
+ * @author Manuel Morejón
+ * @copyright 2013 - 2014
+ * @access public
+ * 
+ */
 ?>
+
+<?php $issueId = $_SESSION ['issueId']; //id de la consulta seleccionada. ?>
+<?php $issue = $mantisCore->getIssueById ( $issueId ); // se cargan los detalles de la consulta. ?>
 
 <div id="consultation_details">
 	<div class="back_option">
@@ -23,13 +47,12 @@ $issue = $mantisCore->getIssueById ( $issueId );
 				<tr valign="top">
 					<td width="110px" class="consult_det_title_td"><label><?php getValue('label_assigned_to');?>:</label>
 					</td>
-					<td width="600px" class="consult_det_info_td"><?php 
-					if ('Especialista General' != $issue->handler->real_name) {
-						echo $issue->handler->real_name;
-					}else {
-						getValueByString($issue->handler->real_name);
-					}
-					?>
+					<td width="600px" class="consult_det_info_td">
+					<?php if ('Especialista General' != $issue->handler->real_name): ?>
+						<?php echo $issue->handler->real_name;?>
+					<?php else:?>
+						<?php getValueByString($issue->handler->real_name);?>
+					<?php endif;?>
 					</td>
 				</tr>
 				<tr valign="top">
@@ -44,12 +67,11 @@ $issue = $mantisCore->getIssueById ( $issueId );
 					<td class="consult_det_info_td"><?php echo $issue->summary;?>
 					
 					<td>
-				
 				</tr>
 				<tr valign="top">
 					<td class="consult_det_title_td"><label><?php getValue('label_description');?>:</label>
 					</td>
-					<td class="consult_det_info_td"><?php echo $issue->description;?>
+					<td class="consult_det_info_td"><?php echo replaceRToBr($issue->description);?>
 					</td>
 				</tr>
 			</table>
@@ -67,19 +89,17 @@ $issue = $mantisCore->getIssueById ( $issueId );
 		<div class="consultation_detail_body">
 			<div class="controls">
 				<table width="100%" cellpadding="3" cellspacing="0">
-				<?php
-				for($i = 0; $i < count ( $issue->attachments ); $i ++) {
-					$attached = $issue->attachments [$i];
-					?>
+				<?php for($i = 0; $i < count ( $issue->attachments ); $i ++): ?>
+					<?php $attached = $issue->attachments [$i];?>
 					<tr valign="top" class="active_text">
-						<td width="180px" class="consult_det_title_td" valign="top"><?php 
-						$user = $mantisCore->getUserById($attached->user_id);
-						echo $user->realname;
-						?> <br /> <?php
-						echo '(' . getDateFormat($attached->date_submitted) . ')';
-						?>
+						<td width="180px" class="consult_det_title_td" valign="top">
+							<?php $user = $mantisCore->getUserById($attached->user_id);?>
+							<?php echo $user->realname;?>
+							<br /> 
+							<?php echo '(' . getDateFormat($attached->date_submitted) . ')';?>
 						</td>
-						<td width="200px" class="consult_det_info_td"><?php echo $attached->filename;?>
+						<td width="200px" class="consult_det_info_td">
+							<?php echo $attached->filename;?>
 						</td>
 						<td width="330px"><a
 							onclick="downloadAttached(<?php echo $attached->id;?>, '<?php echo $attached->filename;?>')"
@@ -87,11 +107,11 @@ $issue = $mantisCore->getIssueById ( $issueId );
 								src="templates/medicnexus/images/download_icon.gif" /> </a>
 						</td>
 					</tr>
-					<?php }
-					if (count ( $issue->attachments ) == 0) :
-					?>
+					<?php endfor;?>
+					<?php if (count ( $issue->attachments ) == 0) :?>
 					<tr class="empty-data-table">
-						<td width="710px;" colspan="2" class="empty-data-table"><?php getValue('label_empty_list');?>
+						<td width="710px;" colspan="2" class="empty-data-table">
+							<?php getValue('label_empty_list');?>
 						</td>
 					</tr>
 					<?php endif;?>
@@ -108,7 +128,16 @@ $issue = $mantisCore->getIssueById ( $issueId );
 									type="hidden" name="flow" id="flow" value="detailsIssue" /> <input
 									type="hidden" name="issueId" id="issueId"
 									value="<?php echo $issueId;?>">
-							</form> <span class="consult_det_title_td"><?php getValue('label_uploadSize');?></span>
+							</form> 
+							<span class="consult_det_info_td">
+								<?php getValue('label_uploadSize');?>
+								<?php if(MN_MANTIS_FILE_UNITY_SIZE == 'KB'):?>
+								<?php echo round(MN_MANTIS_FILE_MAX_SIZE / 1024, 2) ;?>
+								<?php elseif(MN_MANTIS_FILE_UNITY_SIZE == 'MB'):?>
+								<?php echo round(MN_MANTIS_FILE_MAX_SIZE / 1024000, 2) ;?>
+								<?php endif;?>
+								<?php echo ' ' . MN_MANTIS_FILE_UNITY_SIZE;?>
+							</span>
 						</td>
 						<td >
 							<button type="button" onclick="uploadFile()" name="uploadFile"
@@ -133,39 +162,32 @@ $issue = $mantisCore->getIssueById ( $issueId );
 		<div class="consultation_detail_body">
 			<table width="100%" cellpadding="3" cellspacing="0">
 
-			<?php
-			if (isset($issue->notes)) {
-					
-				for($i = 0; $i < count ($issue->notes); $i++)
-				{
-
-					$note = new stdClass();
-					$note = $issue->notes [$i];
-
-					// solo se muestran las notas públicas
-					if ($note->view_state->id == 10)
-					{
-							
-						if ($issue->reporter->id == $note->reporter->id)
-						{
-							echo'<tr valign="top" class="active_text"><td width="200px" class="consult_det_title_td">';
-						}
-						else
-						{
-							echo'<tr valign="top"><td width="200px" class="consult_det_title_td">';
-						}
-							
-						echo $note->reporter->real_name . ':';
-						echo '<br />';
-						echo '(' . getDateFormat($note->date_submitted) . ')';
-						echo '</td><td width="560px" class="consult_det_info_td">';
-						echo $note->text;
-						echo '</td></tr><tr><td colspan="2" height="20px">';
-						echo '<img src="templates/medicnexus/images/notes_separator.gif"  /></td></tr>';
-					}
-				}
-			}
-			?>
+			<?php if (isset($issue->notes)):?>
+				<?php for($i = 0; $i < count ($issue->notes); $i++):?>		
+					<?php $note = new stdClass();?>
+					<?php $note = $issue->notes [$i];?>
+					<?php if ($note->view_state->id == 10): //solo se muestran las públicas. ?>
+						<?php if ($issue->reporter->id == $note->reporter->id):?>
+							<tr valign="top" class="active_text">
+								<td width="200px" class="consult_det_title_td">
+						<?php else:?>
+							<tr valign="top">
+								<td width="200px" class="consult_det_title_td">
+						<?php endif;?>
+						
+						<?php echo $note->reporter->real_name;?>:
+						<br>
+						<?php echo '(' . getDateFormat($note->date_submitted) . ')';?>
+						</td>
+						<td width="560px" class="consult_det_info_td">
+						<?php echo replaceRToBr($note->text);?>
+						</td>
+						</tr><tr>
+						<td colspan="2" height="20px">
+						<img src="templates/medicnexus/images/notes_separator.gif"  /></td></tr>
+					<?php endif;?>
+				<?php endfor;?>
+			<?php endif;?>
 			</table>
 		</div>
 		<div class="notes_form controls">
