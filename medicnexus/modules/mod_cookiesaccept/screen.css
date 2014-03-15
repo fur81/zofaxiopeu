@@ -2,7 +2,7 @@
     position: fixed!important;
     z-index: 16777270;
     width: 100%!important;
-    height: 80px;
+    height: 40px;
     background: url('img/przez.png');
     text-align: center;
     border-width: 1px 0 1px 0!important;
@@ -17,6 +17,7 @@
 	text-shadow:none;
 	border-radius: 0!important;
 	margin: 0 auto!important;
+	opacity: 0.9;
 }
 #ca_info {
     background: #fff;
@@ -59,26 +60,26 @@
 	color:#000;
 	text-align:left;
 }
-#ca_info_plus  p{
+#ca_info_plus span{
 	color:#000;
 	text-align:left;
 	font-size:12px;
 }
 
-#ca_banner p,#ca_banner h2 {
-    margin:4px 0;
+#ca_banner p,#ca_banner span {
+    margin:0;
     padding:0;
     line-height:1.2em;
 	color:#000;
 	float:none!important;
 	text-align: center;
 }
-#ca_banner h2 {
-    font-size:20px;
+#ca_banner span {
+    font-size:12px;
     font-weight:bold;
 }
-#ca_banner p {
-    font-size:14px
+#ca_banner span {
+    font-size:12px
 }
 
 #ca_banner p span {
@@ -90,13 +91,14 @@
 }
 #ca_banner .accept {
     cursor:pointer;
-    font-size:14px;
+    font-size:12px;
     margin:5px auto;
-    width:120px;
+    width:90px;
     background: #1aa7b6;
     padding:3px;
     border-radius:3px;
     text-shadow:1px 1px 0 #0072ca;
+	font-weight: bold;
     color:#fff;
     background-image: -webkit-linear-gradient(#1aa7b6 0%, #11818d 100%);
     background-image: -moz-linear-gradient(#1aa7b6 0%, #11818d 100%);
@@ -108,3 +110,6 @@
 #ca_banner .accept:hover {
     box-shadow:0 0 15px #000;
 }
+.infoplus a {
+	color:#1aa7b6;	
+} 
