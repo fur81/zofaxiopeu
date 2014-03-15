@@ -9,7 +9,7 @@ if ( isset($_GET['success'])) {
 		// se crean las variables existentes en la información temporal
 		$summary = $issueData['summary'];
 		$description = $issueData['description'];
-		$specialistId = $issueData['specialist'];
+		$specialistId = $issueData['specialistId'];
 		$projectId = $issueData['projectId'];
 		// se crea la incidencia con la información almacenada
 		$mantisCore->addIssue($summary, $description, $projectId, $specialistId);
