@@ -90,6 +90,9 @@ $values[L_ENGLISH] = array(
 		'msg_error_consult_inserted' => 'The query could not be created. Consult phones site for more information.',
 		'msg_error_empty_data' => 'The form steel have data that needs be writer.',
 		'msg_error_upload_size' => 'The file to attach surpasses the maximum possible size.',
-		'msg_advice' => 'notice'
+		'msg_advice' => 'notice',
+		'msg_resolved_consult' => 'La consulta se encuentra en estado "Resuelta" por lo que sus datos no podrán ser modificados. 
+								En caso que necesite agregar información sobre la misma deberá ponerse en contacto a través de 
+								los teléfonos brindados en el área Contactos.'
 );
 ?>

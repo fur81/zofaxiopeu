@@ -26,6 +26,10 @@
 
 <?php $issueId = $_SESSION ['issueId']; //id de la consulta seleccionada. ?>
 <?php $issue = $mantisCore->getIssueById ( $issueId ); // se cargan los detalles de la consulta. ?>
+<?php $resolvedConsult = FALSE;?>
+<?php if ($issue->status->id == 80):?>
+	<?php $resolvedConsult = TRUE;?>
+<?php endif;?>
 
 <div id="consultation_details">
 	<div class="back_option">
@@ -33,6 +37,9 @@
 		</a> <img style="cursor: pointer;" onclick="redirectToBack()"
 			src="templates/medicnexus/images/back_option_bg.gif" />
 	</div>
+	<?php if ($resolvedConsult):?>
+		<div class="resolved-issue-msg-notification"><?php getValue('msg_resolved_consult');?></div>
+	<?php endif;?>
 	<div>
 		<div>
 			<div class="consultation_detail_icon">
@@ -95,7 +102,7 @@
 						<td width="180px" class="consult_det_title" valign="top">
 							<?php $user = $mantisCore->getUserById($attached->user_id);?>
 							<?php echo $user->realname;?>
-							<br /> 
+							<br> 
 							<?php echo '(' . getDateFormat($attached->date_submitted) . ')';?>
 						</td>
 						<td width="200px" class="consult_det_info">
@@ -116,6 +123,7 @@
 					</tr>
 					<?php endif;?>
 				</table>
+				<?php if (!$resolvedConsult):?>
 				<br>
 				<table width="100%" cellpadding="3" cellspacing="0">
 					<tr valign="top">
@@ -147,6 +155,7 @@
 						</td>
 					</tr>
 				</table>
+				<?php endif;?>
 			</div>
 		</div>
 	</div>
@@ -190,6 +199,7 @@
 			<?php endif;?>
 			</table>
 		</div>
+		<?php if (!$resolvedConsult):?>
 		<div class="notes_form controls">
 			<table width="100%" cellpadding="2" cellspacing="2">
 				<tr>
@@ -212,13 +222,14 @@
 				</tr>
 				<tr>
 					<td width="710px">
-						<button name="Submit" type="button" onclick="addNoteIssue()">
+						<button name="Submit" type="button" onclick="addNoteIssue()" style="cursor: pointer;">
 						<?php getValue('button_send');?>
 						</button>
 					</td>
 				</tr>
 			</table>
 		</div>
+		<?php endif;?>
 	</div>
 	<div class="back_option">
 		<a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?>
