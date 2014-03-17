@@ -92,6 +92,9 @@ $values[L_CATALAN] = array(
 		'msg_error_consult_inserted' => 'La consulta no s\'ha pogut crear. Consulti els telèfons del lloc per a més informació.',
 		'msg_error_empty_data' => 'Hi ha encara dades en el formulari que han de ser omplerts.',
 		'msg_error_upload_size' => 'El fitxer a adjuntar sobrepassa la mida màxima possible.',
-		'msg_advice' => 'notice'
+		'msg_advice' => 'notice',
+		'msg_resolved_consult' => 'La consulta es troba en estat "Resolta" pel que les seves dades no podran ser modificats.
+									En cas que necessiti afegir informació sobre la mateixa s\'haurà de posar en contacte a través d\'
+									els telèfons brindats en l\'àrea Contactes.'
 );
 ?>

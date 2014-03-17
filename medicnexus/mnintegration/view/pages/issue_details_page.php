@@ -26,6 +26,10 @@
 
 <?php $issueId = $_SESSION ['issueId']; //id de la consulta seleccionada. ?>
 <?php $issue = $mantisCore->getIssueById ( $issueId ); // se cargan los detalles de la consulta. ?>
+<?php $resolvedConsult = FALSE;?>
+<?php if ($issue->status->id == 80):?>
+	<?php $resolvedConsult = TRUE;?>
+<?php endif;?>
 
 <div id="consultation_details">
 	<div class="back_option">
@@ -33,6 +37,9 @@
 		</a> <img style="cursor: pointer;" onclick="redirectToBack()"
 			src="templates/medicnexus/images/back_option_bg.gif" />
 	</div>
+	<?php if ($resolvedConsult):?>
+		<div class="resolved-issue-msg-notification"><?php getValue('msg_resolved_consult');?></div>
+	<?php endif;?>
 	<div>
 		<div>
 			<div class="consultation_detail_icon">
@@ -45,9 +52,9 @@
 		<div class="consultation_detail_body">
 			<table width="100%" cellpadding="3" cellspacing="0">
 				<tr valign="top">
-					<td width="110px" class="consult_det_title_td"><label><?php getValue('label_assigned_to');?>:</label>
+					<td width="110px" class="consult_det_title"><label><?php getValue('label_assigned_to');?>:</label>
 					</td>
-					<td width="600px" class="consult_det_info_td">
+					<td width="600px" class="consult_det_info">
 					<?php if ('Especialista General' != $issue->handler->real_name): ?>
 						<?php echo $issue->handler->real_name;?>
 					<?php else:?>
@@ -56,22 +63,22 @@
 					</td>
 				</tr>
 				<tr valign="top">
-					<td class="consult_det_title_td"><label><?php getValue('label_speciality');?>:</label>
+					<td class="consult_det_title"><label><?php getValue('label_speciality');?>:</label>
 					</td>
-					<td class="consult_det_info_td"><?php getValueByString($issue->project->name);?>
+					<td class="consult_det_info"><?php getValueByString($issue->project->name);?>
 					</td>
 				</tr>
 				<tr valign="top">
-					<td class="consult_det_title_td"><label><?php getValue('label_summary');?>:</label>
+					<td class="consult_det_title"><label><?php getValue('label_summary');?>:</label>
 					</td>
-					<td class="consult_det_info_td"><?php echo $issue->summary;?>
+					<td class="consult_det_info"><?php echo $issue->summary;?>
 					
 					<td>
 				</tr>
 				<tr valign="top">
-					<td class="consult_det_title_td"><label><?php getValue('label_description');?>:</label>
+					<td class="consult_det_title"><label><?php getValue('label_description');?>:</label>
 					</td>
-					<td class="consult_det_info_td"><?php echo replaceRToBr($issue->description);?>
+					<td class="consult_det_info"><?php echo replaceRToBr($issue->description);?>
 					</td>
 				</tr>
 			</table>
@@ -92,13 +99,13 @@
 				<?php for($i = 0; $i < count ( $issue->attachments ); $i ++): ?>
 					<?php $attached = $issue->attachments [$i];?>
 					<tr valign="top" class="active_text">
-						<td width="180px" class="consult_det_title_td" valign="top">
+						<td width="180px" class="consult_det_title" valign="top">
 							<?php $user = $mantisCore->getUserById($attached->user_id);?>
 							<?php echo $user->realname;?>
-							<br /> 
+							<br> 
 							<?php echo '(' . getDateFormat($attached->date_submitted) . ')';?>
 						</td>
-						<td width="200px" class="consult_det_info_td">
+						<td width="200px" class="consult_det_info">
 							<?php echo $attached->filename;?>
 						</td>
 						<td width="330px"><a
@@ -116,6 +123,7 @@
 					</tr>
 					<?php endif;?>
 				</table>
+				<?php if (!$resolvedConsult):?>
 				<br>
 				<table width="100%" cellpadding="3" cellspacing="0">
 					<tr valign="top">
@@ -129,7 +137,7 @@
 									type="hidden" name="issueId" id="issueId"
 									value="<?php echo $issueId;?>">
 							</form> 
-							<span class="consult_det_info_td">
+							<span class="consult_det_info">
 								<?php getValue('label_uploadSize');?>
 								<?php if(MN_MANTIS_FILE_UNITY_SIZE == 'KB'):?>
 								<?php echo round(MN_MANTIS_FILE_MAX_SIZE / 1024, 2) ;?>
@@ -147,6 +155,7 @@
 						</td>
 					</tr>
 				</table>
+				<?php endif;?>
 			</div>
 		</div>
 	</div>
@@ -169,17 +178,17 @@
 					<?php if ($note->view_state->id == 10): //solo se muestran las públicas. ?>
 						<?php if ($issue->reporter->id == $note->reporter->id):?>
 							<tr valign="top" class="active_text">
-								<td width="200px" class="consult_det_title_td">
+								<td width="200px" class="consult_det_title">
 						<?php else:?>
 							<tr valign="top">
-								<td width="200px" class="consult_det_title_td">
+								<td width="200px" class="consult_det_title">
 						<?php endif;?>
 						
 						<?php echo $note->reporter->real_name;?>:
 						<br>
 						<?php echo '(' . getDateFormat($note->date_submitted) . ')';?>
 						</td>
-						<td width="560px" class="consult_det_info_td">
+						<td width="560px" class="consult_det_info">
 						<?php echo replaceRToBr($note->text);?>
 						</td>
 						</tr><tr>
@@ -190,6 +199,7 @@
 			<?php endif;?>
 			</table>
 		</div>
+		<?php if (!$resolvedConsult):?>
 		<div class="notes_form controls">
 			<table width="100%" cellpadding="2" cellspacing="2">
 				<tr>
@@ -212,13 +222,14 @@
 				</tr>
 				<tr>
 					<td width="710px">
-						<button name="Submit" type="button" onclick="addNoteIssue()">
+						<button name="Submit" type="button" onclick="addNoteIssue()" style="cursor: pointer;">
 						<?php getValue('button_send');?>
 						</button>
 					</td>
 				</tr>
 			</table>
 		</div>
+		<?php endif;?>
 	</div>
 	<div class="back_option">
 		<a onclick="redirectToBack()" style="cursor: pointer;"><?php getValue('label_back');?>

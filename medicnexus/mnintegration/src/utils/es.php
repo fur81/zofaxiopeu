@@ -91,6 +91,9 @@ $values[L_SPANISH] = array(
 		'msg_error_consult_inserted' => 'La consulta no se ha podido crear. Consulte a los teléfonos del sitio para mayor información.',
 		'msg_error_empty_data' => 'Existen todavía datos en el formulario que deben ser llenados.',
 		'msg_error_upload_size' => 'El fichero a adjuntar excede el tamaño máximo posible.',
-		'msg_advice' => 'notice'
+		'msg_advice' => 'notice',
+		'msg_resolved_consult' => 'La consulta se encuentra en estado "Resuelta" por lo que sus datos no podrán ser modificados. 
+								En caso que necesite agregar información sobre la misma deberá ponerse en contacto a través de 
+								los teléfonos brindados en el área Contactos.'
 );
 ?>
