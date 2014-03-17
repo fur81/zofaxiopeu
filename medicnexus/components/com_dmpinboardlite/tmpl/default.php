@@ -24,7 +24,7 @@
 	
 ?>
 
-<div class="dmpinboard-title"><?php echo JText::_('TPL_MN_USER_PROFILE_UPPER'); ?></div>
+<div class="dmpinboard-title"><?php echo JText::_('TPL_MN_ELEMENTS_LIST_UPPER'); ?></div>
 <div id="pbgrid_cont" class="<?php echo $arg['preset_style']; ?>"></div>
 <div id="pbgrid_notice"></div>
 
