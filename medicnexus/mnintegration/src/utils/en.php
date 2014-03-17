@@ -91,8 +91,8 @@ $values[L_ENGLISH] = array(
 		'msg_error_empty_data' => 'The form steel have data that needs be writer.',
 		'msg_error_upload_size' => 'The file to attach surpasses the maximum possible size.',
 		'msg_advice' => 'notice',
-		'msg_resolved_consult' => 'La consulta se encuentra en estado "Resuelta" por lo que sus datos no podrán ser modificados. 
-								En caso que necesite agregar información sobre la misma deberá ponerse en contacto a través de 
-								los teléfonos brindados en el área Contactos.'
+		'msg_resolved_consult' => 'The query is in "Resolved" status so your data can not be modified.
+									If you need to add information about it should contact through
+									telephones provided in the Contacts area.'
 );
 ?>
