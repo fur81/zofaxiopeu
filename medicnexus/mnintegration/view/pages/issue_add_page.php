@@ -44,7 +44,7 @@
 			<div class="consultation_detail_body controls">
 				<table width="100%" cellpadding="3" cellspacing="3">
 					<tr valign="top">
-						<td width="110px" class="consult_det_title_td"><label
+						<td width="110px" class="consult_det_title"><label
 							for="subproject">*<?php getValue('label_specialities');?>:</label>
 						</td>
 						<td width="600px" colspan="2"><select name="subproject"
@@ -63,7 +63,7 @@
 						</td>
 					</tr>
 					<tr valign="top">
-						<td width="110px" class="consult_det_title_td"><label
+						<td width="110px" class="consult_det_title"><label
 							for="specialist"><?php getValue('label_specialists');?>:</label>
 						</td>
 
@@ -76,7 +76,7 @@
 						</select>
 						</td>
 
-						<td width="400px" class="consult_det_title_td" valign="top"><label
+						<td width="400px" class="consult_det_title" valign="top"><label
 							for="viewSpecialistsCheckbox"
 							style="vertical-align: inherit !important"><?php getValue('label_select_specialist');?>:</label>
 							&nbsp; <input style="vertical-align: top" type="checkbox"
@@ -85,7 +85,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td class="consult_det_title_td" valign="top"><label>*<?php getValue('label_summary');?>:</label>
+						<td class="consult_det_title" valign="top"><label>*<?php getValue('label_summary');?>:</label>
 						</td>
 						<td colspan="2"><input id="summaryText" type="text"
 							name="summaryText" maxlength="128" style="width: 100%;"
@@ -93,7 +93,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td class="consult_det_title_td" valign="top"><label>*<?php getValue('label_description');?>:</label>
+						<td class="consult_det_title" valign="top"><label>*<?php getValue('label_description');?>:</label>
 						</td>
 						<td colspan="2"><textarea style="width: 99%;" rows="6"
 								name="descriptionTextArea" id="descriptionTextArea"></textarea>
@@ -114,7 +114,7 @@
 			<div class="consultation_detail_body controls">
 				<table width="100%" cellpadding="3" cellspacing="3">
 					<tr>
-						<td class="consult_det_title_td" valign="top"><label><?php getValue('label_documents');?>:</label>
+						<td class="consult_det_title" valign="top"><label><?php getValue('label_documents');?>:</label>
 						</td>
 						<td colspan="3" class="controls" valign="top"><label><?php getValue('label_documentsInfo');?>
 						</label>
@@ -135,19 +135,19 @@
 			<div class="consultation_detail_body">
 				<table width="100%" cellpadding="3" cellspacing="3">
 					<tr valign="top">
-						<td width="120px" class="consult_det_title_td"><?php getValue('label_price');?>:</td>
+						<td width="120px" class="consult_det_title"><?php getValue('label_price');?>:</td>
 						<td colspan="2"><label><?php echo $GLOBALS['PAY_PRICE'] . '  ' . PAYPAL_CURRENCY_EUR;?>
 						</label>
 						</td>
 					</tr>
 					<tr valign="top">
-						<td class="consult_det_title_td"><?php getValue('label_tax');?>:</td>
+						<td class="consult_det_title"><?php getValue('label_tax');?>:</td>
 						<td colspan="2"><label><?php echo $GLOBALS['PAY_TAX'] . '  ' . PAYPAL_CURRENCY_EUR;?>
 						</label>
 						</td>
 					</tr>
 					<tr>
-						<td class="consult_det_title_td" rowspan="2"><label
+						<td class="consult_det_title" rowspan="2"><label
 							style="vertical-align: middle !important;"><?php getValue('label_payment_type');?>:</label>
 						</td>
 						<td valign="top" style="height: 30px;"><input
