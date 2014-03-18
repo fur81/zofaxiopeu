@@ -34,6 +34,8 @@ $values['query'] = array(
 										INNER JOIN mantis_project_user_list_table ON user_id = id
 										WHERE project_id = %value% AND mantis_project_user_list_table.access_level = 55;',
 		'getSubprojects' => 'SELECT child_id AS subprojectId FROM mantis_project_hierarchy_table WHERE parent_id = %value%',
+		'getProjectNoAsigned' => 'SELECT id FROM mantis_project_table WHERE enabled = 1 AND id NOT IN (
+									SELECT project_id FROM mantis_project_user_list_table WHERE user_id = %value%)',
 		
 		/** -- incidencias -- */
 		'getIssuesWithHistoryCount' => 'SELECT COUNT(count) AS total FROM ( 

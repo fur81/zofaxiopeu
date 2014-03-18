@@ -91,8 +91,10 @@ class MantisCore {
 
 		// si no existe se crea
 		$this->createAccount ( $this->currentUser, $realname, $email );
+		// se asignan los proyectos que le falta 
+		$this->addAccountToProject();
 	}
-
+	
 	/**
 	 * Crea una nueva cuenta de usuario.
 	 *
@@ -123,12 +125,6 @@ class MantisCore {
 				// se ejecuta la consulta
 				$query = str_replace ( '%values%', $values, getQuery ( 'createAccount' ) );
 				$this->proxyMySql->query ( $query );
-
-				// se adiciona el usuario al proyecto por defecto
-				$this->addAccountToProject (PROJECT_RAPID_CONSULTATION);
-				$this->addAccountToProject (PROJECT_VIRTUAL_CONSULTATION);
-				$this->addAccountToProject (PROJECT_SECOND_OPINION);
-				$this->addAccountToProject (PROJECT_HEALTH_PROGRAM);
 			}
 		} catch ( Exception $e ) {
 		}
@@ -168,12 +164,8 @@ class MantisCore {
 		return $result;
 	}
 
-	/**
-	 * Se adiciona el usuario registrado al proyecto por defecto.
-	 * 
-	 * @param string $projectId
-	 */
-	private function addAccountToProject($projectId) {
+	
+	/*private function addAccountToProject($projectId) {
 		try {
 			// se obtiene el identificador del usuario
 			$idUser = $this->getUserData()->id;
@@ -189,6 +181,29 @@ class MantisCore {
 				$this->addAccountToProject ($subproject);
 			}
 		} catch ( Exception $e ) {
+		}
+	}*/
+	/**
+	 * Al usurio registrado se le adicionan todos aquellos
+	 * proyectos en los cuales no se encuentra asignado.
+	 * 
+	 * @param string $projectId
+	 */
+	private function addAccountToProject() {
+		try {
+			// se obtiene el identificador del usuario
+			$idUser = $this->getUserData()->id;
+			// se obtienen todos los proyectos donde no esta incluido
+			$query = str_replace( '%value%', $idUser, getQuery ( 'getProjectNoAsigned' ) );
+			$result = $this->proxyMySql->query ( $query );
+			while ( $data = $result->fetch_object () ) {
+				$proyectId = $data->id;
+				// se inserta en la base de datos
+				$values = $proyectId . ',' . $idUser . ',' . MANTIS_INFORMER_ACCESS;
+				$query = str_replace ( '%values%', $values, getQuery ( 'addAccountToProject' ) );
+				$this->proxyMySql->query ( $query );
+			}
+		} catch (Exception $e) {
 		}
 	}
 
