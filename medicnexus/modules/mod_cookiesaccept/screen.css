@@ -2,7 +2,7 @@
     position: fixed!important;
     z-index: 16777270;
     width: 100%!important;
-    height: 40px;
+    height: 15px;
     background: url('img/przez.png');
     text-align: center;
     border-width: 1px 0 1px 0!important;
@@ -59,6 +59,7 @@
     padding-right:10px;
 	color:#000;
 	text-align:left;
+	cursor: pointer;
 }
 #ca_info_plus span{
 	color:#000;
