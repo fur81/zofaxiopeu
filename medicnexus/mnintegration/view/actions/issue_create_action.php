@@ -35,6 +35,10 @@ if ( isset($_GET['success'])) {
 	$_SESSION['subProjectId'] = $projectId;
 	// se salva la información el la base de datos
 	$idData = $mantisCore->saveIssueCreateData($summary, $description, $projectId, $specialistId);
+	if ($_POST['paymentType'] == 'tpv') {
+		include_once ( $GLOBALS['TPV_REQUEST_CLIENT_ZONE'] );
+		exit();
+	}
 	// se carga el servicio de paypal
 	//include_once $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE'];
 	//exit();

@@ -1,6 +1,7 @@
 <div id="client_zone">
+	<?php $mantisCore->addAccountToProject(); // se le adicionan todos los proyectos pendientes al cliente. ?>   
 	<!-- se agrega el encabezado con los proyectos -->
-   <?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
+	<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
     
     <h1>LOREM IPSUM DOLOR</h1>
         <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 

@@ -92,7 +92,7 @@ class MantisCore {
 		// si no existe se crea
 		$this->createAccount ( $this->currentUser, $realname, $email );
 		// se asignan los proyectos que le falta 
-		$this->addAccountToProject();
+		//$this->addAccountToProject();
 	}
 	
 	/**
@@ -189,7 +189,7 @@ class MantisCore {
 	 * 
 	 * @param string $projectId
 	 */
-	private function addAccountToProject() {
+	public function addAccountToProject() {
 		try {
 			// se obtiene el identificador del usuario
 			$idUser = $this->getUserData()->id;
