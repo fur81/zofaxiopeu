@@ -781,13 +781,14 @@ class MantisCore {
 	 * @param string $projectId
 	 * @return string $result
 	 */
-	public function saveIssueCreateData($summary, $description, $projectId, $specialistId) {
+	public function saveIssueCreateData($summary, $description, $projectId, $specialistId, $paymentType) {
 		$idData = 0;
 		try {
 			$data  = 'summary=' . $summary;
 			$data .= "&description=" . $description;
 			$data .= "&projectId=" . $projectId;
 			$data .= "&specialistId=" . $specialistId;
+			$data .= "&paymentType=" . $paymentType;
 			$idData = $this->saveTempData($data);
 		} catch (Exception $e) {
 		}

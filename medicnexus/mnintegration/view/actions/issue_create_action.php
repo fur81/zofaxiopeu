@@ -1,6 +1,4 @@
 <?php
-// siempre se cargan los datos del pago
-setProjectPaypalConfiguration();
 // se chequea si se realizó el pago o no
 if ( isset($_GET['success'])) {
 	if ($_GET['success'] == 'true') {
@@ -10,7 +8,10 @@ if ( isset($_GET['success'])) {
 		$summary = $issueData['summary'];
 		$description = $issueData['description'];
 		$specialistId = $issueData['specialistId'];
+		$paymentType = $issueData['paymentType'];
 		$projectId = $issueData['projectId'];
+		// se establecen los valores de pago
+		setProjectPaypalConfiguration( $paymentType );
 		// se crea la incidencia con la información almacenada
 		$mantisCore->addIssue($summary, $description, $projectId, $specialistId);
 		// se envia un mensaje al usuario del registro realizado
@@ -32,20 +33,22 @@ if ( isset($_GET['success'])) {
 	$description = $_POST['descriptionTextArea'];
 	$specialistId = $_POST['specialist'];
 	$projectId = $_POST['subproject'];
+	$paymentType = $_POST['paymentType'];
 	$_SESSION['subProjectId'] = $projectId;
+	// se establecen los valores de pago
+	setProjectPaypalConfiguration( $paymentType );
 	// se salva la información el la base de datos
-	$idData = $mantisCore->saveIssueCreateData($summary, $description, $projectId, $specialistId);
-	if ($_POST['paymentType'] == 'tpv') {
-		include_once ( $GLOBALS['TPV_REQUEST_CLIENT_ZONE'] );
-		exit();
+	$idData = $mantisCore->saveIssueCreateData($summary, $description, $projectId, $specialistId, $paymentType);
+	if ( $paymentType == MN_PAY_TPV ) {
+		include_once ( $GLOBALS['TPV_REQUEST_CLIENT_ZONE'] ); // se carga el servicio tpv
+	}else if( $paymentType == MN_PAY_PAYPAL ) {
+		include_once $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE']; // se carga el servicio paypal
 	}
-	// se carga el servicio de paypal
-	//include_once $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE'];
 	//exit();
 	// solo para cuando paypal no está funcionando
 	//$mantisCore->addIssue($summary, $description, $projectId, $specialistId);
-	$mantisCore->sendEmail($summary, $description, $projectId, $specialistId, $GLOBALS['PAY_NAME'],
-							$GLOBALS['PAY_PRICE'], $GLOBALS['PAY_TAX'], $GLOBALS['PAY_TOTAL_AMOUNT']);
+	//$mantisCore->sendEmail($summary, $description, $projectId, $specialistId, $GLOBALS['PAY_NAME'],
+	//					$GLOBALS['PAY_PRICE'], $GLOBALS['PAY_TAX'], $GLOBALS['PAY_TOTAL_AMOUNT']);
 	$mantisCore->removeTempData( $idData );
 	$_SESSION ['msg'] = 'msg_info_consult_inserted';
 }

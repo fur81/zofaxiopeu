@@ -16,6 +16,10 @@ $GLOBALS['MNI_CONNECTION'] =    $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mni
 // -- paypal
 $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE'] = $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/src/paypal/payments/PayPalPaymentClientZone.php';
 
+// -- tpv
+$GLOBALS['TPV_REQUEST_CLIENT_ZONE'] = $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/src/tpv/TPVPaymentClientZone.php';
+$GLOBALS['TPV_COMMON'] = $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/src/tpv/TPVCommon.php';
+
 // -- utils
 $GLOBALS['MNI_UTILS'] =         $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/src/utils/utils.php';
 $GLOBALS['MNI_ES'] =            $_SERVER['DOCUMENT_ROOT'].SUB_PROJECT_PATH.'/mnintegration/src/utils/es.php';

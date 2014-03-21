@@ -153,7 +153,7 @@
 						<td valign="top" style="height: 30px;"><input
 							id="paymentTypePaypal" checked="checked"
 							style="vertical-align: middle !important;" name="paymentType"
-							type="radio" value="paypal" /> <label
+							type="radio" value="<?php echo MN_PAY_PAYPAL;?>" /> <label
 							style="vertical-align: middle !important"><?php getValue('label_paypal');?>
 						</label>
 						</td>
@@ -165,7 +165,7 @@
 					<tr>
 						<td valign="top" style="height: 30px;"><input id="paymentTypeTPV"
 							style="vertical-align: middle !important;" name="paymentType"
-							type="radio" value="tpv" /> <label
+							type="radio" value="<?php echo MN_PAY_TPV;?>" /> <label
 							style="vertical-align: bottom !important"><?php getValue('label_tpv');?>
 						</label>
 						</td>
