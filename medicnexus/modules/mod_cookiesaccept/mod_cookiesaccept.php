@@ -94,15 +94,15 @@ if (!isset($_COOKIE['cookieaccept'])) :
     <span style="
 		<?php if($color=="black" && $ca_banner_p=="") echo "color:#fff;" ?>
 		<?php echo $ca_banner_p; ?>"><?php echo $info2; ?>
+		<span class="accept"><?php if(!$accept) { echo JText::_('MOD_COOKIESACCEPT_ACCEPT'); } else { echo $accept; }; ?></span>
         <?php if($enable_info) : ?>
 			<?php if($article_info) : ?>
-				<span class="infoplus" style="<?php echo $ca_banner_p_span; ?>"><a href="<?php echo $link; ?>"><?php if(!$more_info) { echo JText::_('MOD_COOKIESACCEPT_PLUS_INFO'); } else { echo $more_info; }; ?></a></span>
+				<span class="infoplus"><a href="<?php echo $link; ?>"><?php if(!$more_info) { echo JText::_('MOD_COOKIESACCEPT_PLUS_INFO'); } else { echo $more_info; }; ?></a></span>
 			<?php else: ?>
-				<span class="infoplus info_modal" style="<?php echo $ca_banner_p_span; ?>"><?php if(!$more_info) { echo JText::_('MOD_COOKIESACCEPT_PLUS_INFO'); } else { echo $more_info; }; ?></span>
+				<span class="infoplus info_modal" style="cursor: pointer; color: #1aa7b6;	"><?php if(!$more_info) { echo JText::_('MOD_COOKIESACCEPT_PLUS_INFO'); } else { echo $more_info; }; ?></span>
 			<?php endif; ?>
 		<?php endif; ?>
         </span>
-    <div class="accept" style="<?php echo $ca_banner_div_accept; ?>"><?php if(!$accept) { echo JText::_('MOD_COOKIESACCEPT_ACCEPT'); } else { echo $accept; }; ?></div>
 </div>
 <?php if($enable_info && !$article_info) : ?>
 <div id="ca_info" style="<?php echo $ca_info; ?>">

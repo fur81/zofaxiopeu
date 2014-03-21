@@ -1,64 +1,53 @@
 @charset "utf-8";
-/* CSS Document */
 
-li.maximenuck {margin: 0; padding: 0px;}
+/*Documento CCS que contiene los estilos generales del sitio Medicnexus. Se incluyen las tres plantillas contenidas en el mismo*/
 
-body {
-	font: 100%/1.4 "Trebuchet MS", Arial, Helvetica, sans-serif;
-	background: #FFF url(../images/gradient_bg_site.gif) repeat-x;
-	margin: 0;
-	padding: 0;
-	color: #000;
-}
+/*Inicio Element/tag selectors*/
 
-.body_int {
-	font: 100%/1.4 "Trebuchet MS", Arial, Helvetica, sans-serif;
-	background: #FFF url(../images/gradient_bg_site_int.gif) repeat-x;
-	margin: 0;
-	padding: 0;
-	color: #000;
-}
-
-/* ~~ Element/tag selectors ~~ */
-ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+ul, ol, dl { 
 	padding: 0;
 	margin: 0;
 }
+
 h1, h2, h3, h4, h5, h6, p {
-	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	margin-top: 0;
 	padding-right: 15px;
-	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	padding-left: 15px;
 }
+
 p {
 	text-align: justify;	
 	color: #666;
 }
+
 h1 { 
-	color: #666;
+	color: #333;
 	font-size: 12px;
 	text-transform: uppercase;		
-}/*sustituir con una clase especifica*/
-a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+}
+
+a img {
 	border: none;
 }
 
-/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
 a:link {
 	color: #666;
 	text-decoration: none;
 }
 a:visited {
-	color: #6E6C64;
-	text-decoration: underline;
+	color: #cc99cc;
+	text-decoration: none;
 }
-a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+a:hover, a:active, a:focus { 
 	text-decoration: none;
 }
 
-/*html components*/
+/*Fin Element/tag selectors*/
+
+/*Iicio HTML Forms*/
 
 input{
-	font-size: 11px;
+	font-size: 12px;
 	border: 1px solid #999;
 	color: #666;
 	height: 16px;	
@@ -71,13 +60,13 @@ textarea {
 	border-radius: 2px;
     color: #666666;
     font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     padding: 3px;
 }
 
 select {
 	border: 1px solid #999999;
-	font-size: 11px;
+	font-size: 12px;
 	color: #666;
 	height: 22px;	
 }
@@ -87,15 +76,7 @@ label {
 	font-size: 12px;	
 }
 
-/*Estilos control upload*/
-
-/*
-.NFI-wrapper {}
-.NFI-button {}
-.NFI-button:hover {}
-.NFI-filename {}
-.NFI-current {}
-*/
+/*Inicio estilos control upload*/
 
 .NFI-wrapper {
 	border: 1px solid #CCC;
@@ -103,95 +84,70 @@ label {
 	padding: 2px;
 }
 
-/*.NFI-button {
-	background: url(../images/detalles-consultas.gif) no-repeat;	
-}
-
-.NFI-button:hover {
-	background: url(../images/detalles-consultas2.gif) no-repeat;
-}
-
-.NFI-filename {
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	color: #069;	
-}*/
-
 .nice {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size: 12px;
-	/*-webkit-box-shadow: 0px 1px 0px #fff, 0px -1px 0px rgba(0,0,0,.1);
-	-moz-box-shadow: 0px 1px 0px #fff, 0px -1px 0px rgba(0,0,0,.1);
-	box-shadow: 0px 1px 0px #fff, 0px -1px 0px rgba(0,0,0,.1); 
-	-moz-border-radius: 4px; 
-	-webkit-border-radius: 4px;
-	border-radius: 4px;*/
 }
+
 .nice .NFI-button {
-	/*-moz-border-radius-topleft: 2px; 
-	-moz-border-radius-bottomleft: 2px;
-	-webkit-border-top-left-radius: 2px;
-	-webkit-border-bottom-left-radius: 2px;
-	border-top-left-radius: 2px; 
-	border-bottom-left-radius: 2px;*/
-
-	background: url(../images/button_bg.gif) repeat-x;
-
-	/*background-image: linear-gradient(bottom, #1774A3 0%, #0194DD 56%);
-	background-image: -o-linear-gradient(bottom, #1774A3 0%, #0194DD 56%);
-	background-image: -moz-linear-gradient(bottom, #1774A3 0%, #0194DD 56%);
-	background-image: -webkit-linear-gradient(bottom, #1774A3 0%, #0194DD 56%);
-	background-image: -ms-linear-gradient(bottom, #1774A3 0%, #0194DD 56%);
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0, #1774A3),
-		color-stop(0.56, #0194DD)
-	);*/
-	/*text-shadow: 0px -1px 0px #0172bd;*/
-	/*border: solid #0172bd 1px;
-	border-bottom: solid #00428d 1px;*/
-	
-	/*-webkit-box-shadow: inset 0px 1px 0px rgba(255,255,255,.2);
-	-moz-box-shadow: inset 0px 1px 0px rgba(255,255,255,.2);
-	box-shadow: inset 0px 1px 0px rgba(255,255,255,.2); */	
-	
+	background: url(../images/button_bg.gif) repeat-x;	
 	color: #fff;
 	width: 82px;
 	height: 25px;
 	line-height: 25px;
 }
+
 .nice .NFI-button:hover {
 	background: url(../images/button_bg_hover.gif) repeat-x;
-	/*text-shadow: 0px -1px 0px #111;
-	border: solid #000 1px;*/
-	
 }
-.nice .NFI-filename {
-	/*-moz-border-radius-topright: 3px; 
-	-moz-border-radius-bottomright: 3px;
-	-webkit-border-top-right-radius: 3px;
-	-webkit-border-bottom-right-radius: 3px;
-	border-top-right-radius: 3px; 
-	border-bottom-right-radius: 3px;*/
 
+.nice .NFI-filename {
 	width: 250px;
-	/*border: 1px solid #CCC;
-	border-left: none;*/
 	border: none;
 	height: 24px;
 	line-height: 30px;
-	
 	background: #fff;
-	/*-webkit-box-shadow: inset 0px 2px 0px rgba(0,0,0,.05);
-	-moz-box-shadow: inset 0px 2px 0px rgba(0,0,0,.05);
-	box-shadow: inset 0px 2px 0px rgba(0,0,0,.05); */
-
 	color: #666;
-	/*text-shadow: 0px 1px 0px #fff;*/
 }
 
-/*Estilos generales para títulos*/
+/*Fin estilos control upload*/
+
+/*Inicio estilos generales para títulos*/
+
+.logo_title {
+	font-size: 28px;
+	color: #1aa9b8;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 10px 0 0 105px;
+}
+
+.logo_title_int {
+	font-size: 28px;
+	color: #1aa9b8;
+	text-decoration: none;
+	font-weight: normal;
+	height: 50px;
+    margin: 0;
+    padding: 10px 0 0 105px;
+	background: url(../images/bg_site-_title.gif) no-repeat 105px 57px;	
+}
+
+.slogan_site {
+	font-size: 11px;
+	color: #1aa9b8;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 0 0 0 105px;	
+}
+
+.slogan_site_int {
+	font-size: 11px;
+	color: #1aa9b8;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 5px 0 0 105px;	
+}
 
 .box_title_right {
 	font-size: 12px;
@@ -226,16 +182,80 @@ label {
 	font-size: 19px;
 	color: #1aa9b8;
 	text-transform: uppercase;
-	/*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
 	margin: 35px 0 20px 100px;
 	font-weight: bold;	
 }
 
-/* ~~this fixed width container surrounds the other divs~~ */
+.general_services_home_title {
+	color: #1aa9b8;
+	font-size: 12px;
+	background: none;
+	margin: 3px 0 0 0;
+	text-align: center;
+}
+
+.general_serivces_band_title {
+	font-size: 12px;
+	color: #666;
+	background: url(../images/services_title_bg.gif) no-repeat 150px 12px;
+}
+
+.title_bar{
+	height: 20px;
+    padding: 5px;  
+	background: url("../images/box_site_bg.gif") repeat-x;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+}
+
+.title_content_text {
+	font-size: 12px;
+	color: #FFF;
+	text-transform: uppercase;
+	text-align: left;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+}
+
+.head_issues_title {
+	color: #FFF;
+	font-size: 12px;
+	text-transform: uppercase;
+	margin: 3px;
+	padding: 0;
+}
+
+/*Fin estilos generales para títulos*/
+
+body {
+	font: 100%/1.4 "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background: #FFF url(../images/gradient_bg_site.gif) repeat-x;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/*Inicio estilo del cuerpo de las plantillas medicnexus_inside y medicnexus_client_zone*/
+
+.body_int {
+	font: 100%/1.4 "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background: #FFF url(../images/gradient_bg_site_int.gif) repeat-x;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/*Fin estilo del cuerpo de las plantillas medicnexus_inside y medicnexus_client_zone*/
+
+/*Inicio estilos plantillas*/
+/*Las clases que llevan "_int" al final de su nombre se aplica a la plantilla medicnexus_client_zone*/
+
 .container {
 	width: 1000px;
 	background: #FFF;
-	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+	margin: 0 auto;
 }
 
 .header {
@@ -248,7 +268,7 @@ label {
 	background: #FFF;
 }
 
-#left_header_zone {
+.left_header_zone {
 	width: 300px;
 	height: 290px;
 	float: left;
@@ -256,25 +276,7 @@ label {
 	background: url(../images/bg_site-_title.gif) no-repeat 105px 57px;
 }
 
-#left_header_zone h1 {
-	font-size: 28px;
-	color: #1aa9b8;
-	text-decoration: none;
-	font-weight: normal;
-	padding: 10px 0 0 105px;
-	/*letter-spacing: 5px;*/
-	/*font-family: "Frutiger LT Std 45 Light";*/
-}
-
-#left_header_zone h2 {
-	font-size: 11px;
-	color: #1aa9b8;
-	text-decoration: none;
-	font-weight: normal;
-	padding: 0 0 0 105px;
-}
-
-#left_header_zone_int {
+.left_header_zone_int {
 	width: 290px;
 	height: 140px;
     margin: 5px 0 0 0;
@@ -285,118 +287,93 @@ label {
 	background: url(../images/logo_zone_int_bg.gif) repeat-x 25px 60px;
 }
 
-#left_header_zone_int h1 {
-	font-size: 28px;
-	color: #1aa9b8;
-	text-decoration: none;
-	font-weight: normal;
-	height: 50px;
-    margin: 0;
-    padding: 10px 0 0 105px;
-	background: url(../images/bg_site-_title.gif) no-repeat 105px 57px;
-}
-
-#left_header_zone_int h2 {
-	font-size: 11px;
-	color: #1aa9b8;
-	text-decoration: none;
-	font-weight: normal;
-	padding: 0 0 0 105px;
-}
-
-#logo_img {
+.logo_img {
 	width: 85px;
 	height: 85px;
 	padding: 10px 0 0 10px;
 	float: left;
 }
 
-#logo_img_int {
+.logo_img_int {
 	width: 85px;
 	height: 85px;
 	padding: 10px 0 0 10px;
 	float: left;
 }
 
-#header_newsflash {
+.header_newsflash {
 	margin: 20px 0 0 10px;
 	width: 280px;
 	height: 180px;
 	float: left;	
 	background: url(../images/bg_header_newsflash.gif) repeat-x;
-	/*border-left: 10px #FFF solid;
-	border-right: 10px #FFF solid;*/
 	border-radius: 2px 2px 2px 2px;
 	-webkit-border-radius: 2px 2px 2px 2px;
 	-moz-border-radius: 2px 2px 2px 2px;
 }
 
-
-#right_header_zone {
+.right_header_zone {
 	width: 700px;
 	height: 240px;
 	float: left;
 	margin: 0;	
 }
 
-#right_header_zone_int {
+.right_header_zone_int {
 	width: 700px;
 	height: 240px;
 	float: left;
 	margin: 0;	
 }
 
-#promo_lang_zone {
-	font-size: 11px;
+.promo_lang_zone {
+	font-size: 12px;
 	color: #999;
 	text-align: right;
-	/*margin-top: 2px;*/
 	float: left;
-	/*margin-left: 490px;*/
 	margin: 8px 5px 0 476px;
 }
 
-#promo_lang_zone ul li {
+.promo_lang_zone ul li {
 	display: inline;
-	/*margin-left: 3px;*/
 	margin: 0 5px 0 0;	
 }
 
-#promo_lang_zone ul li a {
+.promo_lang_zone ul li a {
 	text-decoration: none;	
 }
 
-#language_flag_zone {
+.language_flag_zone {
 	text-align: right;
 	margin-top: 8px;
 	float: left;
 }
 
-#searching_zone {
+.searching_zone {
 	float: left;
 	color: #999999;
     font-size: 11px;
 	width: 690px;
-    margin: 5px 0 0 0;
+    margin: 3px 0 0 0;
 	padding: 0 10px 0 0;
 }
 
-#searching_zone ul li {
+.searching_zone ul li {
 	display: inline;
 	margin-left: 3px;
 }
 
-#searching_zone ul li a {
-	font-size: 11px;
+.searching_zone ul li a {
+	font-size: 12px;
 	color: #999;
 	text-decoration: none;	
 }
 
-#searching_zone ul li a:hover {
+.searching_zone ul li a:hover {
 	text-decoration: underline;	
 }
 
-#top_menu {
+.top_menu {
 	width: 699px;
 	float: left;
 	border-radius: 2px 2px 2px 2px;
@@ -407,7 +384,7 @@ label {
 	padding: 0;
 }
 
-#front_img_header {
+.front_img_header {
 	width: 700px;
 	height: 200px;
 	float: left;
@@ -415,7 +392,7 @@ label {
 	border-top: 1px solid #FFF;
 }
 
-#front_img_header_int {
+.front_img_header_int {
 	width: 700px;
 	height: 150px;
 	float: left;
@@ -423,42 +400,21 @@ label {
 	border-top: 1px solid #FFF;	
 }
 
-#sitemap_zone {
-	/*height: 20px;*/
+.sitemap_zone {
     padding: 5px 0 0 30px;
 	margin: 5px 0 2px 0;
 	background: url(../images/sitemap_bg.gif) no-repeat 5px 5px;
 }
 
-/*#sitemap_zone h6 {
-	margin: 5px 0 0 15px;
-	font-size: 11px;
-	color: #999;
-}*/
-
-/* ~~ These are the columns for the layout. ~~ 
-
-1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
-
-2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
-
-3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
-
-4) If you prefer your nav on the left instead of the right, simply float these columns the opposite direction (all left instead of all right) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
-
-*/
 .sidebar {
 	float: right;
 	width: 250px;
-	/*padding-bottom: 10px;
-	border: 1px solid #1aa9b8;*/
 }
 
 .side_box {
 	padding: 5px 5px 0 5px;
 	margin: 1px 0 10px 0px;
 	width: 240px;
-	/*border: 1px solid #1aa9b8;*/
 	float: left;
 	box-shadow: 2px 2px 3px #999;
 	-webkit-box-shadow: 2px 2px 3px #999;
@@ -468,6 +424,7 @@ label {
 	-moz-border-radius: 2px 2px 2px 2px;
 }
 
+/*Pending...*/
 .side_box h3 {
 	font-size: 12px;
 	color: #FFF;
@@ -478,21 +435,7 @@ label {
 	text-transform: uppercase;
 }
 
-#news_band_zone {
-	width: 240px;
-	border: 1px solid #1aa9b8;
-	margin: 0 0 10px -1px;
-    padding: 5px 5px 10px 5px;
-	float: left;
-	box-shadow: 2px 2px 2px #999;
-	-webkit-box-shadow: 2px 2px 2px #999;
-	-moz-box-shadow: 2px 2px 2px #999;
-	border-radius: 2px 2px 2px 2px;
-	-webkit-border-radius: 2px 2px 2px 2px;
-	-moz-border-radius: 2px 2px 2px 2px;
-}
-
-#contact_zone {
+.contact_zone {
 	width: 240px;
 	height: 220px;
 	border: 1px solid #1aa9b8;
@@ -508,29 +451,9 @@ label {
 	-moz-border-radius: 2px 2px 2px 2px;
 }
 
-#contact_table
+.contact_table
  {
-	/*padding-top: 25px;*/
 	margin-left: 45px;
-}
-
-#box_title_sidebar {
-	width: 230px;
-    height: 20px;
-    padding: 5px;  	
-	/*box-shadow: 2px 2px 3px #000;
-	-webkit-box-shadow: 2px 2px 3px #000;
-	-moz-box-shadow: 2px 2px 3px #000;*/
-	background: url("../images/box_site_bg.gif") repeat-x;
-}
-
-#box_title_sidebar h1 {
-	font-size: 12px;
-	color: #FFF;
-	background: url(../images/bg_title_box.png) no-repeat right 5px;
-	text-align: right;
-	margin-top: 2px;
-	margin-right: 3px;
 }
 
 .content_box{
@@ -551,39 +474,29 @@ label {
 	width: 720px;
 }
 
-.title_bar{
-	height: 20px;
-    padding: 5px;  
-	background: url("../images/box_site_bg.gif") repeat-x;	
-	/*box-shadow: 2px 2px 3px #999;
+.news_band_zone {
+	width: 240px;
+	border: 1px solid #1aa9b8;
+	margin: 0 0 10px -1px;
+    padding: 5px 5px 10px 5px;
+	float: left;
+	box-shadow: 2px 2px 2px #999;
 	-webkit-box-shadow: 2px 2px 2px #999;
-	-moz-box-shadow: 2px 2px 2px #999;*/
+	-moz-box-shadow: 2px 2px 2px #999;
 	border-radius: 2px 2px 2px 2px;
 	-webkit-border-radius: 2px 2px 2px 2px;
 	-moz-border-radius: 2px 2px 2px 2px;
 }
 
-.title_content_text {
-	font-size: 12px;
-	color: #FFF;
-	text-transform: uppercase;
-	text-align: left;
-	border-radius: 2px 2px 2px 2px;
-	-webkit-border-radius: 2px 2px 2px 2px;
-	-moz-border-radius: 2px 2px 2px 2px;
-	/*margin-top: 2px;*/
-}
-
-#welcome_text {
+.welcome_text {
 	width: 740px;
 	float: left;	
 	padding: 0;
 }
 
-#welcome_text p {
+.welcome_text p {
 	text-align: justify;
-	color: #999;
-	font-size: 11px;	
+	color: #999;	
 }
 
 #site_services_zone {
@@ -591,43 +504,23 @@ label {
 	float: left;		
 }
 
-#site_services_zone h1 {
-	font-size: 12px;
-	color: #666;
-	background: url(../images/services_title_bg.gif) no-repeat 150px 12px;
-}
-
 .site_service_box {
-	width: 150px;
+	width: 180px;
 	float: left;	
 }
 
 .site_service_box img {
-	margin: 0 0 0 45px;	
-}
-
-
-.site_service_box h1 {
-	color: #1aa9b8;
-	font-size: 11px;
-	background: none;
-	margin: 3px 0 0 0;
-	text-align: center;
+	margin: 0 0 10px 65px;	
 }
 
 .site_service_box p {
-	text-align: justify;
-	font-size: 10px;
+	text-align: left !important;
 	color: #666;
-	margin: 3px 0 0 0;
-}
-
-.site_service_box #service_box_btn img {
-	margin: 5px 0 0 25px;	
+	margin: 5px 0;
 }
 
 .services_box_separator {
-	margin: 0 20px 0 20px;
+	margin: 0;
 	width: 1px;
 	height: 90px;
 	background: url(../images/services_box_separator_bg.gif) no-repeat;
@@ -647,10 +540,10 @@ label {
 }
 
 #site_speciality_box {
-	width: 200px;
+	width: 220px;
 	height: 90px;
 	float: left;
-	margin: 5px 30px 0 10px;	
+	margin: 5px 10px 0 10px;	
 }
 
 #speciality_icon {
@@ -664,7 +557,7 @@ label {
 }
 
 #speciality_text {
-	width: 150px;
+	width: 170px;
 	height: 90px;
 	float: left;
 	background: url(../images/speciality_description_bg.png) repeat-x left 20px;
@@ -794,7 +687,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 
 #bottom_menu_site ul li a {
 	color: #1aa9b8;
-	font-size: 11px;
+	font-size: 12px;
 	text-decoration: none;
 }
 
@@ -814,7 +707,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 
 #block_bottom_submenu h1 {
 	color: #FFF;
-	font-size: 10px;	
+	font-size: 11px;	
 }
 
 #block_bottom_submenu ul li {
@@ -825,7 +718,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 
 #block_bottom_submenu ul li a {
 	text-decoration: none;
-	font-size: 10px;
+	font-size: 11px;
 	color: #FFF;	
 }
 
@@ -871,8 +764,8 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 #final_site_band ul li {
 	display: inline;	
 	list-style: none;
-	color: #999;
-	font-size: 11px;
+	color: #666;
+	font-size: 12px;
 }
 
 #health_colleges_site {
@@ -903,11 +796,17 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	line-height: 0px;
 }
 
+/*Inicio estilos del módulo Maximenu*/
+
+li.maximenuck {margin: 0; padding: 0px;}
+
+/*Inicio estilos del módulo Maximenu*/
+
 /*Inicio estilos del módulo mod_login*/
 
 .mn-element-invisible {
 	color: #333;
-	font-size: 11px;	
+	font-size: 12px;	
 }
 
 .control-group {
@@ -916,13 +815,13 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 
 .mn-control-label {
 	color: #333;
-	font-size: 11px;	
+	font-size: 12px;	
 }
 
 .mn-input-small {
     border: 1px solid #1aa9b8;
     color: #666;
-    font-size: 11px;
+    font-size: 12px;
     height: 16px;
 	width: 200px;
 }
@@ -951,7 +850,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 .mn-unstyled {
 	list-style: none;
 	color: #999;
-	font-size: 11px;
+	font-size: 12px;
 }
 
 .mn-unstyled li a {
@@ -967,7 +866,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 
 .mn-form-vertical {
 	color: #999;
-	font-size: 11px;	
+	font-size: 12px;	
 	float: right;
 	margin: -41px -11px 0 0;
     padding: 40px 0 10px 35px;
@@ -1085,8 +984,8 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 }
 
 .item-page p {
-	color: #999;
-	font-size: 11px;
+	color: #666;
+	font-size: 12px;
 	text-align: justify;
 }
 
@@ -1353,7 +1252,7 @@ fieldset {
 	z-index: 1030;
 	display: block;
 	visibility: visible;
-	font-size: 11px;
+	font-size: 12px;
 	line-height: 1.4;
 	opacity: 0;
 	filter: alpha(opacity=0);
@@ -1846,7 +1745,7 @@ fieldset {
 
 .empty-data-table {
     color: #666;
-    font-size: 11px;
+    font-size: 12px;
     text-align: center;
 	font-style: italic;
 }
@@ -1867,7 +1766,7 @@ fieldset {
 #issue_report {
 	text-align: right;	
 	margin-bottom: 10px;
-	width: 700px;
+	width: 730px;
 }
 #issue_report ul li{
 	display: inline;
@@ -1876,7 +1775,7 @@ fieldset {
 }
 #issue_report ul li a{
 	background: none;	
-	font-size: 11px;	
+	font-size: 12px;	
 	color: #1AA9B8;
 	cursor: pointer;
 	
@@ -1889,7 +1788,7 @@ fieldset {
     width: 715px;
 } 
 #fileAttached {
-	font-size: 11px;
+	font-size: 12px;
 	border: 1px solid #CCC;
 	color: #666;
 	height: 20px;		
@@ -1955,13 +1854,7 @@ fieldset {
 .managed-table-th td {
 	border-bottom: 2px solid #FFF;
 }
-#client_zone .managed-table-th h1 {
-	color: #FFF;
-	font-size: 11px;
-	text-transform: uppercase;
-	margin: 3px;
-	padding: 0;
-}
+
 .managed-table-tr {
 	background: #E3E3E3;
 	color: #1aa9b8;
@@ -2085,10 +1978,6 @@ fieldset {
 
 #services_info p {
 	padding-right: 0;
-}
-
-#services_info #service_box_btn img {
-	margin: 0 0 0 15px;	
 }
 
 /*Services - How do we do -*/

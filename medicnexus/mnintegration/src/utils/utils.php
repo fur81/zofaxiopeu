@@ -13,11 +13,11 @@
  * Este fichero contiene las funcionalidades de uso común dentro del sistema. Garantiza
  * el empleo de funcionalidades básicas y simples, pero que se repiten en más de una
  * ocasión.
- *  
+ *
  * @author Manuel Morejón
  * @copyright 2013 - 2014
  * @access public
- * 
+ *
  */
 
 require_once $GLOBALS['MNI_ES'];
@@ -68,42 +68,76 @@ function getProjectName() {
 	return $projectName;
 }
 
-function setProjectPaypalConfiguration() {
-	
-	switch ($_SESSION['projectId']){
-		case PROJECT_SECOND_OPINION:
-			$GLOBALS['PAY_PRICE'] = PAYPAL_PRICE_SECOND_OPINION;
-			$GLOBALS['PAY_SHIPPING'] = PAYPAL_SHIPPING_SECOND_OPINION;
-			$GLOBALS['PAY_TAX'] = PAYPAL_TAX_SECOND_OPINION;
-			$GLOBALS['PAY_TOTAL_AMOUNT'] = PAYPAL_TOTAL_AMOUNT_SECOND_OPINION;
-			$GLOBALS['PAY_NAME'] = getValueIn('label_project_second_opinion_title');
-			$GLOBALS['PAY_DESCRIPTION'] = getValueIn('label_project_second_opinion_description');
-			break;
-		case PROJECT_VIRTUAL_CONSULTATION:
-			$GLOBALS['PAY_PRICE'] = PAYPAL_PRICE_VIRTUAL_CONSULTATION;
-			$GLOBALS['PAY_SHIPPING'] = PAYPAL_SHIPPING_VIRTUAL_CONSULTATION;
-			$GLOBALS['PAY_TAX'] = PAYPAL_TAX_VIRTUAL_CONSULTATION;
-			$GLOBALS['PAY_TOTAL_AMOUNT'] = PAYPAL_TOTAL_AMOUNT_VIRTUAL_CONSULTATION;
-			$GLOBALS['PAY_NAME'] = getValueIn('label_project_virtual_consultation_title');
-			$GLOBALS['PAY_DESCRIPTION'] = getValueIn('label_project_virtual_consultation_description');
-			break;
-		case PROJECT_RAPID_CONSULTATION:
-			$GLOBALS['PAY_PRICE'] = PAYPAL_PRICE_RAPID_CONSULTATION;
-			$GLOBALS['PAY_SHIPPING'] = PAYPAL_SHIPPING_RAPID_CONSULTATION;
-			$GLOBALS['PAY_TAX'] = PAYPAL_TAX_RAPID_CONSULTATION;
-			$GLOBALS['PAY_TOTAL_AMOUNT'] = PAYPAL_TOTAL_AMOUNT_RAPID_CONSULTATION;
-			$GLOBALS['PAY_NAME'] = getValueIn('label_project_rapid_consultation_title');
-			$GLOBALS['PAY_DESCRIPTION'] = getValueIn('label_project_rapid_consultation_description');
-			break;
-		case PROJECT_HEALTH_PROGRAM:
-			$GLOBALS['PAY_PRICE'] = PAYPAL_PRICE_HEALTH_PROGRAM;
-			$GLOBALS['PAY_SHIPPING'] = PAYPAL_SHIPPING_HEALTH_PROGRAM;
-			$GLOBALS['PAY_TAX'] = PAYPAL_TAX_HEALTH_PROGRAM;
-			$GLOBALS['PAY_TOTAL_AMOUNT'] = PAYPAL_TOTAL_AMOUNT_HEALTH_PROGRAM;
-			$GLOBALS['PAY_NAME'] = getValueIn('label_project_health_program_title');
-			$GLOBALS['PAY_DESCRIPTION'] = getValueIn('label_project_health_program_description');
-			break;
+/**
+ * Establece la configuración de las variables de pago en dependencia
+ * del proyecto seleccionado. Los dos tipos de pagos configurados son
+ * Paypal y TPV.
+ * @param String $paymentType
+ */
+function setProjectPaypalConfiguration( $paymentType ) {
+
+	if ( $paymentType == MN_PAY_PAYPAL) {
+
+		switch ($_SESSION['projectId']){
+			case PROJECT_SECOND_OPINION:
+				$GLOBALS['PAY_PRICE'] = PAYPAL_PRICE_SECOND_OPINION;
+				$GLOBALS['PAY_SHIPPING'] = PAYPAL_SHIPPING_SECOND_OPINION;
+				$GLOBALS['PAY_TAX'] = PAYPAL_TAX_SECOND_OPINION;
+				$GLOBALS['PAY_TOTAL_AMOUNT'] = PAYPAL_TOTAL_AMOUNT_SECOND_OPINION;
+				$GLOBALS['PAY_NAME'] = getValueIn('label_project_second_opinion_title');
+				$GLOBALS['PAY_DESCRIPTION'] = getValueIn('label_project_second_opinion_description');
+				break;
+			case PROJECT_VIRTUAL_CONSULTATION:
+				$GLOBALS['PAY_PRICE'] = PAYPAL_PRICE_VIRTUAL_CONSULTATION;
+				$GLOBALS['PAY_SHIPPING'] = PAYPAL_SHIPPING_VIRTUAL_CONSULTATION;
+				$GLOBALS['PAY_TAX'] = PAYPAL_TAX_VIRTUAL_CONSULTATION;
+				$GLOBALS['PAY_TOTAL_AMOUNT'] = PAYPAL_TOTAL_AMOUNT_VIRTUAL_CONSULTATION;
+				$GLOBALS['PAY_NAME'] = getValueIn('label_project_virtual_consultation_title');
+				$GLOBALS['PAY_DESCRIPTION'] = getValueIn('label_project_virtual_consultation_description');
+				break;
+			case PROJECT_RAPID_CONSULTATION:
+				$GLOBALS['PAY_PRICE'] = PAYPAL_PRICE_RAPID_CONSULTATION;
+				$GLOBALS['PAY_SHIPPING'] = PAYPAL_SHIPPING_RAPID_CONSULTATION;
+				$GLOBALS['PAY_TAX'] = PAYPAL_TAX_RAPID_CONSULTATION;
+				$GLOBALS['PAY_TOTAL_AMOUNT'] = PAYPAL_TOTAL_AMOUNT_RAPID_CONSULTATION;
+				$GLOBALS['PAY_NAME'] = getValueIn('label_project_rapid_consultation_title');
+				$GLOBALS['PAY_DESCRIPTION'] = getValueIn('label_project_rapid_consultation_description');
+				break;
+			case PROJECT_HEALTH_PROGRAM:
+				$GLOBALS['PAY_PRICE'] = PAYPAL_PRICE_HEALTH_PROGRAM;
+				$GLOBALS['PAY_SHIPPING'] = PAYPAL_SHIPPING_HEALTH_PROGRAM;
+				$GLOBALS['PAY_TAX'] = PAYPAL_TAX_HEALTH_PROGRAM;
+				$GLOBALS['PAY_TOTAL_AMOUNT'] = PAYPAL_TOTAL_AMOUNT_HEALTH_PROGRAM;
+				$GLOBALS['PAY_NAME'] = getValueIn('label_project_health_program_title');
+				$GLOBALS['PAY_DESCRIPTION'] = getValueIn('label_project_health_program_description');
+				break;
+		}
+	}else if ( $paymentType == MN_PAY_TPV) {
+
+		switch ($_SESSION['projectId']){
+			case PROJECT_SECOND_OPINION:
+				$GLOBALS['PAY_PRICE'] = TPV_PRICE_SECOND_OPINION;
+				$GLOBALS['PAY_NAME'] = getValueIn('label_project_second_opinion_title');
+				$GLOBALS['PAY_DESCRIPTION'] = getValueIn('label_project_second_opinion_description');
+				break;
+			case PROJECT_VIRTUAL_CONSULTATION:
+				$GLOBALS['PAY_PRICE'] = TPV_PRICE_VIRTUAL_CONSULTATION;
+				$GLOBALS['PAY_NAME'] = getValueIn('label_project_virtual_consultation_title');
+				$GLOBALS['PAY_DESCRIPTION'] = getValueIn('label_project_virtual_consultation_description');
+				break;
+			case PROJECT_RAPID_CONSULTATION:
+				$GLOBALS['PAY_PRICE'] = TPV_PRICE_RAPID_CONSULTATION;
+				$GLOBALS['PAY_NAME'] = getValueIn('label_project_rapid_consultation_title');
+				$GLOBALS['PAY_DESCRIPTION'] = getValueIn('label_project_rapid_consultation_description');
+				break;
+			case PROJECT_HEALTH_PROGRAM:
+				$GLOBALS['PAY_PRICE'] = TPV_PRICE_HEALTH_PROGRAM;
+				$GLOBALS['PAY_NAME'] = getValueIn('label_project_health_program_title');
+				$GLOBALS['PAY_DESCRIPTION'] = getValueIn('label_project_health_program_description');
+				break;
+		}
 	}
+	
 }
 
 function getProjectId() {

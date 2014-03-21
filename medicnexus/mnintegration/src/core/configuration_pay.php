@@ -7,39 +7,45 @@
 # últimos acontecimientos existentes en el área. Cuenta con un sistema
 # de respuesta rápida a partir de las consultas realizadas por el cliente.
 
-// variables de paypal
-// -- monedas
+// variables de monedas
+// -- paypal
 define('PAYPAL_CURRENCY_USD', 'USD');
 define('PAYPAL_CURRENCY_EUR', 'EUR');
+// -- tpv
+define('TPV_CURRENCY_EUR', '978');
 
 // second opinion
+// -- paypal
 define('PAYPAL_PRICE_SECOND_OPINION',       '12.00');
 define('PAYPAL_SHIPPING_SECOND_OPINION',     '0.00');
 define('PAYPAL_TAX_SECOND_OPINION',          '0.00');
 define('PAYPAL_TOTAL_AMOUNT_SECOND_OPINION','12.00');
-define('PAYPAL_NAME_SECOND_OPINION', 'Segunda Opinión');
-define('PAYPAL_DESCRIPTION_SECOND_OPINION', 'Los médicos dan una segunda opinión del servicio.');
+// -- tpv
+define('TPV_PRICE_SECOND_OPINION',       '1200');
 
 // rapid consultation
+// -- paypal
 define('PAYPAL_PRICE_RAPID_CONSULTATION',       '10.00');
 define('PAYPAL_SHIPPING_RAPID_CONSULTATION',     '0.00');
 define('PAYPAL_TAX_RAPID_CONSULTATION',          '0.00');
 define('PAYPAL_TOTAL_AMOUNT_RAPID_CONSULTATION','10.00');
-define('PAYPAL_NAME_RAPID_CONSULTATION', 'Consulta Rápida');
-define('PAYPAL_DESCRIPTION_RAPID_CONSULTATION', 'Los médicos brindan una consulta rápida para necesidades inmediatas.');
+// -- tpv
+define('TPV_PRICE_RAPID_CONSULTATION',       '1000');
 
 // virtual consultation
+// -- paypal
 define('PAYPAL_PRICE_VIRTUAL_CONSULTATION',       '23.00');
 define('PAYPAL_SHIPPING_VIRTUAL_CONSULTATION',     '0.00');
 define('PAYPAL_TAX_VIRTUAL_CONSULTATION',          '0.00');
 define('PAYPAL_TOTAL_AMOUNT_VIRTUAL_CONSULTATION','23.00');
-define('PAYPAL_NAME_VIRTUAL_CONSULTATION', 'Consulta Virtual');
-define('PAYPAL_DESCRIPTION_VIRTUAL_CONSULTATION', 'Los médicos brindan una consulta virtual para los clientes.');
+// -- tpv
+define('TPV_PRICE_VIRTUAL_CONSULTATION',       '2300');
 
 // health program
+// -- paypal
 define('PAYPAL_PRICE_HEALTH_PROGRAM',        '6.00');
 define('PAYPAL_SHIPPING_HEALTH_PROGRAM',     '0.00');
 define('PAYPAL_TAX_HEALTH_PROGRAM',          '0.00');
 define('PAYPAL_TOTAL_AMOUNT_HEALTH_PROGRAM', '6.00');
-define('PAYPAL_NAME_HEALTH_PROGRAM', 'Programa de Salud');
-define('PAYPAL_DESCRIPTION_HEALTH_PROGRAM', 'Se brinda un programa de salud para los consultantes.');
+// -- tpv
+define('TPV_PRICE_HEALTH_PROGRAM',        '600');
