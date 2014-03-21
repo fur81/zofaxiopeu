@@ -44,7 +44,7 @@ if ( isset($_GET['success'])) {
 	}else if( $paymentType == MN_PAY_PAYPAL ) {
 		include_once $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE']; // se carga el servicio paypal
 	}
-	//exit();
+	exit();
 	// solo para cuando paypal no está funcionando
 	//$mantisCore->addIssue($summary, $description, $projectId, $specialistId);
 	//$mantisCore->sendEmail($summary, $description, $projectId, $specialistId, $GLOBALS['PAY_NAME'],

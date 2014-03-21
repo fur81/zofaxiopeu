@@ -30,7 +30,7 @@ JHtml::_('bootstrap.framework');
 $doc->addScript('templates/' .$this->template. '/js/template.js');
 
 // Add Stylesheets
-$doc->addStyleSheet('templates/'.$this->template.'/css/template.css');
+//$doc->addStyleSheet('templates/'.$this->template.'/css/template.css');
 
 // Load optional RTL Bootstrap CSS
 JHtml::_('bootstrap.loadCss', false, $this->direction);
@@ -91,21 +91,21 @@ else
 <body class="body_int">
 	<div class="container">
 		<div class="header_int">
-            <div id="left_header_zone_int">
-                <div id="logo_img_int">
-					<a href="<?php echo $this->baseurl; ?>/index.php"> <img
+            <div class="left_header_zone_int">
+                <div class="logo_img_int">
+					<a href="index.php"> <img
 						src="<?php echo $this->baseurl;?>/templates/medicnexus/images/medicnexus_logo.gif"
 						width="85" height="85" border="0" /> </a>
 				</div>
-				<h1>
+				<h1 class="logo_title_int">
 					<span style="color: #81197f;">MEDIC</span>NEXUS
 				</h1>
-				<h2>
+				<h2 class="slogan_site_int">
 				<?php echo JText::_('TPL_MN_DIRECT_CONNECTION');?>
 				</h2>
 			</div>
-			<div id="right_header_zone_int">
-				<div id="promo_lang_zone">
+			<div class="right_header_zone_int">
+				<div class="promo_lang_zone">
 					<ul>
 						<li><?php echo JText::_('TPL_MN_FOLLOW_US_IN');?>:</li>
 						<li><a href="https://www.facebook.com/pages/Medicnexus/473756712691914" target="_blank"> <img
@@ -124,11 +124,11 @@ else
 
 				</div>
 
-				<div id="language_flag_zone">
+				<div class="language_flag_zone">
 					<jdoc:include type="modules" name="position-0" style="xhtml" />
 				</div>
 
-				<div id="searching_zone">
+				<div class="searching_zone">
 					<table cellpadding="0" cellspacing="0" align="right">
 						<tr>
 							<td style="padding-bottom: 5px;">
@@ -152,15 +152,15 @@ else
 						</tr>
 					</table>
 				</div>
-				<div id="top_menu">
+				<div class="top_menu">
 					<!--Zona del menú principal del sitio-->
 					<jdoc:include type="modules" name="position-1" style="xhtml" />
 				</div>
-                <div id="front_img_header_int"></div>
+                <div class="front_img_header_int"></div>
 			</div>
 			<!-- end .header -->
 		</div>
-		<div id="sitemap_zone">
+		<div class="sitemap_zone">
 			<jdoc:include type="modules" name="position-2" style="none" />
 		</div>
 		<div>
@@ -173,7 +173,7 @@ else
 					<jdoc:include type="modules" name="position-7" style="xhtml" />
 				</div>
 			</div>
-			<div id="contact_zone">
+			<div class="contact_zone">
 
 				<div class="title_bar content_sidebar title_sidebar_text">
 					<div class="box_title_right">
@@ -185,7 +185,7 @@ else
 				<?php echo JText::_('TPL_MN_ATTEND_SERVICE');?>
 				</div>
 
-				<div id="contact_table">
+				<div class="contact_table">
 					<table width="90%" cellpadding="1" cellspacing="1" border="0">
 						<tr>
 							<td width="40%" style="color: #666; font-size: 11px;"
@@ -207,7 +207,7 @@ else
 
 			</div>
             
-            <div id="news_band_zone">
+            <div class="news_band_zone">
 
 				<div class="title_bar content_sidebar title_sidebar_text">
 					<div class="box_title_right">
@@ -230,7 +230,7 @@ else
     <div class="footer">
 			<div id="bottom_menu_site">
 				<ul>
-					<li><a href="<?php echo $this->baseurl; ?>/index.php"><?php echo JText::_('TPL_MN_HOME_UPPER');?>
+					<li><a href="index.php"><?php echo JText::_('TPL_MN_HOME_UPPER');?>
 					</a>
 					</li>
 					<li class="bottom_menu_site_separator">::</li>
