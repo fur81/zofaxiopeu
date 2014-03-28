@@ -1,12 +1,26 @@
 <?php
+# Medicnexus - sistema de gestión médica desarrollado en php
+
+# Medicnexus es un programa para la realización de consultas
+# en línea con médicos especializados. El sitio cuenta con noticias
+# y artículos que podrán mantener actualizados al cliente con los
+# últimos acontecimientos existentes en el área. Cuenta con un sistema
+# de respuesta rápida a partir de las consultas realizadas por el cliente.
+
+# Todos los derechos reservados
+
+
 // se adicionan las variables globales del sistema
 include_once 'configuration.php';
 
 /**
- * Clase para gestionar todo lo referente a las conexiones
- * dentro del sistema.
+ * Clase para gestionar las conexiones dentro del sistema. Establece la conexión
+ * para los servicios web y para las consultas directamente a la base de datos
+ * a través de MySql.
+ * 
  * @author Manuel Morejón
- *
+ * @copyright 2013 - 2014
+ * @uses configuration.php
  */
 class Connection {
 
@@ -22,7 +36,11 @@ class Connection {
 	// para incluir en el joomla este fichero
 	// include( $_SERVER['DOCUMENT_ROOT'] . "/mantis-client/src/mantis_core.php");
 
-	// Patrón Singleton
+	
+	/**
+	 * Constuctor de la clase haciendo uso del patrón Singletón
+	 * @return Connection
+	 */
 	public function __construct() {
 		if (!self::$instance) {
 			$this->loadProxyMySql();
