@@ -90,3 +90,14 @@
 	 * Defien el correo del sitio
 	 */
 	define('MN_JOOMLA_EMAIL_FROM', 'no-reply@medicnexus.com' );
+
+
+################################################
+#     Variables para Módulo de Integración     #
+################################################
+	
+	/**
+	 * Define la página principal para cargar el módulo de integración
+	 * dentro del artículo de Joomla.
+	 */
+	define('MN_MAIN_PAGE', $_SERVER['DOCUMENT_ROOT']. SUB_PROJECT_PATH . '/mnintegration/src/core/configuration.php');
