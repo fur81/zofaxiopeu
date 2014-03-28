@@ -1,4 +1,14 @@
 <?php
+# Medicnexus - sistema de gestión médica desarrollado en php
+
+# Medicnexus es un programa para la realización de consultas
+# en línea con médicos especializados. El sitio cuenta con noticias
+# y artículos que podrán mantener actualizados al cliente con los
+# últimos acontecimientos existentes en el área. Cuenta con un sistema
+# de respuesta rápida a partir de las consultas realizadas por el cliente.
+
+# Todos los derechos reservados
+
 global $values;
 $values['query'] = array(
 
@@ -43,6 +53,9 @@ $values['query'] = array(
 											SELECT id FROM mantis_bug_table WHERE project_id = %value%) AS bugs 
 											ON bug_id = bugs.id WHERE (type = 26 OR type = 25) 
 											GROUP BY bug_id HAVING count % 2 = 1) AS result',
+		'getIssuesByUser' => 'SELECT mantis_bug_table.id AS id FROM mantis_bug_table INNER JOIN mantis_user_table ON mantis_user_table.id = reporter_id
+								WHERE project_id IN (SELECT child_id AS project_id FROM mantis_project_hierarchy_table
+								WHERE parent_id = %projectId%) AND username = "%username%" AND status != 90',
 
 		/** -- historial de incidencias -- */
 		'getLastHistoryBug' => 'SELECT * FROM mantis_bug_history_table WHERE bug_id = %value% ORDER BY id DESC LIMIT 1',
