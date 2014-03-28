@@ -43,6 +43,11 @@ class MantisCore {
 	 */
 	private $currentPassword;
 	/**
+	 * Identificador del usuario en Mantis.
+	 * @var int
+	 */
+	private $currentId;
+	/**
 	 * Puente de conexión para los consumir los servicios web del Mantis.
 	 * @var soap
 	 */
@@ -91,8 +96,6 @@ class MantisCore {
 
 		// si no existe se crea
 		$this->createAccount ( $this->currentUser, $realname, $email );
-		// se asignan los proyectos que le falta 
-		//$this->addAccountToProject();
 	}
 	
 	/**
@@ -141,7 +144,8 @@ class MantisCore {
 			$exist = false;
 			$query = str_replace ( '%value%', '"' . $username . '"', getQuery ( 'findAccountByUsername' ) );
 			$result = $this->proxyMySql->query ( $query );
-			if ($result->fetch_object ()) {
+			if ($data = $result->fetch_object ()) {
+				$this->currentId = $data->id;
 				$exist = true;
 			}
 		} catch ( Exception $e ) {
@@ -152,6 +156,7 @@ class MantisCore {
 	/**
 	 * Obtiene toda la información del usuario almacenada en el sitio Mantis.
 	 * @return stdClass userData
+	 * @deprecated
 	 */
 	public function getUserData() {
 		$result = '';
@@ -164,25 +169,6 @@ class MantisCore {
 		return $result;
 	}
 
-	
-	/*private function addAccountToProject($projectId) {
-		try {
-			// se obtiene el identificador del usuario
-			$idUser = $this->getUserData()->id;
-
-			// se inserta en la base de datos
-			$values = $projectId . ',' . $idUser . ',' . MANTIS_INFORMER_ACCESS;
-			$query = str_replace ( '%values%', $values, getQuery ( 'addAccountToProject' ) );
-			$this->proxyMySql->query ( $query );
-			
-			// se buscan los subproyectos asociados a este proyecto principal
-			$subprojects = $this->getAllSubProjects($projectId);
-			foreach ($subprojects as $subproject){
-				$this->addAccountToProject ($subproject);
-			}
-		} catch ( Exception $e ) {
-		}
-	}*/
 	/**
 	 * Al usurio registrado se le adicionan todos aquellos
 	 * proyectos en los cuales no se encuentra asignado.
@@ -192,7 +178,7 @@ class MantisCore {
 	public function addAccountToProject() {
 		try {
 			// se obtiene el identificador del usuario
-			$idUser = $this->getUserData()->id;
+			$idUser = $this->currentId;
 			// se obtienen todos los proyectos donde no esta incluido
 			$query = str_replace( '%value%', $idUser, getQuery ( 'getProjectNoAsigned' ) );
 			$result = $this->proxyMySql->query ( $query );
@@ -255,14 +241,14 @@ class MantisCore {
 	public function getIssuesWithHistoryCount($projectId) {
 		$total = 0;
 		try {
-			// se obtiene las incidencias asociadas a un proyecto
-			$issuesByUser = $this->proxySoap->mc_project_get_issue_headers (
-			$this->currentUser, $this->currentPassword, $projectId, PAGE_NUMBER, ELEMENTS_PER_PAGE );
-			// para cada incidencia se busca si ha sido leida o no
-			for($i = 0; $i < count ( $issuesByUser ); $i ++) {
-				$issue = $issuesByUser [$i];
+			
+			$query = str_replace( '%projectId%', $projectId, getQuery ( 'getIssuesByUser' ) );
+			$query = str_replace( '%username%', $this->currentUser, $query );
+			$result = $this->proxyMySql->query ( $query );
+			while ( $data = $result->fetch_object () ) {
+				$issueId = $data->id;
 				// se chequea si la incidencia ha sido leída
-				$isIssueRead = $this->isIssueRead($issue->id);
+				$isIssueRead = $this->isIssueRead($issueId);
 				if (!$isIssueRead) {
 					// como no ha sido leída se suma al total
 					$total++;
@@ -426,16 +412,13 @@ class MantisCore {
 		$lastModificationUserId = '';
 		$isIssueRead = TRUE;
 		try {
-			// se obtiene el id del usuario registrado en este momento
-			$idUser = $this->getUserData()->id;
-
 			// se obtiene el ultimo historial
 			$historyBug = $this->getLastHistoryBug($issueId);
 
 			// se chequea que no pertenezca al mismo usuario registrado
-			if ( $historyBug->userId == NULL || $idUser != $historyBug->userId) {
+			if ( $historyBug->userId == NULL || $this->currentId != $historyBug->userId) {
 				$isIssueRead = FALSE;
-
+				
 				// se quita la etiqueta de leido solo si todavia existe
 				$totalHistoriesBugTag = $this->getHistoiesBugTag($issueId);
 				if (bcmod($totalHistoriesBugTag, 2) == 0) {
@@ -445,7 +428,6 @@ class MantisCore {
 					$this->addHistoryBug($historyBug);
 				}
 			}
-
 		} catch (Exception $e) {
 		}
 		return $isIssueRead;
@@ -459,7 +441,7 @@ class MantisCore {
 	public function createHistoryBug($issueId) {
 
 		// se obtiene el id del usuario registrado en este momento
-		$idUser = $this->getUserData()->id;
+		$idUser = $this->currentId;
 			
 		// se ponen los valores del elemento a adicionar
 		$historyBug = new stdClass();

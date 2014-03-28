@@ -38,44 +38,48 @@ function showImageHeader($projectId, $serviceTypeName, $textLabel, $totalIssueFo
 		onclick="redirectToProject('<?php echo PROJECT_RAPID_CONSULTATION;?>')"
 		title="<?php getValue('label_project_rapid_consultation_title');?>"
 		style="cursor: pointer;">
-		<?php
-		$totalIssueForRead = $mantisCore->getIssuesWithHistoryCount(PROJECT_RAPID_CONSULTATION);
-		showImageHeader(PROJECT_RAPID_CONSULTATION, 'quick_consult',
-				'label_project_rapid_consultation_title', $totalIssueForRead);
-		?>
+		<?php if ( getProjectId() == PROJECT_RAPID_CONSULTATION || !isset($_SESSION['project_rapid_consultation'])): ?>
+			<?php $totalIssueForRead = $mantisCore->getIssuesWithHistoryCount(PROJECT_RAPID_CONSULTATION); ?>
+			<?php $_SESSION['project_rapid_consultation'] = $totalIssueForRead;?>
+		<?php endif;?>
+		<?php showImageHeader(PROJECT_RAPID_CONSULTATION, 'quick_consult', 
+				'label_project_rapid_consultation_title', $_SESSION['project_rapid_consultation']);?>
 	</div>
 	<div class="client_options_separator"></div>
 	<div id="client_service_box"
 		onclick="redirectToProject('<?php echo PROJECT_VIRTUAL_CONSULTATION;?>')"
 		title="<?php getValue('label_project_virtual_consultation_title');?>"
 		style="cursor: pointer;">
-		<?php
-		$totalIssueForRead = $mantisCore->getIssuesWithHistoryCount(PROJECT_VIRTUAL_CONSULTATION);
-		showImageHeader(PROJECT_VIRTUAL_CONSULTATION, 'virtual_consult',
-				'label_project_virtual_consultation_title', $totalIssueForRead);
-		?>
+		<?php if ( getProjectId() == PROJECT_VIRTUAL_CONSULTATION || !isset($_SESSION['project_virtual_consultation'])): ?>
+			<?php $totalIssueForRead = $mantisCore->getIssuesWithHistoryCount(PROJECT_VIRTUAL_CONSULTATION);?>
+			<?php $_SESSION['project_virtual_consultation'] = $totalIssueForRead;?>
+		<?php endif;?>		
+		<?php showImageHeader(PROJECT_VIRTUAL_CONSULTATION, 'virtual_consult',
+				'label_project_virtual_consultation_title', $_SESSION['project_virtual_consultation']);?>
 	</div>
 	<div class="client_options_separator"></div>
 	<div id="client_service_box"
 		onclick="redirectToProject('<?php echo PROJECT_SECOND_OPINION;?>')"
 		title="<?php getValue('label_project_second_opinion_title');?>"
 		style="cursor: pointer;">
-		<?php
-		$totalIssueForRead = $mantisCore->getIssuesWithHistoryCount(PROJECT_SECOND_OPINION);
-		showImageHeader(PROJECT_SECOND_OPINION, 'second_opinion',
-				'label_project_second_opinion_title', $totalIssueForRead);
-		?>
+		<?php if ( getProjectId() == PROJECT_SECOND_OPINION || !isset($_SESSION['project_second_opinion'])): ?>
+			<?php $totalIssueForRead = $mantisCore->getIssuesWithHistoryCount(PROJECT_SECOND_OPINION);?>
+			<?php $_SESSION['project_second_opinion'] = $totalIssueForRead;?>
+		<?php endif;?>		
+		<?php showImageHeader(PROJECT_SECOND_OPINION, 'second_opinion',
+				'label_project_second_opinion_title', $_SESSION['project_second_opinion']);?>
 	</div>
 	<div class="client_options_separator"></div>
 	<div id="client_service_box"
 		onclick="redirectToProject('<?php echo PROJECT_HEALTH_PROGRAM;?>')"
 		title="<?php getValue('label_project_health_program_title');?>"
 		style="cursor: pointer;">
-		<?php
-		$totalIssueForRead = $mantisCore->getIssuesWithHistoryCount(PROJECT_HEALTH_PROGRAM);
-		showImageHeader(PROJECT_HEALTH_PROGRAM, 'health_programs',
-				'label_project_health_program_title', $totalIssueForRead);
-		?>
+		<?php if ( getProjectId() == PROJECT_HEALTH_PROGRAM || !isset($_SESSION['project_health_program'])): ?>
+			<?php $totalIssueForRead = $mantisCore->getIssuesWithHistoryCount(PROJECT_HEALTH_PROGRAM);?>
+			<?php $_SESSION['project_health_program'] = $totalIssueForRead;?>
+		<?php endif;?>
+		<?php showImageHeader(PROJECT_HEALTH_PROGRAM, 'health_programs',
+				'label_project_health_program_title', $_SESSION['project_health_program']);?>
 	</div>
 </div>
 <div id="client_options_divider"></div>
