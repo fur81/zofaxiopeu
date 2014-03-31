@@ -1,4 +1,19 @@
 <?php 
+# Medicnexus - sistema de gestión médica desarrollado en php
+
+# Medicnexus es un programa para la realización de consultas
+# en línea con médicos especializados. El sitio cuenta con noticias
+# y artículos que podrán mantener actualizados al cliente con los
+# últimos acontecimientos existentes en el área. Cuenta con un sistema
+# de respuesta rápida a partir de las consultas realizadas por el cliente.
+
+# Todos los derechos reservados
+
+/**
+ * Establece la comunicación con la pasarela de pago TPV. En el formulario se colocan
+ * todos los valores que serán enviados al servicio de pago.
+ */
+
 include_once ( $GLOBALS['TPV_COMMON'] ); // se incluye el fichero de configuración para TPV
 $tpvData = setTPVEnviromentConfiguration('sandbox', $idData);  // las opciones pueden ser 'sandbox' o 'live'
 ?>
