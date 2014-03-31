@@ -7,6 +7,13 @@
 # últimos acontecimientos existentes en el área. Cuenta con un sistema
 # de respuesta rápida a partir de las consultas realizadas por el cliente.
 
+/**
+ * En este fichero se establecen las variables utilizadas para las pasarelas
+ * de pago. Se encuentran definidos los valores para PayPal y para TPV. Cada
+ * variable se encuentra correctamente identificada con un comentario al tipo
+ * de pago que pertenece.
+ */
+
 // variables de monedas
 // -- paypal
 define('PAYPAL_CURRENCY_USD', 'USD');

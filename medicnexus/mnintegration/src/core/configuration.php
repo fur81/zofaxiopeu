@@ -9,6 +9,11 @@
 
 # Todos los derechos reservados
 
+/**
+ * Establece valores generales para ser utilizados dentro del módulo integración.
+ * Cada uno de los valores se encuentran identificado al servicio que pertenecen.
+ */
+
 // variables globales de los sistemas
 //define('MN_HOST', 'localhost');
 //define('MN_MANTIS_ROOT_USERNAME', 'mninside');

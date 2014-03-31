@@ -9,6 +9,10 @@
 
 # Todos los derechos reservados
 
+/**
+ * Establece los pasos necesarios para registrar una consulta.
+ */
+
 // se chequea si se realizó el pago o no
 if ( isset($_GET['success'])) {
 	if ($_GET['success'] == 'true') {

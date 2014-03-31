@@ -9,6 +9,14 @@
 
 # Todos los derechos reservados
 
+/**
+ * Establece el flujo principal de todo el módulo de integración.
+ * 
+ * @author Manuel Morejón
+ * @copyright 2013 - 2014
+ * @access public
+ */
+
 include_once $GLOBALS ['MNI_CORE'];
 include_once $GLOBALS ['MNI_UTILS'];
 $mantisCore = new MantisCore ();

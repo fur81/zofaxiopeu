@@ -1,4 +1,18 @@
 <?php
+# Medicnexus - sistema de gestión médica desarrollado en php
+
+# Medicnexus es un programa para la realización de consultas
+# en línea con médicos especializados. El sitio cuenta con noticias
+# y artículos que podrán mantener actualizados al cliente con los
+# últimos acontecimientos existentes en el área. Cuenta con un sistema
+# de respuesta rápida a partir de las consultas realizadas por el cliente.
+
+# Todos los derechos reservados
+
+/**
+ * Establece los pasos para adjuntar un documento a la consulta ya existente.
+ */
+
 // se obtienen los datos del formulario
 $issueId = $_POST['issueId'];
 if ( isset($_FILES['fileAttached']) ) {
