@@ -9,6 +9,11 @@
 
 # Todos los derechos reservados
 
+/**
+ * Se establecen las consultas que serán realizadas directamente 
+ * a la base de datos mninside.
+ */
+
 global $values;
 $values['query'] = array(
 
