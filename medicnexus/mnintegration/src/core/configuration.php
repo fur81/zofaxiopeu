@@ -9,6 +9,11 @@
 
 # Todos los derechos reservados
 
+/**
+ * Establece valores generales para ser utilizados dentro del módulo integración.
+ * Cada uno de los valores se encuentran identificado al servicio que pertenecen.
+ */
+
 // variables globales de los sistemas
 include_once 'general_config.php';
 define('MANTIS_INFORMER_ACCESS', 25);

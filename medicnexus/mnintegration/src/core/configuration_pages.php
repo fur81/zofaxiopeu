@@ -7,6 +7,12 @@
 # últimos acontecimientos existentes en el área. Cuenta con un sistema
 # de respuesta rápida a partir de las consultas realizadas por el cliente.
 
+/**
+ * En este fichero se establece un nombre para cada uno de los ficheros utilizados
+ * dentro del sistema. De esta forma se utiliza como referencia el nombre en todos
+ * los lugares y en caso de configuración solo sería necesario realizar los ajustes
+ * aquí. Cada fichero tiene identificado la ubicación a la cual pertenece.
+ */
 
 // - paginas del sitio
 // -- src
