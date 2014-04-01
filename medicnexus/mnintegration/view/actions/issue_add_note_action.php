@@ -10,8 +10,14 @@
 # Todos los derechos reservados
 
 /**
- * Se establecen las acciones a realizar para agregar una nota
- * a la consulta ya existente.
+ * Acción para para agregar una nota a la consulta ya existente.
+ * Con las notas el usuario puede establecer la comunicación
+ * con el doctor que lo esté atendiendo.
+ * 
+ * @author Manuel Morejón
+ * @copyright 2013 - 2014
+ * @access public
+ * 
  */
 
 // se obtiene el identificador de la incidencia

@@ -10,7 +10,20 @@
 # Todos los derechos reservados
 
 /**
+ * Plantilla para establecer el encabezado de proyecto que visualiza
+ * el usuario registrado. Se muestran los proyectos y la cantidad de 
+ * consultas que le faltan por revisar.
+ * 
+ * @author Manuel Morejón
+ * @copyright 2013 - 2014
+ * @access public
+ * 
+ */
+
+
+/**
  * Muestra la imagen correspondiente al estado actual del proyecto.
+ * 
  * @param int $projectId
  * @param string $serviceTypeName
  * @param string $textLabel

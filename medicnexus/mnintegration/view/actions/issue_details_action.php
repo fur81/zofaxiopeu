@@ -10,7 +10,15 @@
 # Todos los derechos reservados
 
 /**
- * Establece los pasos para mostar los detalles de una consulta.
+ * Acciones para mostar los detalles de una consulta. En la vista de detalles de la
+ * consulta se habilitan funcionalidades para adjuntar ficheros que puedan dar
+ * claridad de la consulta realizada y se pueden agregar notas como vía de comunicación
+ * con los doctores.
+ * 
+ * @author Manuel Morejón
+ * @copyright 2013 - 2014
+ * @access public
+ * 
  */
 
 // se almacena el identificador de la incidencia en la sessión
