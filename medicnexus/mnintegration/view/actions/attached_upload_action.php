@@ -10,7 +10,12 @@
 # Todos los derechos reservados
 
 /**
- * Establece los pasos para adjuntar un documento a la consulta ya existente.
+ * Acción para adjuntar un documento a la consulta ya existente.
+ * 
+ * @author Manuel Morejón
+ * @copyright 2013 - 2014
+ * @access public
+ * 
  */
 
 // se obtienen los datos del formulario

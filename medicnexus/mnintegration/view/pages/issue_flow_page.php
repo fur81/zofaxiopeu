@@ -10,7 +10,7 @@
 # Todos los derechos reservados
 
 /**
- * Establece el flujo principal de todo el módulo de integración.
+ * Esta página establece el flujo principal de todo el módulo de integración.
  * 
  * @author Manuel Morejón
  * @copyright 2013 - 2014

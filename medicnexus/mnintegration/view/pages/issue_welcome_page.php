@@ -8,6 +8,17 @@
 # de respuesta rápida a partir de las consultas realizadas por el cliente.
 
 # Todos los derechos reservados
+
+/**
+ * Esta página muestra la pantalla de bienvenida a los usuarios registrados.
+ * En ella aparecen los servicios disponibles para realizar las consultas.
+ * 
+ * @author Manuel Morejón
+ * @copyright 2013 - 2014
+ * @access public
+ * 
+ */
+
 ?>
 <div id="client_zone">
 	<?php $mantisCore->addAccountToProject(); // se le adicionan todos los proyectos pendientes al cliente. ?>   

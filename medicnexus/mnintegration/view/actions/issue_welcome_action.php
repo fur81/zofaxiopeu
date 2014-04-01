@@ -10,7 +10,11 @@
 # Todos los derechos reservados
 
 /**
- * Establece las acciones para mostar el inicio de los servicios.
+ * Acción para mostar el inicio de los servicios.
+ * 
+ * @author Manuel Morejón
+ * @copyright 2013 - 2014
+ * @access public
  */
 
 // quedan limpios las variables de sessión

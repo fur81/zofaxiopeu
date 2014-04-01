@@ -10,7 +10,11 @@
 # Todos los derechos reservados
 
 /**
- * Establece las acciones para establecer el proyecto seleccionado.
+ * Acción para establecer el proyecto seleccionado.
+ * 
+ * @author Manuel Morejón
+ * @copyright 2013 - 2014
+ * @access public
  */
 
 // se establece el proyecto seleccionado

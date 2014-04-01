@@ -10,7 +10,14 @@
 # Todos los derechos reservados
 
 /**
- * Establece los pasos necesarios para registrar una consulta.
+ * Acción  para registrar una consulta. En el registro se salva la información
+ * correspondiente al tipo de pago seleccionado. Existen dos tipos de pagos
+ * uno por PayPal y otro por TPV.
+ * 
+ * @author Manuel Morejón
+ * @copyright 2013 - 2014
+ * @access public
+ * 
  */
 
 // se chequea si se realizó el pago o no
