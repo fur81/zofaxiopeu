@@ -48,7 +48,7 @@ a:hover, a:active, a:focus {
 
 input{
 	font-size: 12px;
-	border: 1px solid #999;
+	border: 1px solid #666;
 	color: #666;
 	height: 16px;	
 }
@@ -810,7 +810,7 @@ li.maximenuck {margin: 0; padding: 0px;}
 }
 
 .control-group {
-	line-height: 22px;	
+	line-height: 18px;	
 }
 
 .mn-control-label {
@@ -819,7 +819,7 @@ li.maximenuck {margin: 0; padding: 0px;}
 }
 
 .mn-input-small {
-    border: 1px solid #1aa9b8;
+    border: 1px solid #666;
     color: #666;
     font-size: 12px;
     height: 16px;
@@ -857,7 +857,7 @@ li.maximenuck {margin: 0; padding: 0px;}
 	/*display: inline;*/
 	background: url(../images/link_bullet_bg.gif) no-repeat center left;
 	padding-left: 10px;
-	color: #333;
+	color: #666;
 }
 
 .mn-unstyled li a:hover {
@@ -1010,38 +1010,108 @@ li.maximenuck {margin: 0; padding: 0px;}
 
 /*Inicio estilos de área de mensajes de Joomla*/
 
+/*alert-message*/
+.alert.alert-message {
+	background-color: #DFF0D8;
+    border: 1px solid #468847/*#D6E9C6*/;
+}
+.alert.alert-message .close {
+	color: #468847;	
+	border: 1px solid #468847;	
+}
+.alert.alert-message .alert-heading {
+    color: #468847;
+    margin: 10px 0 0 35px;
+    padding: 0 0 5px 0;
+    text-transform: uppercase;
+	font-weight: bold;	
+}
+.alert.alert-message p {
+    color: #468847;	
+}
+/*alert-warning*/
+.alert.alert-warning {
+	background-color: #FCF8E3;
+    border: 1px solid #C09853/*#FBEED5*/;
+}
+.alert.alert-warning .close {
+	color: #C09853;	
+	border: 1px solid #C09853;	
+}
+.alert.alert-warning .alert-heading {
+	color: #C09853;
+    margin: 10px 0 0 35px;
+    padding: 0 0 5px 0;
+    text-transform: uppercase;
+	font-weight: bold;	
+}
+.alert.alert-warning p {
+    color: #C09853;	
+}
+/*alert-success*/
+.alert.alert-success {
+	background-color: #DFF0D8;
+    border: 1px solid #468847/*#D6E9C6*/;
+}
+.alert.alert-success .close {
+	color: #468847;	
+	border: 1px solid #468847;	
+}
+.alert.alert-success .alert-heading {
+    color: #468847;
+    margin: 10px 0 0 35px;
+    padding: 0 0 5px 0;
+    text-transform: uppercase;
+	font-weight: bold;	
+}
+.alert.alert-success p {
+    color: #468847;	
+}
+/*alert-error*/
+.alert.alert-error {
+	background-color: #EED3D7;
+    border: 1px solid #B94A48;
+}
+.alert.alert-error .close {
+	color: #B94A48;	
+	border: 1px solid #B94A48;	
+}
+.alert.alert-error .alert-heading {
+    color: #B94A48;
+    margin: 10px 0 0 35px;
+    padding: 0 0 5px 0;
+    text-transform: uppercase;
+	font-weight: bold;	
+}
+.alert.alert-error p {
+    color: #B94A48;	
+}
+.alert {
+	font-size: 12px;
+	line-height: 16px;
+	margin-top: 5px;
+	text-shadow: 0 2px 0 rgba(255, 255, 255, 0.5);	
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+}
+.alert p {
+	padding: 5px 10px 0 35px;
+}
 #system-message-container {
 	margin: 0;
-	/*border: 1px solid #1AA9B8;*/
 	margin-bottom: 5px;
 }
-#system-message {
-	color: #333;
-	font-size: 12px;
-	/*border: 1px solid #1AA9B8;*/
-}
-#system-message p {
-	padding: 10px 0 0 35px;
-	border-top: 1px solid #1AA9B8;
-	margin-top: -10px;
-}
-.alert {}
-
+#system-message {}
 .alert-warning {}
 
 .close {
 	color: #333;	
 	padding: 0 5px;
 	float: left;
-	border: 1px solid #1AA9B8;
+	border: 1px solid #333;
 	margin: 5px;
 	cursor: pointer;	
-}
-
-.alert-heading {
-	padding: 10px 0 0 35px;
-	text-transform: uppercase;
-	color: #333;	
 }
 
 /*Fin estilos de área de mensajes de Joomla*/
@@ -1052,7 +1122,7 @@ li.maximenuck {margin: 0; padding: 0px;}
 
 .registration_info_title {
 	color: #FFF;
-	margin: -32px 0 20px 8px;
+	margin: -34px 0 20px 0;
 	font-size: 12px;
 	font-weight: bold;
 	background: url(../images/bg_title_box.png) no-repeat left 5px !important;
@@ -1061,7 +1131,7 @@ li.maximenuck {margin: 0; padding: 0px;}
 
 fieldset {
 	font-size: 12px;
-	color: #666;
+	color: #333;
 	border: 1px solid #1AA9B8;	
 	padding: 10px 10px 0 10px;
 	margin-bottom: 10px;
@@ -1094,7 +1164,7 @@ fieldset {
 /*navs*/
 
 .nav.nav-tabs.nav-stacked {
-	line-height: 16px;
+	line-height: 18px;
 	font-size: 11px;
 	margin-bottom: 10px;	
 }
@@ -1123,12 +1193,12 @@ fieldset {
 	border-top-left-radius: 4px;*/
 }
 .nav-tabs.nav-stacked > li:last-child > a {
-	-webkit-border-bottom-right-radius: 4px;
-	-moz-border-radius-bottomright: 4px;
-	border-bottom-right-radius: 4px;
-	-webkit-border-bottom-left-radius: 4px;
-	-moz-border-radius-bottomleft: 4px;
-	border-bottom-left-radius: 4px;
+	-webkit-border-bottom-right-radius: 2px;
+	-moz-border-radius-bottomright: 2px;
+	border-bottom-right-radius: 2px;
+	-webkit-border-bottom-left-radius: 2px;
+	-moz-border-radius-bottomleft: 2px;
+	border-bottom-left-radius: 2px;
 }
 .nav-tabs.nav-stacked > li > a:hover,
 .nav-tabs.nav-stacked > li > a:focus {
@@ -2216,7 +2286,7 @@ fieldset {
 
 .remind-reset-form-title {
 	color: #FFF;
-	margin: -23px 0 20px 8px;
+	margin: -23px 0 20px 10px;
 	font-size: 12px;
 	font-weight: bold;
 	background: url(../images/bg_title_box.png) no-repeat left 4px !important;
@@ -2224,6 +2294,7 @@ fieldset {
 }
 
 .remind p {
+	font-size: 12px;
 	padding: 0 10px;
 }
 
@@ -2236,6 +2307,7 @@ fieldset {
 /*Inicio estilos Reset*/
 
 .reset p {
+	font-size: 12px;
 	padding: 0 10px;	
 }
 
