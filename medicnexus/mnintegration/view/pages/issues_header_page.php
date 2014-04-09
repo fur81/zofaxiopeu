@@ -75,12 +75,11 @@
 				<?php if ($i % 2 == 0): ?>
 				<tr class="managed-table-tr"
 					onclick="data(<?php echo $issue->id;?>)" style="cursor: pointer;">
-					<?php else: ?>
-				
-				
+				<?php else: ?>
 				<tr class="managed-table-tr-alternate"
 					onclick="data(<?php echo $issue->id;?>)" style="cursor: pointer;">
-					<?php endif;?>
+				<?php endif;?>
+					
 					<td><?php if (!$isIssueRead): ?> <strong><?php  echo getDateFormat($issue->last_updated); ?>
 					</strong> <?php else:?> <?php echo getDateFormat($issue->last_updated); ?>
 					<?php endif; ?>
@@ -113,13 +112,12 @@
 			</table>
 		</div>
 	</div>
-	<div class="controls">
+	<div class="controls" style="float: left;">
 		<button type="button" onclick="redirectToAddIssue()"
 			name="issueReport" style="cursor: pointer; margin: 0 0 20px 10px;">
 			<?php getValue('label_report_consultation');?>
 		</button>
 	</div>
-
 </div>
 
 <!-- formularios para activar las opciones del panel -->
