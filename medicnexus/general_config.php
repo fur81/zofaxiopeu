@@ -55,7 +55,7 @@
 	/**
 	 * Define el tamaño máximo para los ficheros adjuntos
 	 */
-	define('MN_MANTIS_FILE_MAX_SIZE', 1224000 );  # in bytes
+	define('MN_MANTIS_FILE_MAX_SIZE', 5120000 );  # in bytes
 	/**
 	 * Define la unidad de medida para los ficheros adjuntos
 	 */
