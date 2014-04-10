@@ -405,7 +405,7 @@ else
 		<!-- end .footer -->
 		<div id="final_site_band">
 			<ul>
-				<li><span style="color: #81197f;">MEDIC</span>NEXUS 2013</li>
+				<li><span style="color: #81197f;">MEDIC</span>NEXUS 2014</li>
 				<li>|</li>
 				<li><?php echo JText::_('TPL_MN_ALL_RIGHT_RESERVED_UPPER');?></li>
 			</ul>
