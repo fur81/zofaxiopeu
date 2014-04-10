@@ -77,6 +77,7 @@ $values[L_SPANISH] = array(
 		'label_reports' => 'Reportes',
 		'label_service' => 'Servicio',
 		'label_documents' => 'Documentos',
+		'label_consultList' => 'Listado de Consultas',
 		'label_select' => '-- Seleccione --',
 		'label_uploadSize' => 'El fichero que se desee adjuntar no puede ser mayor a ',
 		'label_documentsInfo' => 'Usted podrá adjuntar todos los ficheros que desee a la consulta una vez que esta ha 

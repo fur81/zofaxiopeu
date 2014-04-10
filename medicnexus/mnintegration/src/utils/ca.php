@@ -77,6 +77,7 @@ $values[L_CATALAN] = array(
 		'label_reports' => 'Informes',
 		'label_service' => 'Servicio',
 		'label_documents' => 'Documents',
+		'label_consultList' => 'Listado de Consultas',
 		'label_select' => '-- Seleccioneu --',
 		'label_uploadSize' => 'El fitxer que es vulgui adjuntar no pot ser major a ',
 		'label_documentsInfo' => 'Vostè podrà adjuntar tots els fitxers que vulgueu a la 
