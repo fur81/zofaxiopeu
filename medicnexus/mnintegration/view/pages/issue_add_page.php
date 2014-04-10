@@ -89,14 +89,17 @@
 						</td>
 						<td colspan="2"><input id="summaryText" type="text"
 							name="summaryText" maxlength="128" style="width: 100%;"
-							title="<?php getValue('msg_required_summary');?>">
+							title="<?php getValue('msg_required_summary');?>"
+							placeholder="<?php getValue('msg_required_summary');?>">
 						</td>
 					</tr>
 					<tr>
 						<td class="consult_det_title" valign="top"><label>*<?php getValue('label_description');?>:</label>
 						</td>
 						<td colspan="2"><textarea style="width: 99%;" rows="6"
-								name="descriptionTextArea" id="descriptionTextArea"></textarea>
+								name="descriptionTextArea" id="descriptionTextArea"
+								title="<?php getValue('msg_required_descrition');?>"
+								placeholder="<?php getValue('msg_required_descrition');?>"></textarea>
 						</td>
 					</tr>
 				</table>
