@@ -46,7 +46,7 @@ a:hover, a:active, a:focus {
 
 /*Iicio HTML Forms*/
 
-input{
+input {
 	font-size: 12px;
 	border: 1px solid #666;
 	color: #666;
@@ -372,6 +372,146 @@ body {
 .searching_zone ul li a:hover {
 	text-decoration: underline;	
 }
+
+/*Inicio estilos Joomla Search*/
+
+.search {
+	padding: 0 5px 5px 5px;	
+}
+
+.page-title/*search_info_title*/ {
+	color: #FFF;
+	margin: -23px 0 0 5px;
+	font-size: 12px;
+	font-weight: bold;
+	background: url(../images/bg_title_box.png) no-repeat left 5px !important;
+	padding-left: 15px;	
+}
+
+#search-searchword {
+	margin: 20px 0 5px 0;	
+}
+
+.searchintro p {
+	font-size: 12px;
+	font-weight: normal;
+	margin: 10px 0;
+	padding: 0; 	
+}
+
+.btn-group button {
+	margin-top: 5px;
+	min-width: 100px;
+	height: 25px;
+	background: url(../images/button_bg.gif) repeat-x;
+	border: 0;
+	color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+	/*text-transform: uppercase;*/
+	font-weight: bold;	
+}
+
+.btn-group button:hover {
+	margin-top: 5px;
+	min-width: 100px;
+	height: 25px;
+	background: url(../images/button_bg_hover.gif) repeat-x;
+	border: 0;
+	color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+	/*text-transform: uppercase;*/
+	font-weight: bold;	
+}
+
+.pull-left {
+	text-align: left;
+	/*float: left;	*/
+}
+
+.phrases {
+	margin-top: 10px;
+	padding: 0 10px 10px 5px;	
+}
+
+.only {
+	margin: 0 5px 10px 5px;
+}
+
+.form-limit {
+	font-size: 12px;
+    font-weight: bold;
+    margin: 15px 0 0 5px;	
+}
+
+.search-results {
+	padding: 0 5px;	
+}
+
+.result-title {
+	border-top: 1px dotted #333;	
+	padding-top: 10px;
+}
+
+.result-created {
+	margin-bottom: 10px;
+	color: #1AA9B8;	
+	margin-left: 15px;
+}
+
+.result-title a {
+	font-size: 12px;
+	color: #81197F;
+	font-weight: bold;
+}
+
+.result-title a:hover {
+	text-decoration: underline;
+}
+
+.result-text {
+	text-align: justify;
+	color: #333;
+	margin-left: 15px;
+}
+
+.small {
+	color: #333;
+	margin-left: -25px;	
+}
+
+dd,dt,dd {
+	font-size: 12px;
+	line-height: 20px;	
+}
+
+#searchphraseall-lbl {
+	vertical-align: middle;	
+}
+
+.error {
+	color: #B94A48;
+	font-size: 12px;
+	border: 1px solid #B94A48;
+	padding: 5px 10px;	
+	margin-bottom: 5px;
+}
+
+.pagination {
+	color: #81197F;
+    font-size: 12px;
+	text-align: center;
+	margin-bottom: 10px;	
+}
+
+/*Fin estilos Joomla Search*/
 
 .top_menu {
 	width: 699px;
@@ -1116,6 +1256,8 @@ li.maximenuck {margin: 0; padding: 0px;}
 
 /*Fin estilos de área de mensajes de Joomla*/
 
+/*Inicio estilos Registration*/´
+
 .registration {
 	padding: 10px;	
 }
@@ -1128,6 +1270,8 @@ li.maximenuck {margin: 0; padding: 0px;}
 	background: url(../images/bg_title_box.png) no-repeat left 5px !important;
 	padding-left: 15px;
 }
+
+/*Fin estilos Registration*/
 
 fieldset {
 	font-size: 12px;
@@ -1771,14 +1915,6 @@ fieldset {
 	margin: 20px 0 30px;	
 }
 
-.consult_det_title {
-	color: #333;
-	font-size: 12px;
-	text-align: justify;	
-	font-weight: bold;
-	vertical-align: top;
-}
-
 .consult_det_title_td {
 	color: #333;
 	font-size: 12px;
@@ -1790,12 +1926,6 @@ fieldset {
 .consult_det_title_td:hover {
 	text-decoration: underline;
 	cursor: pointer;
-}
-
-.consult_det_info {
-	color: #666;
-	font-size: 12px;
-	text-align: justify;	
 }
 
 .consult_det_info_td {
