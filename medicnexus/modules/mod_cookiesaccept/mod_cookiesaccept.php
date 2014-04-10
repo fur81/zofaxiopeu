@@ -13,8 +13,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 $document = JFactory::getDocument();
 $document->addStyleSheet('modules/mod_cookiesaccept/screen.css');
 
-if($params->get('jquery'))
-    $document->addScript("http://code.jquery.com/jquery-latest.min.js");
+//if($params->get('jquery'))
+    //$document->addScript("http://code.jquery.com/jquery-latest.min.js");
 $color = $params->get('color');
 $position = $params->get('position');
 $enable_info = $params->get('enable_info');
