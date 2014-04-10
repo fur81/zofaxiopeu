@@ -42,7 +42,7 @@
 				<img src="templates/medicnexus/images/reports_list_icon.gif" />
 			</div>
 			<div class="consultation_detail_title">
-			<?php echo 'Listado de Consultas';?>
+			<?php echo getValue('label_consultList');?>
 			</div>
 		</div>
 		<div class="consultation_detail_body">
@@ -57,10 +57,10 @@
 					<td width="25%" align="left"><label class="head_issues_title"><?php getValue('label_speciality');?>
 					</label>
 					</td>
-					<td width="10%" align="left"><label class="head_issues_title"><?php getValue('label_attached');?>
+					<td width="10%" align="center"><label class="head_issues_title"><?php getValue('label_attached');?>
 					</label>
 					</td>
-					<td width="10%" align="left"><label class="head_issues_title"><?php getValue('label_notes');?>
+					<td width="10%" align="center"><label class="head_issues_title"><?php getValue('label_notes');?>
 					</label>
 					</td>
 				</tr>
