@@ -1915,6 +1915,14 @@ fieldset {
 	margin: 20px 0 30px;	
 }
 
+.consult_det_title {
+	color: #333;
+	font-size: 12px;
+	text-align: justify;	
+	font-weight: bold;
+	vertical-align: top;
+}
+
 .consult_det_title_td {
 	color: #333;
 	font-size: 12px;
@@ -1926,6 +1934,12 @@ fieldset {
 .consult_det_title_td:hover {
 	text-decoration: underline;
 	cursor: pointer;
+}
+
+.consult_det_info {
+	color: #666;
+	font-size: 12px;
+	text-align: justify;	
 }
 
 .consult_det_info_td {
