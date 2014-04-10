@@ -74,7 +74,7 @@ function getProjectName() {
  * Paypal y TPV.
  * @param String $paymentType
  */
-function setProjectPaypalConfiguration( $paymentType ) {
+function setProjectPaypalConfiguration( $paymentType = MN_PAY_PAYPAL) {
 
 	if ( $paymentType == MN_PAY_PAYPAL) {
 
