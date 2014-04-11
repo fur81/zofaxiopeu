@@ -504,6 +504,10 @@ dd,dt,dd {
 	margin-bottom: 5px;
 }
 
+/*Fin estilos Joomla Search*/
+
+/*Inicio estilos Pagination*/
+
 .pagination {
 	color: #81197F;
     font-size: 12px;
@@ -511,7 +515,28 @@ dd,dt,dd {
 	margin-bottom: 10px;	
 }
 
-/*Fin estilos Joomla Search*/
+.pagination-list li {
+	
+}
+
+.pagination ul li {
+	display: inline;
+}
+
+.pagenav {
+	background: none !important;
+	color: #81197F !important;
+}
+
+.pagenav:hover {
+	text-decoration: underline;	
+}
+
+.active a {
+	background: none !important;	
+}
+
+/*Fin estilos Pagination*/
 
 .top_menu {
 	width: 699px;
@@ -737,7 +762,6 @@ dd,dt,dd {
 	border-radius: 2px 2px 2px 2px;
 	-webkit-border-radius: 2px 2px 2px 2px;
 	-moz-border-radius: 2px 2px 2px 2px;
-	/*clear: both;*/
 }
 
 #articles_zone {
@@ -1130,7 +1154,7 @@ li.maximenuck {margin: 0; padding: 0px;}
 }
 
 .item-page p img {
-	margin: 0 10px 0 0; 
+	margin: 0 10px; 
 	border: 1px solid #1aa9b8;
 	float: left;	
 }
@@ -1309,8 +1333,9 @@ fieldset {
 
 .nav.nav-tabs.nav-stacked {
 	line-height: 18px;
-	font-size: 11px;
+	font-size: 12px;
 	margin-bottom: 10px;	
+	color: #81197F;
 }
 .nav-stacked > li {
 	float: none;
@@ -2491,6 +2516,11 @@ fieldset {
 	padding: 0 15px;
 }
 
+.blog img {
+	border: 1px solid #1AA9B8;
+	margin: 0 10px;
+}
+
 .blog .page-header h2 {
 	padding: 0;
 }
@@ -2516,6 +2546,10 @@ p.readmore {
 
 .readmore a {
 	color: #81197f;
+}
+
+.items-more {
+	margin: 30px 10px 0 10px;
 }
 
 /*Fin estilos Blog Noticias*/
