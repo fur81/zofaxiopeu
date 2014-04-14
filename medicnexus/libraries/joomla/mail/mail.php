@@ -437,11 +437,11 @@ class JMail extends PHPMailer
 	 *
 	 * @since   11.1
 	 */
-	public function sendMail($from, $fromName, $recipient, $subject, $body, $mode = false, $cc = null, $bcc = null, $attachment = null,
+	public function sendMail($from, $fromName, $recipient, $subject, $body, $mode = true, $cc = null, $bcc = null, $attachment = null,
 		$replyTo = null, $replyToName = null)
 	{
 		$this->setSubject($subject);
-		$this->setBody($body);
+		$this->setBody( JText::_('TPL_MN_EMAIL_HEADER') . $body . JText::_('TPL_MN_EMAIL_FOOTER') );
 
 		// Are we sending the email as HTML?
 		if ($mode)
