@@ -958,7 +958,7 @@ function email_send( $p_email_data ) {
 			break;
 	}
 
-	$mail->IsHTML( false );              # set email format to plain text
+	$mail->IsHTML( true );              # set email format to plain text
 	$mail->WordWrap = 80;              # set word wrap to 50 characters
 	$mail->Priority = $t_email_data->metadata['priority'];  # Urgent = 1, Not Urgent = 5, Disable = 0
 	$mail->CharSet = $t_email_data->metadata['charset'];
@@ -1190,8 +1190,10 @@ function email_bug_info_to_one_user( $p_visible_bug_data, $p_message_id, $p_proj
 	$t_subject = '[Medicnexus]: ' . lang_project_name( $p_visible_bug_data['email_project'] );
 	
 	# build message
-
-	$t_message = lang_get_defaulted( $p_message_id, null );
+	# se agrega el encabezado del mensaje
+	$t_message = lang_get('tpl_mn_email_header');
+	
+	$t_message .= lang_get_defaulted( $p_message_id, null );
 
 	if( is_array( $p_header_optional_params ) ) {
 		$t_message = vsprintf( $t_message, $p_header_optional_params );
@@ -1205,6 +1207,9 @@ function email_bug_info_to_one_user( $p_visible_bug_data, $p_message_id, $p_proj
 	
 	$t_message .= email_format_bug_message_medicnexus( $p_visible_bug_data );
 
+	# se colocal final del formato del mensaje
+	$t_message .= lang_get('tpl_mn_email_footer');
+	
 	# build headers
 	$t_bug_id = $p_visible_bug_data['email_bug'];
 	$t_message_md5 = md5( $t_bug_id . $p_visible_bug_data['email_date_submitted'] );
