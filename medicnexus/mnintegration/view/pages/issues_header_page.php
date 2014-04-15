@@ -42,7 +42,7 @@
 				<img src="templates/medicnexus/images/reports_list_icon.gif" />
 			</div>
 			<div class="consultation_detail_title">
-			<?php echo 'Listado de Consultas';?>
+			<?php echo getValue('label_consultList');?>
 			</div>
 		</div>
 		<div class="consultation_detail_body">
@@ -57,10 +57,10 @@
 					<td width="25%" align="left"><label class="head_issues_title"><?php getValue('label_speciality');?>
 					</label>
 					</td>
-					<td width="10%" align="left"><label class="head_issues_title"><?php getValue('label_attached');?>
+					<td width="10%" align="center"><label class="head_issues_title"><?php getValue('label_attached');?>
 					</label>
 					</td>
-					<td width="10%" align="left"><label class="head_issues_title"><?php getValue('label_notes');?>
+					<td width="10%" align="center"><label class="head_issues_title"><?php getValue('label_notes');?>
 					</label>
 					</td>
 				</tr>
@@ -75,12 +75,11 @@
 				<?php if ($i % 2 == 0): ?>
 				<tr class="managed-table-tr"
 					onclick="data(<?php echo $issue->id;?>)" style="cursor: pointer;">
-					<?php else: ?>
-				
-				
+				<?php else: ?>
 				<tr class="managed-table-tr-alternate"
 					onclick="data(<?php echo $issue->id;?>)" style="cursor: pointer;">
-					<?php endif;?>
+				<?php endif;?>
+					
 					<td><?php if (!$isIssueRead): ?> <strong><?php  echo getDateFormat($issue->last_updated); ?>
 					</strong> <?php else:?> <?php echo getDateFormat($issue->last_updated); ?>
 					<?php endif; ?>
@@ -113,13 +112,12 @@
 			</table>
 		</div>
 	</div>
-	<div class="controls">
+	<div class="controls" style="float: left;">
 		<button type="button" onclick="redirectToAddIssue()"
 			name="issueReport" style="cursor: pointer; margin: 0 0 20px 10px;">
 			<?php getValue('label_report_consultation');?>
 		</button>
 	</div>
-
 </div>
 
 <!-- formularios para activar las opciones del panel -->

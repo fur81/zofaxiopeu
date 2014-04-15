@@ -131,7 +131,7 @@
 							<form enctype="multipart/form-data" method="post" action="#"
 								id="uploadFileForm" name="uploadFileForm" >
 								<input class="nicefileinput nice" type="file" id="fileAttached"
-									name="fileAttached" width=""> <input type="hidden"
+									name="fileAttached" > <input type="hidden"
 									name="issueAction" value="uploadAttachedAction"> <input
 									type="hidden" name="flow" id="flow" value="detailsIssue" /> <input
 									type="hidden" name="issueId" id="issueId"
@@ -212,7 +212,8 @@
 						<form id="addNoteIssueForm" name="addNoteIssueForm" action="#"
 							method="post">
 							<textarea name="noteTextArea" rows="3" style="width: 100%"
-								class="managed-chat-td"></textarea>
+								class="managed-chat-td"
+								placeholder="<?php getValue('label_new_note');?>"></textarea>
 							<input type="hidden" name="issueId" id="issueId"
 								value="<?php echo $issueId;?>"> <input type="hidden"
 								id="issueAction" name="issueAction" value="addIssueNoteAction">
@@ -286,5 +287,4 @@
 	$("input[type=file]").nicefileinput({ 
 		label : '<?php getValue('button_browse');?>'
 	});
-	
 </script>

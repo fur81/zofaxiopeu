@@ -21,7 +21,7 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 			<input type="text" name="searchword" placeholder="<?php echo JText::_('COM_SEARCH_SEARCH_KEYWORD'); ?>" id="search-searchword" size="30" maxlength="<?php echo $upper_limit; ?>" value="<?php echo $this->escape($this->origkeyword); ?>" class="inputbox" />
 		</div>
 		<div class="btn-group pull-left">
-			<button name="Search" onclick="this.form.submit()" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('COM_SEARCH_SEARCH');?>"><span class="icon-search"></span></button>
+			<button name="Search" onclick="this.form.submit()" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('COM_SEARCH_SEARCH');?>"><span class="icon-search"><?php echo JHtml::tooltipText('COM_SEARCH_SEARCH');?></span></button>
 		</div>
 		<input type="hidden" name="task" value="search" />
 		<div class="clearfix"></div>
@@ -34,30 +34,45 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 	</div>
 
 	<fieldset class="phrases">
-		<legend><?php echo JText::_('COM_SEARCH_FOR');?>
-		</legend>
-			<div class="phrases-box">
-			<?php echo $this->lists['searchphrase']; ?>
+		<legend><?php echo JText::_('COM_SEARCH_FOR');?></legend>
+			<table cellpadding="3" cellspacing="3">
+            <tr>
+            <div class="phrases-box">
+			<td colspan="2"><?php echo $this->lists['searchphrase']; ?></td>
 			</div>
+            </tr>
 			<div class="ordering-box">
-			<label for="ordering" class="ordering">
+       		<tr>
+			<td width="30px"><label for="ordering" class="ordering">
 				<?php echo JText::_('COM_SEARCH_ORDERING');?>
-			</label>
-			<?php echo $this->lists['ordering'];?>
+			</label></td>
+			<td><?php echo $this->lists['ordering'];?></td>
+            </tr>
+            </table>
 			</div>
 	</fieldset>
 
 	<?php if ($this->params->get('search_areas', 1)) : ?>
 		<fieldset class="only">
 		<legend><?php echo JText::_('COM_SEARCH_SEARCH_ONLY');?></legend>
+		
+		<table width="80%" cellpadding="2" cellspacing="2">
+       	<tr>
 		<?php foreach ($this->searchareas['search'] as $val => $txt) :
 			$checked = is_array($this->searchareas['active']) && in_array($val, $this->searchareas['active']) ? 'checked="checked"' : '';
 		?>
 		<label for="area-<?php echo $val;?>" class="checkbox">
-			<input type="checkbox" name="areas[]" value="<?php echo $val;?>" id="area-<?php echo $val;?>" <?php echo $checked;?> >
+			<td width="10px">
+            	<input type="checkbox" name="areas[]" value="<?php echo $val;?>" id="area-<?php echo $val;?>" <?php echo $checked;?> >
+            </td>
+            <td>
 			<?php echo JText::_($txt); ?>
+            </td>
 		</label>
 		<?php endforeach; ?>
+        </tr>
+        </table>
+        
 		</fieldset>
 	<?php endif; ?>
 

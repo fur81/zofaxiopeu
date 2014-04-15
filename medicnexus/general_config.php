@@ -55,7 +55,7 @@
 	/**
 	 * Define el tamaño máximo para los ficheros adjuntos
 	 */
-	define('MN_MANTIS_FILE_MAX_SIZE', 1224000 );  # in bytes
+	define('MN_MANTIS_FILE_MAX_SIZE', 5120000 );  # in bytes
 	/**
 	 * Define la unidad de medida para los ficheros adjuntos
 	 */
@@ -89,15 +89,5 @@
 	/**
 	 * Defien el correo del sitio
 	 */
-	define('MN_JOOMLA_EMAIL_FROM', 'no-reply@medicnexus.com' );
+	define('MN_JOOMLA_EMAIL_FROM', 'manuelminfo@gmail.com' );
 
-
-################################################
-#     Variables para Módulo de Integración     #
-################################################
-	
-	/**
-	 * Define la página principal para cargar el módulo de integración
-	 * dentro del artículo de Joomla.
-	 */
-	define('MN_MAIN_PAGE', $_SERVER['DOCUMENT_ROOT']. SUB_PROJECT_PATH . '/mnintegration/src/core/configuration.php');
