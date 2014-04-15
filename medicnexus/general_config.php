@@ -89,5 +89,5 @@
 	/**
 	 * Defien el correo del sitio
 	 */
-	define('MN_JOOMLA_EMAIL_FROM', 'no-reply@medicnexus.com' );
+	define('MN_JOOMLA_EMAIL_FROM', 'manuelminfo@gmail.com' );
 
