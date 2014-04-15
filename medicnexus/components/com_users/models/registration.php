@@ -446,12 +446,12 @@ class UsersModelRegistration extends JModelForm
 			{
 				$emailBody = JText::sprintf(
 					'COM_USERS_EMAIL_REGISTERED_WITH_ACTIVATION_BODY',
-					$data['name'],
+					//$data['name'],
 					$data['sitename'],
-					$data['activate'],
-					$data['siteurl'],
 					$data['username'],
-					$data['password_clear']
+					$data['password_clear'],
+					$data['activate'],
+					$data['siteurl']
 				);
 			}
 			else
