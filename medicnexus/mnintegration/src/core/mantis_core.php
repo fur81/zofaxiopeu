@@ -241,7 +241,6 @@ class MantisCore {
 	public function getIssuesWithHistoryCount($projectId) {
 		$total = 0;
 		try {
-			
 			$query = str_replace( '%projectId%', $projectId, getQuery ( 'getIssuesByUser' ) );
 			$query = str_replace( '%username%', $this->currentUser, $query );
 			$result = $this->proxyMySql->query ( $query );
@@ -841,36 +840,33 @@ class MantisCore {
 	 */
 	public function sendEmail($summary, $description, $projectId, $specialistId, $payName,
 							$payPrice, $payTax, $payTotalAmount) {
-		// se obtiene el objeto JMail que es gestionado por Joomla
-		$mailer = JFactory::getMailer();						
-		// se obtiene las configuraciones generales de Joomla
+		// se obtiene el nombre de la especialidad
+		$project = $this->getProject($projectId);	
+		// se obtiene el nombre del médico
+		$specialist = $this->getUserById($specialistId);						
+		// se obtienen las configuraciones generales de Joomla
 		$config = JFactory::getConfig();
-		// se asignan los valores generales de Joomla al correo nuevo
-		$sender = array(
-			$config->get( 'mailfrom' ),
-			$config->get( 'fromname' ) );
-		$mailer->setSender($sender);
-		// se obtiene el usuario actualmente registrado
+		// se obtienen los datos del usuario
 		$user = JFactory::getUser();
-		// se obtiene su correo
+		// se crean los campos principales del mensaje
+		$from = $config->get( 'mailfrom' );
+		$fromName = $config->get( 'fromname' );
 		$recipient = $user->email;
-		// se asigna el correo del usuario al mensaje
-		$mailer->addRecipient($recipient);
-		// se agrega el titulo del mensaje
-		$mailer->setSubject( getValueIn('email_titleCreateConsult') );
+		$subject = getValueIn('email_titleCreateConsult');
 		// se crea el cuerpo del mensaje
 		$body = getValueIn('email_bodyCreateConsult') . "\n";
+		$body .= getValueIn('label_user') . ': ' . $user->username . "\n";
+		$body .= getValueIn('label_service') . ': ' . $payName . "\n";
+		$body .= getValueIn('label_speciality') . ': ' . $project->name . "\n";
+		$body .= getValueIn('label_specialist') . ': ' . $specialist->realname . "\n";
 		$body .= getValueIn('label_summary') . ': ' . $summary . "\n";
 		$body .= getValueIn('label_description') . ': ' . $description . "\n";
-		$body .= getValueIn('label_service') . ': ' . $payName . "\n";
 		$body .= getValueIn('label_price') . ': ' . $payPrice . "\n";
 		$body .= getValueIn('label_tax') . ': ' . $payTax . "\n";
 		$body .= getValueIn('label_total_amount') . ': ' . $payTotalAmount . "\n\n";
 		$body .= getValueIn('email_bodyFooter');
-		// se asigna el cuerpo del mensaje
-		$mailer->setBody( $body );
-		// se envia el correo
-		$send = $mailer->Send();
+		// se envía el mensaje		
+		JMail::getInstance()->sendMail($from, $fromName, $recipient, $subject, $body);
 	}
 
 	/**
