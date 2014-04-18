@@ -90,4 +90,8 @@
 	 * Defien el correo del sitio
 	 */
 	define('MN_JOOMLA_EMAIL_FROM', 'manuelminfo@gmail.com' );
+	/**
+	 * Defien el contraseña del correo del sitio
+	 */
+	define('MN_JOOMLA_EMAIL_PASSWORD_FROM', 'casinodeportivo' );
 

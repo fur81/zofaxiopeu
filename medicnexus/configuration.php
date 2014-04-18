@@ -36,7 +36,7 @@ class JConfig {
 	public $sendmail = '/usr/sbin/sendmail';
 	public $smtpauth = '1';
 	public $smtpuser = MN_JOOMLA_EMAIL_FROM;
-	public $smtppass = 'casinodeportivo';
+	public $smtppass = MN_JOOMLA_EMAIL_PASSWORD_FROM;
 	public $smtphost = 'smtp.gmail.com';
 	public $smtpsecure = 'ssl';
 	public $smtpport = '465';
