@@ -1184,6 +1184,20 @@ function email_bug_info_to_one_user( $p_visible_bug_data, $p_message_id, $p_proj
 	if( ON !== config_get( 'enable_email_notification' ) || is_blank( $t_user_email ) ) {
 		return true;
 	}
+	
+	# busco el tipo de usuario que es
+
+	$access_level = '';
+	$query = 'SELECT access_level FROM mantis_user_table WHERE id = ' . $p_user_id;
+	$access_level = db_query_bound( $query );
+	$access_level = db_result($access_level);
+	if ( $access_level == 90 ) { // administrador
+		;
+	} else if ( $access_level == 55 ) { // desarrollador - médico
+		;
+	} else if ( $access_level == 25 ) { // informador - usuario
+		;
+	}
 
 	# build subject
 	//$t_subject = '[' . $p_visible_bug_data['email_project'] . ' ' . bug_format_id( $p_visible_bug_data['email_bug'] ) . ']: ' . $p_visible_bug_data['email_summary'];
@@ -1209,6 +1223,7 @@ function email_bug_info_to_one_user( $p_visible_bug_data, $p_message_id, $p_proj
 
 	# se colocal final del formato del mensaje
 	$t_message .= lang_get('tpl_mn_email_footer');
+	
 	
 	# build headers
 	$t_bug_id = $p_visible_bug_data['email_bug'];
