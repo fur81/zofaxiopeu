@@ -44,7 +44,7 @@ define('JPATH_PLATFORM',JPATH_LIBRARIES);
 /*load loader class */
 require_once(JPATH_LIBRARIES .DS.'loader.php' );
 
-defined('_JREQUEST_NO_CLEAN',1);
+defined('_JREQUEST_NO_CLEAN');
 
 if(file_exists(JPATH_LIBRARIES.'/import.php'))
 	require_once JPATH_LIBRARIES.'/import.php';
