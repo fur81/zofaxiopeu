@@ -844,7 +844,11 @@ class MantisCore {
 			// se obtiene el nombre de la especialidad
 			$project = $this->getProject($projectId);
 			// se obtiene el nombre del médico
-			$specialist = $this->getUserById($specialistId);
+			$specialist = getValue('label_specialists');
+			if ($specialistId != null) {
+				$specialist = $this->getUserById($specialistId);
+				$specialist = $specialist->realname;
+			}
 			// se obtienen las configuraciones generales de Joomla
 			$config = JFactory::getConfig();
 			// se obtienen los datos del usuario
@@ -855,19 +859,19 @@ class MantisCore {
 			$recipient = $user->email;
 			$subject = getValueIn('email_titleCreateConsult');
 			// se crea el cuerpo del mensaje
-			$body = getValueIn('email_bodyCreateConsult') . "\n";
-			$body .= getValueIn('label_user') . ': ' . $user->username . "\n";
-			$body .= getValueIn('label_service') . ': ' . $payName . "\n";
-			$body .= getValueIn('label_speciality') . ': ' . $project->name . "\n";
-			$body .= getValueIn('label_specialist') . ': ' . $specialist->realname . "\n";
-			$body .= getValueIn('label_summary') . ': ' . $summary . "\n";
-			$body .= getValueIn('label_description') . ': ' . $description . "\n";
-			$body .= getValueIn('label_price') . ': ' . $payPrice . "\n";
-			$body .= getValueIn('label_tax') . ': ' . $payTax . "\n";
-			$body .= getValueIn('label_total_amount') . ': ' . $payTotalAmount . "\n\n";
+			$body = getValueIn('email_bodyCreateConsult') . "<br>";
+			$body .= getValueIn('label_user') . ': ' . $user->username . "<br>";
+			$body .= getValueIn('label_service') . ': ' . $payName . "<br>";
+			$body .= getValueIn('label_speciality') . ': ' . $project->name . "<br>";
+			$body .= getValueIn('label_specialist') . ': ' . $specialist . "<br>";
+			$body .= getValueIn('label_summary') . ': ' . $summary . "<br>";
+			$body .= getValueIn('label_description') . ': ' . $description . "<br>";
+			$body .= getValueIn('label_price') . ': ' . $payPrice . "<br>";
+			$body .= getValueIn('label_tax') . ': ' . $payTax . "<br>";
+			$body .= getValueIn('label_total_amount') . ': ' . $payTotalAmount . "<br><br>";
 			$body .= getValueIn('email_bodyFooter');
 			// se envía el mensaje
-			JMail::getInstance()->sendMail($from, $fromName, $recipient, $subject, $body);
+			JFactory::getMailer()->sendMail($from, $fromName, $recipient, $subject, $body);
 		} catch (Exception $e) {
 		}
 	}
