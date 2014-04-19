@@ -29,8 +29,6 @@
 <?php $resolvedConsult = FALSE;?>
 <?php if ($issue->status->id == 80):?>
 	<?php $resolvedConsult = TRUE;?>
-<?php else: ?>
-	<?php $mantisCore->updateProfile(); // se actualiza el perfil del usuario.?>
 <?php endif;?>
 
 <div id="consultation_details">

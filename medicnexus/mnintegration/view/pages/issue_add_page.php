@@ -23,7 +23,6 @@
  */
 ?>
 <?php setProjectPaypalConfiguration(); // se establece la configuración para las variables de paypal. ?>
-<?php $mantisCore->updateProfile(); // se actualiza el perfil del usuario.?>
 
 <div id="consultation_details">
 	<div class="back_option">
