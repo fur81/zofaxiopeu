@@ -11,6 +11,8 @@ defined('_JEXEC') or die;
 
 require_once JPATH_COMPONENT.'/controller.php';
 
+
+
 /**
  * Profile controller class for Users.
  *
@@ -168,6 +170,17 @@ class UsersControllerProfile extends UsersController
 				$this->setRedirect(JRoute::_(($redirect = $app->getUserState('com_users.edit.profile.redirect')) ? $redirect : 'index.php?option=com_users&view=profile&user_id='.$return, false));
 				break;
 		}
+		
+		# Código Medicnexus
+		# Se actualiza el perfil del usuario en el sistema Mantis
+		# Primero se incluyen los fichero necesarios para el funcionamiento
+		include_once  $_SERVER['DOCUMENT_ROOT'] . '/medicnexus/mnintegration/src/core/configuration.php';
+		include_once $GLOBALS ['MNI_CORE'];
+		include_once $GLOBALS ['MNI_UTILS'];
+		# Se crea el objeto que se encarga de salvar la información
+		$mantisCore = new MantisCore ();
+		$mantisCore->login ( $GLOBALS ['CURRENT_USERNAME'], $GLOBALS ['CURRENT_USERFULLNAME'], $GLOBALS ['CURRENT_USEREMAIL'] );
+		$mantisCore->updateProfile();
 
 		// Flush the data from the session.
 		$app->setUserState('com_users.edit.profile.data', null);
