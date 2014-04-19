@@ -19,6 +19,11 @@ JHtml::_('behavior.keepalive');
 	} else : {
 		echo JText::sprintf('MOD_LOGIN_HINAME', htmlspecialchars($user->get('username')));
 	} endif; ?>
+	<br>
+	<a href="<?php echo JRoute::_('index.php?option=com_users&view=profile'); ?>"><?php echo JText::_('TPL_MN_PROFILE_INFORMATION_UPPER');?></a>
+	<br>
+	<?php echo JText::_('TPL_MN_ACTIVE_LANGUAGE') . ': ';?>
+	<?php echo JLanguage::getInstance(JFactory::getUser()->getParam('language'))->getName();?>
 	</div>
 <?php endif; ?>
 	<div class="controls" align="right" style="margin-right: 5px;">

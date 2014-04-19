@@ -10,7 +10,7 @@
 defined('_JEXEC') or die;
 ?>
 <div class="profile <?php echo $this->pageclass_sfx?>">
-<div class="profile_info_title"><?php echo JText::_('TPL_MN_PROFILE_INFORMATION_UPPER'); ?></div>
+<div class="profile_info_title" style="text-transform: uppercase;"><?php echo JText::_('TPL_MN_PROFILE_INFORMATION_UPPER'); ?></div>
 <?php if ($this->params->get('show_page_heading')) : ?>
 <div class="page-header">
 	<h1>
