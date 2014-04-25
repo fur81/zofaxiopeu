@@ -18,6 +18,7 @@ h1, h2, h3, h4, h5, h6, p {
 p {
 	text-align: justify;	
 	color: #666;
+	font-size: 12px;
 }
 
 h1 { 
@@ -50,7 +51,8 @@ input {
 	font-size: 12px;
 	border: 1px solid #666;
 	color: #666;
-	height: 16px;	
+	height: 16px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;	
 }
 
 textarea {
@@ -314,7 +316,7 @@ body {
 
 .right_header_zone {
 	width: 700px;
-	height: 240px;
+	/*height: 240px;*/
 	float: left;
 	margin: 0;	
 }
@@ -327,11 +329,12 @@ body {
 }
 
 .promo_lang_zone {
-	font-size: 12px;
-	color: #999;
-	text-align: right;
-	float: left;
-	margin: 8px 5px 0 476px;
+	color: #666666;
+    float: left;
+    font-size: 12px;
+    margin: 8px 5px 0 0;
+    text-align: right;
+    width: 610px;
 }
 
 .promo_lang_zone ul li {
@@ -344,18 +347,30 @@ body {
 }
 
 .language_flag_zone {
-	text-align: right;
-	margin-top: 8px;
 	float: left;
+    margin-top: 8px;
+    /*padding-right: 5px;*/
+    text-align: right;
+}
+
+.lang-active {
+	/*background: url(../images/active_lang.png) no-repeat center top !important;*/
+}
+
+.lang-active a img {
+	padding: 3px 0;
+	border-top: 1px solid #1AA9B8 !important;
+	border-bottom: 1px solid #1AA9B8 !important;
+	margin: 0;
 }
 
 .searching_zone {
-	float: left;
-	color: #999999;
+	float: right;
+	color: #666;
     font-size: 11px;
-	width: 690px;
-    margin: 3px 0 0 0;
-	padding: 0 10px 0 0;
+	/*width: 690px;*/
+    margin: 3px 6px 0 0;
+	/*padding: 0 10px 0 0;*/
 }
 
 .searching_zone ul li {
@@ -365,7 +380,7 @@ body {
 
 .searching_zone ul li a {
 	font-size: 12px;
-	color: #999;
+	color: #666;
 	text-decoration: none;	
 }
 
@@ -376,7 +391,7 @@ body {
 /*Inicio estilos Joomla Search*/
 
 .search {
-	padding: 0 5px 5px 5px;	
+	/*padding: 0 5px 5px 5px;*/
 }
 
 .page-title/*search_info_title*/ {
@@ -2527,15 +2542,15 @@ fieldset {
 }
 
 .blog .page-header h2 a {
-	color: #666;
+	color: #333;
 	margin: 0;
 	padding: 0;
 	background: none;
 }
 
 .blog p {
-	font-size: 12px;
-	text-align: justify;	
+	/*font-size: 12px;
+	text-align: justify;	*/
 	padding: 0;
 }
 
