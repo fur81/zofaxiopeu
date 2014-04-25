@@ -174,7 +174,7 @@ class UsersControllerProfile extends UsersController
 		# Código Medicnexus
 		# Se actualiza el perfil del usuario en el sistema Mantis
 		# Primero se incluyen los fichero necesarios para el funcionamiento
-		include_once  $_SERVER['DOCUMENT_ROOT'] . '/medicnexus/mnintegration/src/core/configuration.php';
+		include_once  $_SERVER['DOCUMENT_ROOT'] . SUB_PROJECT_PATH . '/mnintegration/src/core/configuration.php';
 		include_once $GLOBALS ['MNI_CORE'];
 		include_once $GLOBALS ['MNI_UTILS'];
 		# Se crea el objeto que se encarga de salvar la información
