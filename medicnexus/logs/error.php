@@ -13,3 +13,4 @@
 2014-01-10T17:46:20+00:00	INFO	joomlacanceled	
 2014-01-10T17:47:22+00:00	INFO	joomlacanceled	
 2014-01-27T14:30:03+00:00	INFO	joomlafailure	Username and password do not match or you do not have an account yet.
+2014-04-25T04:36:54+00:00	INFO	joomlafailure	No se permiten contraseñas vacías
