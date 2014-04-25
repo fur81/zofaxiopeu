@@ -7,6 +7,7 @@
 ul, ol, dl { 
 	padding: 0;
 	margin: 0;
+	font-size: 12px;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -1158,8 +1159,32 @@ li.maximenuck {margin: 0; padding: 0px;}
 /*Estilo generales de Joomla*/
 
 .item-page {
-	margin: -23px 0 0 -5px;	
+	margin: -23px 0 0 -5px;
+	padding-bottom: 10px;	
 	width: 740px;
+}
+
+.item-page a {
+	color: #81197F;
+}
+
+.item-page a:hover {
+	text-decoration: underline;
+}
+
+.item-page ul li {
+	background: url(../images/link_bullet_bg.gif) no-repeat left 8px;
+	list-style: none;
+	margin-left: 20px !important;	
+	padding-left: 15px;
+	line-height: 18px;
+	color: #666;
+}
+
+.item-page ol li {
+	margin-left: 35px !important;
+	line-height: 18px;
+	color: #666;
 }
 
 .item-page p {
@@ -1169,13 +1194,31 @@ li.maximenuck {margin: 0; padding: 0px;}
 }
 
 .item-page p img {
-	margin: 0 10px; 
+	margin: 5px 10px; 
 	border: 1px solid #1aa9b8;
 	float: left;	
 }
 
 .item-page table {
-	margin-left: 10px;
+	margin-left: 15px;
+	border: 1px solid #1aa9b8;	
+	font-size: 12px;
+}
+
+.item-page table th {
+	background: #1aa9b8;
+	color: #FFF;
+	text-align: left;
+	padding: 5px 10px;
+	border-bottom: 3px solid #FFF;
+}
+
+.item-page table td {
+	background: #f9f9f9;
+	color: #666;
+	text-align: justify;
+	padding: 10px;
+	vertical-align: top;
 }
 
 .page-header h2 a {
@@ -1777,7 +1820,7 @@ fieldset {
 }
 #about_us_zone {
     float: left;
-    padding: 0;
+    padding: 0 0 10px 0;
     width: 740px;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
@@ -1791,7 +1834,7 @@ fieldset {
     font-size: 12px;
 }
 #about_us_zone ul {
-    margin-left: 30px;
+    /*margin-left: 30px;*/
 }	
 #about_us_zone ul li {
     color: #999;
