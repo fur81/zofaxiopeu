@@ -1361,6 +1361,7 @@ fieldset {
 	border: 1px solid #1AA9B8;	
 	padding: 10px 10px 0 10px;
 	margin-bottom: 10px;
+	padding-bottom: 10px;
 }
 
 .login {
@@ -1449,10 +1450,6 @@ fieldset {
 	color: #00C;	
 	font-size: 36px;
 }*/
-
-.controls select {
-	margin-bottom: 10px;
-}
 
 .controls button {
 	margin-top: 5px;
@@ -2396,7 +2393,6 @@ fieldset {
 
 #dynamic_recaptcha_1 {
 	border: 1px solid #666;
-	margin-bottom: 10px;
 	margin-top: 0;
 	padding: 10px;	
 }

@@ -27,7 +27,7 @@ $lang->load('plg_user_profile', JPATH_ADMINISTRATOR);
 <?php foreach ($this->form->getFieldsets() as $group => $fieldset):// Iterate through the form fieldsets and display each one.?>
 	<?php $fields = $this->form->getFieldset($group);?>
 	<?php if (count($fields)):?>
-	<fieldset style="padding-bottom: 10px;">
+	<fieldset>
 		<?php if (isset($fieldset->label)):// If the fieldset has a label set, display it as the legend.?>
 		<legend><?php echo JText::_($fieldset->label); ?></legend>
 		<?php endif;?>
