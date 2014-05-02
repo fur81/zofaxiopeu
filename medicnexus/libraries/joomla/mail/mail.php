@@ -440,6 +440,11 @@ class JMail extends PHPMailer
 	public function sendMail($from, $fromName, $recipient, $subject, $body, $mode = true, $cc = null, $bcc = null, $attachment = null,
 		$replyTo = null, $replyToName = null)
 	{
+		//se establece el idioma del perfil del usuario
+		$lang = JFactory::getLanguage();
+		$langUser = JFactory::getUser()->getParam('language');
+		JFactory::getLanguage()->setLanguage($langUser);
+		
 		$this->setSubject($subject);
 		$this->setBody( JText::_('TPL_MN_EMAIL_HEADER') . $body . JText::_('TPL_MN_EMAIL_FOOTER') );
 
@@ -473,6 +478,9 @@ class JMail extends PHPMailer
 		$autoReplyTo = (empty($this->ReplyTo)) ? true : false;
 		$this->setSender(array($from, $fromName, $autoReplyTo));
 
+		// se reestablece el idioma del sitio
+		JFactory::getLanguage()->setLanguage($lang);
+		
 		return $this->Send();
 	}
 
