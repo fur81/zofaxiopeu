@@ -1450,6 +1450,10 @@ fieldset {
 	font-size: 36px;
 }*/
 
+.controls select {
+	margin-bottom: 10px;
+}
+
 .controls button {
 	margin-top: 5px;
 	min-width: 100px;
