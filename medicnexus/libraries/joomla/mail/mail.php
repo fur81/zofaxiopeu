@@ -441,7 +441,7 @@ class JMail extends PHPMailer
 		$replyTo = null, $replyToName = null)
 	{
 		//se establece el idioma del perfil del usuario
-		$lang = JFactory::getLanguage();
+		$lang = JFactory::getLanguage()->getTag();
 		$langUser = JFactory::getUser()->getParam('language');
 		JFactory::getLanguage()->setLanguage($langUser);
 		
