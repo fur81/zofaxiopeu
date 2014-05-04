@@ -1217,7 +1217,7 @@ li.maximenuck {margin: 0; padding: 0px;}
 	background: #f9f9f9;
 	color: #666;
 	text-align: justify;
-	padding: 10px;
+	padding: 5px;
 	vertical-align: top;
 }
 
@@ -1643,7 +1643,8 @@ fieldset {
 	padding: 0 !important;
 }
 #client_zone table {
-	margin-left: 10px;
+	margin-left: 0;
+	border: none;
 }
 #client_zone table ul li {
 	display: inline;
@@ -1934,6 +1935,12 @@ fieldset {
 
 #consultation_details table {
 	margin: 0;
+	border: none;
+}
+
+#consultation_details table td {
+	background: none;
+	border: none;
 }
 
 .back_option {
@@ -2041,13 +2048,6 @@ fieldset {
 	font-style: italic;	
 }
 
-.empty-data-table {
-    color: #666;
-    font-size: 12px;
-    text-align: center;
-	font-style: italic;
-}
-
 .notes_form {
 	float: left;
 	margin-bottom: 20px;	
@@ -2069,14 +2069,15 @@ fieldset {
 #issue_report ul li{
 	display: inline;
 	list-style: none;	
-	margin-left: 5px;	
+	margin-left: 5px;
+	background: none;	
 }
 #issue_report ul li a{
 	background: none;	
 	font-size: 12px;	
 	color: #1AA9B8;
 	cursor: pointer;
-	
+	margin-right: -25px;
 }
 #issue_report ul li a:hover{
 	text-decoration: underline;
@@ -2151,6 +2152,7 @@ fieldset {
 }
 .managed-table-th td {
 	border-bottom: 2px solid #FFF;
+	background: #999 !important;
 }
 
 .managed-table-tr {
@@ -2177,11 +2179,12 @@ fieldset {
 .managed-table-tr-alternate td {
 	padding: 3px;
 }
-.empty-data-table {
-	background: #FFF;
+.empty-data-table td {
+	background: #FFF !important;
 	color: #666;
-	font-size: 11px;
 	text-align: center;	
+    font-size: 12px;
+	font-style: italic;
 }
 
 /*Fin Estilo de Table*/
@@ -2463,7 +2466,6 @@ fieldset {
 	font-weight: bold;
 	background: url(../images/bg_title_box.png) no-repeat left 5px !important;
 	padding-left: 15px;
-	text-transform: uppercase;
 }
 
 .profile {
@@ -2556,6 +2558,8 @@ fieldset {
 	font-style: italic;
 	font-size: 12px;
 	line-height: 18px;
+	float: left;
+	margin-top: 5px;
 }
 
 /*Fin estilos Articles-Preview*/
@@ -2609,6 +2613,10 @@ p.readmore {
 
 .items-more {
 	margin: 30px 10px 0 10px;
+}
+
+.edit-icon a {
+	background: none !important;	
 }
 
 /*Fin estilos Blog Noticias*/
