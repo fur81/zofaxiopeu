@@ -1058,6 +1058,12 @@ li.maximenuck {margin: 0; padding: 0px;}
 .mn-login-greeting {
 	text-align: right;
 	margin-right: 10px;	
+	color: #666;
+	background: url("../images/welcome_msg_separator.gif") no-repeat right 20px;
+}
+
+.mn-login-greeting a:hover {
+	text-decoration: underline;
 }
 
 /*.mn-btn-logout {
