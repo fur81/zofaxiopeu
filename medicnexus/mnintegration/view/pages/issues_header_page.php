@@ -112,7 +112,7 @@
 			</table>
 		</div>
 	</div>
-	<div class="controls" style="float: left;">
+	<div class="controls">
 		<button type="button" onclick="redirectToAddIssue()"
 			name="issueReport" style="cursor: pointer; margin: 0 0 20px 10px;">
 			<?php getValue('label_report_consultation');?>
