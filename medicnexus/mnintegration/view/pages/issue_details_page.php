@@ -43,7 +43,7 @@
 	<div>
 		<div>
 			<div class="consultation_detail_icon">
-				<img src="templates/medicnexus/images/consult_detail_icon.gif" />
+				<img alt="consult_detail_icon.gif" src="templates/medicnexus/images/consult_detail_icon.gif" />
 			</div>
 			<div class="consultation_detail_title">
 			<?php getProjectName(); echo ' - ';   getValue('label_consultation_details');?>
@@ -188,11 +188,16 @@
 						<br>
 						<?php echo '(' . getDateFormat($note->date_submitted) . ')';?>
 						</td>
-						<td width="560px" class="consult_det_info">
+						<td width="540px" class="consult_det_info">
 						<?php echo replaceRToBr($note->text);?>
 						</td>
+						<?php if ($issue->reporter->id != $note->reporter->id):?>
+						<td width="20px">
+							<img src="templates/medicnexus/images/dr_chat_icon.gif"/>
+						</td>
+						<?php endif;?>
 						</tr><tr>
-						<td colspan="2" height="20px">
+						<td colspan="3" height="20px">
 						<img src="templates/medicnexus/images/notes_separator.gif"  /></td></tr>
 					<?php endif;?>
 				<?php endfor;?>
