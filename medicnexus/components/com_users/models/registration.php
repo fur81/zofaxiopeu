@@ -409,23 +409,20 @@ class UsersModelRegistration extends JModelForm
 			{
 				$emailBody = JText::sprintf(
 					'COM_USERS_EMAIL_REGISTERED_WITH_ADMIN_ACTIVATION_BODY',
-					$data['name'],
 					$data['sitename'],
-					$data['activate'],
-					$data['siteurl'],
 					$data['username'],
-					$data['password_clear']
+					$data['password_clear'],
+					$data['activate'],
+					$data['siteurl']
 				);
 			}
 			else
 			{
 				$emailBody = JText::sprintf(
 					'COM_USERS_EMAIL_REGISTERED_WITH_ADMIN_ACTIVATION_BODY_NOPW',
-					$data['name'],
 					$data['sitename'],
 					$data['activate'],
-					$data['siteurl'],
-					$data['username']
+					$data['siteurl']
 				);
 			}
 		}
@@ -446,7 +443,6 @@ class UsersModelRegistration extends JModelForm
 			{
 				$emailBody = JText::sprintf(
 					'COM_USERS_EMAIL_REGISTERED_WITH_ACTIVATION_BODY',
-					//$data['name'],
 					$data['sitename'],
 					$data['username'],
 					$data['password_clear'],
@@ -458,11 +454,9 @@ class UsersModelRegistration extends JModelForm
 			{
 				$emailBody = JText::sprintf(
 					'COM_USERS_EMAIL_REGISTERED_WITH_ACTIVATION_BODY_NOPW',
-					$data['name'],
 					$data['sitename'],
 					$data['activate'],
-					$data['siteurl'],
-					$data['username']
+					$data['siteurl']
 				);
 			}
 		}
@@ -479,18 +473,15 @@ class UsersModelRegistration extends JModelForm
 			{
 				$emailBody = JText::sprintf(
 					'COM_USERS_EMAIL_REGISTERED_BODY',
-					$data['name'],
 					$data['sitename'],
-					$data['siteurl'],
 					$data['username'],
-					$data['password_clear']
+					$data['siteurl']
 				);
 			}
 			else
 			{
 				$emailBody = JText::sprintf(
 					'COM_USERS_EMAIL_REGISTERED_BODY_NOPW',
-					$data['name'],
 					$data['sitename'],
 					$data['siteurl']
 				);
