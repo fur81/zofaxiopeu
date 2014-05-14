@@ -410,6 +410,7 @@ class UsersModelReset extends JModelForm
 		$data['link_text'] = JRoute::_($link, false, $mode);
 		$data['link_html'] = JRoute::_($link, true, $mode);
 		$data['token'] = $token;
+		$data['siteurl'] = JUri::root();
 
 		$subject = JText::sprintf(
 			'COM_USERS_EMAIL_PASSWORD_RESET_SUBJECT',
