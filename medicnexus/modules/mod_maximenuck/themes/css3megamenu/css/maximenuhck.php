@@ -243,15 +243,16 @@ background : #19a6b5;
 list-style : none;
 display: block !important;
 border-bottom: 1px dotted #FFFFFF;
-height:20px;
+width: 180px;
+height:21px;
 }
 
 div#<?php echo $id; ?> ul.maximenuck li ul.maximenuck2 li.maximenuck:hover,
 div#<?php echo $id; ?> ul.maximenuck2 li.maximenuck:hover {
 background: #e749e4;
-border-top: 1px solid #e749e4;
+/*border-top: 1px solid #e749e4;
 border-left: 1px solid #e749e4;
-border-right: 1px solid #e749e4;
+border-right: 1px solid #e749e4;*/
 border-bottom: 1px dotted #FFFFFF;
 }
 
@@ -345,7 +346,7 @@ color : #EEE;
 
 /* submenus container */
 div#<?php echo $id; ?> div.floatck {
-width : 150px; /* default width */
+width : 180px; /* default width */
 margin: 4px 0 0 -1px;
 height: 25px;
 text-align:left;
@@ -379,7 +380,7 @@ border:1px solid #777777;
 }
 
 div#<?php echo $id; ?> ul.maximenuck li div.floatck div.maximenuck2 {
-width : 150px; /* default width */
+width : 180px; /* default width */
 margin: 0;
 padding: 0;
 }
