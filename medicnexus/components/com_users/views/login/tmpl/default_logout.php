@@ -45,3 +45,8 @@ defined('_JEXEC') or die;
 	</form>
 	<br>
 </div>
+
+<?php 
+	header("Location:" . JRoute::_('index.php') );
+	exit;
+?>

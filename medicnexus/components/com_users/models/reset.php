@@ -293,6 +293,7 @@ class UsersModelReset extends JModelForm
 	/**
 	 * Method to start the password reset process.
 	 *
+	 * @todo falta colocar la url del articulo ¿Cómo restablecer la contraseña?
 	 * @since   1.6
 	 */
 	public function processResetRequest($data)
@@ -417,9 +418,11 @@ class UsersModelReset extends JModelForm
 
 		$body = JText::sprintf(
 			'COM_USERS_EMAIL_PASSWORD_RESET_BODY',
-			$data['sitename'],
+			$user->username,
 			$data['token'],
-			$data['link_text']
+			$data['link_text'],
+			$data['siteurl'], 
+			$data['sitename']
 		);
 
 		// Send the password reset request email.
