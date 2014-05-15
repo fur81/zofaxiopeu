@@ -13,6 +13,7 @@ JHtml::_('behavior.keepalive');
 JHtml::_('behavior.formvalidation');
 ?>
 <div class="reset-confirm<?php echo $this->pageclass_sfx?>">
+	<div class="remind-reset-form-title"><?php echo JText::_('COM_USERS_FIELD_RESET_CONFIRM_TOKEN_TITLE'); ?></div>
 	<?php if ($this->params->get('show_page_heading')) : ?>
 	<h1>
 		<?php echo $this->escape($this->params->get('page_heading')); ?>
@@ -32,8 +33,9 @@ JHtml::_('behavior.formvalidation');
 		</fieldset>
 		<?php endforeach; ?>
 
-		<div>
-			<button type="submit" class="validate"><?php echo JText::_('JSUBMIT'); ?></button>
+		<div class="form-actions" style="margin-bottom: 10px;">
+			<button type="submit" class="btn btn-primary validate" 
+				title="<?php echo JText::_('JSUBMIT');?>"><?php echo JText::_('JSUBMIT');?></button>
 			<?php echo JHtml::_('form.token'); ?>
 		</div>
 	</form>
