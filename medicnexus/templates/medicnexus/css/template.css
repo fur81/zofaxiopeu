@@ -2547,6 +2547,7 @@ fieldset {
 	font-weight: bold;
 	background: url(../images/bg_title_box.png) no-repeat left 4px !important;
 	padding-left: 15px;
+	text-transform: uppercase;
 }
 
 .remind p {
