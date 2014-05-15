@@ -1222,7 +1222,7 @@ function email_bug_info_to_one_user( $p_visible_bug_data, $p_message_id, $p_proj
 	// se agrega la información relacionada con los datos de la incidencia.
 	$t_message .= email_format_bug_message_medicnexus( $p_visible_bug_data );
 	// se agrega la información adicional correspondiente al tipo de usuario.
-		
+	$t_message .= " <br>" . $user_information;	
 
 	# se colocal final del formato del mensaje
 	$t_message .= lang_get('tpl_mn_email_footer');
