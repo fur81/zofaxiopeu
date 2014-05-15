@@ -41,7 +41,7 @@ if ( isset($_GET['success'])) {
 		// se envia un mensaje de terminacion correcta
 		$_SESSION ['msg'] = 'msg_info_consult_inserted';
 	}else{
-		$_SESSION ['msg'] = 'msg_info_consult_inserted';
+		$_SESSION ['msg'] = 'msg_error_consult_inserted';
 	}
 	// se eliminan los valores del temporal
 	$mantisCore->removeTempData($_GET['idData']);
@@ -60,12 +60,12 @@ if ( isset($_GET['success'])) {
 	setProjectPaypalConfiguration( $paymentType );
 	// se salva la información el la base de datos
 	$idData = $mantisCore->saveIssueCreateData($summary, $description, $projectId, $specialistId, $paymentType);
-	//if ( $paymentType == MN_PAY_TPV ) {
-	//	include_once ( $GLOBALS['TPV_REQUEST_CLIENT_ZONE'] ); // se carga el servicio tpv
-	//}else if( $paymentType == MN_PAY_PAYPAL ) {
-	//	include_once $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE']; // se carga el servicio paypal
-	//}
-	//exit();
+	if ( $paymentType == MN_PAY_TPV ) {
+		include_once ( $GLOBALS['TPV_REQUEST_CLIENT_ZONE'] ); // se carga el servicio tpv
+	}else if( $paymentType == MN_PAY_PAYPAL ) {
+		include_once $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE']; // se carga el servicio paypal
+	}
+	exit();
 	// solo para cuando paypal no está funcionando
 	//$mantisCore->addIssue($summary, $description, $projectId, $specialistId);
 	$mantisCore->sendEmail($summary, $description, $projectId, $specialistId, $GLOBALS['PAY_NAME'],
