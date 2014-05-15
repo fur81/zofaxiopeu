@@ -9,6 +9,9 @@
 
 defined('_JEXEC') or die;
 ?>
+<?php header("Location:" . JRoute::_('index.php?Itemid=') ); ?>
+<?php exit; ?>
+
 <div class="logout <?php echo $this->pageclass_sfx?>">
 	<?php if ($this->params->get('show_page_heading')) : ?>
 	<div class="page-header">
@@ -45,8 +48,3 @@ defined('_JEXEC') or die;
 	</form>
 	<br>
 </div>
-
-<?php 
-	header("Location:" . JRoute::_('index.php') );
-	exit;
-?>

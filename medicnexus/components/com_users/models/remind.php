@@ -159,8 +159,8 @@ class UsersModelRemind extends JModelForm
 		);
 		$body = JText::sprintf(
 			'COM_USERS_EMAIL_USERNAME_REMINDER_BODY',
-			$data['sitename'],
 			$data['username'],
+			$data['sitename'],
 			$data['link_text']
 		);
 

@@ -41,7 +41,7 @@ if ( isset($_GET['success'])) {
 		// se envia un mensaje de terminacion correcta
 		$_SESSION ['msg'] = 'msg_info_consult_inserted';
 	}else{
-		$_SESSION ['msg'] = 'msg_info_consult_inserted';
+		$_SESSION ['msg'] = 'msg_error_consult_inserted';
 	}
 	// se eliminan los valores del temporal
 	$mantisCore->removeTempData($_GET['idData']);

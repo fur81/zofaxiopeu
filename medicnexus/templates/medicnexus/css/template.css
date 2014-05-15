@@ -182,10 +182,10 @@ label {
 }
 
 .contact_title {
-	font-size: 19px;
+	font-size: 17px;
 	color: #1aa9b8;
 	text-transform: uppercase;
-	margin: 35px 0 20px 100px;
+	margin: 35px 0 30px 100px;
 	font-weight: bold;	
 }
 
@@ -2547,6 +2547,7 @@ fieldset {
 	font-weight: bold;
 	background: url(../images/bg_title_box.png) no-repeat left 4px !important;
 	padding-left: 15px;
+	text-transform: uppercase;
 }
 
 .remind p {
