@@ -1191,12 +1191,13 @@ function email_bug_info_to_one_user( $p_visible_bug_data, $p_message_id, $p_proj
 	$query = 'SELECT access_level FROM mantis_user_table WHERE id = ' . $p_user_id;
 	$access_level = db_query_bound( $query );
 	$access_level = db_result($access_level);
+	$user_information = '<br>';
 	if ( $access_level == 90 ) { // administrador
-		;
+		$user_information .= 'administrador';
 	} else if ( $access_level == 55 ) { // desarrollador - médico
-		;
+		$user_information .= 'medico';
 	} else if ( $access_level == 25 ) { // informador - usuario
-		;
+		$user_information .= 'usuario';
 	}
 
 	# build subject
@@ -1214,12 +1215,14 @@ function email_bug_info_to_one_user( $p_visible_bug_data, $p_message_id, $p_proj
 	}
 
 	if(( $t_message !== null ) && ( !is_blank( $t_message ) ) ) {
-		$t_message .= " \n";
+		$t_message .= " <br>";
 	}
 
 	//$t_message .= email_format_bug_message( $p_visible_bug_data );
-	
+	// se agrega la información relacionada con los datos de la incidencia.
 	$t_message .= email_format_bug_message_medicnexus( $p_visible_bug_data );
+	// se agrega la información adicional correspondiente al tipo de usuario.
+	$t_message .= " <br>" . $user_information;	
 
 	# se colocal final del formato del mensaje
 	$t_message .= lang_get('tpl_mn_email_footer');
