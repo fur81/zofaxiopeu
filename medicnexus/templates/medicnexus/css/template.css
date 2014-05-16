@@ -1493,6 +1493,7 @@ fieldset {
 	-moz-border-radius: 2px 2px 2px 2px;
 	/*text-transform: uppercase;*/
 	font-weight: bold;
+	float: left;
 }
 
 .controls button:hover {
