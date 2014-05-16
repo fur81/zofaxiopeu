@@ -149,6 +149,12 @@
 						</label>
 						</td>
 					</tr>
+					<tr valign="top">
+						<td class="consult_det_title"><?php getValue('label_total_amount');?>:</td>
+						<td colspan="2"><label><?php echo $GLOBALS['PAY_TOTAL_AMOUNT'] . '  ' . PAYPAL_CURRENCY_EUR;?>
+						</label>
+						</td>
+					</tr>
 					<tr>
 						<td class="consult_det_title" rowspan="2"><label
 							style="vertical-align: middle !important;"><?php getValue('label_payment_type');?>:</label>
