@@ -26,6 +26,6 @@
 	<?php include_once $GLOBALS['MNI_PROJECTS_HEADER_ACTION'];?>
     
     <h1><?php getValue('label_client_zone_title');?></h1>
-    <p><?php getValue(label_client_zone_description);?></p>
+    <p><?php getValue('label_client_zone_description');?></p>
     
 </div>
