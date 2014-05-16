@@ -289,7 +289,7 @@
 		}else {
 			$('#specialist').attr('disabled','disabled');
 			$("#specialist").html("");
-			$("#specialist").append("<option value=\"null\">"+value+"</option>");
+			$("#specialist").append("<option selected=\"selected\">"+value+"</option>");
 		}
 	}
 
