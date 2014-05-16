@@ -298,15 +298,5 @@
 		document.getElementById('projectId').value = <?php echo $_SESSION['projectId'];?>;
 		document.forms["headersIssueForm"].submit();
 	}		
-
-	// garantiza modificar el estilo del botón Browse...
-	$(document).ready(function(){
-		$("input[type=file]").nicefileinput();
-	});
-
-	$("input[type=file]").nicefileinput({ 
-		label : '<?php getValue('button_browse');?>'
-	});
-
 	
 </script>
