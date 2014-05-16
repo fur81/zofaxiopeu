@@ -9,7 +9,7 @@
 
 defined('_JEXEC') or die;
 ?>
-<?php header("Location:" . JRoute::_('index.php?Itemid=') ); ?>
+<?php header("Location:" . JRoute::_('index.php?option=com_content&view=article&id=3') ); ?>
 <?php exit; ?>
 
 <div class="logout <?php echo $this->pageclass_sfx?>">
