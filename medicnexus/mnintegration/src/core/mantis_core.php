@@ -865,7 +865,6 @@ class MantisCore {
 			$body .= getValueIn('label_speciality') . ': ' . $project->name . "<br>";
 			$body .= getValueIn('label_specialist') . ': ' . $specialist . "<br>";
 			$body .= getValueIn('label_summary') . ': ' . $summary . "<br>";
-			$body .= getValueIn('label_description') . ': ' . $description . "<br>";
 			$body .= getValueIn('label_price') . ': ' . $payPrice . "<br>";
 			$body .= getValueIn('label_tax') . ': ' . $payTax . "<br>";
 			$body .= getValueIn('label_total_amount') . ': ' . $payTotalAmount . "<br><br>";
