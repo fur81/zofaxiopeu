@@ -1,0 +1,1133 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font: 100%/1.4 "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background: #FFF url(../images/gradient_bg_site.gif) repeat-x;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #666;
+	text-decoration: none;
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+/*html components*/
+
+input {
+	font-size: 11px;
+	border: 1px solid #CCC;
+	color: #999;
+	height: 16px;	
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	width: 1000px;
+	background: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	height: 290px;
+	background: #FFF;
+}
+
+#left_header_zone {
+	width: 300px;
+	height: 290px;
+	float: left;
+	margin: 0;	
+	background: url(../images/bg_site-_title.gif) no-repeat 105px 58px;
+}
+
+#left_header_zone h1 {
+	font-size: 28px;
+	color: #1aa9b8;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 10px 0 0 105px;
+	/*letter-spacing: 5px;*/
+	/*font-family: "Frutiger LT Std 45 Light";*/
+}
+
+#left_header_zone h2 {
+	font-size: 11px;
+	color: #1aa9b8;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 0 0 0 105px;
+}
+
+#logo_img {
+	width: 85px;
+	height: 85px;
+	padding: 10px 0 0 10px;
+	float: left;
+}
+
+#header_newsflash {
+	margin: 15px 0 0 0;
+	width: 280px;
+	height: 180px;
+	float: left;	
+	background: url(../images/bg_header_newsflash.gif) repeat-x;
+	border-left: 10px #FFF solid;
+	border-right: 10px #FFF solid;
+}
+
+#right_header_zone {
+	width: 700px;
+	height: 290px;
+	float: left;
+	margin: 0;	
+}
+
+#promo_lang_zone {
+	font-size: 11px;
+	color: #999;
+	text-align: right;
+	/*margin-top: 2px;*/
+	float: left;
+	/*margin-left: 490px;*/
+	margin: 2px 5px 0 476px;
+}
+
+#promo_lang_zone ul li {
+	display: inline;
+	/*margin-left: 3px;*/
+	margin: 0 5px 0 0;	
+}
+
+#promo_lang_zone ul li a {
+	text-decoration: none;	
+}
+
+#language_flag_zone {
+	text-align: right;
+	margin-top: 2px;
+	float: left;
+}
+
+#searching_zone {
+	float: left;
+	color: #999999;
+    font-size: 11px;
+	width: 690px;
+    margin: 1px 0 0 0;
+	padding: 0 10px 0 0;
+}
+
+#searching_zone ul li {
+	display: inline;
+	margin-left: 3px;
+}
+
+#searching_zone ul li a {
+	font-size: 11px;
+	color: #999;
+	text-decoration: none;	
+}
+
+#top_menu {
+	width: 699px;
+	/*height: 30px; Para el maximenu*/
+	float: left;
+	border-right: 1px solid #FFF;
+	background: url(../images/box_site_bg.gif) repeat-x;	
+	border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	behavior:url(border.htc);
+	margin: 0;
+	padding: 0;
+}
+
+#front_img_header {
+	width: 700px;
+	height: 200px;
+	float: left;
+	background: url(../images/front_img_header.jpg) no-repeat;
+	border-top: 1px solid #FFF;
+}
+
+#sitemap_zone {
+	height: 20px;
+    margin-top: 1px;
+    padding: 5px 0 0 30px;
+    /*width: 995px;*/
+	background: url(../images/sitemap_bg.gif) no-repeat 5px 5px;
+	/*border: 1px solid #930;*/
+	margin-top: 1px;
+}
+
+/*#sitemap_zone h6 {
+	margin: 5px 0 0 15px;
+	font-size: 11px;
+	color: #999;
+}*/
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the left instead of the right, simply float these columns the opposite direction (all left instead of all right) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+
+
+/*
+#authentication_zone {
+	width: 240px;
+	height: 225px;
+	border: 1px solid #1aa9b8;	
+	margin: 0 0 5px 0;
+    padding: 5px;
+	float: left;
+}
+
+
+#contact_zone {
+	width: 240px;
+	height: 220px;
+	border: 1px solid #1aa9b8;
+	margin: 0 0 10px;
+    padding: 5px;
+	float: left;
+	background: url("../images/contact_img.gif") no-repeat 10px 50px;
+}*/
+
+#contact_zone h2 {
+	font-size: 17px;
+	color: #1aa9b8;
+	text-transform: uppercase;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin: 35px 0 30px 84px;
+}
+
+#contact_table
+ {
+	/*padding-top: 25px;*/
+	margin-left: 45px;
+}
+.sidebar {
+	float: right;
+	width: 250px;
+	/*padding-bottom: 10px;
+	border: 1px solid #1aa9b8;*/
+}
+.title_sidebar_text {
+	font-size: 12px;
+	color: #FFF;
+	/*background: url(../images/bg_title_box.png) no-repeat right center;*/
+	text-align: right;
+	margin-top: 2px;
+}
+.title_content_text {
+	font-size: 12px;
+	color: #FFF;
+	/*background: url(../images/bg_title_box.png) no-repeat right center;*/
+	text-align: left;
+	margin-top: 2px;
+}
+.title_bar{
+	height: 20px;
+    padding: 5px;  
+	background: url("../images/box_site_bg.gif") repeat-x;
+	border-radius: 2px;
+}
+.content_box{
+	padding: 5px 5px;
+	margin: 0 0 10px 0;
+	width: 730px;
+	border: 1px solid #1aa9b8;
+	float: left;
+	box-shadow: 2px 2px 3px #000;
+	-webkit-box-shadow: 2px 2px 3px #000;
+	-moz-box-shadow: 2px 2px 3px #000;
+	border-radius: 2px;
+}
+.side_box{
+	padding: 5px 5px;
+	margin: 0 0 10px 0;
+	width: 240px;
+	border: 1px solid #1aa9b8;
+	float: left;
+	box-shadow: 2px 2px 3px #000;
+	-webkit-box-shadow: 2px 2px 3px #000;
+	-moz-box-shadow: 2px 2px 3px #000;
+	border-radius: 2px;
+}
+
+.content_boxbar{
+	width: 720px;
+}
+
+.content_sidebar{
+	width: 230px;
+}
+
+/*
+#box_title h1 {
+	font-size: 12px;
+	color: #FFF;
+	background: url(../images/bg_title_box.png) no-repeat 2px center;
+	margin-top: 2px;
+}
+*/
+#welcome_text {
+	width: 730px;
+	float: left;	
+	padding: 10px 0 0 0;
+}
+
+#welcome_text p {
+	text-align: justify;
+	color: #999;
+	font-size: 11px;	
+}
+
+#site_services_zone {
+	width: 730px;
+	float: left;		
+}
+
+#site_services_zone h1 {
+	font-size: 12px;
+	color: #666;
+	background: url(../images/services_title_bg.gif) no-repeat 140px 12px;
+}
+
+#site_service_box {
+	width: 150px;
+	float: left;	
+}
+
+#site_service_box img {
+	margin: 0 0 0 45px;	
+}
+
+
+#site_service_box h1 {
+	color: #1aa9b8;
+	font-size: 11px;
+	background: none;
+	margin: 3px 0 0 0;
+	text-align: center;
+}
+
+#site_service_box p {
+	text-align: justify;
+	font-size: 10px;
+	color: #666;
+	margin: 3px 0 0 0;
+}
+
+#site_service_box #service_box_btn img {
+	margin: 5px 0 0 25px;	
+}
+
+.services_box_separator {
+	margin: 0 20px 0 20px;
+	width: 1px;
+	height: 90px;
+	background: url(../images/services_box_separator_bg.gif) no-repeat;
+	float: left;	
+}
+
+#site_specialities_zone {
+	width: 730px;
+	float: left;
+	margin: 10px 0 0 0;
+}
+
+#site_specialities_zone h1 {
+	font-size: 12px;
+	color: #666;
+	background: url(../images/specialities_title_bg.gif) no-repeat 180px 12px;
+}
+
+#site_speciality_box {
+	width: 200px;
+	height: 90px;
+	float: left;
+	margin: 5px 30px 0 10px;	
+}
+
+#speciality_icon {
+	float: left;
+	width: 50px;
+	height: 40px;
+}
+
+#speciality_icon img {
+	margin: 0 0 0 5px;	
+}
+
+#speciality_text {
+	width: 150px;
+	height: 90px;
+	float: left;
+	background: url(../images/speciality_description_bg.png) repeat-x left 20px;
+	/*padding: 0 2px;*/
+}
+
+#speciality_text h1 {
+	background: url(../images/speciality_title_bg.gif) no-repeat left center;
+	padding: 0 0 0 10px;
+}
+
+#speciality_text p {
+	font-size: 10px;
+	color: #FFF;
+	text-align: justify;
+}
+
+#news-article_zone {
+	padding: 5px 5px;
+	margin: 0 0 10px 0;
+	width: 730px;
+	border: 1px solid #1aa9b8;
+	float: left;
+	/*clear: both;*/
+}
+
+#articles_zone {
+	width: 350px;
+	float: left;
+	margin: 10px 0 0 0;	
+}
+
+#articles_zone h1 {
+	font-size: 12px;
+	color: #666;
+	background: url(../images/articles_title_bg.gif) no-repeat 85px 12px;
+}
+
+#articles {
+	height: 310px;	
+}
+
+#articles-news_separator {
+	width: 1px;
+	height: 320px;
+	background: url(../images/articles-news_zone_bg.gif) no-repeat;
+	float: left;
+	margin: 10px 5px 0 5px;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #666; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	/*margin-bottom: 15px;*/ /* this creates the space between the navigation on the content below */
+	margin: 0;
+	display: block;
+	padding: 0;
+	/*height: 29px;*/
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* this creates the button separation */
+	display: block;
+}
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: inline; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background: none;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	background: #none;
+	color: #FFF;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	height: 170px;
+	padding: 10px 0;
+	background: #CCC;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+.bottom_menu_site_separator {
+	color: #1aa9b8;
+	font-size: 11px;	
+}
+
+#bottom_menu_site {
+	width: 1000px;
+	height: 30px;
+	margin: 0 auto;	
+	text-align: center;
+}
+
+#bottom_menu_site ul li {
+	display: inline;
+	margin: 0 0 0 10px;
+}
+
+#bottom_menu_site ul li a {
+	color: #1aa9b8;
+	font-size: 11px;
+	text-decoration: none;
+}
+
+#bottom_menu_site ul li a:hover {
+	text-decoration: underline;
+}
+
+#bottom_submenu_site_zone {
+	width: 1000px;
+	margin: 10px auto;	
+}
+
+#block_bottom_submenu {
+	width: 190px;
+	float: left;	
+}
+
+#block_bottom_submenu h1 {
+	color: #FFF;
+	font-size: 10px;	
+}
+
+#block_bottom_submenu ul li {
+	list-style: none;	
+	margin: 0 0 0 25px;
+	line-height: 16px;
+}
+
+#block_bottom_submenu ul li a {
+	text-decoration: none;
+	font-size: 10px;
+	color: #FFF;	
+}
+
+#block_bottom_submenu ul li a:hover {
+	color: #1aa9b8;	
+}
+
+#bottom_menu_site_separator {
+	float: left;
+	width: 1px;
+	height: 115px;
+	background: url(../images/bottom_menu_site_separator.gif) no-repeat;
+	margin: 5px 5px 0 5px;
+}
+
+#bottom_social_networks_zone {
+	width: 190px;
+	float: left;
+	color: #FFF;
+	font-size: 11px;	
+}
+
+#bottom_social_networks_zone h1 {
+	text-align: right;
+	color: #FFF;
+	font-size: 11px;
+}
+
+#final_site_band {
+	width: 1000px;
+	margin: 10px auto 0;
+	background: url(../images/bottom_footer_bg.gif) no-repeat;
+}
+
+#final_site_band ul li {
+	display: inline;	
+	list-style: none;
+	color: #999;
+	font-size: 11px;
+}
+
+#health_colleges_site {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: right;
+}
+
+#health_colleges_site ul li {
+	list-style: none;
+	display: inline;
+	margin: 0 0 0 10px;
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+/*Inicio estilos del módulo mod_login*/
+
+#authentication_zone h3 {
+	font-size: 12px;
+	color: #FFF;
+	background: url(../images/bg_title_box.png) no-repeat right center;
+	margin-top: 2px;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+.mn-element-invisible {
+	color: #666;
+	font-size: 11px;	
+}
+
+.mn-control-label {
+	color: #666;
+	font-size: 11px;	
+}
+
+.mn-input-small {
+    border: 1px solid #1aa9b8;
+    color: #999999;
+    font-size: 11px;
+    height: 16px;
+	width: 200px;
+}
+
+.mn-userdata {
+	float: right;
+	margin: -41px -11px 0 0;
+    padding: 40px 0 10px 35px;
+    width: 215px;
+	border: 1px solid #1aa9b8;	
+}
+
+.mn-btn-login {
+	width: 100px;
+	height: 22px;
+	background: url(../images/btn_bg100.png) no-repeat;
+	border: 0;
+	color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.mn-unstyled {
+	list-style: none;
+	color: #999;
+	font-size: 11px;
+}
+
+.mn-unstyled li a {
+	/*display: inline;*/
+	background: url(../images/link_bullet_bg.gif) no-repeat center left;
+	padding-left: 10px;
+	color: #666;
+}
+
+.mn-unstyled li a:hover {
+	text-decoration: underline;
+}
+
+.mn-form-vertical {
+	color: #999;
+	font-size: 11px;	
+	float: right;
+	margin: -41px -11px 0 0;
+    padding: 40px 0 10px 35px;
+    width: 215px;
+	border: 1px solid #1aa9b8;	
+}
+
+.mn-login-greeting {
+	text-align: right;
+	margin-right: 10px;	
+}
+
+.mn-btn-logout {
+	width: 100px;
+	height: 22px;
+	background: url(../images/btn_bg100.png) no-repeat;
+	border: 0;
+	color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+	margin: 5px 10px 0 0;
+	float: right;	
+}
+
+/*Fin estilos del módulo mod_login*/
+
+/*Inicio estilos del módulo mod_menu*/
+
+#top_menu ul.nav {
+	border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+}
+
+#top_menu ul.nav li {
+	display: inline;
+	border: none;	
+	margin-top: 5px;
+	background: url(../images/top_menu_separator.png) no-repeat left center;
+	border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+}
+
+#top_menu ul.nav a {
+	color: #FFF;
+	font-size: 12px;
+	text-transform: uppercase;
+	text-align: center;	
+	padding-right: 10px;
+	/*box-shadow: 0px 2px 3px #000;
+	-webkit-box-shadow: 0px 2px 3px #000;
+	-moz-box-shadow: 0px 2px 3px #000;*/
+}
+
+#top_menu ul.nav a:hover {
+	color: #FFF;
+	font-size: 12px;
+	background: url(../images/top_menu_bg_over.gif);
+	text-transform: uppercase;
+	text-align: center;	
+	padding-right: 10px;
+	
+}
+
+/*Fin estilos del módulo mod_menu*/
+
+/*Inicio estilos del módulo mod_breadcrumbs*/
+
+/*#sitemap_zone ul li  {
+	display: inline;	
+	list-style: none;
+	margin-right: 5px;
+	color: #1aa9b8;
+	font-size: 12px;
+}
+
+#sitemap_zone .pathway  {
+	font-size: 12px;
+	color: #333;
+}*/
+
+.breadcrumb {
+	/*padding: 8px 15px;*/
+	/*margin: 0 0 18px;*/
+	list-style: none;
+	/*background-color: #f5f5f5;*/
+	/*-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;*/
+}
+.breadcrumb > li {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	text-shadow: 0 1px 0 #fff;
+	color: #1AA9B8;
+    font-size: 12px;
+}
+.breadcrumb > li > .divider {
+	padding: 0 5px;
+	color: #ccc;
+}
+.breadcrumb > .active {
+	color: #999;
+}
+
+/*Fin estilos del módulo mod_breadcrumbs*/
+
+/*Estilo generales de Joomla*/
+
+.item-page {
+	margin: -22px 0 0 -5px;	
+}
+
+.item-page p {
+	color: #999;
+	font-size: 12px;
+	text-align: justify;
+}
+
+.page-header h2 a {
+	font-size: 12px;
+	color: #FFF;
+	background: url(../images/bg_title_box.png) no-repeat left center;
+	margin-top: 2px;
+	padding-left: 15px;
+	text-transform: uppercase;
+}
+
+#system-message-container {
+	color: #666;
+	font-size: 12px;
+}
+
+/*#system-message-container h4 {
+	color: #FFF;
+	font-size: 24px;	
+}*/
+
+.registration {
+	padding: 10px;	
+}
+
+fieldset {
+	font-size: 12px;
+	color: #666;
+	border: 1px solid #1AA9B8;	
+	padding: 10px 10px 0 10px;
+	margin-bottom: 10px;
+}
+
+.login {
+	padding: 10px 10px 10px 10px;
+	width: 710px;
+}
+
+.well {
+	font-size: 12px;
+	color: #666;
+	border: 1px solid #1AA9B8;	
+	padding: 10px;
+	margin-bottom: 10px;
+	/*min-height: 20px;
+	padding: 19px;
+	margin-bottom: 20px;
+	background-color: #f5f5f5;
+	border: 1px solid #e3e3e3;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);*/
+}
+
+/*navs*/
+
+.nav-stacked > li {
+	float: none;
+}
+.nav-stacked > li > a {
+	margin-right: 0;
+}
+.nav-tabs.nav-stacked {
+	border-bottom: 0;
+	margin-top: -15px;
+}
+.nav-tabs.nav-stacked > li > a {
+	/*border: 1px solid #ddd;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;*/
+}
+.nav-tabs.nav-stacked > li:first-child > a {
+	/*-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-right-radius: 4px;
+	-webkit-border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	border-top-left-radius: 4px;*/
+}
+.nav-tabs.nav-stacked > li:last-child > a {
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-bottom-right-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-bottom-left-radius: 4px;
+}
+.nav-tabs.nav-stacked > li > a:hover,
+.nav-tabs.nav-stacked > li > a:focus {
+	border-color: #ddd;
+	z-index: 2;
+}
+
+.span9 {
+		width: 538px;
+	}
+
+.red {
+	color: #F00;	
+}
+
+.star {
+	color: #F00;	
+}
+
+/*#jform_name-lbl {
+	color: #00C;	
+	font-size: 36px;
+}*/
+
+.controls button {
+	margin-top: 5px;
+	width: 100px;
+	height: 22px;
+	background: url(../images/btn_bg100.png) no-repeat;
+	border: 0;
+	color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.control-label {
+	font-size: 12px;
+	color: #666;
+}
+
+.form-actions button {
+	width: 100px;
+	height: 22px;
+	background: url(../images/btn_bg100.png) no-repeat;
+	border: 0;
+	color: #FFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.form-actions a {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.form-actions a:hover {
+	text-decoration: underline;
+}
+
+.remind p {
+	font-size: 12px;
+	color: #666;
+	text-align: justify;
+	margin-top: 10px;	
+}
+
+.reset p {
+	font-size: 12px;
+	color: #666;
+	text-align: justify;
+	margin-top: 10px;	
+}
+
+#content {
+	float: left;
+    width: 730px;
+}
+
+#content ul {
+	border: none;
+}
+
+#content ul li {
+	border: none;
+	margin-left: 10px;	
+}
+
+#content ul li a {
+	color: #666;
+	font-size: 12px;
+	background: url(../images/link_bullet_bg.gif) no-repeat center left;	
+}
+
+/*Inicio Estilos Tooltip*/
+
+.tooltip {
+	position: absolute;
+	z-index: 1030;
+	display: block;
+	visibility: visible;
+	font-size: 11px;
+	line-height: 1.4;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.tooltip.in {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+.tooltip.top {
+	margin-top: -3px;
+	padding: 5px 0;
+}
+.tooltip.right {
+	margin-left: 3px;
+	padding: 0 5px;
+}
+.tooltip.bottom {
+	margin-top: 3px;
+	padding: 5px 0;
+}
+.tooltip.left {
+	margin-left: -3px;
+	padding: 0 5px;
+}
+.tooltip-inner {
+	max-width: 200px;
+	padding: 8px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	background-color: #666;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.tooltip-arrow {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+}
+.tooltip.top .tooltip-arrow {
+	bottom: 0;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px 5px 0;
+	border-top-color: #666;
+}
+.tooltip.right .tooltip-arrow {
+	top: 50%;
+	left: 0;
+	margin-top: -5px;
+	border-width: 5px 5px 5px 0;
+	border-right-color: #666;
+}
+.tooltip.left .tooltip-arrow {
+	top: 50%;
+	right: 0;
+	margin-top: -5px;
+	border-width: 5px 0 5px 5px;
+	border-left-color: #666;
+}
+.tooltip.bottom .tooltip-arrow {
+	top: 0;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 0 5px 5px;
+	border-bottom-color: #666;
+}
+/*Fin Estilos Tooltip*/
+
+/*Inicio Estilos Clientes*/
+
+#client_zone {
+	width: 730px;	
+}
+#client_zone_options {
+	width: 730px;
+	float: left;	
+	margin-top: 10px;	
+}
+#client_zone_options h1 {
+	font-size: 12px;
+	color: #666;
+	background: url(../images/services_title_bg.gif) no-repeat 140px 12px;
+}
+#client_service_box {
+	width: 150px;
+	float: left;	
+}
+#client_service_box img {
+	margin: 0 0 0 45px;	
+}
+#client_service_box h1 {
+	color: #1aa9b8;
+	font-size: 11px;
+	background: none;
+	margin: 3px 0 0 0;
+	text-align: center;
+}
+.client_service_box {
+	margin: 0 20px 0 20px;
+	width: 1px;
+	height: 90px;
+	background: url(../images/services_box_separator_bg.gif) no-repeat;
+	float: left;	
+}
+.client_options_separator {
+	margin: 10px 20px 0 20px;
+	width: 1px;
+	height: 46px;
+	background: url(../images/client_options_separator.gif) no-repeat;
+	float: left;	
+}
+#client_options_divider {
+	width: 710px;
+	height: 1px;
+	background: url(../images/client_options_divider.gif) no-repeat;
+	float: left;
+	margin: 10px;	
+}
+#welcome_client_zone {
+    float: left;
+    padding: 10px 0 0;
+    width: 730px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#welcome_client_zone p {
+    color: #999999;
+    font-size: 11px;
+    text-align: justify;
+}
+#welcome_client_zone h1 {
+    color: #666;
+    font-size: 12px;
+}
+#welcome_client_zone ul {
+    margin-left: 30px;
+}	
+#welcome_client_zone ul li {
+    color: #999;
+    font-size: 11px;
+	list-style: none;
+	background: url("../images/link_bullet_bg.gif") no-repeat left center;
+	padding-left: 10px;
+	line-height: 18px;
+}
+/*Fin Estilos Clientes*/

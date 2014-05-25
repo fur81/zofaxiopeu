@@ -8,7 +8,7 @@
 # de respuesta rápida a partir de las consultas realizadas por el cliente.
 
 # Todos los derechos reservados
-# cambio para probar commit y push - ailia
+
 /**
  * En este fichero se almacenan las variables de configuración
  * generales del sistema Medicnexus completo. Garantiza que todos
@@ -25,16 +25,15 @@
 	/**
 	 * Define el nombre del servidor de producción
 	 */
-	define('MN_HOST', 'localhost');
+	define('MN_HOST', 'mysql.medicnexus.com');
 	/**
 	 * Define el usuario establecido para acceder a MYSQL
 	 */
-	define('MN_MYSQL_USER', 'root');
+	define('MN_MYSQL_USER', 'vacio');
 	/**
 	 * Define la contraseña establecida para acceder a MYSQL
 	 */
-	define('MN_MYSQL_PASSWORD', 'phpmy4dm1n#2013');
-	
+	define('MN_MYSQL_PASSWORD', 'vacio');	
 	
 #################################
 #     Variables para Mantis     #
@@ -47,7 +46,7 @@
 	/**
 	 * Define la contraseña del usuario de administración de Mantis
 	 */
-	define('MN_MANTIS_ROOT_PASSWORD', 'm4nt1s#2013');
+	define('MN_MANTIS_ROOT_PASSWORD', 'MedicnexuS2013');
 	/**
 	 * Define el nombre de la base de datos utilizado en Mantis
 	 */
@@ -69,15 +68,15 @@
 	/**
 	 * Define el usuario de administración para el sitio Joomla
 	 */
-	define('MN_JOOMLA_ROOT_USERNAME', 'joomla_cero');
+	define('MN_JOOMLA_ROOT_USERNAME', 'cero_mn');
 	/**
 	 * Define la contraseña del usuario de administración para el sitio Joomla
 	 */
-	define('MN_JOOMLA_ROOT_PASSWORD', 'j00ml4#2013');
+	define('MN_JOOMLA_ROOT_PASSWORD', 'MedicnexuS2013');
 	/**
 	 * Define el nombre de la base de datos en el sitio Joomla
 	 */
-	define('MN_JOOMLA_DATABASE', 'cero');
+	define('MN_JOOMLA_DATABASE', 'cero_mn');
 	/**
 	 * Define el prefijo utilizado para las tablas existentes en la base de datos Joomla
 	 */
@@ -85,13 +84,12 @@
 	/**
 	 * Variable para el camino reslativo del sitio
 	 */
-	define('SUB_PROJECT_PATH','/medicnexus');	
+	define('SUB_PROJECT_PATH','');	
 	/**
 	 * Defien el correo del sitio
 	 */
-	define('MN_JOOMLA_EMAIL_FROM', 'manuelminfo@gmail.com' );
+	define('MN_JOOMLA_EMAIL_FROM', 'no-reply@medicnexus.com' );
 	/**
 	 * Defien el contraseña del correo del sitio
 	 */
-	define('MN_JOOMLA_EMAIL_PASSWORD_FROM', 'casinodeportivo' );
-
+	define('MN_JOOMLA_EMAIL_PASSWORD_FROM', 'nonono' );
