@@ -182,7 +182,7 @@ else
 				</div>
 
 				<div class="contact_title">
-				<?php echo JText::_('TPL_MN_ATTEND_SERVICE');?>
+				<?php echo JText::_('TPL_MN_ATTEND_SERVICE');?><br>
 				</div>
 
 				<div class="contact_table">
@@ -190,17 +190,17 @@ else
 						<tr>
 							<td width="40%" style="color: #666; font-size: 11px;"
 								align="right"><?php echo JText::_('TPL_MN_EMAIL');?>:</td>
-							<td style="color: #999; font-size: 11px;">contacto@medicnexus.com</td>
+							<td style="color: #999; font-size: 11px;">aclient@medicnexus.com</td>
 						</tr>
 						<tr>
 							<td width="40%" style="color: #666; font-size: 11px;"
 								align="right"><?php echo JText::_('TPL_MN_PHONE');?>:</td>
-							<td style="color: #999; font-size: 11px;">(+34) 66-683-0777</td>
+							<td style="color: #999; font-size: 11px;">(+34) 93 321 85 95</td>
 						</tr>
 						<tr>
 							<td width="40%" style="color: #666; font-size: 11px;"
 								align="right"><?php echo JText::_('TPL_MN_FAX');?>:</td>
-							<td style="color: #999; font-size: 11px;">(+34) 91-188-6000</td>
+							<td style="color: #999; font-size: 11px;">(+34) 677 51 82 62</td>
 						</tr>
 					</table>
 				</div>

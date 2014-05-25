@@ -149,13 +149,20 @@
 						</label>
 						</td>
 					</tr>
+					<tr valign="top">
+						<td class="consult_det_title"><?php getValue('label_total_amount');?>:</td>
+						<td colspan="2"><label><?php echo $GLOBALS['PAY_TOTAL_AMOUNT'] . '  ' . PAYPAL_CURRENCY_EUR;?>
+						</label>
+						</td>
+					</tr>
 					<tr>
 						<td class="consult_det_title" rowspan="2"><label
 							style="vertical-align: middle !important;"><?php getValue('label_payment_type');?>:</label>
 						</td>
+						<!-- comentado para inhabilitar paypal -->
 						<td valign="top" style="height: 30px;"><input
-							id="paymentTypePaypal" checked="checked"
-							style="vertical-align: middle !important;" name="paymentType"
+							id="paymentTypePaypal"
+							style="vertical-align: middle !important;" name="paymentType"  checked="checked"
 							type="radio" value="<?php echo MN_PAY_PAYPAL;?>" /> <label
 							style="vertical-align: middle !important"><?php getValue('label_paypal');?>
 						</label>
@@ -164,7 +171,10 @@
 							src="templates/medicnexus/images/credit_cards_icons.gif"
 							style="vertical-align: bottom !important;">
 						</td>
+						
+						<!--<td></td><td></td>  quitar cuando se habilite paypal -->
 					</tr>
+					
 					<tr>
 						<td valign="top" style="height: 30px;"><input id="paymentTypeTPV"
 							style="vertical-align: middle !important;" name="paymentType"
@@ -213,10 +223,13 @@
 <!-- scripts de la página -->
 <script type="text/javascript">
 
+	//para desmarcar el check de especialistas al recargar
+	document.getElementById("viewSpecialistsCheckbox").checked = false;
+
 	// se obtiene el camino relativo del servidor
 	function getPath() {
     	var path = "";
-	    nodes = window.location. pathname. split('/');
+	    nodes = window.location.pathname.split('/');
 	    for (var index = 0; index < nodes.length - 3; index++) {
     	    path += "../";
     	}
@@ -237,7 +250,8 @@
 			$.ajax
 			({
 				type: "POST",
-				url: getPath()+"mnintegration/view/ajax/issue_add_specialist_inc.php",
+				url: window.location.origin+"/mnintegration/view/ajax/issue_add_specialist_inc.php",
+				//url: "http://www.medicnexus.com/mnintegration/view/ajax/issue_add_specialist_inc.php",
 				data: dataString,
 				cache: false,
 				success: function(html)

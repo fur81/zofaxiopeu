@@ -241,7 +241,7 @@
 	 * @see $g_send_reset_password
 	 * @global int $g_allow_signup
 	 */
-	$g_allow_signup			= ON;
+	$g_allow_signup			= OFF;
 
 	/**
 	 * Max. attempts to login using a wrong password before lock the account.
@@ -317,31 +317,31 @@
 	 * Administrator Email address
 	 * @global string $g_administrator_email
 	 */
-	$g_administrator_email	= 'administrator@example.com';
+	$g_administrator_email	= 'aclient@medicnexus.com';
 
 	/**
 	 * Webmaster email
 	 * @global string $g_webmaster_email
 	 */
-	$g_webmaster_email		= 'webmaster@example.com';
+	$g_webmaster_email		= 'aclient@medicnexus.com';
 
 	/**
 	 * the sender email, part of 'From: ' header in emails
 	 * @global string $g_from_email
 	 */
- 	$g_from_email			= 'noreply@example.com';
+ 	$g_from_email			= 'noreply@medicnexus.com';
 
 	/**
 	 * the sender name, part of 'From: ' header in emails
 	 * @global string $g_from_name
 	 */
-	$g_from_name			= 'Mantis Bug Tracker';
+	$g_from_name			= 'Medicnexus Inside';
 
 	/**
 	 * the return address for bounced mail
 	 * @global string $g_return_path_email
 	 */
-	$g_return_path_email	= 'admin@example.com';
+	$g_return_path_email	= 'aclient@medicnexus.com';
 
 	/**
 	 * Allow email notification.

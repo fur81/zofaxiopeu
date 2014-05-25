@@ -84,6 +84,17 @@ $values[L_SPANISH] = array(
 		'label_uploadSize' => 'El fichero que se desee adjuntar no puede ser mayor a ',
 		'label_documentsInfo' => 'Usted podrá adjuntar todos los ficheros que desee a la consulta una vez que esta ha 
 							sido creada. Para acceder a esta opción dirígase a la vista detallada de la consulta creada.',
+		'label_client_zone_title' => 'LOREM IPSUM DOLOR',
+		'label_client_zone_description' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
+										laudantium, totam erictus mepli rem aperiam, eaque ipsa quae ab illo inventore veritatis et 
+										quasi architecto beatae vitae dicta sunt explicitus nillus ectol bo. Nemo enim ipsam voluptatem 
+										quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur maraellos malic gni 
+										dolores eos qui ratione	voluptatem sequi nesciunt.
+										Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+										Aenean maite ellectus illio ect lassa. Cum sociis natoque penatibus et magnis dis parturient 
+										montes, nascetur ridiculus mus. Aenean maesus cisei commodo ligula eget dolor. Aenean massa. 
+										Cum sociis natoque penatibus et magnis dis parturient montello brenuli usu is, nascetur 
+										ridiculus mus.',
 
 		/** botones */
 		'button_send' => 'Enviar',

@@ -37,7 +37,7 @@
 		</button>
 	</div>
 	<div style="padding: 0 0 0 10px;">
-		<div>
+		<div style="float: left;">
 			<div class="consultation_detail_icon">
 				<img src="templates/medicnexus/images/reports_list_icon.gif" />
 			</div>

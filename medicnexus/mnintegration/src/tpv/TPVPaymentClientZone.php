@@ -13,9 +13,9 @@
  * Establece la comunicación con la pasarela de pago TPV. En el formulario se colocan
  * todos los valores que serán enviados al servicio de pago.
  */
-
 include_once ( $GLOBALS['TPV_COMMON'] ); // se incluye el fichero de configuración para TPV
-$tpvData = setTPVEnviromentConfiguration('sandbox', $idData);  // las opciones pueden ser 'sandbox' o 'live'
+
+$tpvData = setTPVEnviromentConfiguration('live', $idData);  // las opciones pueden ser 'sandbox' o 'live'
 ?>
 
 <form id="f_tpv" name="f_tpv" action="<?php echo $tpvData->urlTPV;?>" method="post" style="height:1px; width:1px; overflow: hidden;">

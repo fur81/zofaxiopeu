@@ -11,7 +11,7 @@
 	# --- email --- # 
 		#$g_enable_email_notification = OFF;
         $g_phpMailer_method     = PHPMAILER_METHOD_SMTP;
-        $g_smtp_host            = 'smtp.gmail.com';
+        $g_smtp_host            = 'mail.medicnexus.com';
         $g_smtp_username        = MN_JOOMLA_EMAIL_FROM;
         $g_smtp_password        = MN_JOOMLA_EMAIL_PASSWORD_FROM;
         $g_smtp_connection_mode = 'ssl';
