@@ -8,7 +8,7 @@
 # de respuesta rápida a partir de las consultas realizadas por el cliente.
 
 # Todos los derechos reservados
-
+# cambio para probar commit y push - ailia
 /**
  * En este fichero se almacenan las variables de configuración
  * generales del sistema Medicnexus completo. Garantiza que todos
