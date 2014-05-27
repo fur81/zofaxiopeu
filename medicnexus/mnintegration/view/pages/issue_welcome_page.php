@@ -27,5 +27,4 @@
     
     <h1><?php getValue('label_client_zone_title');?></h1>
     <p><?php getValue('label_client_zone_description');?></p>
-    
 </div>

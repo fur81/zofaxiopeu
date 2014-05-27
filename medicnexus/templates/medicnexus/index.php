@@ -25,6 +25,8 @@ else
 	$fullWidth = 0;
 }
 
+
+
 // Add JavaScript Frameworks
 JHtml::_('bootstrap.framework');
 $doc->addScript('templates/' .$this->template. '/js/template.js');
@@ -85,6 +87,18 @@ else
 <script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/medicnexus/js/jquery.nicefileinput.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>MEDICNEXUS</title>
+
+<!-- GOOGLE ANALYTICS -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41157753-1', 'medicnexus.com');
+  ga('send', 'pageview');
+
+</script>
 </head>
 
 <body
@@ -188,7 +202,7 @@ else
 				</div>
 
 				<div class="contact_title">
-				<?php echo JText::_('TPL_MN_ATTEND_SERVICE');?>
+				<?php echo JText::_('TPL_MN_ATTEND_SERVICE');?><br>
 				</div>
 
 				<div class="contact_table">
@@ -196,17 +210,17 @@ else
 						<tr>
 							<td width="40%" style="color: #666; font-size: 11px;"
 								align="right"><?php echo JText::_('TPL_MN_EMAIL');?>:</td>
-							<td style="color: #999; font-size: 11px;">contacto@medicnexus.com</td>
+							<td style="color: #999; font-size: 11px;">aclient@medicnexus.com</td>
 						</tr>
 						<tr>
 							<td width="40%" style="color: #666; font-size: 11px;"
 								align="right"><?php echo JText::_('TPL_MN_PHONE');?>:</td>
-							<td style="color: #999; font-size: 11px;">(+34) 66-683-0777</td>
+							<td style="color: #999; font-size: 11px;">(+34) 93 321 85 95</td>
 						</tr>
 						<tr>
 							<td width="40%" style="color: #666; font-size: 11px;"
 								align="right"><?php echo JText::_('TPL_MN_FAX');?>:</td>
-							<td style="color: #999; font-size: 11px;">(+34) 91-188-6000</td>
+							<td style="color: #999; font-size: 11px;">(+34) 677 51 82 62</td>
 						</tr>
 					</table>
 				</div>

@@ -51,7 +51,7 @@
 	/**
 	 * Define el nombre de la base de datos utilizado en Mantis
 	 */
-	define('MN_MANTIS_DATABASE', 'mninside');
+	define('MN_MANTIS_DATABASE', 'mninside_production');
 	/**
 	 * Define el tamaño máximo para los ficheros adjuntos
 	 */
@@ -77,7 +77,7 @@
 	/**
 	 * Define el nombre de la base de datos en el sitio Joomla
 	 */
-	define('MN_JOOMLA_DATABASE', 'cero');
+	define('MN_JOOMLA_DATABASE', 'cero_production');
 	/**
 	 * Define el prefijo utilizado para las tablas existentes en la base de datos Joomla
 	 */
@@ -94,4 +94,8 @@
 	 * Defien el contraseña del correo del sitio
 	 */
 	define('MN_JOOMLA_EMAIL_PASSWORD_FROM', 'casinodeportivo' );
+	/**
+	 * Defien el correo del usuario en el sitio
+	 */
+	define('MN_JOOMLA_EMAIL_CLIENT', 'aclient@medicnexus.com' );
 

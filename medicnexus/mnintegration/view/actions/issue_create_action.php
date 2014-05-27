@@ -24,33 +24,13 @@ require __DIR__ . '/../../src/paypal/payments/paypal.php';
 
 // se chequea si se realizó el pago o no
 if ( isset($_GET['success'])) {
-/*
-	if ($_GET['success'] == 'true') {
-		// se carga la información temporal
-		$issueData = $mantisCore->loadTempData($_GET['idData']);
-		// se crean las variables existentes en la información temporal
-		$summary = $issueData['summary'];
-		$description = $issueData['description'];
-		$specialistId = $issueData['specialistId'];
-		$paymentType = $issueData['paymentType'];
-		$projectId = $issueData['projectId'];
-		// se establecen los valores de pago
-		setProjectPaypalConfiguration( $paymentType );
-		// se crea la incidencia con la información almacenada
-		$mantisCore->addIssue($summary, $description, $projectId, $specialistId);
-		// se envia un mensaje al usuario del registro realizado
-		$mantisCore->sendEmail($summary, $description, $projectId, $specialistId, $GLOBALS['PAY_NAME'],
-							$GLOBALS['PAY_PRICE'], $GLOBALS['PAY_TAX'], $GLOBALS['PAY_TOTAL_AMOUNT']);
-		// se envia un mensaje de terminacion correcta
-		$_SESSION ['msg'] = 'msg_info_consult_inserted';
-	}else{
-		$_SESSION ['msg'] = 'msg_error_consult_inserted';
-	}
-	*/
 	
-	if($_GET['success'] == 'true' && isset($_GET['PayerID'])) {		
+	if($_GET['success'] == 'true') {	
 		try {
-			$payment = executePayment($_SESSION['paymentId'], $_GET['PayerID']);
+			if (isset($_GET['PayerID']))
+			{
+				$payment = executePayment($_SESSION['paymentId'], $_GET['PayerID']);
+			}
 			//TODO: analizar el estado del pago $payment->getState()
 			// se carga la información temporal
 			$issueData = $mantisCore->loadTempData($_GET['idData']);
@@ -106,9 +86,8 @@ if ( isset($_GET['success'])) {
 		//include_once $GLOBALS['PAYPAL_REQUEST_CLIENT_ZONE']; // se carga el servicio paypal
 		try{
 		
-			$payment = makePaymentUsingPayPal($GLOBALS ['CURRENT_PAGE'] . '?success=true&idData=' . $idData, 
+			$payment = makePaymentUsingPayPal($idData, $GLOBALS ['CURRENT_PAGE'] . '?success=true&idData=' . $idData, 
 											  $GLOBALS ['CURRENT_PAGE'] . '?success=false&idData=' . $idData);	
-			
 			
 			//TODO: cambiar por BBDD
 			$_SESSION['paymentId'] = $payment->getId();
@@ -120,7 +99,6 @@ if ( isset($_GET['success'])) {
 				}
 			}			
 			header("Location: " . $redirectUrl);
-			
 			exit;
 		} catch(PayPal\Exception\PPConnectionException $ex) {
 			echo "Exception: " . $ex->getMessage() . PHP_EOL;
