@@ -20,7 +20,7 @@
 function setTPVEnviromentConfiguration( $enviroment, $idData ){
 	$tpv = new stdClass();
 	$tpv->producDescription = $GLOBALS['PAY_NAME']; // descripción del producto
-	$tpv->order = llenaEspacios($idData, 11, '0'); // contador del número del producto
+	$tpv->order = $idData; // contador del número del producto
 	$tpv->currency = TPV_CURRENCY_EUR; // moneda que se utiliza
 	$tpv->import = $GLOBALS['PAY_PRICE']; // precio del producto
 	$tpv->email = JFactory::getUser()->email; // correo de la persona que solicita el producto
@@ -45,22 +45,4 @@ function setTPVEnviromentConfiguration( $enviroment, $idData ){
 	$tpv->hash = sha1($tpv->import.$tpv->order.$tpv->code.$tpv->currency.$tpv->type.$tpv->urlReturn.$tpv->clau); // código de seguridad
 	
 	return $tpv;
-}
-
-
-/**
- * Llena con ceros el valor del pasado por parámetros según la cantidad.
- * 
- * @param int $valor
- * @param int $num
- * @param char $char
- * @return string
- */
-function llenaEspacios($valor,$num,$char){
-    $len_valor = strlen($valor);
-    for($i=$len_valor; $i<$num; $i++){
-        $valor = $char.''.$valor;
-    }
-    $valor = '1'.$valor;
-    return $valor;
 }

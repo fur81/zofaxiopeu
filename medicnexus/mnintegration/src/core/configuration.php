@@ -44,8 +44,8 @@ define('L_CATALAN', 'ca-ES');
 define('L_ENGLISH', 'en-GB');
 
 // variables de pagos
-define('MN_PAY_PAYPAL', 'paypal');
-define('MN_PAY_TPV', 'tpv');
+define('MN_PAY_PAYPAL', 'Paypal');
+define('MN_PAY_TPV', 'TPV');
 include_once 'configuration_pay.php';
 
 // variables de joomla

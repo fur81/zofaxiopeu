@@ -171,4 +171,21 @@ function getDateFormat($date) {
 function replaceRToBr($string) {
 	return str_replace("\r", "<br>", $string);
 }
+
+/**
+ * Llena con ceros el valor del pasado por parámetros según la cantidad.
+ * 
+ * @param int $valor
+ * @param int $num
+ * @param char $char
+ * @return string
+ */
+function llenaEspacios($valor,$num,$char){
+    $len_valor = strlen($valor);
+    for($i=$len_valor; $i<$num; $i++){
+        $valor = $char.''.$valor;
+    }
+    $valor = '1'.$valor;
+    return $valor;
+}
 ?>
