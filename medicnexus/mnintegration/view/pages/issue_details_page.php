@@ -23,7 +23,6 @@
  * 
  */
 ?>
-
 <?php $issueId = $_SESSION ['issueId']; //id de la consulta seleccionada. ?>
 <?php $issue = $mantisCore->getIssueById ( $issueId ); // se cargan los detalles de la consulta. ?>
 <?php $resolvedConsult = FALSE;?>
@@ -51,6 +50,19 @@
 		</div>
 		<div class="consultation_detail_body">
 			<table width="100%" cellpadding="3" cellspacing="0">
+				<tr valign="top">
+					<td class="consult_det_title"><label><?php getValue('label_payment_type');?>:</label>
+					</td>
+					<td class="consult_det_info"><?php echo replaceRToBr($issue->custom_fields[0]->value);
+					?>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td class="consult_det_title"><label><?php getValue('label_transaction');?>:</label>
+					</td>
+					<td class="consult_det_info"><?php echo replaceRToBr($issue->custom_fields[1]->value);?>
+					</td>
+				</tr>
 				<tr valign="top">
 					<td width="110px" class="consult_det_title"><label><?php getValue('label_assigned_to');?>:</label>
 					</td>
@@ -97,7 +109,7 @@
 			<div class="controls">
 				<table width="100%" cellpadding="3" cellspacing="0">
 				<?php for($i = 0; $i < count ( $issue->attachments ); $i ++): ?>
-					<?php $attached = $issue->attachments [$i];?>
+					<?php $attached = $issue->attachments[$i];?>
 					<tr valign="top" class="active_text">
 						<td width="180px" class="consult_det_title" valign="top">
 							<?php $user = $mantisCore->getUserById($attached->user_id);?>

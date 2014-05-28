@@ -49,6 +49,7 @@ $values[L_ENGLISH] = array(
 		'label_payment_type' => 'Payment Type',
 		'label_paypal' => 'PayPal',
 		'label_tpv' => 'TPV',
+		'label_transaction' => 'Transaction',
 		
 		/** formularios */
 		'label_empty_list' => '-- There\'s no items to list --',

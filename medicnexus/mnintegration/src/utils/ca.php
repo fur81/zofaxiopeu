@@ -49,6 +49,7 @@ $values[L_CATALAN] = array(
 		'label_payment_type' => 'Tipus de Pagament',
 		'label_paypal' => 'PayPal',
 		'label_tpv' => 'TPV',
+		'label_transaction' => 'Transacción',
 		
 		/** formularios */
 		'label_empty_list' => '-- No hi ha dades per mostrar --',

@@ -279,7 +279,7 @@ class MantisCore {
 	 * @param string $description
 	 * @return id
 	 */
-	public function addIssue($summary, $description, $projectId, $specialistId) {
+	public function addIssue($summary, $description, $projectId, $specialistId, $paymentType, $transaction) {
 		$result = '';
 		try {
 			$issueData = new stdClass();
@@ -296,6 +296,17 @@ class MantisCore {
 				$issueData->handler = new stdClass();
 				$issueData->handler->id = $specialistId;
 			}
+			// valores de campos personalizados
+			// -- tipo de pago
+			$issueData->custom_fields[0] = new stdClass();
+			$issueData->custom_fields[0]->field = new stdClass();
+			$issueData->custom_fields[0]->field->id = 3;
+			$issueData->custom_fields[0]->value = $paymentType;
+			// -- transacción
+			$issueData->custom_fields[1] = new stdClass();
+			$issueData->custom_fields[1]->field = new stdClass();
+			$issueData->custom_fields[1]->field->id = 2;
+			$issueData->custom_fields[1]->value = $transaction;
 			// se crea la incidencia
 			$result = $this->proxySoap->mc_issue_add ( $this->currentUser, $this->currentPassword, $issueData );
 		} catch ( Exception $e ) {
@@ -771,6 +782,7 @@ class MantisCore {
 			$data .= "&specialistId=" . $specialistId;
 			$data .= "&paymentType=" . $paymentType;
 			$idData = $this->saveTempData($data);
+			$idData = llenaEspacios($idData, 11, '0');
 		} catch (Exception $e) {
 		}
 		return $idData;

@@ -171,10 +171,7 @@
 							src="templates/medicnexus/images/credit_cards_icons.gif"
 							style="vertical-align: bottom !important;">
 						</td>
-						
-						<!--<td></td><td></td>  quitar cuando se habilite paypal -->
 					</tr>
-					
 					<tr>
 						<td valign="top" style="height: 30px;"><input id="paymentTypeTPV"
 							style="vertical-align: middle !important;" name="paymentType"

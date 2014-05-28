@@ -50,6 +50,7 @@ $values[L_SPANISH] = array(
 		'label_payment_type' => 'Tipo de pago',
 		'label_paypal' => 'PayPal',
 		'label_tpv' => 'TPV',
+		'label_transaction' => 'Transacción',
 		
 		/** formularios */
 		'label_empty_list' => '-- No existen datos para mostrar --',
