@@ -93,3 +93,7 @@
 	 * Defien el contraseña del correo del sitio
 	 */
 	define('MN_JOOMLA_EMAIL_PASSWORD_FROM', 'nonono' );
+	/**
+	 * Defien el correo del usuario en el sitio
+	 */
+	define('MN_JOOMLA_EMAIL_CLIENT', 'aclient@medicnexus.com' );

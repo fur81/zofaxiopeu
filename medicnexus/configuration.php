@@ -1,4 +1,5 @@
 <?php
+require_once ('general_config.php');
 class JConfig {
 	public $offline = '0';
 	public $offline_message = 'Este sitio está cerrado por tareas de mantenimiento.<br /> Por favor, inténtelo nuevamente más tarde.';
@@ -12,11 +13,11 @@ class JConfig {
 	public $debug = '0';
 	public $debug_lang = '0';
 	public $dbtype = 'mysql';
-	public $host = 'mysql.medicnexus.com';
-	public $user = 'cero_mn';
-	public $password = 'MedicnexuS2013';
-	public $db = 'cero_mn';
-	public $dbprefix = 'cero_';
+	public $host = MN_HOST;
+	public $user = MN_JOOMLA_ROOT_USERNAME;
+	public $password = MN_JOOMLA_ROOT_PASSWORD;
+	public $db = MN_JOOMLA_DATABASE;
+	public $dbprefix = MN_JOOMLA_DATABASE_PREFIX;
 	public $live_site = '';
 	public $secret = 'aDtDIwo3OSlv2woP';
 	public $gzip = '0';
@@ -30,12 +31,12 @@ class JConfig {
 	public $ftp_enable = '0';
 	public $offset = 'Europe/Madrid';
 	public $mailer = 'smtp';
-	public $mailfrom = 'no-reply@medicnexus.com';
+	public $mailfrom = MN_JOOMLA_EMAIL_FROM;
 	public $fromname = 'Medicnexus';
 	public $sendmail = '/usr/sbin/sendmail';
 	public $smtpauth = '1';
-	public $smtpuser = 'no-reply@medicnexus.com';
-	public $smtppass = 'nonono';
+	public $smtpuser = MN_JOOMLA_EMAIL_FROM;
+	public $smtppass = MN_JOOMLA_EMAIL_PASSWORD_FROM;
 	public $smtphost = 'mail.medicnexus.com';
 	public $smtpsecure = 'ssl';
 	public $smtpport = '465';

@@ -16,11 +16,11 @@
         $g_smtp_password        = MN_JOOMLA_EMAIL_PASSWORD_FROM;
         $g_smtp_connection_mode = 'ssl';
         $g_smtp_port            = 465;
-        $g_administrator_email  = MN_JOOMLA_EMAIL_FROM;
-        $g_webmaster_email      = MN_JOOMLA_EMAIL_FROM;
+        $g_administrator_email  = MN_JOOMLA_EMAIL_CLIENT;
+        $g_webmaster_email      = MN_JOOMLA_EMAIL_CLIENT;
         $g_from_name            = 'Medicnexus';
-        $g_from_email           = MN_JOOMLA_EMAIL_FROM;
-        $g_return_path_email    = MN_JOOMLA_EMAIL_FROM;
+        $g_from_email           = MN_JOOMLA_EMAIL_CLIENT;
+        $g_return_path_email    = MN_JOOMLA_EMAIL_CLIENT;
 		
 		#$g_validate_email
 		#se utiliza para validar los correos, tener en cuenta si incluirlos o no
@@ -37,4 +37,7 @@
 		
         # --- branding --- #
         $g_window_title         = 'Medicnexus';
+        
+        # --- Anonymous Access / Signup ---
+		$g_allow_signup				= OFF;
 ?>
