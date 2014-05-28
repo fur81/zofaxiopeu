@@ -1,4 +1,3 @@
-<<<<<<< OURS
 <?php 
 # Medicnexus - sistema de gestión médica desarrollado en php
 
