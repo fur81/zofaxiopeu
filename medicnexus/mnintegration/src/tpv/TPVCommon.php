@@ -20,7 +20,7 @@
 function setTPVEnviromentConfiguration( $enviroment, $idData ){
 	$tpv = new stdClass();
 	$tpv->producDescription = $GLOBALS['PAY_NAME']; // descripción del producto
-	$tpv->order = $idData; // contador del número del producto
+	$tpv->order = llenaEspacios($idData, 11, '0');; // contador del número del producto
 	$tpv->currency = TPV_CURRENCY_EUR; // moneda que se utiliza
 	$tpv->import = $GLOBALS['PAY_PRICE']; // precio del producto
 	$tpv->email = JFactory::getUser()->email; // correo de la persona que solicita el producto
