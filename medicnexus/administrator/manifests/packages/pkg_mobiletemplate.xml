@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="package" method="upgrade">
+	<name>mobiletemplate</name>
+	<packagename>mobiletemplate</packagename>
+	<author>nhuang</author>
+	<authorEmail>jianbo.zhu@gmail.com</authorEmail>
+	<authorUrl>http://nhuang.com</authorUrl>
+	<packager>nhuang</packager>
+	<packagerurl>http://nhuang.com/</packagerurl>
+	<creationDate>June 2013</creationDate>
+	<copyright>Copyright (C) Nhuang Studio All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<version>1.8.0</version>
+	<description></description>
+	<files>
+			<file id="tpl_mobiletemplate" type="template" client="site">tmpl_mobiletemplate.zip</file>
+	<file id="plg_mobiletemplate" type="plugin" client="site">plg_system_mobiletemplate.zip</file>
+	</files>
+</extension>
