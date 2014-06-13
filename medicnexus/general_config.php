@@ -33,7 +33,7 @@
 	/**
 	 * Define la contraseña establecida para acceder a MYSQL
 	 */
-	define('MN_MYSQL_PASSWORD', 'carabobo');
+	define('MN_MYSQL_PASSWORD', 'phpmy4dm1n#2013');
 	
 	
 #################################
@@ -43,15 +43,15 @@
 	/**
 	 * Define el usuario de administración de Mantis
 	 */
-	define('MN_MANTIS_ROOT_USERNAME', 'root');
+	define('MN_MANTIS_ROOT_USERNAME', 'mninside');
 	/**
 	 * Define la contraseña del usuario de administración de Mantis
 	 */
-	define('MN_MANTIS_ROOT_PASSWORD', 'carabobo');
+	define('MN_MANTIS_ROOT_PASSWORD', 'm4nt1s#2013');
 	/**
 	 * Define el nombre de la base de datos utilizado en Mantis
 	 */
-	define('MN_MANTIS_DATABASE', 'mninside_production');
+	define('MN_MANTIS_DATABASE', 'mninside');
 	/**
 	 * Define el tamaño máximo para los ficheros adjuntos
 	 */
@@ -69,15 +69,15 @@
 	/**
 	 * Define el usuario de administración para el sitio Joomla
 	 */
-	define('MN_JOOMLA_ROOT_USERNAME', 'root');
+	define('MN_JOOMLA_ROOT_USERNAME', 'joomla_cero');
 	/**
 	 * Define la contraseña del usuario de administración para el sitio Joomla
 	 */
-	define('MN_JOOMLA_ROOT_PASSWORD', 'carabobo');
+	define('MN_JOOMLA_ROOT_PASSWORD', 'j00ml4#2013');
 	/**
 	 * Define el nombre de la base de datos en el sitio Joomla
 	 */
-	define('MN_JOOMLA_DATABASE', 'cero_production');
+	define('MN_JOOMLA_DATABASE', 'cero');
 	/**
 	 * Define el prefijo utilizado para las tablas existentes en la base de datos Joomla
 	 */

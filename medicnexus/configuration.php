@@ -1,4 +1,5 @@
 <?php
+require_once ('general_config.php');
 class JConfig {
 	public $offline = '0';
 	public $offline_message = 'Este sitio está cerrado por tareas de mantenimiento.<br /> Por favor, inténtelo nuevamente más tarde.';
@@ -12,11 +13,11 @@ class JConfig {
 	public $debug = '0';
 	public $debug_lang = '0';
 	public $dbtype = 'mysql';
-	public $host = 'localhost';
-	public $user = 'root';
-	public $password = 'carabobo';
-	public $db = 'cero_production';
-	public $dbprefix = 'cero_';
+	public $host = MN_HOST;
+	public $user = MN_JOOMLA_ROOT_USERNAME;
+	public $password = MN_JOOMLA_ROOT_PASSWORD;
+	public $db = MN_JOOMLA_DATABASE;
+	public $dbprefix = MN_JOOMLA_DATABASE_PREFIX;
 	public $live_site = '';
 	public $secret = 'aDtDIwo3OSlv2woP';
 	public $gzip = '0';
@@ -28,15 +29,15 @@ class JConfig {
 	public $ftp_pass = '';
 	public $ftp_root = '';
 	public $ftp_enable = '0';
-	public $offset = 'UTC';
+	public $offset = 'Europe/Madrid';
 	public $mailer = 'smtp';
-	public $mailfrom = 'manuelminfo@gmail.com';
+	public $mailfrom = MN_JOOMLA_EMAIL_FROM;
 	public $fromname = 'Medicnexus';
 	public $sendmail = '/usr/sbin/sendmail';
 	public $smtpauth = '1';
-	public $smtpuser = 'manuelminfo@gmail.com';
-	public $smtppass = 'casinodeportivo';
-	public $smtphost = 'smtp.gmail.com';
+	public $smtpuser = MN_JOOMLA_EMAIL_FROM;
+	public $smtppass = MN_JOOMLA_EMAIL_PASSWORD_FROM;
+	public $smtphost = 'mail.medicnexus.com';
 	public $smtpsecure = 'ssl';
 	public $smtpport = '465';
 	public $caching = '0';
@@ -53,8 +54,8 @@ class JConfig {
 	public $sef_suffix = '1';
 	public $unicodeslugs = '1';
 	public $feed_limit = '10';
-	public $log_path = '/var/www/html/medicnexus/logs';
-	public $tmp_path = '/var/www/html/medicnexus/tmp';
+	public $log_path = '/home/medicnexus/www/logs';
+	public $tmp_path = '/home/medicnexus/www/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 	public $MetaRights = '';
