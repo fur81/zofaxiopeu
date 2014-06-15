@@ -15,77 +15,33 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
 <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
    <jdoc:include type="head" />
-<link rel="stylesheet" href="<?php echo $this->baseurl; ?>templates/system/css/system.css" type="text/css" />
-
-<link rel="stylesheet" href="<?php echo $this->baseurl; ?>templates/system/css/general.css" type="text/css" />
-	<link type="text/css" rel="stylesheet" href="<?php echo $this->baseurl;?>/templates/mobiletemplate/css/docs.css" />
-		<link type="text/css" rel="stylesheet" href="<?php echo $this->baseurl;?>/templates/mobiletemplate/css/mmenu.css" />
-   	<style type="text/css">
-			#page
-			{
-				padding-top: 40px;
-			}
-			#header
-			{
-				margin-left: 0px;
-				position: fixed;
-				top: 0;
-				left: 0%;
-				width: 100%;
-
-				-webkit-box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				box-sizing: border-box;
-
-				-webkit-transition: left 0.5s ease, right 0.5s ease, margin 0.5s ease;
-				-moz-transition: left 0.5s ease, right 0.5s ease, margin 0.5s ease;
-				transition: left 0.5s ease, right 0.5s ease, margin 0.5s ease;
-			}
-			html.mmenu-opened #header
-			{
-				margin-left: 0px;
-				left: 0%;
-			}
-			html.mmenu-opening #header
-			{
-				margin-left: -65px;
-				left: 100%;
-			}
-			@media all and (min-width: 500px) {
-				html.mmenu-opening #header
-				{
-					left: 500px;
-				}
-			}
-				.mmenu
-			{
-				background: <?php echo $this->params->get('tpl_color','#333');?>;
-			}
-		</style>
 
 
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/mobiletemplate/js/jquery.mmenu.min.js"></script>
-          <script language="javascript" type="text/javascript">jQuery.noConflict();</script>
+<!-- CSS -->
+<link type="text/css" rel="stylesheet" href="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/bootstrap/css/bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/prettyPhoto/css/prettyPhoto.css" />
+<link type="text/css" rel="stylesheet" href="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/css/flexslider.css" />
+<link type="text/css" rel="stylesheet" href="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/css/font-awesome.css" />
+<link type="text/css" rel="stylesheet" href="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/css/style.css" />
+<!--<link type="text/css" rel="stylesheet" href="<?--php echo $this->baseurl;?>/templates/mobiletemplate/css/template.css" />-->
 
-		<script type="text/javascript">
+<!-- Favicon and touch icons -->
+<link type="text/css" rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/ico/apple-touch-icon-144-precomposed.png" />
+<link type="text/css" rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/ico/apple-touch-icon-114-precomposed.png" />
+<link type="text/css" rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/ico/apple-touch-icon-72-precomposed.png" />
+<link type="text/css" rel="apple-touch-icon-precomposed" href="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/ico/apple-touch-icon-57-precomposed.png" />
 
-			jQuery(function() {
-				jQuery('nav#menu').mmenu({
-					configuration: {
-						//	For some odd reason, the header won't stay "fixed"
-						//	when using hardware acceleration
-						hardwareAcceleration: false
-					}
-					
-				});
-			});
-
-
-			
-		</script>
-
-
+<!-- Javascript -->        
+        
+<script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/js/jquery.flexslider.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/js/jquery.tweet.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/js/jflickrfeed.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/js/jquery.ui.map.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/js/jquery.quicksand.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/prettyPhoto/js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/js/scripts.js"></script>
 </head>
 
 

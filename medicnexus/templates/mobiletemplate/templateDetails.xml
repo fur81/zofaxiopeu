@@ -23,30 +23,23 @@
 		<folder>js</folder>
 		<folder>blocks</folder>
 	</files>
-	
-
 	<positions>
-<position>mobile_nav</position>
+		<position>mobile_nav</position>
 		<position>footer</position>
 		<position>content_top</position>
-
-		
+		<position>position-1</position>
 	</positions>
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.tpl_mobiletemplate.ini</language>
 		<language tag="en-GB">en-GB/en-GB.tpl_mobiletemplate.sys.ini</language>
 	</languages>
-<config>
-	<fields name="params">
-		
+	<config>
+		<fields name="params">
 			<fieldset name="basic">
-			
-			<field type="text" name="nav_module" default="mobile_nav" label="TPL_MOBILETEMLATE_NAV_MODULE_LABEL" description="TPL_MOBILETEMLATE_NAV_MODULE_DESC" />
-			<field type="text" name="content_top" default="content_top" label="TPL_MOBILETEMLATE_CONTENT_MODULE_LABEL" description="TPL_MOBILETEMLATE_CONTENT_MODULE_DESC" />
+				<field type="text" name="nav_module" default="mobile_nav" label="TPL_MOBILETEMLATE_NAV_MODULE_LABEL" description="TPL_MOBILETEMLATE_NAV_MODULE_DESC" />
+				<field type="text" name="content_top" default="content_top" label="TPL_MOBILETEMLATE_CONTENT_MODULE_LABEL" description="TPL_MOBILETEMLATE_CONTENT_MODULE_DESC" />
 				<field type="color" name="tpl_color" default="#333" label="TPL_MOBILETEMLATE_BG_COLOR_LABEL" description="TPL_MOBILETEMLATE_BG_COLOR_DESC" />
-				</fieldset>
-				
-			</fields>
-	
+			</fieldset>
+		</fields>
 	</config>
 </extension>
