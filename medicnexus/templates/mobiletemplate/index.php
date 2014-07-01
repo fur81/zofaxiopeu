@@ -1,314 +1,216 @@
 <?php
+/**
+ * @package     Joomla.Site
+ * @subpackage  Templates.protostar
+ *
+ * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
 
-/*------------------------------------------------------------------------
+defined('_JEXEC') or die;
 
--------------------------------------------------------------------------*/
-
-// no direct access
-
-defined( '_JEXEC' ) or die( 'Restricted access' );
+// Getting params from template
+$params = JFactory::getApplication()->getTemplate(true)->params;
 
 $app = JFactory::getApplication();
+$doc = JFactory::getDocument();
+$this->language = $doc->language;
+$this->direction = $doc->direction;
 
-include_once (dirname(__FILE__).'/blocks/head.php');
+// Detecting Active Variables
+$option   = $app->input->getCmd('option', '');
+$view     = $app->input->getCmd('view', '');
+$layout   = $app->input->getCmd('layout', '');
+$task     = $app->input->getCmd('task', '');
+$itemid   = $app->input->getCmd('Itemid', '');
+$sitename = $app->getCfg('sitename');
 
+if($task == "edit" || $layout == "form" )
+{
+	$fullWidth = 1;
+}
+else
+{
+	$fullWidth = 0;
+}
+
+// Add JavaScript Frameworks
+JHtml::_('bootstrap.framework');
+$doc->addScript('templates/' .$this->template. '/js/template.js');
+
+// Add Stylesheets
+$doc->addStyleSheet('templates/'.$this->template.'/css/template.css');
+
+// Load optional RTL Bootstrap CSS
+JHtml::_('bootstrap.loadCss', false, $this->direction);
+
+// Add current user information
+$user = JFactory::getUser();
+
+// Adjusting content width
+if ($this->countModules('position-7') && $this->countModules('position-8'))
+{
+	$span = "span6";
+}
+elseif ($this->countModules('position-7') && !$this->countModules('position-8'))
+{
+	$span = "span9";
+}
+elseif (!$this->countModules('position-7') && $this->countModules('position-8'))
+{
+	$span = "span9";
+}
+else
+{
+	$span = "span12";
+}
+
+// Logo file or site title param
+if ($this->params->get('logoFile'))
+{
+	$logo = '<img src="'. JUri::root() . $this->params->get('logoFile') .'" alt="'. $sitename .'" />';
+}
+elseif ($this->params->get('sitetitle'))
+{
+	$logo = '<span class="site-title" title="'. $sitename .'">'. htmlspecialchars($this->params->get('sitetitle')) .'</span>';
+}
+else
+{
+	$logo = '<span class="site-title" title="'. $sitename .'">'. $sitename .'</span>';
+}
 ?>
-    <body>
-    	<!-- Header -->
-        <div class="container">
-            <div class="header row">
-                <div class="span12">
-                    <div class="navbar">
-                        <div class="navbar-inner">
-                            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </a>
-                            <h1>
-                                <a class="brand" href="index.html">Andia - a super cool design agency...</a>
-                            </h1>
-                            <div class="nav-collapse collapse">
-                                <ul class="nav pull-right">
-                                    <li class="current-page">
-                                        <a href="index.php"><i class="icon-home"></i><br />Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo $this->baseurl;?>/templates/mobiletemplate/portfolio.html"><i class="icon-camera"></i><br />Portfolio</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="icon-comments"></i><br />Blog</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo $this->baseurl;?>/templates/mobiletemplate/services.html"><i class="icon-tasks"></i><br />Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo $this->baseurl;?>/templates/mobiletemplate/about.html"><i class="icon-user"></i><br />About</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo $this->baseurl;?>/templates/mobiletemplate/contact.html"><i class="icon-envelope-alt"></i><br />Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<jdoc:include type="head" />
+	<?php
+	// Use of Google Font
+	if ($this->params->get('googleFont'))
+	{
+	?>
+		<link href='http://fonts.googleapis.com/css?family=<?php echo $this->params->get('googleFontName');?>' rel='stylesheet' type='text/css' />
+		<style type="text/css">
+			h1,h2,h3,h4,h5,h6,.site-title{
+				font-family: '<?php echo str_replace('+', ' ', $this->params->get('googleFontName'));?>', sans-serif;
+			}
+		</style>
+	<?php
+	}
+	?>
+	<?php
+	// Template color
+	if ($this->params->get('templateColor'))
+	{
+	?>
+	<style type="text/css">
+		body.site
+		{
+			border-top: 3px solid <?php echo $this->params->get('templateColor');?>;
+			background-color: <?php echo $this->params->get('templateBackgroundColor');?>
+		}
+		a
+		{
+			color: <?php echo $this->params->get('templateColor');?>;
+		}
+		.navbar-inner, .nav-list > .active > a, .nav-list > .active > a:hover, .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover, .nav-pills > .active > a, .nav-pills > .active > a:hover,
+		.btn-primary
+		{
+			background: <?php echo $this->params->get('templateColor');?>;
+		}
+		.navbar-inner
+		{
+			-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
+			-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
+			box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
+		}
+	</style>
+	<?php
+	}
+	?>
+	<!--[if lt IE 9]>
+		<script src="<?php echo $this->baseurl ?>/media/jui/js/html5.js"></script>
+	<![endif]-->
+</head>
 
-        <!-- Slider -->
-        <div class="slider">
-            <div class="container">
-                <div class="row">
-                    <div class="span10 offset1">
-                        <div class="flexslider">
-                            <ul class="slides">
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/1.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/1.jpg">
-                                    <p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur.</p>
-                                </li>
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/2.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/2.jpg">
-                                    <p class="flex-caption">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                                </li>
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/5.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/5.jpg">
-                                    <p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur.</p>
-                                </li>
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/6.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/6.jpg">
-                                    <p class="flex-caption">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<body class="site <?php echo $option
+	. ' view-' . $view
+	. ($layout ? ' layout-' . $layout : ' no-layout')
+	. ($task ? ' task-' . $task : ' no-task')
+	. ($itemid ? ' itemid-' . $itemid : '')
+	. ($params->get('fluidContainer') ? ' fluid' : '');
+?>">
 
-        <!-- Site Description -->
-        <div class="presentation container">
-        	<jdoc:include type="modules" name="position-7" style="xhtml" />
-            <h2>Bienvenidos a <span class="blue-marine">MEDICNEXUS</span>, tu portal de salud para dispositivos móviles.</h2>
-            <p>Estar informado, mantenerte al día y consultar periódicamente con tu medico es la mejor manera de mantener una vida saludable, prevenir lesiones y enfermedades que en el caso de no ser tratadas a tiempo podrían conllevar una pérdida de la calidad de vida.</p>
-        </div>
-
-        <!-- Services -->
-        <div class="what-we-do container">
-            <div class="row">
-                <div class="service span3">
-                    <!--<div class="icon-awesome">
-                        <i class="icon-eye-open"></i>
-                    </div>-->
-                    <div style="margin-top: 10px;">
-                    	<img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/quick_consult_service_icon.png" width="50" height="45">
-                    </div>
-                    <h4>Consulta Rápida</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...</p>
-                    <a href="services.html">Read more</a>
-                </div>
-                <div class="service span3">
-                    <!--<div class="icon-awesome">
-                        <i class="icon-table"></i>
-                    </div>-->
-                    <div style="margin-top: 10px;">
-                    	<img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/virtual_consult_service_icon.png" width="50" height="45">
-                    </div>
-                    <h4>Consulta Virtual</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...</p>
-                    <a href="services.html">Read more</a>
-                </div>
-                <div class="service span3">
-                    <!--<div class="icon-awesome">
-                        <i class="icon-magic"></i>
-                    </div>-->
-                    <div style="margin-top: 10px;">
-                    	<img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/second_opinion_service_icon.png" width="50" height="45">
-                    </div>
-                    <h4>Segunda Opinión</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...</p>
-                    <a href="services.html">Read more</a>
-                </div>
-                <div class="service span3">
-                    <!--<div class="icon-awesome">
-                        <i class="icon-print"></i>
-                    </div>-->
-                    <div style="margin-top: 10px;">
-                    	<img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/health_programs_service_icon.png" width="50" height="45">
-                    </div>
-                    <h4>Programa de Salud</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et...</p>
-                    <a href="services.html">Read more</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Latest Work -->
-        <div class="portfolio container">
-            <div class="portfolio-title">
-                <h3>¿Cómo funciona?</h3>
-            </div>
-            <div class="row">
-                <div class="work span3">
-                	<div id="service_step_block">
-                        <div id="header" style="background: #e1e1e1 url('<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/service_block_header_bg1.gif') no-repeat;">
-                        
-                            <h2>
-                                Seleccionar el servicio
-                            </h2>
-                        </div>
-                        <div id="body">
-                            <div id="middle">
-                                <img alt="" src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/medical_services_icon.gif" /><br />
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-                            </div>
-                        </div>
-                    </div>
-					<!--<img src="<?--php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/portfolio/work1.jpg" alt="">
-                    <h4>
-                    </h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-                    <div class="icon-awesome">
-                        <a href="<?--php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/portfolio/work1.jpg" rel="prettyPhoto"><i class="icon-search"></i></a>
-                        <a href="portfolio.html"><i class="icon-link"></i></a>
-                    </div>-->             
-                </div>
-                <div class="work span3">
-                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/personal_data_icon.png" alt="">
-                    <h4>Datos personales</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-                    <!--<div class="icon-awesome">
-                        <a href="<?--php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/portfolio/work2.jpg" rel="prettyPhoto"><i class="icon-search"></i></a>
-                        <a href="portfolio.html"><i class="icon-link"></i></a>
-                    </div>-->
-                </div>
-                <div class="work span3">
-                	<div id="service_step_block">
-                        <div id="header" style="background: #e1e1e1 url('<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/service_block_header_bg3.gif') no-repeat;">
-                        
-                            <h2>
-                                Realizar la consulta
-                            </h2>
-                        </div>
-                        <div id="body">
-                            <div id="middle">
-                                <img alt="" src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/medical_consult_icon.gif" /><br />
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--<img src="<?--php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/portfolio/work3.jpg" alt="">
-                    <h4>Dolor Prints</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-                    <div class="icon-awesome">
-                        <a href="<?--php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/portfolio/work3.jpg" rel="prettyPhoto"><i class="icon-search"></i></a>
-                        <a href="portfolio.html"><i class="icon-link"></i></a>
-                    </div>-->
-                </div>
-                <div class="work span3">
-                    <div id="service_step_block">
-                        <div id="header" style="background: #e1e1e1 url('<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/service_block_header_bg4.gif') no-repeat;">
-                        
-                            <h2>
-                                Esperar respuesta
-                            </h2>
-                        </div>
-                        <div id="body">
-                            <div id="middle">
-                                <img alt="" src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/medical_response_icon.gif" /><br />
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--<img src="<?--php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/portfolio/work4.jpg" alt="">
-                    <h4>Sit Amet Website</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...</p>
-                    <div class="icon-awesome">
-                        <a href="<?--php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/portfolio/work4.jpg" rel="prettyPhoto"><i class="icon-search"></i></a>
-                        <a href="portfolio.html"><i class="icon-link"></i></a>
-                    </div>-->
-                </div>
-            </div>
-        </div>
-
-        <!-- Testimonials -->
-        <!--<div class="testimonials container">
-            <div class="testimonials-title">
-                <h3>Testimonials</h3>
-            </div>
-            <div class="row">-->
-                <!--<div class="testimonial-list span12">
-                    <div class="tabbable tabs-below">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="A">
-                                <img src="<?--php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/testimonials/1.jpg" title="" alt="">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur..."<br /><span class="violet">Lorem Ipsum, dolor.co.uk</span></p>
-                            </div>
-                            <div class="tab-pane" id="B">
-                                <img src="<?--php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/testimonials/2.jpg" title="" alt="">
-                                <p>"Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat..."<br /><span class="violet">Minim Veniam, nostrud.com</span></p>
-                            </div>
-                            <div class="tab-pane" id="C">
-                                <img src="<?--php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/testimonials/3.jpg" title="" alt="">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur..."<br /><span class="violet">Lorem Ipsum, dolor.co.uk</span></p>
-                            </div>
-                            <div class="tab-pane" id="D">
-                                <img src="<?--php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/testimonials/1.jpg" title="" alt="">
-                                <p>"Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat..."<br /><span class="violet">Minim Veniam, nostrud.com</span></p>
-                            </div>
-                        </div>
-                       <ul class="nav nav-tabs">
-                           <li class="active"><a href="#A" data-toggle="tab"></a></li>
-                           <li class=""><a href="#B" data-toggle="tab"></a></li>
-                           <li class=""><a href="#C" data-toggle="tab"></a></li>
-                           <li class=""><a href="#D" data-toggle="tab"></a></li>
-                       </ul>
-                   </div>
-                </div>
-            </div>-->
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="widget span3">
-                        <h4>About Us</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                        <p><a href="">Read more...</a></p>
-                    </div>
-                    <!--<div class="widget span3">
-                        <h4>Latest Tweets</h4>
-                        <div class="show-tweets"></div>
-                    </div>
-                    <div class="widget span3">
-                        <h4>Flickr Photos</h4>
-                        <ul class="flickr-feed"></ul>
-                    </div>-->
-                    <div class="widget span3">
-                        <h4>Contact Us</h4>
-                        <p><i class="icon-map-marker"></i> Barcelona, España</p>
-                        <p><i class="icon-phone"></i> Teléfono: 0034 333 12 68 347</p>
-                        <p><i class="icon-user"></i> Skype: Medicnexus_Skype</p>
-                        <p><i class="icon-envelope-alt"></i> Email: <a href="">contacto@medicnexus.com</a></p>
-                    </div>
-                </div>
-                <div class="footer-border"></div>
-                <div class="row">
-                    <div class="copyright span4">
-                        <p>Copyright 2014 Medicnexus - All rights reserved.</p>
-                    </div>
-                    <div class="social span8">
-                        <a class="facebook" href=""></a>
-                        <a class="dribbble" href=""></a>
-                        <a class="twitter" href=""></a>
-                        <a class="pinterest" href=""></a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </body>
+	<!-- Body -->
+	<div class="body">
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
+			<!-- Header -->
+			<header class="header" role="banner">
+				<div class="header-inner clearfix">					
+                    <div class="header-search pull-right">
+						<jdoc:include type="modules" name="position-0" style="none" />
+					</div>
+                    <a class="brand pull-left" href="<?php echo $this->baseurl; ?>">
+						<span style="color: #81197f;">MEDIC</span>NEXUS 
+                        <h2 class="slogan_site"><?php echo JText::_('TPL_MN_TEMPLATE_PURPOSES');?></h2>
+					</a>
+				</div>
+			</header>
+			<?php if ($this->countModules('position-1')) : ?>
+			<nav class="navigation" role="navigation">
+				<jdoc:include type="modules" name="position-1" style="none" />
+			</nav>
+			<?php endif; ?>
+			<jdoc:include type="modules" name="banner" style="xhtml" />
+			<div class="row-fluid">
+				<?php if ($this->countModules('position-8')) : ?>
+				<!-- Begin Sidebar -->
+				<div id="sidebar" class="span3">
+					<div class="sidebar-nav">
+						<jdoc:include type="modules" name="position-8" style="xhtml" />
+					</div>
+				</div>
+				<!-- End Sidebar -->
+				<?php endif; ?>
+				<main id="content" role="main" class="<?php echo $span;?>">
+					<!-- Begin Content -->
+					<jdoc:include type="modules" name="position-3" style="xhtml" />
+					<jdoc:include type="message" />
+					<jdoc:include type="component" />
+					<jdoc:include type="modules" name="position-2" style="none" />
+					<!-- End Content -->
+				</main>
+				<?php if ($this->countModules('position-7')) : ?>
+				<div id="aside" class="span3">
+					<!-- Begin Right Sidebar -->
+					<jdoc:include type="modules" name="position-7" style="well" />
+					<!-- End Right Sidebar -->
+				</div>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+	<footer class="footer" role="contentinfo">
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
+			<hr />
+			<jdoc:include type="modules" name="footer" style="none" />
+			<p class="pull-right"><a href="#top" id="back-top"><?php echo JText::_('TPL_MN_ALL_RIGHT_RESERVED_UPPER'); ?></a></p>
+			<p>&copy; <?php echo $sitename; ?> <?php echo date('Y');?></p>
+		</div>
+	</footer>
+	<jdoc:include type="modules" name="debug" style="none" />
+    <div id="health_colleges_site">
+        <ul>
+            <li><a href="#"> <img
+                    src="<?php echo $this->baseurl;?>/templates/protostar/images/metges_college.gif"
+                    border="0" /> </a>
+            </li>
+            <li><a href="#"> <img
+                    src="<?php echo $this->baseurl;?>/templates/protostar/images/web_medica_college.gif"
+                    border="0" /> </a>
+            </li>
+        </ul>
+	</div>
+</body>
 </html>
