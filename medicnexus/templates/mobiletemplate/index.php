@@ -37,9 +37,14 @@ else
 // Add JavaScript Frameworks
 JHtml::_('bootstrap.framework');
 $doc->addScript('templates/' .$this->template. '/js/template.js');
+$doc->addScript('templates/' .$this->template. '/assets/bootstrap/js/bootstrap.min.js');
+$doc->addScript('templates/' .$this->template. '/assets/js/jquery-1.8.2.min.js');
+$doc->addScript('templates/' .$this->template. '/assets/js/jquery.flexslider.js');
+$doc->addScript('templates/' .$this->template. '/assets/js/scripts.js');
 
 // Add Stylesheets
 $doc->addStyleSheet('templates/'.$this->template.'/css/template.css');
+$doc->addStyleSheet('templates/'.$this->template.'/assets/css/flexslider.css');
 
 // Load optional RTL Bootstrap CSS
 JHtml::_('bootstrap.loadCss', false, $this->direction);
@@ -156,6 +161,44 @@ else
 					</a>
 				</div>
 			</header>
+            
+            <div class="slider">
+            <div class="container">
+                <div class="row">
+                    <div class="span10 offset1">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li data-thumb="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/1.jpg">
+                                    <img src="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/1.jpg">
+                                    
+                                </li>
+                                <li data-thumb="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/2.jpg">
+                                    <img src="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/2.jpg">
+                                    
+                                </li>
+                                <li data-thumb="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/3.jpg">
+                                    <img src="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/3.jpg">
+                                    
+                                </li>
+                                <li data-thumb="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/4.jpg">
+                                    <img src="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/4.jpg">
+                                    
+                                </li>
+                                <li data-thumb="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/5.jpg">
+                                    <img src="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/5.jpg">
+                                    
+                                </li>
+                                <li data-thumb="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/6.jpg">
+                                    <img src="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/6.jpg">
+                                    
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
 			<?php if ($this->countModules('position-1')) : ?>
 			<nav class="navigation" role="navigation">
 				<jdoc:include type="modules" name="position-1" style="none" />
