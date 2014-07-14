@@ -67,21 +67,12 @@
 							for="specialist"><?php getValue('label_specialists');?>:</label>
 						</td>
 
-						<td width="200px" valign="top"><select name="specialist"
-							class="specialist" id="specialist" style="width: 100%"
-							disabled="disabled">
-								<option selected="selected">
+						<td width="600px" colspan="2"><select name="specialist"
+							class="specialist" id="specialist" style="width: 193px;">
+							<option value="null">
 								<?php getValue('label_general_specialist');?>
-								</option>
+							</option>
 						</select>
-						</td>
-
-						<td width="400px" class="consult_det_title" valign="top"><label
-							for="viewSpecialistsCheckbox"
-							style="vertical-align: inherit !important"><?php getValue('label_select_specialist');?>:</label>
-							&nbsp; <input style="vertical-align: top" type="checkbox"
-							id="viewSpecialistsCheckbox" name="viewSpecialistsCheckbox"
-							onclick="showSpecialists()">
 						</td>
 					</tr>
 					<tr>
@@ -220,9 +211,6 @@
 <!-- scripts de la página -->
 <script type="text/javascript">
 
-	//para desmarcar el check de especialistas al recargar
-	document.getElementById("viewSpecialistsCheckbox").checked = false;
-
 	// se obtiene el camino relativo del servidor
 	function getPath() {
     	var path = "";
@@ -240,7 +228,7 @@
 		// se cambia del subproyecto.
 		$(".subproject").change(function()
 		{
-			if ( $('#viewSpecialistsCheckbox').attr('checked') ) {
+			var value = "<?php echo getValue('label_general_specialist');?>";
 			var id=$(this).val();
 			var dataString = 'id='+ id;
 
@@ -252,10 +240,11 @@
 				cache: false,
 				success: function(html)
 				{
-				$(".specialist").html(html);
+				$(".specialist").html("");
+				$(".specialist").append("<option value=\"null\">"+value+"</option>");
+				$(".specialist").append(html);
 				}
 			});
-		}
 		});
 	});
 
@@ -286,20 +275,6 @@
 			// como todos los campos obligatorios están llenos se le da 
 			// submit al formulario.
 			document.forms["createIssueForm"].submit();
-		}
-	}
-
-	// función para garantizar el funcionamiento de la opción marcar o desmarcar
-	// los especialistas.
-	function showSpecialists() {
-		var value = "<?php echo getValue('label_general_specialist');?>";
-		if ($('#viewSpecialistsCheckbox').attr('checked')) {
-			$('#specialist').removeAttr('disabled');
-			$(".subproject").change();
-		}else {
-			$('#specialist').attr('disabled','disabled');
-			$("#specialist").html("");
-			$("#specialist").append("<option value=\"null\">"+value+"</option>");
 		}
 	}
 
