@@ -47,7 +47,7 @@ function showImageHeader($projectId, $serviceTypeName, $textLabel, $totalIssueFo
 ?>
 
 <div id="client_zone_options">
-	<div id="client_service_box"
+	<div class="client_service_box_cz"
 		onclick="redirectToProject('<?php echo PROJECT_RAPID_CONSULTATION;?>')"
 		title="<?php getValue('label_project_rapid_consultation_title');?>"
 		style="cursor: pointer;">
@@ -59,7 +59,7 @@ function showImageHeader($projectId, $serviceTypeName, $textLabel, $totalIssueFo
 				'label_project_rapid_consultation_title', $_SESSION['project_rapid_consultation']);?>
 	</div>
 	<div class="client_options_separator"></div>
-	<div id="client_service_box"
+	<div class="client_service_box_cz"
 		onclick="redirectToProject('<?php echo PROJECT_VIRTUAL_CONSULTATION;?>')"
 		title="<?php getValue('label_project_virtual_consultation_title');?>"
 		style="cursor: pointer;">
@@ -71,7 +71,7 @@ function showImageHeader($projectId, $serviceTypeName, $textLabel, $totalIssueFo
 				'label_project_virtual_consultation_title', $_SESSION['project_virtual_consultation']);?>
 	</div>
 	<div class="client_options_separator"></div>
-	<div id="client_service_box"
+	<div class="client_service_box_cz"
 		onclick="redirectToProject('<?php echo PROJECT_SECOND_OPINION;?>')"
 		title="<?php getValue('label_project_second_opinion_title');?>"
 		style="cursor: pointer;">
@@ -83,7 +83,7 @@ function showImageHeader($projectId, $serviceTypeName, $textLabel, $totalIssueFo
 				'label_project_second_opinion_title', $_SESSION['project_second_opinion']);?>
 	</div>
 	<div class="client_options_separator"></div>
-	<div id="client_service_box"
+	<div class="client_service_box_cz"
 		onclick="redirectToProject('<?php echo PROJECT_HEALTH_PROGRAM;?>')"
 		title="<?php getValue('label_project_health_program_title');?>"
 		style="cursor: pointer;">

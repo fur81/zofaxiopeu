@@ -188,7 +188,7 @@ textarea {
 }
 body {
 	margin: 0;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	line-height: 18px;
 	color: #333;
@@ -7191,33 +7191,56 @@ div.current dd.tabs {
     text-transform: uppercase;	
 }
 
-#site_specialities_zone {
+.site_specialities_zone {
 	width: 100%;
 	float: left;
 	margin: 10px 0 0 0;
 }
 
-#site_specialities_zone h1 {
-	font-size: 14px;
+.home_specialities_title {
+	font-size: 12px;
 	color: #666;
-	/*background: url(../images/specialities_title_bg.gif) no-repeat 180px 12px;*/
-	margin: 0 0 10px;
+	background: url(../images/specialities_title_bg.gif) no-repeat 180px 12px;
 }
 
-#site_speciality_box {
+.home_speciality_title {
+	font-size: 12px;
+	padding: 0 0 0 10px;
+}
+
+.site_speciality_box {
 	width: 100%;
 	height: 90px;
 	float: left;
 	/*margin: 5px 10px 0 10px;*/
 }
 
-#speciality_icon {
+.client_zone_title {
+	font-size: 12px;
+	color: #666;
+	text-transform: uppercase;
+}
+
+.title_client_zone_menu {
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+	line-height: 22px;
+	color: #666;
+	font-weight: bold;
+}
+
+.title_client_zone_menu:hover {
+    color: #81197F;
+}
+
+.speciality_icon {
 	float: left;
 	width: 50px;
 	height: 40px;
 }
 
-#speciality_text {
+.speciality_text {
 	width: 100%;
 	height: 90px;
 	float: none;

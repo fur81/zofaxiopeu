@@ -98,7 +98,7 @@ else
 				<div class="logo_img">
 					<a href="index.php"> <img
 						src="<?php echo $this->baseurl;?>/templates/medicnexus/images/medicnexus_logo.gif"
-						width="85" height="85" border="0" /> </a>
+						width="85" height="85" border="0" alt="<?php echo JText::_('TPL_MN_LOGO_IMG');?>" /> </a>
 				</div>
 				<h1 class="logo_title">
 					<span style="color: #81197f;">MEDIC</span>NEXUS
@@ -117,11 +117,11 @@ else
 						<li><?php echo JText::_('TPL_MN_FOLLOW_US_IN');?>:</li>
 						<li><a href="https://www.facebook.com/pages/Medicnexus/473756712691914" target="_blank"> <img
 								src="<?php echo $this->baseurl;?>/templates/medicnexus/images/fb_icon.gif"
-								border="0" /> </a>
+								border="0" alt="<?php echo JText::_('TPL_MN_FB_IMG');?>" /> </a>
 						</li>
-						<li><a href="https://www.facebook.com/pages/Medicnexus/473756712691914" target="_blank"> <img
+						<li><a target="_blank" href="https://twitter.com/Medicnexus"> <img
 								src="<?php echo $this->baseurl;?>/templates/medicnexus/images/tw_icon.gif"
-								border="0" /> </a>
+								border="0" alt="<?php echo JText::_('TPL_MN_TW_IMG');?>" /> </a>
 						</li>
 						<li><img
 							src="<?php echo $this->baseurl;?>/templates/medicnexus/images/promo_lang_separator.gif"
@@ -149,7 +149,7 @@ else
 									</li>
 									<li style="margin: 2px 10px 0 5px;"><a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>"> <img
 											src="<?php echo $this->baseurl;?>/templates/medicnexus/images/register_user_icon.gif"
-											border="0" /> </a>
+											border="0" alt="<?php echo JText::_('TPL_MN_REGISTRY_IMG');?>" /> </a>
 									</li>
 								</ul>
 							</td>

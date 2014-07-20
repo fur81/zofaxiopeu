@@ -28,6 +28,11 @@ h1 {
 	text-transform: uppercase;		
 }
 
+img {
+	font-size: 12px;
+	color: #333;
+}
+
 a img {
 	border: none;
 }
@@ -182,10 +187,10 @@ label {
 }
 
 .contact_title {
-	font-size: 17px;
+	font-size: 19px;
 	color: #1aa9b8;
 	text-transform: uppercase;
-	margin: 35px 0 30px 100px;
+	margin: 35px 0 20px 100px;
 	font-weight: bold;	
 }
 
@@ -228,6 +233,53 @@ label {
 	text-transform: uppercase;
 	margin: 3px;
 	padding: 0;
+}
+
+.footer_menu_items_title {
+	text-align: left;
+	color: #FFF;
+	font-size: 11px;
+	padding: 0 10px 10px 10px;
+}
+
+.home_articles_title {
+	font-size: 12px;
+	color: #666;
+	background: url(../images/articles_title_bg.gif) no-repeat 85px 12px;
+	font-weight: bold;
+	padding-left: 15px;
+}
+
+.home_specialities_title {
+	font-size: 12px;
+	color: #666;
+	background: url(../images/specialities_title_bg.gif) no-repeat 180px 12px;
+}
+
+.home_speciality_title {
+	background: url(../images/speciality_title_bg.gif) no-repeat left center;
+	padding: 0 0 0 10px;
+}
+
+.client_zone_title {
+	font-size: 12px;
+	color: #666;
+	text-transform: uppercase;
+}
+
+.user_guide_info_title {
+    background: url(../images/user_guide_title_bg.gif) no-repeat 15px 20px;
+	height: 25px;
+}
+
+.title_client_zone_menu {
+	float: left;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 60px 0 0 -50px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 160px;
 }
 
 /*Fin estilos generales para títulos*/
@@ -712,36 +764,30 @@ dd,dt,dd {
 	float: left;	
 }
 
-#site_specialities_zone {
+.site_specialities_zone {
 	width: 730px;
 	float: left;
 	margin: 10px 0 0 0;
 }
 
-#site_specialities_zone h1 {
-	font-size: 12px;
-	color: #666;
-	background: url(../images/specialities_title_bg.gif) no-repeat 180px 12px;
-}
-
-#site_speciality_box {
+.site_speciality_box {
 	width: 220px;
 	height: 90px;
 	float: left;
 	margin: 5px 10px 0 10px;	
 }
 
-#speciality_icon {
+.speciality_icon {
 	float: left;
 	width: 50px;
 	height: 40px;
 }
 
-#speciality_icon img {
+.speciality_icon img {
 	margin: 0 0 0 5px;	
 }
 
-#speciality_text {
+.speciality_text {
 	width: 170px;
 	height: 90px;
 	float: left;
@@ -749,15 +795,10 @@ dd,dt,dd {
 	/*padding: 0 2px;*/
 }
 
-#speciality_text h1 {
-	background: url(../images/speciality_title_bg.gif) no-repeat left center;
-	padding: 0 0 0 10px;
-}
-
-#speciality_text p {
-	font-size: 10px;
-	color: #FFF;
-	text-align: left;
+.speciality_text p {
+	font-size: 10px !important;
+	color: #FFF !important;
+	text-align: left !important;
 }
 
 .block-welcome-separator
@@ -784,20 +825,10 @@ dd,dt,dd {
 	-moz-border-radius: 2px 2px 2px 2px;
 }
 
-#articles_zone {
+.articles_zone {
 	width: 350px;
 	float: left;
 	margin: 10px 0 0 5px;	
-}
-
-#articles_zone h1 {
-	font-size: 12px;
-	color: #666;
-	background: url(../images/articles_title_bg.gif) no-repeat 85px 12px;
-}
-
-#articles {
-	/*height: 310px;	*/
 }
 
 #articles-news_separator {
@@ -852,30 +883,30 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	-moz-border-radius: 2px 2px 2px 2px;
 }
 
-.bottom_menu_site_separator {
+.footer_menu_site_separator {
 	color: #1aa9b8;
 	font-size: 11px;	
 }
 
-#bottom_menu_site {
+.bottom_menu_site {
 	width: 1000px;
 	height: 30px;
 	margin: 0 auto;	
 	text-align: center;
 }
 
-#bottom_menu_site ul li {
+.bottom_menu_site ul li {
 	display: inline;
 	margin: 0 0 0 10px;
 }
 
-#bottom_menu_site ul li a {
+.bottom_menu_site ul li a {
 	color: #1aa9b8;
 	font-size: 12px;
 	text-decoration: none;
 }
 
-#bottom_menu_site ul li a:hover {
+.bottom_menu_site ul li a:hover {
 	text-decoration: underline;
 }
 
@@ -884,33 +915,28 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	margin: 10px auto;	
 }
 
-#block_bottom_submenu {
+.block_bottom_submenu {
 	width: 190px;
 	float: left;	
 }
 
-#block_bottom_submenu h1 {
-	color: #FFF;
-	font-size: 11px;	
-}
-
-#block_bottom_submenu ul li {
+.block_bottom_submenu ul li {
 	list-style: none;	
-	margin: 0 0 0 25px;
-	line-height: 16px;
+	margin: 0 0 0 15px;
+	line-height: 18px;
 }
 
-#block_bottom_submenu ul li a {
+.block_bottom_submenu ul li a {
 	text-decoration: none;
 	font-size: 11px;
 	color: #FFF;	
 }
 
-#block_bottom_submenu ul li a:hover {
+.block_bottom_submenu ul li a:hover {
 	color: #1aa9b8;	
 }
 
-#bottom_menu_site_separator {
+.bottom_menu_site_separator {
 	float: left;
 	width: 1px;
 	height: 115px;
@@ -925,12 +951,6 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 	font-size: 11px;	
 }
 
-#bottom_social_networks_zone h1 {
-	text-align: right;
-	color: #FFF;
-	font-size: 11px;
-}
-
 #bottom_social_networks_zone a {
 	color: #FFF;	
 }
@@ -942,6 +962,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
 #final_site_band {
 	width: 1000px;
 	margin: 10px auto 0;
+	padding-top: 5px;
 	background: url(../images/bottom_footer_bg.gif) no-repeat;
 }
 
@@ -1659,17 +1680,12 @@ fieldset {
 #client_zone p {
 	width: 710px;	
 }
-#client_zone h1 {
-	font-size: 12px;
-	color: #666;
-	text-transform: uppercase;
-}
-#client_zone h3 {
+/*#client_zone h3 {
 	font-size: 12px;
 	color: #666;
 	text-transform: uppercase;
 	padding: 0 !important;
-}
+}*/
 #client_zone table {
 	margin-left: 0;
 	border: none;
@@ -1698,26 +1714,12 @@ fieldset {
 	float: left;	
 	margin-top: 10px;	
 }
-#client_zone_options h1 {
-	font-size: 12px;
-	color: #666;
-	background: url(../images/services_title_bg.gif) no-repeat 140px 12px;
-}
-#client_service_box {
+.client_service_box_cz {
 	width: 165px;
 	float: left;	
 }
-#client_service_box img {
+.client_service_box_cz img {
 	margin: 0 0 0 55px;	
-}
-.title_client_zone_menu {
-	float: left;
-    font-size: 12px;
-    font-weight: bold;
-    margin: 60px 0 0 -50px;
-    text-align: center;
-    text-transform: uppercase;
-    width: 160px;
 }
 .service_icon {
 	width: 50px;
@@ -1820,13 +1822,6 @@ fieldset {
 	background: url(../images/health_programs_service_hover_unread_icon.gif) no-repeat;
 	color: #81197F;	
 }
-#client_service_box h1 {
-	color: #1aa9b8;
-	font-size: 11px;
-	background: none;
-	margin: 3px 0 0 0;
-	text-align: center;
-}
 .client_service_box {
 	margin: 0 20px 0 20px;
 	width: 1px;
@@ -1859,10 +1854,6 @@ fieldset {
     font-size: 11px;
     text-align: justify;
 }
-#about_us_zone h1 {
-    color: #666;
-    font-size: 12px;
-}
 #about_us_zone ul {
     /*margin-left: 30px;*/
 }	
@@ -1889,35 +1880,31 @@ fieldset {
     padding: 0;
     width: 740px;	
 }
-#user_guide_info_block {
+.user_guide_info_block {
 	float: left;
     margin: 5px 0 0 0;
     padding: 0;
     width: 730px;
 }
-#user_guide_bullet {
+.user_guide_bullet {
 	float: left;
     height: 30px;
     margin: 0 0 0 15px;
     width: 30px;
 	background: url(../images/user_guide_bullet.gif) no-repeat;	
 }
-#user_guide_info {
+.user_guide_info {
     float: left;
     padding-top: 5px;
     width: 685px;
 }
-#user_guide_info h1 {
-    background: url(../images/user_guide_title_bg.gif) no-repeat 15px 20px;
-	height: 25px;
-}
-#user_guide_info p {
+.user_guide_info p {
     padding-right: 5px;
 }
 
 /*faq_zone*/
 
-#faq_zone {
+/*#faq_zone {
 	float: left;
     padding: 0;
     width: 740px;	
@@ -1948,7 +1935,7 @@ fieldset {
 #faq_info p {
     padding-top: 5px;
 	padding-right: 5px;
-}
+}*/
 
 /*Fin estilos user guide zone*/
 
@@ -2216,7 +2203,7 @@ fieldset {
 
 /*sitemap items*/
 
-#sitemap_items {
+/*#sitemap_items {
 	width: 720px;
 	float: left;
 	margin: 0 0 10px 10px;
@@ -2260,19 +2247,13 @@ fieldset {
 	height: 2px;
 	background: url(../images/sitemap_separator.gif) no-repeat;
 	margin-left: 5px;	
-}
+}*/
 
 /*general_services*/
 
 #general_services {
 	width: 740px;
 	float: left;	
-}
-
-#general_services h1 {
-	color: #666;
-	font-size: 12px;
-	text-transform: uppercase;	
 }
 
 .medical_services_block {
@@ -2289,20 +2270,20 @@ fieldset {
 	border-bottom: 1px dotted #1aa9b8;	
 }
 
-#services_img {
+.services_img {
 	width: 50px;
 	height: 45px;
 	margin: 5px 0 0 30px;
 	float: left;
 }
 
-#services_info {
+.services_info {
 	width: 640px;
 	float: left;
 	padding-top: 5px;
 }
 
-#services_info p {
+.services_info p {
 	padding-right: 0;
 }
 
@@ -2547,7 +2528,6 @@ fieldset {
 	font-weight: bold;
 	background: url(../images/bg_title_box.png) no-repeat left 4px !important;
 	padding-left: 15px;
-	text-transform: uppercase;
 }
 
 .remind p {
