@@ -35,7 +35,7 @@
 		<div>
 			<div>
 				<div class="consultation_detail_icon">
-					<img src="templates/medicnexus/images/consult_report_icon.gif" />
+					<img src="templates/medicnexus/images/consult_report_icon.gif" alt="<?php echo JText::_('TPL_MN_REPORT_CONSULT_IMG');?>" />
 				</div>
 				<div class="consultation_detail_title">
 				<?php getProjectName(); echo ' - ';  getValue('label_report_consultation_info');?>
@@ -44,7 +44,7 @@
 			<div class="consultation_detail_body controls">
 				<table width="100%" cellpadding="3" cellspacing="3">
 					<tr valign="top">
-						<td width="110px" class="consult_det_title"><label
+						<td width="110px" class="consult_det_title_td"><label
 							for="subproject">*<?php getValue('label_specialities');?>:</label>
 						</td>
 						<td width="600px" colspan="2"><select name="subproject"
@@ -63,7 +63,7 @@
 						</td>
 					</tr>
 					<tr valign="top">
-						<td width="110px" class="consult_det_title"><label
+						<td width="110px" class="consult_det_title_td"><label
 							for="specialist"><?php getValue('label_specialists');?>:</label>
 						</td>
 
@@ -99,7 +99,7 @@
 		<div>
 			<div>
 				<div class="consultation_detail_icon">
-					<img src="templates/medicnexus/images/document_attachment_icon.gif" />
+					<img src="templates/medicnexus/images/document_attachment_icon.gif" alt="<?php echo JText::_('TPL_MN_ATTACH_DOC_IMG');?>" />
 				</div>
 				<div class="consultation_detail_title">
 				<?php getValue('label_attached_documents');?>
@@ -120,7 +120,7 @@
 		<div>
 			<div>
 				<div class="consultation_detail_icon">
-					<img src="templates/medicnexus/images/payment_icon.gif" />
+					<img src="templates/medicnexus/images/payment_icon.gif" alt="<?php echo JText::_('TPL_MN_PAYMENT_IMG');?>" />
 				</div>
 				<div class="consultation_detail_title">
 				<?php getValue('label_payment');?>
@@ -129,13 +129,13 @@
 			<div class="consultation_detail_body">
 				<table width="100%" cellpadding="3" cellspacing="3">
 					<tr valign="top">
-						<td width="120px" class="consult_det_title"><?php getValue('label_price');?>:</td>
+						<td width="120px" class="consult_det_title_td"><?php getValue('label_price');?>:</td>
 						<td colspan="2"><label><?php echo $GLOBALS['PAY_PRICE'] . '  ' . PAYPAL_CURRENCY_EUR;?>
 						</label>
 						</td>
 					</tr>
 					<tr valign="top">
-						<td class="consult_det_title"><?php getValue('label_tax');?>:</td>
+						<td class="consult_det_title_td"><?php getValue('label_tax');?>:</td>
 						<td colspan="2"><label><?php echo $GLOBALS['PAY_TAX'] . '  ' . PAYPAL_CURRENCY_EUR;?>
 						</label>
 						</td>
@@ -172,7 +172,7 @@
 						</td>
 						<td valign="middle"><img
 							src="templates/medicnexus/images/sabadell_bank_icon.gif"
-							style="vertical-align: bottom !important;">
+							style="vertical-align: bottom !important;" alt="<?php echo JText::_('TPL_MN_TPV_IMG');?>" />
 						</td>
 					</tr>
 					<tr>

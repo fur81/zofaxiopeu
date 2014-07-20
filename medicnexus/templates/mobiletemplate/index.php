@@ -184,14 +184,6 @@ else
                                     <img src="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/4.jpg">
                                     
                                 </li>
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/5.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/5.jpg">
-                                    
-                                </li>
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/6.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/6.jpg">
-                                    
-                                </li>
                             </ul>
                         </div>
                     </div>
