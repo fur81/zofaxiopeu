@@ -168,20 +168,24 @@ else
                     <div class="span10 offset1">
                         <div class="flexslider">
                             <ul class="slides">
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/1.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/1.jpg">
+                                <li data-thumb="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/1.jpg">
+                                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/1.jpg">
                                     
                                 </li>
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/2.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/2.jpg">
+                                <li data-thumb="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/2.jpg">
+                                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/2.jpg">
                                     
                                 </li>
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/3.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/3.jpg">
+                                <li data-thumb="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/3.jpg">
+                                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/3.jpg">
                                     
                                 </li>
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/4.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/protostar/assets/img/slider/4.jpg">
+                                <li data-thumb="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/4.jpg">
+                                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/4.jpg">
+                                    
+                                </li>
+                                <li data-thumb="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/5.jpg">
+                                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/5.jpg">
                                     
                                 </li>
                             </ul>
