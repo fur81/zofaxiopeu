@@ -37,14 +37,9 @@ else
 // Add JavaScript Frameworks
 JHtml::_('bootstrap.framework');
 $doc->addScript('templates/' .$this->template. '/js/template.js');
-$doc->addScript('templates/' .$this->template. '/assets/bootstrap/js/bootstrap.min.js');
-$doc->addScript('templates/' .$this->template. '/assets/js/jquery-1.8.2.min.js');
-$doc->addScript('templates/' .$this->template. '/assets/js/jquery.flexslider.js');
-$doc->addScript('templates/' .$this->template. '/assets/js/scripts.js');
 
 // Add Stylesheets
 $doc->addStyleSheet('templates/'.$this->template.'/css/template.css');
-$doc->addStyleSheet('templates/'.$this->template.'/assets/css/flexslider.css');
 
 // Load optional RTL Bootstrap CSS
 JHtml::_('bootstrap.loadCss', false, $this->direction);
@@ -133,9 +128,6 @@ else
 	<?php
 	}
 	?>
-	<!--[if lt IE 9]>
-		<script src="<?php echo $this->baseurl ?>/media/jui/js/html5.js"></script>
-	<![endif]-->
 </head>
 
 <body class="site <?php echo $option
@@ -151,56 +143,22 @@ else
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
 			<!-- Header -->
 			<header class="header" role="banner">
-				<div class="header-inner clearfix">					
-                    <div class="header-search pull-right">
+				<div class="header-inner clearfix">
+					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>">
+						<?php echo $logo;?> <?php if ($this->params->get('sitedescription')) { echo '<div class="site-description">'. htmlspecialchars($this->params->get('sitedescription')) .'</div>'; } ?>
+					</a>
+					<div class="header-search pull-right">
 						<jdoc:include type="modules" name="position-0" style="none" />
 					</div>
-                    <a class="brand pull-left" href="<?php echo $this->baseurl; ?>">
-						<span style="color: #81197f;">MEDIC</span>NEXUS 
-                        <h2 class="slogan_site"><?php echo JText::_('TPL_MN_TEMPLATE_PURPOSES');?></h2>
-					</a>
 				</div>
 			</header>
-            
-            <div class="slider">
-            <div class="container">
-                <div class="row">
-                    <div class="span10 offset1">
-                        <div class="flexslider">
-                            <ul class="slides">
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/1.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/1.jpg">
-                                    
-                                </li>
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/2.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/2.jpg">
-                                    
-                                </li>
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/3.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/3.jpg">
-                                    
-                                </li>
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/4.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/4.jpg">
-                                    
-                                </li>
-                                <li data-thumb="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/5.jpg">
-                                    <img src="<?php echo $this->baseurl;?>/templates/mobiletemplate/assets/img/slider/5.jpg">
-                                    
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-            
 			<?php if ($this->countModules('position-1')) : ?>
 			<nav class="navigation" role="navigation">
 				<jdoc:include type="modules" name="position-1" style="none" />
 			</nav>
 			<?php endif; ?>
-			<jdoc:include type="modules" name="banner" style="xhtml" />
+			
+			<jdoc:include type="modules" name="position-2" style="none" />
 			<div class="row-fluid">
 				<?php if ($this->countModules('position-8')) : ?>
 				<!-- Begin Sidebar -->
@@ -216,7 +174,6 @@ else
 					<jdoc:include type="modules" name="position-3" style="xhtml" />
 					<jdoc:include type="message" />
 					<jdoc:include type="component" />
-					<jdoc:include type="modules" name="position-2" style="none" />
 					<!-- End Content -->
 				</main>
 				<?php if ($this->countModules('position-7')) : ?>
@@ -226,30 +183,12 @@ else
 					<!-- End Right Sidebar -->
 				</div>
 				<?php endif; ?>
+				<jdoc:include type="modules" name="news-preview-band" style="xhtml" />
 			</div>
 		</div>
 	</div>
 	<!-- Footer -->
-	<footer class="footer" role="contentinfo">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
-			<hr />
-			<jdoc:include type="modules" name="footer" style="none" />
-			<p class="pull-right"><a href="#top" id="back-top"><?php echo JText::_('TPL_MN_ALL_RIGHT_RESERVED_UPPER'); ?></a></p>
-			<p>&copy; <?php echo $sitename; ?> <?php echo date('Y');?></p>
-		</div>
-	</footer>
+	<?php include_once 'templates/medicnexus/footer.php';?>
 	<jdoc:include type="modules" name="debug" style="none" />
-    <div id="health_colleges_site">
-        <ul>
-            <li><a href="#"> <img
-                    src="<?php echo $this->baseurl;?>/templates/protostar/images/metges_college.gif"
-                    border="0" /> </a>
-            </li>
-            <li><a href="#"> <img
-                    src="<?php echo $this->baseurl;?>/templates/protostar/images/web_medica_college.gif"
-                    border="0" /> </a>
-            </li>
-        </ul>
-	</div>
 </body>
 </html>
