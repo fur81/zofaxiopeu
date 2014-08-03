@@ -132,19 +132,17 @@ else
 	<div class="body">
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
 			<!-- Header -->
-			<div class="header">
-				<div class="header-inner clearfix">
-					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>">
-						<img src="<?php echo $logo;?>" alt="<?php echo $sitename; ?>" />
-					</a>
-					<div class="header-search pull-right">
-						<?php
-						// Display position-0 modules
-						echo $doc->getBuffer('modules', 'position-0', array('style' => 'none'));
-						?>
+			<header class="header" role="banner">
+				<div class="header-inner clearfix">					
+                    <div class="header-search pull-right">
+						<jdoc:include type="modules" name="position-0" style="none" />
 					</div>
+                    <a class="brand pull-left" href="<?php echo $this->baseurl; ?>">
+						<span style="color: #81197f;">MEDIC</span>NEXUS 
+                        <h2 class="slogan_site"><?php echo JText::_('TPL_MN_TEMPLATE_PURPOSES');?></h2>
+					</a>
 				</div>
-			</div>
+			</header>
 			<div class="navigation">
 				<?php
 				// Display position-1 modules
@@ -158,7 +156,7 @@ else
 			<div class="row-fluid">
 				<div id="content" class="span12">
 					<!-- Begin Content -->
-					<h1 class="page-header"><?php echo JText::_('JERROR_LAYOUT_PAGE_NOT_FOUND'); ?></h1>
+					<h1 class="page-header title-mobile-error"><?php echo JText::_('JERROR_LAYOUT_PAGE_NOT_FOUND'); ?></h1>
 					<div class="well">
 						<div class="row-fluid">
 							<div class="span6">
@@ -178,7 +176,7 @@ else
 									<?php echo $doc->getBuffer('module', 'search'); ?>
 								<?php endif; ?>
 								<p><?php echo JText::_('JERROR_LAYOUT_GO_TO_THE_HOME_PAGE'); ?></p>
-								<p><a href="<?php echo $this->baseurl; ?>/index.php" class="btn"><i class="icon-home"></i> <?php echo JText::_('JERROR_LAYOUT_HOME_PAGE'); ?></a></p>
+								<p><a href="<?php echo $this->baseurl; ?>/index.php" class="error-controls"><i class="icon-home"></i> <?php echo JText::_('JERROR_LAYOUT_HOME_PAGE'); ?></a></p>
 							</div>
 						</div>
 						<hr />

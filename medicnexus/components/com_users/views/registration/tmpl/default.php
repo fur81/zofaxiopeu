@@ -50,12 +50,16 @@ JHtml::_('behavior.formvalidation');
 	<?php endif;?>
 <?php endforeach;?>
 		<div class="form-actions">
-			<button type="submit" class="btn btn-primary validate" 
-				title="<?php echo JText::_('JREGISTER');?>"><?php echo JText::_('JREGISTER');?></button>
-			<a href="<?php echo JRoute::_('');?>" title="<?php echo JText::_('JCANCEL');?>"><button class="btn btn-primary validate" type="button"><?php echo JText::_('JCANCEL');?></button></a>
-			<input type="hidden" name="option" value="com_users" />
-			<input type="hidden" name="task" value="registration.register" />
-			<?php echo JHtml::_('form.token');?>
+			<div class="controls">
+            	<button type="submit" class="btn btn-primary validate" title="<?php echo JText::_('JREGISTER');?>"><?php echo JText::_('JREGISTER');?>
+            	</button>
+                <a href="<?php echo JRoute::_('');?>" title="<?php echo JText::_('JCANCEL');?>">
+                	<button class="btn btn-primary validate" type="button"><?php echo JText::_('JCANCEL');?></button>
+                </a>
+                <input type="hidden" name="option" value="com_users" />
+                <input type="hidden" name="task" value="registration.register" />
+                <?php echo JHtml::_('form.token');?>
+            </div>
 		</div>
 	</form>
 </div>

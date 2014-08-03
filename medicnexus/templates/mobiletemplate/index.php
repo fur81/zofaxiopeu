@@ -143,13 +143,14 @@ else
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
 			<!-- Header -->
 			<header class="header" role="banner">
-				<div class="header-inner clearfix">
-					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>">
-						<?php echo $logo;?> <?php if ($this->params->get('sitedescription')) { echo '<div class="site-description">'. htmlspecialchars($this->params->get('sitedescription')) .'</div>'; } ?>
-					</a>
-					<div class="header-search pull-right">
+				<div class="header-inner clearfix">					
+                    <div class="header-search pull-right">
 						<jdoc:include type="modules" name="position-0" style="none" />
 					</div>
+                    <a class="brand pull-left" href="<?php echo $this->baseurl; ?>">
+						<span style="color: #81197f;">MEDIC</span>NEXUS 
+                        <h2 class="slogan_site"><?php echo JText::_('TPL_MN_TEMPLATE_PURPOSES');?></h2>
+					</a>
 				</div>
 			</header>
 			<?php if ($this->countModules('position-1')) : ?>
@@ -183,12 +184,84 @@ else
 					<!-- End Right Sidebar -->
 				</div>
 				<?php endif; ?>
-				<jdoc:include type="modules" name="news-preview-band" style="xhtml" />
+				<!--<jdoc:include type="modules" name="news-preview-band" style="xhtml" />-->
 			</div>
 		</div>
 	</div>
 	<!-- Footer -->
-	<?php include_once 'templates/medicnexus/footer.php';?>
+    <footer class="footer" role="contentinfo">
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
+			<hr />
+			<jdoc:include type="modules" name="footer" style="none" />
+		</div>
+	</footer>
+    <div id="bottom_social_networks_zone">
+					<div class="footer_menu_items_title">
+					<?php echo JText::_('TPL_MN_SOCIAL_NETWORK_UPPER');?>
+					</div>
+					<table width="100%" cellpadding="0" cellspacing="0">
+						<tr align="right">
+							<td><a target="_blank" href="https://twitter.com/Medicnexus"><?php echo JText::_('TPL_MN_TWITTER');?> </a></td>
+							<td><a target="_blank" href="https://twitter.com/Medicnexus"> <img
+									src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_twitter_icon.gif"
+									border="0" alt="<?php echo JText::_('TPL_MN_TW_IMG');?>" /> </a>
+							</td>
+							<td><a href="https://www.facebook.com/pages/Medicnexus/473756712691914" target="_blank"><?php echo JText::_('TPL_MN_FACEBOOK');?> </a></td>
+							<td><a href="https://www.facebook.com/pages/Medicnexus/473756712691914" target="_blank"> <img
+									src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_fb_icon.gif"
+									border="0" alt="<?php echo JText::_('TPL_MN_FB_IMG');?>" /> </a>
+							</td>
+						</tr>
+                        <tr>
+                        	<td colspan="4"></td>
+                        </tr>
+						<tr>
+							<td colspan="4">
+								<div class="footer_menu_items_title">
+								<?php echo JText::_('TPL_MN_INFORMATION_CHANNELS_UPPER');?>
+								</div>
+							</td>
+						</tr>
+						<tr align="right">
+							<td><a href="#"><?php echo JText::_('TPL_MN_YOUTUBE');?> </a></td>
+							<td><a href="#"> <img
+									src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_youtube_icon.gif"
+									border="0" alt="<?php echo JText::_('TPL_MN_YT_IMG');?>" /> </a>
+							</td>
+							<td><a href="#"><?php echo JText::_('TPL_MN_RSS');?> </a></td>
+							<td><a href="#"> <img
+									src="<?php echo $this->baseurl;?>/templates/medicnexus/images/big_rss_icon.gif"
+									border="0" alt="<?php echo JText::_('TPL_MN_RSS_IMG');?>" /> </a>
+							</td>
+						</tr>
+					</table>
+				</div>
+        
+                <div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
+			<hr />
+			<jdoc:include type="modules" name="footer" style="none" />
+		</div>
+        
+                <p class="pull-left"><a href="#top" id="back-top">&copy;&nbsp;<?php echo JText::_('TPL_MN_ALL_RIGHT_RESERVED_UPPER'); ?></a></p>
+			<p><?php echo $sitename; ?> <?php echo date('Y');?></p>
+            
+            <div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : '');?>">
+			<hr />
+			<jdoc:include type="modules" name="footer" style="none" />
+		</div>
+            
+            <div id="health_colleges_site">
+        <ul>
+            <li><a href="#"> <img
+                    src="<?php echo $this->baseurl;?>/templates/mobiletemplate/images/metges_college.gif"
+                    border="0" /> </a>
+            </li>
+            <li><a href="#"> <img
+                    src="<?php echo $this->baseurl;?>/templates/mobiletemplate/images/web_medica_college.gif"
+                    border="0" /> </a>
+            </li>
+        </ul>
+	</div>
 	<jdoc:include type="modules" name="debug" style="none" />
 </body>
 </html>
