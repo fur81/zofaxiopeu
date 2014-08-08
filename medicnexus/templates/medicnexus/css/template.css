@@ -1235,6 +1235,12 @@ li.maximenuck {margin: 0; padding: 0px;}
 	font-size: 12px;
 }
 
+.blog table {
+	/*margin-left: 15px;*/
+	border: 1px solid #1aa9b8;	
+	font-size: 12px;
+}
+
 .item-page table th {
 	background: #1aa9b8;
 	color: #FFF;
@@ -1243,7 +1249,23 @@ li.maximenuck {margin: 0; padding: 0px;}
 	border-bottom: 3px solid #FFF;
 }
 
+.blog table th {
+	background: #1aa9b8;
+	color: #FFF;
+	text-align: left;
+	padding: 5px 10px;
+	border-bottom: 3px solid #FFF;
+}
+
 .item-page table td {
+	background: #f9f9f9;
+	color: #666;
+	text-align: justify;
+	padding: 5px;
+	vertical-align: top;
+}
+
+.blog table td {
 	background: #f9f9f9;
 	color: #666;
 	text-align: justify;
@@ -1374,7 +1396,6 @@ li.maximenuck {margin: 0; padding: 0px;}
 	margin: 0;
 	margin-bottom: 5px;
 }
-#system-message {}
 .alert-warning {}
 
 .close {
@@ -2583,7 +2604,7 @@ fieldset {
 }
 
 .blog {
-	padding: 0 15px;
+	padding: 0 10px;/*bazinga*/
 }
 
 .blog img {
