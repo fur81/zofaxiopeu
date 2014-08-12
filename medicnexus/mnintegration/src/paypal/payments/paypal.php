@@ -217,12 +217,12 @@ function executePayment($paymentId, $payerId) {
  * @param int $num
  * @param char $char
  * @return string
- */
+
 function llenaEspaciosPaypal($valor,$num,$char){
     $len_valor = strlen($valor);
     for($i=$len_valor; $i<$num; $i++){
         $valor = $char.''.$valor;
     }
-    $valor = '1'.$valor;
+    //$valor = '2'.$valor;
     return $valor;
-}
+} */

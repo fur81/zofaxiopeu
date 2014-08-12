@@ -44,7 +44,7 @@
 			<div class="consultation_detail_body controls">
 				<table width="100%" cellpadding="3" cellspacing="3">
 					<tr valign="top">
-						<td width="110px" class="consult_det_title_td"><label
+						<td width="110px" class="consult_det_title"><label
 							for="subproject">*<?php getValue('label_specialities');?>:</label>
 						</td>
 						<td width="600px" colspan="2"><select name="subproject"
@@ -63,7 +63,7 @@
 						</td>
 					</tr>
 					<tr valign="top">
-						<td width="110px" class="consult_det_title_td"><label
+						<td width="110px" class="consult_det_title"><label
 							for="specialist"><?php getValue('label_specialists');?>:</label>
 						</td>
 
@@ -129,13 +129,13 @@
 			<div class="consultation_detail_body">
 				<table width="100%" cellpadding="3" cellspacing="3">
 					<tr valign="top">
-						<td width="120px" class="consult_det_title_td"><?php getValue('label_price');?>:</td>
+						<td width="120px" class="consult_det_title"><?php getValue('label_price');?>:</td>
 						<td colspan="2"><label><?php echo $GLOBALS['PAY_PRICE'] . '  ' . PAYPAL_CURRENCY_EUR;?>
 						</label>
 						</td>
 					</tr>
 					<tr valign="top">
-						<td class="consult_det_title_td"><?php getValue('label_tax');?>:</td>
+						<td class="consult_det_title"><?php getValue('label_tax');?>:</td>
 						<td colspan="2"><label><?php echo $GLOBALS['PAY_TAX'] . '  ' . PAYPAL_CURRENCY_EUR;?>
 						</label>
 						</td>

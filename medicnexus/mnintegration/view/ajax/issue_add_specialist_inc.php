@@ -20,6 +20,7 @@ if( isset( $_POST['id']) )
 {
 	// se incluyen las variables generales
 	include_once  $_SERVER['DOCUMENT_ROOT'].'/medicnexus/general_config.php';
+//	alert($_SERVER['DOCUMENT_ROOT'].'/www/general_config.php');
 
 	// se crea la conexion a la base de datos
 	$proxyMySql = new mysqli(MN_HOST, MN_MANTIS_ROOT_USERNAME, MN_MANTIS_ROOT_PASSWORD, MN_MANTIS_DATABASE);

@@ -33,6 +33,7 @@ function getApiContext() {
 	// OAuthTokenCredential class can be retrieved from 
 	// developer.paypal.com
 
+ /*	
 	// sandbox
 	$apiContext = new ApiContext(
 		new OAuthTokenCredential(
@@ -40,15 +41,15 @@ function getApiContext() {
 			'EE2lCxCSyGfI8TPKHRPALfhxcBfqWk6UBeyLSGtLLJWEYSo0xJOsxtApcFd_'
 		)
 	);
-
+*/
 	// live 
-	/*
+	
 	$apiContext = new ApiContext(
 		new OAuthTokenCredential(
-			'AfIe-BBKg9DPeRfhQ_E3H5J_ikdgTp5fCt90kgt8yDRUJ-n6QaQmifnSe9EE',
-			'EI8n4hBAo_nKcQ3TFOHSMlFMqItsm5PDtRZsH_8y6RPy6noGbBvfTA9Kf-Pc'
+			'AXh7hxAI5NHnEklbfdA9vJsYRZy1U2u5HfcELrXlPyMSNCJAQ7D6UBaLI8jc',
+			'EDGVlhCrtFADL5v3CJz-ejRchN8PvYrotuwiMM-ds9BVEXQP5LlNsBZW2hA6'
 		)
-	);*/
+	);
 
 
 	// #### SDK configuration
@@ -59,7 +60,7 @@ function getApiContext() {
 
 	$apiContext->setConfig(
 		array(
-			'mode' => 'sandbox', // cambiar a 'live' cuando esté en producción
+			'mode' => 'live', // cambiar a 'live' cuando esté en producción o sandbox en DES
 			'http.ConnectionTimeOut' => 30,
 			'log.LogEnabled' => true,
 			'log.FileName' => '../PayPal.log',

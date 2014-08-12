@@ -185,7 +185,7 @@ function llenaEspacios($valor,$num,$char){
     for($i=$len_valor; $i<$num; $i++){
         $valor = $char.''.$valor;
     }
-    $valor = '1'.$valor;
+    $valor = '0'.$valor;
     return $valor;
 }
 ?>

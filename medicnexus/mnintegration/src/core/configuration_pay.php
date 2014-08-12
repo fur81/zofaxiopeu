@@ -50,9 +50,9 @@ define('TPV_PRICE_VIRTUAL_CONSULTATION',       '2300');
 
 // health program
 // -- paypal
-define('PAYPAL_PRICE_HEALTH_PROGRAM',        '6.00');
+define('PAYPAL_PRICE_HEALTH_PROGRAM',        '0.10');
 define('PAYPAL_SHIPPING_HEALTH_PROGRAM',     '0.00');
 define('PAYPAL_TAX_HEALTH_PROGRAM',          '0.00');
-define('PAYPAL_TOTAL_AMOUNT_HEALTH_PROGRAM', '6.00');
+define('PAYPAL_TOTAL_AMOUNT_HEALTH_PROGRAM', '0.10');
 // -- tpv
-define('TPV_PRICE_HEALTH_PROGRAM',        '600');
+define('TPV_PRICE_HEALTH_PROGRAM',        '10');

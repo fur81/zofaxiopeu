@@ -54,5 +54,4 @@ $GLOBALS['CURRENT_USERNAME'] = JFactory::getUser()->username;
 $GLOBALS['CURRENT_USERFULLNAME'] = JFactory::getUser()->name;
 $GLOBALS['CURRENT_USEREMAIL'] = JFactory::getUser()->email;
 
-
 ?>
